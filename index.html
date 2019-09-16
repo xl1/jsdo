@@ -1,0 +1,94 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Salvaged codes from jsdo.it</title>
+    <style>
+        :root {
+            --bg: #ddd;
+            --header-height: 30px;
+            --frame-size: 465px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            display: grid;
+            height: 100vh;
+            grid-template: var(--header-height) var(--frame-size) 1fr / var(--frame-size) 1fr;
+            grid-template-areas:
+                "header header"
+                "player editor"
+                "desc   editor";
+        }
+        .header {
+            grid-area: header;
+            background-color: var(--bg);
+        }
+        .player {
+            grid-area: player;
+        }
+            .player__iframe {
+                border: none;
+            }
+            .player__button {
+                position: relative;
+                top: calc(-1 * var(--frame-size));
+                height: var(--frame-size);
+                line-height: var(--frame-size);
+                font-size: 40px;
+                text-align: center;
+                cursor: pointer;
+            }
+        .description {
+            grid-area: desc;
+            box-sizing: border-box;
+            border-top: 1px solid var(--bg);
+        }
+        .editor {
+            grid-area: editor;
+            box-sizing: border-box;
+            border-left: 1px solid var(--bg);
+        }
+    </style>
+    <script type="module" src="./index.js"></script>
+</head>
+<body>
+    <div class="main" id="app">
+        <div class="header">
+            <select class="header__selector"
+                v-model="selectedPage" @change="pageChanged">
+                <option disabled value="">Select file</option>
+                <option v-for="p in pages" :value="p.name">{{ p.title }}</option>
+            </select>
+        </div>
+        <div class="player">
+            <iframe
+                class="player__iframe"
+                width="465" height="465"
+                sandbox="allow-forms allow-modals allow-scripts allow-top-navigation"
+                ref="iframe"></iframe>
+            <div class="player__button" :hidden="isPlaying" @click="play">▶ Play</div>
+        </div>
+        <div class="description" v-html="description"></div>
+        <div class="editor">
+            <ul>
+                <li v-for="l in libraries">{{ l }}</li>
+            </ul>
+            <ul class="editor__switcher">
+                <li>
+                    <label><input type="radio" value="html" v-model="codeType"> HTML</label>
+                </li>
+                <li>
+                    <label><input type="radio" value="js" v-model="codeType"> JS</label>
+                </li>
+                <li>
+                    <label><input type="radio" value="css" v-model="codeType"> CSS</label>
+                </li>
+            </ul>
+            <div class="editor__editor">
+                <code><pre>{{ code }}</pre></code>
+            </div>
+        </div>
+    </div>
+</body>
