@@ -1,0 +1,14 @@
+{
+  "name": "jsdo",
+  "version": "1.0.0",
+  "description": "Salvaged codes from jsdo.it",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3"
+  },
+  "author": "xl1",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.13"
+  }
+}
