@@ -1,0 +1,7 @@
+precision mediump float;
+uniform vec2 u_textureSize;
+
+void main(){
+  float x = u_textureSize.x - 50.0;
+  gl_FragColor = vec4(x / 250.0, 0.0, 0.0, 1.0);
+}

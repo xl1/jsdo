@@ -1,0 +1,1189 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"  class="osOther" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+
+<title>Pure CSS お絵かきロジック - jsdo.it - Share JavaScript, HTML5 and CSS</title>
+
+<meta property="qc:admins" content="21506643427614" />
+<meta property="wb:webmaster" content="5c8153403c54c98f" />
+<meta name="description" content="Pure CSS お絵かきロジック by xl1 @ jsdo.it - share JavaScript, HTML5 and CSS - jsdo.it is a service to write JavaScript, HTML5, CSS in your browser and share it. You can copy and modify others' code. And also Ask questions about JavaScript, HTML5, CSS" />
+
+<meta name="keywords"  content="judo.it,JavaScript,HTML5,CSS,jsdoit" />
+
+<meta name="author" content="jsdoit Inc." />
+<meta name="license" content="&#169;jsdoit Inc." />
+
+<meta property="og:site_name" content="jsdo.it" />
+<meta property="fb:page_id" content="138382942860000" />
+<meta property="fb:app_id" content="104748116268345" />
+<meta property="og:locale" content="ja_JP">
+
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="http://jsdo.it/xl1/tfPB" />
+
+<meta property="og:description" content="Pure CSS お絵かきロジック by xl1 @ jsdo.it - http://jsdo.it/xl1/cfCz と同じ仕組みです
+ルールは http://ja.wikipedia.org/wiki/%E3%81%8A%E7%B5%B5%E3%81%8B%E3%81%8D%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF など参照" />
+<meta property="twitter:description" content="Pure CSS お絵かきロジック by xl1 @ jsdo.it - http://jsdo.it/xl1/cfCz と同じ仕組みです
+ルールは http://ja.wikipedia.org/wiki/%E3%81%8A%E7%B5%B5%E3%81%8B%E3%81%8D%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF など参照" />
+
+
+
+
+<meta property="og:image" content="http://jsdo-static-contents.s3.amazonaws.com/images/capture/t/f/P/tfPB.jpg?t=1301455234" />
+<meta property="og:image:width" content="465" />
+<meta property="og:image:height" content="465" />
+
+<meta name="twitter:site" content="@jsdo_it">
+<meta name="twitter:card" content="summary">
+
+
+
+
+<meta property="og:title" content="Pure CSS お絵かきロジック" />
+<meta name="twitter:title" content="Pure CSS お絵かきロジック" />
+
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/favicon.ico" />
+<link rel="start" href="/" title="home" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/common.css?1468627570" />
+
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/code.css?1468627570" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/codemirror.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/themes.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/SyntaxHighlighter.css?1441025678" />
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<!--[if IE 9]><body class="ie9 i_default"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><body class="i_default"><!--<![endif]-->
+
+<script type="text/javascript">
+var language = "i_default"; // used in l()
+</script>
+
+<!-- script 'type="text/javascript" src="https://www.google.com/jsapi"></script -->
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- adtype =  -->
+<!-- Google DoubleClick 広告のスクリプトページ -->
+<div id="container" class="codepage contents">
+<!--[[[ HEADER-AREA ]]]-->
+<!-- country = JP -->
+<header id="headerGlobal" class="group">
+<div class="sub">
+<div class="layoutContainer layoutLiquid group">
+
+<!-- PR欄&リンク -->
+<style>
+#headerGlobal .pr a:before {
+    content: "重要なお知らせ";
+}
+#headerGlobal .pr a {
+    color: red;
+    font-size: 14px;
+    text-shadow: none;
+    padding-right: 11px;
+}
+</style>
+<p class="pr" style="color:red; font-"><a href="http://jsdo.it/blog/2019/07/jsdoit-1.html">
+【重要】サービス終了のお知らせ</a></p>
+<!-- PR欄&リンク -->
+
+
+<ul id="headerLanguage">
+<li class="column">
+<span class="header_menu_column" id="header_menu_column_1"><a href="#"><span class="thumb"></span>English</a></span>
+<div class="navGlobalSub">
+<ul class="shadowLayor1">
+<li><a href="?lang=en" class="usa">English</a></li>
+<li style="display:none;"><a href="#" class="kor">한국어</a></li>
+<li><a href="?lang=zh-CN" class="chn">中文</a></li>
+<li><a href="?lang=ja" class="jpn">日本語</a></li>
+</ul>
+</div>
+</li>
+<!-- / #headerAccount --></ul>
+<ul id="navGlobal">
+<li><a href="/tags" title="Tags">Tags</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/event/topics" title="Topics &amp; Events">Topics &amp; Events</a></li>
+<li><a href="/qa" title="Discussions">Discussions</a></li>
+<li><a href="http://games.jsdo.it" title="jsdo.it HTML5-Games">HTML5-Games</a></li>
+<!-- / #navGlobal --></ul>
+<!-- / .layoutContainer --></div>
+<!-- / .sub --></div>
+<div class="main">
+<div class="layoutContainer layoutLiquid group">
+
+<h1 id="siteName"><a href="/"><img src="/img/common/sitename_03.png" width="79" height="39" alt="jsdo.it - Share JavaScript, HTML5 and CSS" /></a></h1>
+
+<div id="btnHeaderCodeNew">
+<form method="post" action="/code/new">
+<fieldset>
+<p><input type="submit" value="Start coding"></p>
+</fieldset>
+<input type="hidden" name="token" value="">
+</form>
+<!-- / #btnHeaderCodeNew --></div>
+
+<div id="navGlobalSearch">
+<form method="get" action="/search" class="search">
+<input id="inputSearch" type="text" name="q" class="query input-prompt" autocomplete="off" placeholder="Search"><input type="submit" value="" class="button">
+</form>
+<!--/#navGlobalSearch--></div>
+
+
+
+
+<div id="headerSignin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signup">Create account</a></p>
+<p>or</p>
+<div class="signin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signin">LOGIN</a></p>
+<div class="panel">
+<div class="shadowLayor1">
+<div class="service">
+<ul>
+<li class="google"><a href="/login/google?login=1" onClick="_gaq.push(['_trackPageview', '/login/service/google']);">Login with Google</a></li>
+<li class="facebook"><a href="/login/facebook" onClick="_gaq.push(['_trackPageview', '/login/service/facebook']);">Login with Facebook</a></li>
+<li class="twitter"><a href="/login/twitter" onClick="_gaq.push(['_trackPageview', '/login/service/twitter']);">Login with Twitter</a></li>
+
+
+
+<li class="other"><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);">Other login options</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- / #headerSignin --></div>
+
+
+
+<!-- / .layoutContainer --></div>
+<!-- / .main --></div>
+
+
+
+<div id="navPrimaryTag">
+<div class="layoutContainer layoutLiquid">
+<nav class="group">
+<div class="search">
+<form method="get" action="/search">
+<input type="text" placeholder="Search" name="q" results="10" class="text" /><input type="submit" value="Search" class="hidden">
+</form>
+</div>
+<ul class="group">
+<li class="application"><a href="/tag/application" >Application</a></li>
+<li class="ui"><a href="/tag/user_interface" >User Interface</a></li>
+<li class="html5"><a href="/tag/html5_elements&amp;api" >HTML5 Elements &amp; API</a></li>
+<li class="css"><a href="/tag/css" >CSS</a></li>
+<li class="art"><a href="/tag/art&amp;design" >Art &amp; Design</a></li>
+<li class="game"><a href="/tag/game" ">Game</a></li>
+<li class="library"><a href="/tag/library&amp;test" >Library &amp; Test</a></li>
+<li class="smartphone"><a href="/tag/smartphones&amp;tablets" >Smartphones &amp; Tablets</a></li>
+<li class="all"><a href="/codes">All</a></li>
+</ul>
+</nav>
+<!-- / .layoutContainer --></div>
+<!-- / #navPrimaryTag --></div>
+
+
+
+
+
+
+<!-- / #headerGlobal --></header>
+<!--[[[ /HEADER-AREA ]]]-->
+
+
+<!--[[[ CONTENT-AREA ]]]-->
+<div id="body">
+<article id="codeDetail" class="layoutContainer">
+
+
+
+<section class="code">
+<header class="group">
+
+<div class="main">
+<h1><a href="http://jsdo.it/xl1/tfPB" rel="bookmark">Pure CSS お絵かきロジック</a></h1>
+<div class="author group" itemscope itemtype="http://data-vocabulary.org/Person">
+<p class="image"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="30" height="30" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author" itemprop="url"><span itemprop="name">xl1</span></a></p>
+<div class="connection">
+	<div class="follow"><span onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="btnBase btnType2 btnSmall btnFollow">Follow</span></div>
+</div>
+<time datetime="2011-03-30T12:20:31">2011-03-30 12:20:31</time>
+<p class="license">License: 
+  <a href="/help#help_license">MIT License</a>
+</p>
+</div>
+<!-- / .main --></div>
+
+<div class="counts">
+<div>
+<span id="fork_button" class="fork btnBase btnType5">
+<dl>
+<dt>Fork</dt><dd>11</dd>
+</dl>
+</span>
+</div>
+<div>
+<a href="http://jsdo.it/login?redirect=http%3A%2F%2Fjsdo.it%2Fxl1%2FtfPB" class="favorite btnBase btnType6 btnSmall">
+<span class="favoriteIcon"><img src="/img/common/ico/ico_fav_02_shadow.png" width="15px" height="12px" /></span><dl class="group">
+<dt>Fav</dt><dd>13</dd>
+</dl>
+</a><div href="/" class="pv">
+<dl class="group">
+<dt>View</dt><dd>154269</dd>
+</dl>
+</div>
+</div>
+<!-- / .counts --></div>
+</header>
+
+<script type="text/javascript">
+var user = {
+  screen_name: "xl1"
+};
+</script>
+
+
+<div class="fullscreen group">
+<div class="inner">
+<ul class="controller">
+<li class="btnBase btnType6 btnSmall btnInvisible btnStart" id="btnPlay" onclick="JSDoIt.CodeShow.play(); return false;"><span>Play</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnStop" id="btnStop" style="display: none;" onclick="JSDoIt.CodeShow.stop(); return false;"><span>Stop</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnReload" id="btnReload" style="display: none;" onclick="JSDoIt.CodeShow.reload(); return false;"><span>Reload</span></li>
+</ul>
+<p><a href="http://jsdo.it/xl1/tfPB/fullscreen" class="btnBase btnType6 btnSmall btnInvisible btnFullscreen" title="Fullscreen preview"><span>Fullscreen</span></a></p>
+<p><span title="Smart Phone Preview" class="btnBase btnType6 btnSmall btnInvisible btnSmartphone" data-size="width=320,height=480"><span>Smart Phone</span></span></p>
+<p><a href="http://jsdo.it/xl1/tfPB/tree" class="btnBase btnType6 btnSmall btnInvisible"><span>Fork tree</span></a></p>
+</div>
+</div>
+
+<fieldset>
+
+<section class="viewer group">
+
+<div class="group areaCodeViewer">
+<div class="boxCode" id="boxShowCode"><header>
+<ul class="group">
+<li class="description active" data-target-tab="boxEditDescription"><span>Readme</span></li>
+<li class="js" data-target-tab="boxEditJS">JavaScript <small>0 lines</small></li>
+<li class="html" data-target-tab="boxEditHTML">HTML <small>32 lines</small></li>
+<li class="css" data-target-tab="boxEditCSS">CSS <small>90 lines</small></li>
+</ul>
+</header>
+
+
+<section id="boxEditDescription">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeDescription">
+
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><a  href="http://jsdo.it/xl1/cfCz">http://jsdo.it/xl1/cfCz</a> と同じ仕組みです<br />
+ルールは <a  href="http://ja.wikipedia.org/wiki/%E3%81%8A%E7%B5%B5%E3%81%8B%E3%81%8D%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF">http://ja.wikipedia.org/wiki/%E3%81%8A%E7%B5%B5%E3%81%8B%E3%81%8D%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF</a> など参照</div>
+
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditJS">
+<ul class="tabCode group">
+    <li title="Pure CSS お絵かきロジック" class="selected tabJS initialTab"><span id="primaryTabTitle">Pure CSS お絵かきロジック</span></li></ul>
+<div class="code" id="boxCodeJS"> 
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeJS" data-lang=""></textarea></div><!-- / .code --></div>
+<!-- / #boxEditJS --></section>
+
+<section id="boxEditHTML">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeHTML">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeHTML">&lt;table&gt;&lt;tr&gt;
+  &lt;td&gt;&lt;/td&gt;
+  &lt;td class=&quot;question top&quot;&gt;
+    &lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;7&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;9&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;2&lt;br&gt;1&lt;br&gt;3&lt;/span&gt;&lt;span&gt;&lt;br&gt;2&lt;br&gt;1&lt;br&gt;1&lt;br&gt;2&lt;/span&gt;&lt;span&gt;&lt;br&gt;2&lt;br&gt;1&lt;br&gt;2&lt;br&gt;2&lt;/span&gt;&lt;span&gt;1&lt;br&gt;1&lt;br&gt;1&lt;br&gt;1&lt;br&gt;1&lt;/span&gt;&lt;span&gt;1&lt;br&gt;1&lt;br&gt;1&lt;br&gt;2&lt;br&gt;1&lt;/span&gt;&lt;span&gt;&lt;br&gt;1&lt;br&gt;1&lt;br&gt;3&lt;br&gt;1&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;1&lt;br&gt;2&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;7&lt;/span&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+  &lt;td class=&quot;question left&quot;&gt;
+    &lt;div&gt;10&lt;/div&gt;
+    &lt;div&gt;5&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;3&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;2&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;3&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;5&amp;nbsp;&amp;nbsp;1&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;1&amp;nbsp;&amp;nbsp;2&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;2&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;4&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;6&lt;/div&gt;
+  &lt;/td&gt;
+  &lt;td id=&quot;canvas&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i00&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i01&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i02&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i03&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i04&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i05&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i06&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i07&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i08&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i09&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i10&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i11&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i12&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i13&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i14&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i15&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i16&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i17&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i18&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i19&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i20&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i21&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i22&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i23&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i24&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i25&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i26&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i27&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i28&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i29&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i30&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i31&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i32&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i33&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i34&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i35&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i36&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i37&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i38&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i39&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i40&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i41&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i42&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i43&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i44&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i45&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i46&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i47&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i48&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i49&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i50&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i51&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i52&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i53&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i54&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i55&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i56&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i57&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i58&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i59&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i60&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i61&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i62&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i63&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i64&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i65&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i66&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i67&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i68&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i69&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i70&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i71&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i72&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i73&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i74&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i75&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i76&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i77&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i78&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i79&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i80&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i81&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i82&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i83&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i84&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i85&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i86&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i87&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i88&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i89&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i90&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i91&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i92&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i93&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i94&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i95&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i96&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i97&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i98&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i99&quot;&gt;&lt;label&gt;&lt;/label&gt;
+    &lt;div id=&quot;clear&quot;&gt;Congratulations!&lt;br&gt;(HTML5 logo)&lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;</textarea></div>
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditCSS">
+<ul class="tabCode group">
+    <li title="Pure CSS お絵かきロジック" class="selected tabCSS initialTab"><span id="primaryTabTitle">Pure CSS お絵かきロジック</span></li></ul>
+<div class="code" id="boxCodeCSS">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeCSS" data-lang="">table {
+  border-spacing: 0;
+}
+table td {
+  padding: 0;
+}
+input:hover + label {
+  background: silver;
+}
+
+#canvas input:checked + label { 
+  background: black
+}
+#canvas {
+  position: relative;
+  line-height: 0;
+}
+#canvas input, #canvas label {
+  width: 20px;
+  height: 20px;
+  border-left: 1px solid silver;
+  border-top: 1px solid silver;
+}
+#canvas input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+#canvas label {
+  display: inline-block;
+  z-index: -1;
+}
+.question {
+  font-family: monospace;
+}
+.question.top span {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  border-left: 1px solid silver;
+}
+.question.left div {
+  height: 16px;
+  text-align: right;
+  border-top: 1px solid silver;
+  padding: 2px 8px;
+}
+
+table:active {
+  content: '';
+}
+#clear {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: red;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+  z-index: -1;
+  opacity: 0;
+}
+
+#i00:checked~#i01:checked~#i02:checked~#i03:checked~#i04:checked~
+#i05:checked~#i06:checked~#i07:checked~#i08:checked~#i09:checked~
+#i10:checked~#i11:checked~#i12:checked~#i13:checked~#i14:checked~
+#i15:not(:checked)~#i16:not(:checked)~#i17:not(:checked)~#i18:not(:checked)~#i19:checked~
+#i20:checked~#i21:checked~#i22:not(:checked)~#i23:not(:checked)~#i24:not(:checked)~
+#i25:checked~#i26:checked~#i27:checked~#i28:not(:checked)~#i29:checked~
+#i30:checked~#i31:checked~#i32:not(:checked)~#i33:checked~#i34:checked~
+#i35:not(:checked)~#i36:not(:checked)~#i37:not(:checked)~#i38:not(:checked)~#i39:checked~
+#i40:checked~#i41:checked~#i42:not(:checked)~#i43:not(:checked)~#i44:not(:checked)~
+#i45:checked~#i46:checked~#i47:checked~#i48:not(:checked)~#i49:checked~
+#i50:checked~#i51:checked~#i52:checked~#i53:checked~#i54:checked~
+#i55:not(:checked)~#i56:not(:checked)~#i57:checked~#i58:not(:checked)~#i59:checked~
+#i60:checked~#i61:checked~#i62:not(:checked)~#i63:not(:checked)~#i64:checked~
+#i65:not(:checked)~#i66:checked~#i67:checked~#i68:not(:checked)~#i69:checked~
+#i70:not(:checked)~#i71:checked~#i72:checked~#i73:not(:checked)~#i74:not(:checked)~
+#i75:checked~#i76:checked~#i77:not(:checked)~#i78:checked~#i79:not(:checked)~
+#i80:not(:checked)~#i81:checked~#i82:checked~#i83:checked~#i84:checked~
+#i85:not(:checked)~#i86:not(:checked)~#i87:not(:checked)~#i88:checked~#i89:not(:checked)~
+#i90:not(:checked)~#i91:not(:checked)~#i92:checked~#i93:checked~#i94:checked~
+#i95:checked~#i96:checked~#i97:checked~#i98:not(:checked)~#i99:not(:checked)~
+#clear {
+  opacity: 1;
+  z-index: 1;
+}</textarea></div><!-- / .code --></div>
+<!-- / #boxEditCSS --></section>
+
+<script type="text/javascript">
+  var theme               = "default";
+  var uid                 = "tfPB";
+//  var basefiles           = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+//  var editorjs            = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+  var basefiles           = "/js/codemirror/basefiles.js".substr(15); // "basefiles.js?1278486952"
+  var editorjs            = "/js/codemirror/editor.js".substr(15);
+  var has_long_line       = {};
+  has_long_line["js"]     = 0;
+  has_long_line["css"]    = 0;
+  has_long_line["html"]   = 0;
+
+  // 1st is initial
+  var initial_tabs = { js: [""], css: [""] };
+  var code_site_uri = "http://jsrun.it/xl1/tfPB";
+  var is_danger     = 0; // 1 or 0
+  var lines         = [ 0,32,90 ];
+</script><noscript>
+<code>http://jsdo.it/xl1/cfCz と同じ仕組みです
+ルールは http://ja.wikipedia.org/wiki/%E3%81%8A%E7%B5%B5%E3%81%8B%E3%81%8D%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF など参照</code>
+<code></code>
+<code>&lt;table&gt;&lt;tr&gt;
+  &lt;td&gt;&lt;/td&gt;
+  &lt;td class=&quot;question top&quot;&gt;
+    &lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;7&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;9&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;2&lt;br&gt;1&lt;br&gt;3&lt;/span&gt;&lt;span&gt;&lt;br&gt;2&lt;br&gt;1&lt;br&gt;1&lt;br&gt;2&lt;/span&gt;&lt;span&gt;&lt;br&gt;2&lt;br&gt;1&lt;br&gt;2&lt;br&gt;2&lt;/span&gt;&lt;span&gt;1&lt;br&gt;1&lt;br&gt;1&lt;br&gt;1&lt;br&gt;1&lt;/span&gt;&lt;span&gt;1&lt;br&gt;1&lt;br&gt;1&lt;br&gt;2&lt;br&gt;1&lt;/span&gt;&lt;span&gt;&lt;br&gt;1&lt;br&gt;1&lt;br&gt;3&lt;br&gt;1&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;1&lt;br&gt;2&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;7&lt;/span&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+  &lt;td class=&quot;question left&quot;&gt;
+    &lt;div&gt;10&lt;/div&gt;
+    &lt;div&gt;5&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;3&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;2&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;3&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;5&amp;nbsp;&amp;nbsp;1&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;1&amp;nbsp;&amp;nbsp;2&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;2&amp;nbsp;&amp;nbsp;2&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;4&amp;nbsp;&amp;nbsp;1&lt;/div&gt;
+    &lt;div&gt;6&lt;/div&gt;
+  &lt;/td&gt;
+  &lt;td id=&quot;canvas&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i00&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i01&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i02&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i03&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i04&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i05&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i06&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i07&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i08&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i09&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i10&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i11&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i12&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i13&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i14&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i15&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i16&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i17&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i18&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i19&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i20&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i21&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i22&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i23&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i24&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i25&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i26&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i27&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i28&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i29&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i30&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i31&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i32&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i33&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i34&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i35&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i36&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i37&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i38&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i39&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i40&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i41&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i42&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i43&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i44&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i45&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i46&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i47&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i48&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i49&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i50&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i51&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i52&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i53&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i54&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i55&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i56&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i57&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i58&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i59&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i60&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i61&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i62&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i63&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i64&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i65&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i66&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i67&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i68&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i69&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i70&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i71&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i72&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i73&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i74&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i75&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i76&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i77&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i78&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i79&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i80&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i81&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i82&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i83&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i84&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i85&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i86&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i87&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i88&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i89&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;i90&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i91&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i92&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i93&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i94&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i95&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i96&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i97&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i98&quot;&gt;&lt;label&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;i99&quot;&gt;&lt;label&gt;&lt;/label&gt;
+    &lt;div id=&quot;clear&quot;&gt;Congratulations!&lt;br&gt;(HTML5 logo)&lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;</code>
+<code>table {
+  border-spacing: 0;
+}
+table td {
+  padding: 0;
+}
+input:hover + label {
+  background: silver;
+}
+
+#canvas input:checked + label { 
+  background: black
+}
+#canvas {
+  position: relative;
+  line-height: 0;
+}
+#canvas input, #canvas label {
+  width: 20px;
+  height: 20px;
+  border-left: 1px solid silver;
+  border-top: 1px solid silver;
+}
+#canvas input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+#canvas label {
+  display: inline-block;
+  z-index: -1;
+}
+.question {
+  font-family: monospace;
+}
+.question.top span {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  border-left: 1px solid silver;
+}
+.question.left div {
+  height: 16px;
+  text-align: right;
+  border-top: 1px solid silver;
+  padding: 2px 8px;
+}
+
+table:active {
+  content: '';
+}
+#clear {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: red;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+  z-index: -1;
+  opacity: 0;
+}
+
+#i00:checked~#i01:checked~#i02:checked~#i03:checked~#i04:checked~
+#i05:checked~#i06:checked~#i07:checked~#i08:checked~#i09:checked~
+#i10:checked~#i11:checked~#i12:checked~#i13:checked~#i14:checked~
+#i15:not(:checked)~#i16:not(:checked)~#i17:not(:checked)~#i18:not(:checked)~#i19:checked~
+#i20:checked~#i21:checked~#i22:not(:checked)~#i23:not(:checked)~#i24:not(:checked)~
+#i25:checked~#i26:checked~#i27:checked~#i28:not(:checked)~#i29:checked~
+#i30:checked~#i31:checked~#i32:not(:checked)~#i33:checked~#i34:checked~
+#i35:not(:checked)~#i36:not(:checked)~#i37:not(:checked)~#i38:not(:checked)~#i39:checked~
+#i40:checked~#i41:checked~#i42:not(:checked)~#i43:not(:checked)~#i44:not(:checked)~
+#i45:checked~#i46:checked~#i47:checked~#i48:not(:checked)~#i49:checked~
+#i50:checked~#i51:checked~#i52:checked~#i53:checked~#i54:checked~
+#i55:not(:checked)~#i56:not(:checked)~#i57:checked~#i58:not(:checked)~#i59:checked~
+#i60:checked~#i61:checked~#i62:not(:checked)~#i63:not(:checked)~#i64:checked~
+#i65:not(:checked)~#i66:checked~#i67:checked~#i68:not(:checked)~#i69:checked~
+#i70:not(:checked)~#i71:checked~#i72:checked~#i73:not(:checked)~#i74:not(:checked)~
+#i75:checked~#i76:checked~#i77:not(:checked)~#i78:checked~#i79:not(:checked)~
+#i80:not(:checked)~#i81:checked~#i82:checked~#i83:checked~#i84:checked~
+#i85:not(:checked)~#i86:not(:checked)~#i87:not(:checked)~#i88:checked~#i89:not(:checked)~
+#i90:not(:checked)~#i91:not(:checked)~#i92:checked~#i93:checked~#i94:checked~
+#i95:checked~#i96:checked~#i97:checked~#i98:not(:checked)~#i99:not(:checked)~
+#clear {
+  opacity: 1;
+  z-index: 1;
+}</code>
+</noscript>
+
+<!-- p class="btnFullScreen"><a href="http://jsdo.it/xl1/tfPB/read">Code Fullscreen</a></p -->
+<!-- / .boxCode --></div>
+<div class="boxViewer">
+<iframe src="" width="465" height="465" id="generated_site">
+use an iframe compat browser, deer
+</iframe>
+<div id="boxThumbViewer">
+<p id="thumbnail"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/t/f/P/tfPB.jpg?t=1301455234" width="465" height="465" /></p>
+<p class="btnPlayViewer"><a href="javascript:void(0);" id="play_button" onclick="JSDoIt.CodeShow.play(); return false;"><img src="/img/common/play_button.png" alt="play" class="btn" /></a></p>
+<!-- / #bixThumbViewer --></div>
+<!-- /.boxViewer --></div>
+</div>
+
+<div id="codeUtilties" class="group">
+	<ul class="utils group">
+		<li>
+			<form id="form_fork_sub" method="post" action="http://jsdo.it/xl1/tfPB/fork">
+				<input type="submit" value="Fork" class="btnBase btnType5 btnSmall" id="fork_button_sub" name="btnFork" />
+                                <input type="hidden" name="token" value="" />          
+			</form>
+		</li>		<li id="play_on_games_button" style="display: none;"><a href="http://games.jsdo.it/xl1/tfPB" class="btnBase btnType1 btnSmall"><span>Play on jsdo.it games</span></a><p class="arrow"><img src="/img/code/game/arrow.png" alt="" /></p></li>
+		<li>
+			<ul class="btnGroup group">
+				<li class="tab" data-tab-name="author"><span class="btnBase btnType6 btnSmall">Author</span></li>
+				<li class="tab active" data-tab-name="socialFeedback"><span class="btnBase btnType6 btnSmall active">Share</span></li>
+				<li class="tab" data-tab-name="embed"><span class="btnBase btnType6 btnSmall">ブログに埋め込む</span></li>
+				<li class="tab" data-tab-name="qrcode"><span class="btnBase btnType6 btnSmall">QR</span></li>
+				<li class="tab" data-tab-name="tag"><span class="btnBase btnType6 btnSmall">Tag</span></li>
+			</ul>
+		</li>
+		<li class="download"><a href="http://jsdo.it/xl1/tfPB/download" class="btnBase btnType6 btnSmall btnInvisible" title="download"><img src="/img/common/ico/ico_download_01.png" width="17" height="13" alt="download" title="download">Download</a></li>
+	</ul>
+	<div class="utilDetails clearfix">
+		<section class="blockCodeUtil games">
+		<div class="col2">
+		<div>
+		<a href="http://games.jsdo.it" target="_blank"><img src="/img/code/jsdoitGames.png" id="jsdoitGamesImage" width="114" height="116"></a>
+
+		</div>
+		<div>
+		<p class="msgComplete">Complete!</p>
+		<div class="blockInputFormStyle1">
+		<form id="form_sub_games" action="/api/code/post_to_games" data-saved="0">
+		<input type="hidden" name="token" value="" />
+		<input type="hidden" name="uid" value="tfPB" />
+		<div class="inputItem description">
+		<h2>Description <span>What kind of game?</span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<textarea required="required" name="description">http://jsdo.it/xl1/cfCz と同じ仕組みです
+ルールは http://ja.wikipedia.org/wiki/%E3%81%8A%E7%B5%B5%E3%81%8B%E3%81%8D%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF など参照</textarea>
+		</div>
+		</div>
+		<div class="inputItem device">
+		<h2>Control Device <span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<table>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_jwc.png" alt="jsdo.it websocket controller" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="1" name="support_spctrl" value="1"  />Smartphone Controller<a href="/controller">jsdo.it WebSocket Controller</a>»</label>
+		<div class="detail device1">
+		<ul>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_arrow.png" alt=""></p>
+		<input type="text" name="stick" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_start.png"></p>
+		<input type="text" name="button_start" /value="" >
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_a.png"></p>
+		<input type="text" name="button_a" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_b.png"></p>
+		<input type="text" name="button_b" value="" />
+		</li>
+		</ul>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_mouse.png" alt="Mouse" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="3" name="support_mouse" value="1"  />Mouse</label>
+		<div class="detail device3">
+		<textarea name="mouse" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_keyboard.png" alt="keyboard" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="4" name="support_keyboard" value="1"  />Keyboard</label>
+		<div class="detail device4">
+		<textarea name="keyboard" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_smartphone.png" alt="smartphone" /></p>
+		</th><td>
+		<label><input type="checkbox" class="flag" data-device="2"  name="support_touchdevice" value="1"  />Touch Device</label>
+		<div class="detail device2">
+		<textarea name="touchdevice" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		</table>
+		</div>
+		</div>
+		<div class="inputItem screen valid">
+		<h2>Fullscreen<span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<ul>
+		<li><label><input type="radio" name="support_fullscreen" value="1" checked> Activated</label></li>
+		<li><label><input type="radio" name="support_fullscreen" value="0" > Inactivated</label></li>
+		</ul>
+		</div>
+		</div>
+		<div class="submit">
+		<a id="game_delete_button" href="javascript:void(0)" class="btnBase btnType6 btnSmall btnInvisible" >jsdo.it games から削除する</a>
+		<a id="game_submit_button" class="btnBase btnType5" disabled="disabled" href="javascript:void(0)">Submit</a>
+		</div>
+		</form><!-- form_sub_games  -->
+		<!-- / .blockInputFormStyle1 --></div>
+		</div>
+		</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil author" itemscope itemtype="http://data-vocabulary.org/Person">
+			<div class="col2 group">
+				<div class="image">
+					<p class="thumb"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="100" height="100" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+				<!-- / .image --></div>
+				<div class="information">
+					<h1 class="hidden">Author</h1>
+					<div class="user">
+						<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author"><span itemprop="name">xl1</span></a></p>
+					</div>
+					<ul class="metas group">
+                        
+                        
+                        
+                        
+					</ul>
+					<div class="discription markdown">
+						
+
+					</div>
+				<!-- / .information --></div>
+			</div>
+		<!-- / .author --></section>
+		<section class="blockCodeUtil socialFeedback active">
+			<ul class="group">
+			<li class="facebook"><fb:like href="http://jsdo.it/xl1/tfPB" send="false" layout="button_count" width="55" show_faces="false" font="verdana"></fb:like></li>
+			
+			<li class="stumbleupon"><script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script></li>
+			
+			  <a href="http://twitter.com/share" class="twitter-share-button" data-text="Pure CSS お絵かきロジック #jsdoit" data-count="horizontal" data-related="jsdoit_team">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			  
+			<li class="plusone"><g:plusone size="medium" href="http://jsdo.it/xl1/tfPB"></g:plusone></li>
+			</ul>
+		<!-- / .socialFeedback --></section>
+		<section class="blockCodeUtil embed">
+			<div class="col2 widgetDesignBox group">
+				<div class="image">
+					<img src="/img/code/widget_design_view.png" width="660px" height="116px">
+				</div>
+				<div>
+					<div class="blockInputFormStyle1">
+						<div class="inputItem">
+							<h2>Default Panel</h2>
+							<div class="comment">
+								<ul class="select selectDefaultPanel">
+									<li><label><input type="radio" name="defaultTab" value="play">Auto play</label></li>
+									<li><label><input type="radio" name="defaultTab" value="screenshot">Screenshot</label></li>
+									<li><label><input type="radio" name="defaultTab" value="readme" checked="checked">Readme</label></li>
+									<li><label><input type="radio" name="defaultTab" value="javascript">JavaScript</label></li>
+									<li><label><input type="radio" name="defaultTab" value="html">HTML</label></li>
+									<li><label><input type="radio" name="defaultTab" value="css">CSS</label></li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>Size</h2>
+							<div class="comment">
+								<ul class="selectEmbedSize">
+									<li>Width: <input type="number" class="width inline" min="465" value="465" style="width:60px;"> px</li>
+									<li>Height: <input type="number" class="height inline" min="496" value="496" style="width:60px;"> px</li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>code</h2>
+							<div class="comment">
+								<textarea readonly="readonly" onclick="javascript:this.select();" data-url="http://jsdo.it/blogparts/tfPB/js">&lt;script type=&quot;text/javascript&quot; src=&quot;http://jsdo.it/blogparts/tfPB/js&quot;&gt;&lt;/script&gt;</textarea>
+							</div>
+						</div>
+					<!-- / .blockInputFormStyle1 --></div>
+				</div>
+			</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil qrcode">
+			<div class="col2 group">
+				<div>
+					<p class="code"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://jsdo.it" width="150" height="150" alt="QR Code"></p>
+				</div>
+				<div> 
+				</div>
+			</div>
+		<!-- / .qrcode --></section>
+		<section class="blockCodeUtil tag">
+			<ul class="listTags">
+			<li><a href="http://jsdo.it/tag/css" rel="tag">css</a></li>
+			</ul>
+		<!-- / .tag --></section>	
+	<!-- / .utilDetails --></div>
+<!-- / #codeUtilties --></div>
+
+<!-- / .viewer --></section>
+
+<!-- /.code --></section>
+
+<section class="discussion">
+	<header><h1 class="ttlStyle2">Discussion</h1></header>
+	<div>
+		<ul>
+		</ul>
+		<p class="post"><a href="/qa/create?code_uri=http://jsdo.it/xl1/tfPB" class="btnBase btnType1">Questions on this code?</a></p>
+	</div>
+<!-- / .discussion --></section>
+
+<div class="ad_super_bnr btnT"><!-- jsdo.it_codepage_fullbnr_en --> <script type='text/javascript'> GA_googleFillSlot("jsdo.it_codepage_fullbnr_en"); </script>
+<!-- /.ad_super_bnr --></div>
+
+<section>
+<header><h1 class="ttlStyle2">Tags</h1></header>
+
+<ul class="listTags group">
+    
+    <li><a href="http://jsdo.it/tag/CSS3" title="CSS3" class="tag1">CSS3</a></li>
+    
+    <li><a href="http://jsdo.it/tag/CSS%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="CSSプログラミング" class="tag1">CSSプログラミング</a></li>
+    
+    <li><a href="http://jsdo.it/tag/css" title="css" class="tag1">css</a></li>
+    
+    <li><a href="http://jsdo.it/tag/game" title="game" class="">game</a></li>
+    
+    <li><a href="http://jsdo.it/tag/html5" title="html5" class="">html5</a></li>
+</ul>
+
+<!-- /.tags --></section>
+
+
+
+
+
+
+
+
+<section class="favorite">
+<header><h1 class="ttlStyle2">Favorite by</h1></header>
+    <div class="unitGroup group">
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/tsubao" title="tsubao"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/b/a/9/1/ba911befac5ad630278c58b6cc36a2562036b724_100.jpg" width="30" height="30" alt="tsubao" title="tsubao" /></a></span><a href="http://jsdo.it/tsubao" title="tsubao">tsubao</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/savage69kr" title="savage69kr"><img src="/img/common/img_user_anonymous.gif" width="30" height="30" alt="savage69kr" title="savage69kr" /></a></span><a href="http://jsdo.it/savage69kr" title="savage69kr">savage69kr</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/higashi344550" title="higashi344550"><img src="/img/common/img_user_anonymous.gif" width="30" height="30" alt="higashi344550" title="higashi344550" /></a></span><a href="http://jsdo.it/higashi344550" title="higashi344550">higashi34455</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/phi" title="phi"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/f/e/4/9/fe49d8e68499f80b0fa38186ff42b102807b0c65_100.jpg" width="30" height="30" alt="phi" title="phi" /></a></span><a href="http://jsdo.it/phi" title="phi">phi</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/pypupypa" title="pypupypa"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/7/7/1/3/771358eae7f0273a29caf5f9b45fa822e32a67f9_100.jpg" width="30" height="30" alt="pypupypa" title="pypupypa" /></a></span><a href="http://jsdo.it/pypupypa" title="pypupypa">pypupypa</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/NYP" title="NYP"><img src="/img/common/img_user_anonymous.gif" width="30" height="30" alt="NYP" title="NYP" /></a></span><a href="http://jsdo.it/NYP" title="NYP">NYP</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/ckazu" title="ckazu"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/b/f/f/2/bff24c35c2bdb8a73ba281a310e8ca4a3c7a648b_100.jpg" width="30" height="30" alt="ckazu" title="ckazu" /></a></span><a href="http://jsdo.it/ckazu" title="ckazu">ckazu</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/ub-pnr" title="ub-pnr"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/1/5/a/815a462be2cb5cf63808a9767cc3b493a438f069_100.jpg" width="30" height="30" alt="ub-pnr" title="ub-pnr" /></a></span><a href="http://jsdo.it/ub-pnr" title="ub-pnr">ub-pnr</a>
+          <!-- /.unitFavBy --></div>
+	<!-- /.unitGroup --></div>
+
+<div class="unitFavUserL group">
+  <p class="user"><span class="thumb"><a href="http://jsdo.it/laishin17" title="laishin17"><img src="/img/common/img_user_anonymous.gif" width="30" height="30" alt="laishin17" title="laishin17" /></a></span><a href="http://jsdo.it/laishin17" title="laishin17">laishin17</a>: </p>
+  <p class="comment"><a href="http://jsdo.it/tag/CSS3" title="CSS3" class="tag">CSS3</a></p><!-- /#unitFavUserL --></div>
+
+<div class="unitFavUserL group">
+  <p class="user"><span class="thumb"><a href="http://jsdo.it/quandle" title="quandle"><img src="/img/common/img_user_anonymous.gif" width="30" height="30" alt="quandle" title="quandle" /></a></span><a href="http://jsdo.it/quandle" title="quandle">quandle</a>: </p>
+  <p class="comment"><a href="http://jsdo.it/tag/CSS%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="CSSプログラミング" class="tag">CSSプログラミング</a></p><!-- /#unitFavUserL --></div>
+
+<div class="unitFavUserL group">
+  <p class="user"><span class="thumb"><a href="http://jsdo.it/fujiwarak" title="fujiwarak"><img src="/img/common/img_user_anonymous.gif" width="30" height="30" alt="fujiwarak" title="fujiwarak" /></a></span><a href="http://jsdo.it/fujiwarak" title="fujiwarak">fujiwarak</a>: </p>
+  <p class="comment"><a href="http://jsdo.it/tag/css" title="css" class="tag">css</a><a href="http://jsdo.it/tag/html5" title="html5" class="tag">html5</a>fan!</p><!-- /#unitFavUserL --></div>
+
+<div class="unitFavUserL group">
+  <p class="user"><span class="thumb"><a href="http://jsdo.it/ginpei" title="ginpei"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/9/1/e/f/91efe1d1301d7291c157a14c6253951260c93236_100.jpg" width="30" height="30" alt="ginpei" title="ginpei" /></a></span><a href="http://jsdo.it/ginpei" title="ginpei">ginpei</a>: </p>
+  <p class="comment"><a href="http://jsdo.it/tag/CSS3" title="CSS3" class="tag">CSS3</a><a href="http://jsdo.it/tag/CSS%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="CSSプログラミング" class="tag">CSSプログラミング</a>クリア時のメッセージまで！！</p><!-- /#unitFavUserL --></div>
+
+<div class="unitFavUserL group">
+  <p class="user"><span class="thumb"><a href="http://jsdo.it/sugyan" title="sugyan"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/5/f/f/c/5ffcafd96a6689eeade89939122ce3a14bd09e09_100.jpg" width="30" height="30" alt="sugyan" title="sugyan" /></a></span><a href="http://jsdo.it/sugyan" title="sugyan">sugyan</a>: </p>
+  <p class="comment"><a href="http://jsdo.it/tag/CSS3" title="CSS3" class="tag">CSS3</a></p><!-- /#unitFavUserL --></div>
+
+
+<!-- /.favorite --></section>
+
+
+
+
+
+
+
+<section class="forked group">
+<header><h1 class="ttlStyle2">Forked</h1></header>
+
+  <div class="boxSort group">
+      <p class="changeSort">sort by</p>
+      <ul class="group"><li class="selected"><em>latest</em></li>
+<li><a href="http://jsdo.it/xl1/tfPB?order=pv#code_forked">page views</a></li>
+<li><a href="http://jsdo.it/xl1/tfPB?order=favorite#code_forked">favorite</a></li>
+<li><a href="http://jsdo.it/xl1/tfPB?order=forked#code_forked">forked</a></li>
+      </ul>
+  <!-- / .boxSort --></div>
+
+  <div id="boxForkedCode" class="autopagerize_page_element">
+    <div class="unitCodeGroup group col4">
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/mgst.yt25/m4rP" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/m/4/r/m4rP_w.jpg?t=1387524164" alt="forked: Pure CSS お絵かきロジック" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/mgst.yt25/m4rP" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><span class="body">forked: Pure CSS お絵かきロジック</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/mgst.yt25" title="mgst.yt25"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="mgst.yt25" /></a></span><a href="http://jsdo.it/mgst.yt25">mgst.yt25</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">586</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">2/47/90</li>
+<li class="tag">
+<ul class="listTag">
+<li><a href="http://jsdo.it/tag/css" class="">css</a></li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/dohmas/xTY7" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/x/T/Y/xTY7_w.jpg?t=1361017551" alt="forked: Pure CSS お絵かきロジック" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/dohmas/xTY7" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><span class="body">forked: Pure CSS お絵かきロジック</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/dohmas" title="dohmas"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="dohmas" /></a></span><a href="http://jsdo.it/dohmas">dohmas</a>
+</p>
+
+
+<ul class="data">
+<li class="forked"><a href="#code_forked" title="forked from forked: Pure CSS お絵かきロジック">1</a></li><li class="fav">0</li>
+<li class="pv">1585</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">2/32/90</li>
+<li class="tag">
+<ul class="listTag">
+<li><a href="http://jsdo.it/tag/css" class="">css</a></li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/Hitoshige.Yuasa/3LAH" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/3/L/A/3LAH_w.jpg?t=1340779235" alt="forked: Pure CSS お絵かきロジック" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/Hitoshige.Yuasa/3LAH" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><span class="body">forked: Pure CSS お絵かきロジック</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/Hitoshige.Yuasa" title="Hitoshige.Yuasa"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="Hitoshige.Yuasa" /></a></span><a href="http://jsdo.it/Hitoshige.Yuasa">Hitoshige.Yu</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">1191</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">2/32/90</li>
+<li class="tag">
+<ul class="listTag">
+<li><a href="http://jsdo.it/tag/css" class="">css</a></li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/simzcom/jT3s" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><img src="//jsdo.it/img/common/thumb_nowcapturing_w.png" alt="forked: Pure CSS お絵かきロジック" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/simzcom/jT3s" rel="bookmark" title="forked: Pure CSS お絵かきロジック"><span class="body">forked: Pure CSS お絵かきロジック</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/simzcom" title="simzcom"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="simzcom" /></a></span><a href="http://jsdo.it/simzcom">simzcom</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">594</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">2/32/90</li>
+<li class="tag">
+<ul class="listTag">
+<li><a href="http://jsdo.it/tag/css" class="">css</a></li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+    <!--/.unitCodeGroup--></div>
+  <!-- /#boxForkedCode --></div>
+
+<!-- /.forked --></section>
+
+
+
+
+
+
+<ul class="pager">
+
+<li><em>1</em></li>
+<li><a href="http://jsdo.it/xl1/tfPB?page=2">2</a></li>
+<li><a href="http://jsdo.it/xl1/tfPB?page=3">3</a></li><li><a href="http://jsdo.it/xl1/tfPB?page=2" rel="next">NEXT&gt;&gt;</a></li>
+</ul>
+
+
+<!-- /#codeDetail --></article>
+
+<div id="diff_container"></div>
+<div id="diff_controller">
+  <a href="#" id="diff_close_button"><img src="/img/code/close.gif" class="btnT"></a>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=107163819375320&amp;xfbml=1"></script>
+
+<!-- /#body --></div>
+<!--/[[[ CONTENT-AREA ]]]-->
+<footer id="siteFooter" class="layoutWideContainer">
+<div class="layoutContainer layoutLiquid group">
+<div class="apps group">
+<div class="col1">
+<a href="/users"><p class="userRanking">User ranking</p></a>
+<a href="/codes/ranking"><p class="codeRanking">Code ranking</p></a>
+</div>
+<div class="col2">
+<a href="/event/topics">
+<section class="event">
+<h1>Topics &amp; Events</h1>
+<p>"I want to make something but don't know what to make." "We want to know the newest trends!" Responding to those voices, we are regularly hosting events and updating topics.</p>
+</section>
+</a>
+</div>
+<div class="col3">
+<a href="/qa">
+<section class="discussions">
+<h1>Discussions</h1>
+<p>Any questions? Ask jsdo.it users! You can post questions together with your code. You can also get answers supported by a code.</p>
+</section>
+</a>
+</div>
+<!-- / .apps --></div>
+<section class="account">
+<h1>Completely Free Account</h1>
+<p>
+<form method="post" action="/code/new">
+<input type="hidden" name="token" value="">
+<p class="btnLabel labelFree"><input type="submit" class="btnBase btnType5" value="Sign up Free and Start coding"></p>
+</form>
+</p>
+</section>
+<div class="globals group">
+<nav>
+<ul>
+
+<li><a href="http://twitter.com/#!/jsdoit_team" class="external" rel="external">@jsdoit_team</a></li>
+<li><a href="http://www.facebook.com/jsdo.it" target="_blank" class="external" rel="external">Facebook</a></li>
+
+
+</ul>
+<ul>
+<li><a href="/about" title="What's jsdo.it?">About</a></li>
+<li><a href="/assets">Assets</a></li>
+<li><a href="/help">Help</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/apidoc/">API</a></li>
+<li><a href="/terms">Term of use</a></li>
+<li><a href="/privacy_policy/">Privacy policy</a></li>
+<li><a href="/help#help_contact">Contact</a></li>
+</ul>
+</nav> 
+<p id="copyright" class="vcard"><small>Site Design &copy; <a href="http://www.jsdo.it/" title="jsdoit Inc." class="external fn org url">jsdoit Inc.</a> All Rights Reserved.</small></p>
+<!-- / .globals --></div>
+</div>
+<!-- / #siteFooter --></footer>
+
+
+<!--/#container--></div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15793157-5']);
+  _gaq.push(['_setDomainName', '.jsdo.it']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['_trackPageview', '/code/show'+location.pathname]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script type="text/javascript">
+var path  = "code/show";
+var token = "";
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/js/do.js?1441025678"></script>
+ <script type="text/javascript" src="/js/notification.js?1441025678"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+
+<script type="text/javascript" src="/js/codemirror/codemirror-compressed.js?1441025678"></script>
+</body>
+</html>

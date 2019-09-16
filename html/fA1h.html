@@ -1,0 +1,3968 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"  class="osOther" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+
+<title>forked: Canvas context 2Dで座標変換を実装してみる - jsdo.it - Share JavaScript, HTML5 and CSS</title>
+
+<meta property="qc:admins" content="21506643427614" />
+<meta property="wb:webmaster" content="5c8153403c54c98f" />
+<meta name="description" content="forked: Canvas context 2Dで座標変換を実装してみる by xl1 @ jsdo.it - share JavaScript, HTML5 and CSS - jsdo.it is a service to write JavaScript, HTML5, CSS in your browser and share it. You can copy and modify others' code. And also Ask questions about JavaScript, HTML5, CSS" />
+
+<meta name="keywords"  content="judo.it,JavaScript,HTML5,CSS,jsdoit" />
+
+<meta name="author" content="jsdoit Inc." />
+<meta name="license" content="&#169;jsdoit Inc." />
+
+<meta property="og:site_name" content="jsdo.it" />
+<meta property="fb:page_id" content="138382942860000" />
+<meta property="fb:app_id" content="104748116268345" />
+<meta property="og:locale" content="ja_JP">
+
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="http://jsdo.it/xl1/fA1h" />
+
+<meta property="og:description" content="forked: Canvas context 2Dで座標変換を実装してみる by xl1 @ jsdo.it - " />
+<meta property="twitter:description" content="forked: Canvas context 2Dで座標変換を実装してみる by xl1 @ jsdo.it - " />
+
+
+
+
+<meta property="og:image" content="http://jsdo-static-contents.s3.amazonaws.com/images/capture/f/A/1/fA1h.jpg?t=1365310061" />
+<meta property="og:image:width" content="465" />
+<meta property="og:image:height" content="465" />
+
+<meta name="twitter:site" content="@jsdo_it">
+<meta name="twitter:card" content="summary">
+
+
+
+
+<meta property="og:title" content="forked: Canvas context 2Dで座標変換を実装してみる" />
+<meta name="twitter:title" content="forked: Canvas context 2Dで座標変換を実装してみる" />
+
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/favicon.ico" />
+<link rel="start" href="/" title="home" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/common.css?1468627570" />
+
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/code.css?1468627570" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/codemirror.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/themes.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/SyntaxHighlighter.css?1441025678" />
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<!--[if IE 9]><body class="ie9 i_default"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><body class="i_default"><!--<![endif]-->
+
+<script type="text/javascript">
+var language = "i_default"; // used in l()
+</script>
+
+<!-- script 'type="text/javascript" src="https://www.google.com/jsapi"></script -->
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- adtype =  -->
+<!-- Google DoubleClick 広告のスクリプトページ -->
+<div id="container" class="codepage contents">
+<!--[[[ HEADER-AREA ]]]-->
+<!-- country = JP -->
+<header id="headerGlobal" class="group">
+<div class="sub">
+<div class="layoutContainer layoutLiquid group">
+
+<!-- PR欄&リンク -->
+<style>
+#headerGlobal .pr a:before {
+    content: "重要なお知らせ";
+}
+#headerGlobal .pr a {
+    color: red;
+    font-size: 14px;
+    text-shadow: none;
+    padding-right: 11px;
+}
+</style>
+<p class="pr" style="color:red; font-"><a href="http://jsdo.it/blog/2019/07/jsdoit-1.html">
+【重要】サービス終了のお知らせ</a></p>
+<!-- PR欄&リンク -->
+
+
+<ul id="headerLanguage">
+<li class="column">
+<span class="header_menu_column" id="header_menu_column_1"><a href="#"><span class="thumb"></span>English</a></span>
+<div class="navGlobalSub">
+<ul class="shadowLayor1">
+<li><a href="?lang=en" class="usa">English</a></li>
+<li style="display:none;"><a href="#" class="kor">한국어</a></li>
+<li><a href="?lang=zh-CN" class="chn">中文</a></li>
+<li><a href="?lang=ja" class="jpn">日本語</a></li>
+</ul>
+</div>
+</li>
+<!-- / #headerAccount --></ul>
+<ul id="navGlobal">
+<li><a href="/tags" title="Tags">Tags</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/event/topics" title="Topics &amp; Events">Topics &amp; Events</a></li>
+<li><a href="/qa" title="Discussions">Discussions</a></li>
+<li><a href="http://games.jsdo.it" title="jsdo.it HTML5-Games">HTML5-Games</a></li>
+<!-- / #navGlobal --></ul>
+<!-- / .layoutContainer --></div>
+<!-- / .sub --></div>
+<div class="main">
+<div class="layoutContainer layoutLiquid group">
+
+<h1 id="siteName"><a href="/"><img src="/img/common/sitename_03.png" width="79" height="39" alt="jsdo.it - Share JavaScript, HTML5 and CSS" /></a></h1>
+
+<div id="btnHeaderCodeNew">
+<form method="post" action="/code/new">
+<fieldset>
+<p><input type="submit" value="Start coding"></p>
+</fieldset>
+<input type="hidden" name="token" value="">
+</form>
+<!-- / #btnHeaderCodeNew --></div>
+
+<div id="navGlobalSearch">
+<form method="get" action="/search" class="search">
+<input id="inputSearch" type="text" name="q" class="query input-prompt" autocomplete="off" placeholder="Search"><input type="submit" value="" class="button">
+</form>
+<!--/#navGlobalSearch--></div>
+
+
+
+
+<div id="headerSignin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signup">Create account</a></p>
+<p>or</p>
+<div class="signin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signin">LOGIN</a></p>
+<div class="panel">
+<div class="shadowLayor1">
+<div class="service">
+<ul>
+<li class="google"><a href="/login/google?login=1" onClick="_gaq.push(['_trackPageview', '/login/service/google']);">Login with Google</a></li>
+<li class="facebook"><a href="/login/facebook" onClick="_gaq.push(['_trackPageview', '/login/service/facebook']);">Login with Facebook</a></li>
+<li class="twitter"><a href="/login/twitter" onClick="_gaq.push(['_trackPageview', '/login/service/twitter']);">Login with Twitter</a></li>
+
+
+
+<li class="other"><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);">Other login options</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- / #headerSignin --></div>
+
+
+
+<!-- / .layoutContainer --></div>
+<!-- / .main --></div>
+
+
+
+<div id="navPrimaryTag">
+<div class="layoutContainer layoutLiquid">
+<nav class="group">
+<div class="search">
+<form method="get" action="/search">
+<input type="text" placeholder="Search" name="q" results="10" class="text" /><input type="submit" value="Search" class="hidden">
+</form>
+</div>
+<ul class="group">
+<li class="application"><a href="/tag/application" >Application</a></li>
+<li class="ui"><a href="/tag/user_interface" >User Interface</a></li>
+<li class="html5"><a href="/tag/html5_elements&amp;api" >HTML5 Elements &amp; API</a></li>
+<li class="css"><a href="/tag/css" >CSS</a></li>
+<li class="art"><a href="/tag/art&amp;design" >Art &amp; Design</a></li>
+<li class="game"><a href="/tag/game" ">Game</a></li>
+<li class="library"><a href="/tag/library&amp;test" >Library &amp; Test</a></li>
+<li class="smartphone"><a href="/tag/smartphones&amp;tablets" >Smartphones &amp; Tablets</a></li>
+<li class="all"><a href="/codes">All</a></li>
+</ul>
+</nav>
+<!-- / .layoutContainer --></div>
+<!-- / #navPrimaryTag --></div>
+
+
+
+
+
+
+<!-- / #headerGlobal --></header>
+<!--[[[ /HEADER-AREA ]]]-->
+
+
+<!--[[[ CONTENT-AREA ]]]-->
+<div id="body">
+<article id="codeDetail" class="layoutContainer">
+
+
+
+<section class="code">
+<header class="group"><p class="parent">Forked from: <a title="edo_m18" href="http://jsdo.it/edo_m18">edo_m18</a>'s <a href="http://jsdo.it/edo_m18/9Xku">Canvas context 2Dで自作3Dエンジンを作る</a> <a class="viewDiffBtn" href="#" onclick="JSDoIt.CodeShow.on_diff_click('9Xku','fA1h'); return false;" class="diff">View Diff (22)</a></p>
+
+<div class="main">
+<h1><a href="http://jsdo.it/xl1/fA1h" rel="bookmark">forked: Canvas context 2Dで座標変換を実装してみる</a></h1>
+<div class="author group" itemscope itemtype="http://data-vocabulary.org/Person">
+<p class="image"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="30" height="30" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author" itemprop="url"><span itemprop="name">xl1</span></a></p>
+<div class="connection">
+	<div class="follow"><span onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="btnBase btnType2 btnSmall btnFollow">Follow</span></div>
+</div>
+<time datetime="2013-04-07T13:47:38">2013-04-07 13:47:38</time>
+<p class="license">License: 
+  <a href="/help#help_license">MIT License</a>
+</p>
+</div>
+<!-- / .main --></div>
+
+<div class="counts">
+<div>
+<span id="fork_button" class="fork btnBase btnType5">
+<dl>
+<dt>Fork</dt><dd>0</dd>
+</dl>
+</span>
+</div>
+<div>
+<a href="http://jsdo.it/login?redirect=http%3A%2F%2Fjsdo.it%2Fxl1%2FfA1h" class="favorite btnBase btnType6 btnSmall">
+<span class="favoriteIcon"><img src="/img/common/ico/ico_fav_02_shadow.png" width="15px" height="12px" /></span><dl class="group">
+<dt>Fav</dt><dd>0</dd>
+</dl>
+</a><div href="/" class="pv">
+<dl class="group">
+<dt>View</dt><dd>1510</dd>
+</dl>
+</div>
+</div>
+<!-- / .counts --></div>
+</header>
+
+<script type="text/javascript">
+var user = {
+  screen_name: "xl1"
+};
+</script>
+
+
+<div class="fullscreen group">
+<div class="inner">
+<ul class="controller">
+<li class="btnBase btnType6 btnSmall btnInvisible btnStart" id="btnPlay" onclick="JSDoIt.CodeShow.play(); return false;"><span>Play</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnStop" id="btnStop" style="display: none;" onclick="JSDoIt.CodeShow.stop(); return false;"><span>Stop</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnReload" id="btnReload" style="display: none;" onclick="JSDoIt.CodeShow.reload(); return false;"><span>Reload</span></li>
+</ul>
+<p><a href="http://jsdo.it/xl1/fA1h/fullscreen" class="btnBase btnType6 btnSmall btnInvisible btnFullscreen" title="Fullscreen preview"><span>Fullscreen</span></a></p>
+<p><span title="Smart Phone Preview" class="btnBase btnType6 btnSmall btnInvisible btnSmartphone" data-size="width=320,height=480"><span>Smart Phone</span></span></p>
+</div>
+</div>
+
+<fieldset>
+
+<section class="viewer group">
+
+<div class="group areaCodeViewer">
+<div class="boxCode" id="boxShowCode"><header>
+<ul class="group">
+<li class="description active" data-target-tab="boxEditDescription"><span>Readme</span></li>
+<li class="js" data-target-tab="boxEditJS">CoffeeScript <small>1608 lines</small></li>
+<li class="html" data-target-tab="boxEditHTML">HTML <small>4 lines</small></li>
+<li class="css" data-target-tab="boxEditCSS">CSS <small>4 lines</small></li>
+</ul>
+</header>
+
+
+<section id="boxEditDescription">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeDescription">
+
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div></div>
+
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditJS">
+<ul class="tabCode group">
+    <li title="forked: Canvas context 2Dで座標変換を実装してみる" class="selected tabJS initialTab"><span id="primaryTabTitle">forked: Canvas context 2Dで座標変換を実装してみる</span></li></ul>
+<div class="code" id="boxCodeJS"> 
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeJS" data-lang="coffeescript"># forked from edo_m18's &quot;Canvas context 2Dで座標変換を実装してみる&quot; http://jsdo.it/edo_m18/9Xku
+do (win = window, doc = window.document, exports = window.S3D or (window.S3D = {})) -&gt;
+
+    #Import
+    {max, min, sqrt, tan, cos, sin, PI} = Math
+
+    DEG_TO_RAD = PI / 180
+    ANGLE = PI * 2
+
+# -------------------------------------------------------------------------------
+
+    class Vertex
+        constructor: (@vertecies) -&gt;
+
+        getZPosition: -&gt;
+            ret = 0
+            cnt = 0
+            for v, i in @vertecies by 4
+                cnt++
+                ret += @vertecies[i + 2] * @vertecies[i + 3]
+
+            return ret / cnt
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Vector3 class
+        @constructor
+        @param {number} x Position of x.
+        @param {number} y Position of y.
+        @param {number} z Position of z.
+    ###
+    class Vector3
+        constructor: (@x = 0, @y = 0, @z = 0) -&gt;
+        zero: -&gt;
+            @x = @y = @z = 0;
+
+        equal: (v) -&gt;
+            return (@x is v.x) and (@y is v.y) and (@z is v.z)
+
+        sub: (v) -&gt;
+            @x -= v.x
+            @y -= v.y
+            @z -= v.z
+            return @
+
+        subVectors: (a, b) -&gt;
+            @x = a.x - b.x
+            @y = a.y - b.y
+            @z = a.z - b.z
+            return @
+
+        add: (v) -&gt;
+            @x += v.x
+            @y += v.y
+            @z += v.z
+            return @
+
+        addVectors: (a, b) -&gt;
+            @x = a.x + b.x
+            @y = a.y + b.y
+            @z = a.z + b.z
+            return @
+
+        copy: (v) -&gt;
+            @x = v.x
+            @y = v.y
+            @z = v.z
+            return @
+
+        norm: -&gt;
+            sqrt(@x * @x + @y * @y + @z * @z)
+
+        normalize: -&gt;
+            nrm = @norm()
+
+            if nrm isnt 0
+                nrm = 1 / nrm
+                @x *= nrm
+                @y *= nrm
+                @z *= nrm
+
+            return @
+
+
+        multiply: (v) -&gt;
+            @x *= v.x
+            @y *= v.y
+            @z *= v.z
+
+            return @
+
+        #scalar multiplication
+        multiplyScalar: (s) -&gt;
+            @x *= s
+            @y *= s
+            @z *= s
+            return @
+
+        multiplyVectors: (a, b) -&gt;
+            @x = a.x * b.x
+            @y = a.y * b.y
+            @z = a.z * b.z
+
+        #dot product
+        dot: (v) -&gt;
+            return @x * v.x + @y * v.y + @z * v.z
+
+        cross: (v, w) -&gt;
+
+            return @crossVectors(v, w) if w
+
+            x = @x
+            y = @y
+            z = @z
+
+            @x = (y * v.z) - (z * v.y)
+            @y = (z * v.x) - (x * v.z)
+            @z = (x * v.y) - (y * v.x)
+
+            return @
+
+        #cross product
+        crossVectors: (v, w) -&gt;
+            @x = (w.y * v.z) - (w.z * v.y)
+            @y = (w.z * v.x) - (w.x * v.z)
+            @z = (w.x * v.y) - (w.y * v.x)
+
+            return @
+
+        applyMatrix4: (m) -&gt;
+            e = m.elements
+
+            x = @x
+            y = @y
+            z = @z
+
+            @x = e[0] * x + e[4] * y + e[8]  * z + e[12]
+            @y = e[1] * x + e[5] * y + e[9]  * z + e[13]
+            @z = e[2] * x + e[5] * y + e[10] * z + e[14]
+
+            return @
+
+        ###*
+            射影投影座標変換
+
+            計算された座標変換行列をスクリーンの座標系に変換するために計算する
+            基本はスケーリング（&amp;Y軸反転）と平行移動。
+            行列で表すと
+            w = width  / 2
+            h = height / 2
+            とすると
+                        |w  0  0  0|
+            M(screen) = |0 -h  0  0|
+                        |0  0  1  0|
+                        |w  h  0  1|
+
+            4x4の変換行列を対象の1x4行列[x, y, z, 1]に適用する
+            1x4行列と4x4行列の掛け算を行う
+
+            |@_11 @_12 @_13 @_14|   |x|
+            |@_21 @_22 @_23 @_24| x |y|
+            |@_31 @_32 @_33 @_34|   |z|
+            |@_41 @_42 @_43 @_44|   |1|
+
+            @_4nは1x4行列の最後が1のため、ただ足すだけになる
+
+            @param {Array.&lt;number&gt;} out
+            @param {number} x
+            @param {number} y
+            @param {number} z
+        ###
+        applyProjection: (m, out) -&gt;
+
+            x = @x
+            y = @y
+            z = @z
+
+            e = m.elements
+
+            #Perspective divide
+            w = (e[3] * x + e[7] * y + e[11] * z + e[15])
+
+            _w = Math.abs(1 / w)
+            _x = (e[0] * x + e[4] * y + e[8]  * z + e[12])
+            _y = (e[1] * x + e[5] * y + e[9]  * z + e[13])
+            _z = (e[2] * x + e[6] * y + e[10] * z + e[14])
+
+            @x = _x * _w
+            @y = _y * _w
+            @z = _z * _w
+
+            out[0] = @
+            out[1] = w
+
+            return (-w &lt;= _x &lt;= w) or (-w &lt;= _y &lt;= w) or (-w &lt;= _z &lt;= w)
+
+        clone: -&gt;
+            vec3 = new Vector3
+            vec3.copy @
+            return vec3
+
+        toArray: -&gt;
+            return [@x, @y, @z]
+
+        toString: -&gt;
+            &quot;#{@x},#{@y},#{@z}&quot;
+
+
+# -------------------------------------------------------------------
+
+    ###*
+        Matrix2 class
+        @constructor
+    ###
+    class Matrix2
+        constructor: (m11 = 1, m12 = 0, m21 = 0, m22 = 1) -&gt;
+
+            @elements = te = new Float32Array 4
+
+            # |1 0|
+            # |0 1|
+            # ----------
+            # |m11 m12|
+            # |m21 m22|
+            # の行列で初期化
+
+            te[0] = m11; te[2] = m12;
+            te[1] = m21; te[3] = m22;
+
+        ###*
+            逆行列を生成
+            
+            [逆行列の公式]
+
+            A = |a b|
+                |c d|
+
+            について、detA = ad - bc ≠0のときAの逆行列が存在する
+
+            A^-1 = | d -b| * 1 / detA
+                   |-c  a|
+        ###
+        getInvert: -&gt;
+            out = new Matrix2()
+            oe  = out.elements
+            te  = @elements
+
+            det = te[0] * te[3] - te[2] * te[1]
+
+            return null if 0.0001 &gt; det &gt; -0.0001
+
+            oe[0] =  te[3] / det
+            oe[1] = -te[1] / det
+            oe[2] = -te[2] / det
+            oe[3] =  te[0] / det
+
+            return out
+
+# -----------------------------------------------------------
+
+    ###*
+        Matrix4 class
+        @constructor
+        @param {boolean} cpy
+    ###
+    class Matrix4
+        constructor: (cpy) -&gt;
+            @elements = new Float32Array 16
+            if (cpy) then @copy cpy else @identity()
+
+        identity: -&gt;
+
+            # 以下のように初期化
+            # |1 0 0 0|
+            # |0 1 0 0|
+            # |0 0 1 0|
+            # |0 0 0 1|
+            #
+            # |m11 m12 m13 m14|
+            # |m21 m22 m23 m24|
+            # |m31 m32 m33 m34|
+            # |m41 m42 m43 m44|
+            #
+            # OpenGLでは以下の一次元配列となる（縦横に注意）
+            # |m[0] m[4] m[8]  m[12]|
+            # |m[1] m[5] m[9]  m[13]|
+            # |m[2] m[6] m[10] m[14]|
+            # |m[3] m[7] m[11] m[15]|
+
+            te = @elements
+
+            te[0] = 1; te[4] = 0; te[8]  = 0; te[12] = 0;
+            te[1] = 0; te[5] = 1; te[9]  = 0; te[13] = 0;
+            te[2] = 0; te[6] = 0; te[10] = 1; te[14] = 0;
+            te[3] = 0; te[7] = 0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        equal: (m) -&gt;
+            te = @elements
+            me = m.elements
+
+            return (
+                (te[0] is me[0]) and (te[4] is me[4]) and (te[8]  is me[8] ) and (te[12] is me[12]) and
+                (te[1] is me[1]) and (te[5] is me[5]) and (te[9]  is me[9] ) and (te[13] is me[13]) and
+                (te[2] is me[2]) and (te[6] is me[6]) and (te[10] is me[10]) and (te[14] is me[14]) and
+                (te[3] is me[3]) and (te[7] is me[7]) and (te[11] is me[11]) and (te[15] is me[15])
+            )
+
+        getInvert: -&gt;
+            out = new Matrix4
+            oe  = out.elements
+            te  = @elements
+
+            a11 = te[0]; a12 = te[4]; a13 = te[8];  a14 = te[12];
+            a21 = te[1]; a22 = te[5]; a23 = te[9];  a24 = te[13];
+            a31 = te[2]; a32 = te[6]; a33 = te[10]; a34 = te[14];
+            a41 = te[3]; a42 = te[7]; a43 = te[11]; a44 = te[15];
+
+            det = (a11 * a22 * a33 * a44
+            + a11 * a23 * a34 * a42
+            + a11 * a24 * a32 * a43
+            + a12 * a21 * a34 * a43
+            + a12 * a23 * a31 * a44
+            + a12 * a24 * a33 * a41
+            + a13 * a21 * a32 * a44
+            + a13 * a22 * a34 * a41
+            + a13 * a24 * a31 * a42
+            + a14 * a21 * a33 * a42
+            + a14 * a22 * a31 * a43
+            + a14 * a23 * a32 * a41
+            - a11 * a22 * a34 * a43
+            - a11 * a23 * a32 * a44
+            - a11 * a24 * a33 * a42
+            - a12 * a21 * a33 * a44
+            - a12 * a23 * a34 * a41
+            - a12 * a24 * a31 * a43
+            - a13 * a21 * a34 * a42
+            - a13 * a22 * a31 * a44
+            - a13 * a24 * a32 * a41
+            - a14 * a21 * a32 * a43
+            - a14 * a22 * a33 * a41
+            - a14 * a23 * a31 * a42)
+
+            return null if 0.0001 &gt; det &gt; -0.0001
+
+            b11 = ((a22 * a33 * a44) + (a23 * a34 * a42) + (a24 * a32 * a43) - (a22 * a34 * a43) - (a23 * a32 * a44) - (a24 * a33 * a42)) / det
+            b12 = ((a12 * a34 * a43) + (a13 * a32 * a44) + (a14 * a33 * a42) - (a12 * a33 * a44) - (a13 * a34 * a42) - (a14 * a32 * a43)) / det
+            b13 = ((a12 * a23 * a44) + (a13 * a24 * a42) + (a14 * a22 * a43) - (a12 * a24 * a43) - (a13 * a22 * a44) - (a14 * a23 * a42)) / det
+            b14 = ((a12 * a24 * a33) + (a13 * a22 * a34) + (a14 * a23 * a32) - (a12 * a23 * a34) - (a13 * a24 * a32) - (a14 * a22 * a33)) / det
+
+            b21 = ((a21 * a34 * a43) + (a23 * a31 * a44) + (a24 * a33 * a41) - (a21 * a33 * a44) - (a23 * a34 * a41) - (a24 * a31 * a43)) / det
+            b22 = ((a11 * a33 * a44) + (a13 * a34 * a41) + (a14 * a31 * a43) - (a11 * a34 * a43) - (a13 * a31 * a44) - (a14 * a33 * a41)) / det
+            b23 = ((a11 * a24 * a43) + (a13 * a21 * a44) + (a14 * a23 * a41) - (a11 * a23 * a44) - (a13 * a24 * a41) - (a14 * a21 * a43)) / det
+            b24 = ((a11 * a23 * a34) + (a13 * a24 * a31) + (a14 * a21 * a33) - (a11 * a24 * a33) - (a13 * a21 * a34) - (a14 * a23 * a31)) / det
+
+            b31 = ((a21 * a32 * a44) + (a22 * a34 * a41) + (a24 * a31 * a42) - (a21 * a34 * a42) - (a22 * a31 * a44) - (a24 * a32 * a41)) / det
+            b32 = ((a11 * a34 * a42) + (a12 * a31 * a44) + (a14 * a32 * a41) - (a11 * a32 * a44) - (a12 * a34 * a41) - (a14 * a31 * a42)) / det
+            b33 = ((a11 * a22 * a44) + (a12 * a24 * a41) + (a14 * a21 * a42) - (a11 * a24 * a42) - (a12 * a21 * a44) - (a14 * a22 * a41)) / det
+            b34 = ((a11 * a24 * a32) + (a12 * a21 * a34) + (a14 * a22 * a31) - (a11 * a22 * a34) - (a12 * a24 * a31) - (a14 * a21 * a32)) / det
+
+            b41 = ((a21 * a33 * a42) + (a22 * a31 * a43) + (a23 * a32 * a41) - (a21 * a32 * a43) - (a22 * a33 * a41) - (a23 * a31 * a42)) / det
+            b42 = ((a11 * a32 * a43) + (a12 * a33 * a41) + (a13 * a31 * a42) - (a11 * a33 * a42) - (a12 * a31 * a43) - (a13 * a32 * a41)) / det
+            b43 = ((a11 * a23 * a42) + (a12 * a21 * a43) + (a13 * a22 * a41) - (a11 * a22 * a43) - (a12 * a23 * a41) - (a13 * a21 * a42)) / det
+            b44 = ((a11 * a22 * a33) + (a12 * a23 * a31) + (a13 * a21 * a32) - (a11 * a23 * a32) - (a12 * a21 * a33) - (a13 * a22 * a31)) / det
+
+            oe[0] = b11; oe[4] = b12; oe[8]  = b13; oe[12] = b14;
+            oe[1] = b21; oe[5] = b22; oe[9]  = b23; oe[13] = b24;
+            oe[2] = b31; oe[6] = b32; oe[10] = b33; oe[14] = b34;
+            oe[3] = b41; oe[7] = b42; oe[11] = b43; oe[15] = b44;
+
+            return out
+
+
+        ###*
+            Copy from `m`
+            @param {Matrix4} m
+        ###
+        copy: (m) -&gt;
+        
+            @elements = m.elements.subarray()
+            return @
+
+        makeFrustum: (left, right, bottom, top, near, far) -&gt;
+
+            te = @elements
+            vw = right - left
+            vh = top - bottom
+
+            x = 2 * near / vw
+            y = 2 * near / vh
+
+            a = (right + left) / (right - left)
+            b = (top + bottom) / (top - bottom)
+            c = - (far + near) / (far - near)
+            d = - (2 * near * far) / (far - near)
+
+
+            # W値用の値を算出
+            #
+            # Z座標は、ニアクリップ面では z/w = -1、
+            # ファークリップ面では z/w = 1 になるように
+            # バイアスされ、スケーリングされる。
+            te[0]  = x; te[4] = 0; te[8]  =  a; te[12] = 0;
+            te[1]  = 0; te[5] = y; te[9]  =  b; te[13] = 0;
+            te[2]  = 0; te[6] = 0; te[10] =  c; te[14] = d;
+            te[3]  = 0; te[7] = 0; te[11] = -1; te[15] = 0;
+
+            return @
+
+
+        perspectiveLH: (fov, aspect, near, far) -&gt;
+            tmp = Matrix4.perspectiveLH(fov, aspect, near, far)
+            @copy tmp
+
+        @perspectiveLH: (fov, aspect, near, far) -&gt;
+
+            tmp = new Matrix4
+            te  = tmp.elements
+
+            ymax = near * tan(fov * DEG_TO_RAD * 0.5)
+            ymin = -ymax
+            xmin = ymin * aspect
+            xmax = ymax * aspect
+
+            return tmp.makeFrustum xmin, xmax, ymin, ymax, near, far
+
+        multiply: (A) -&gt;
+            tmp = Matrix4.multiply(@, A)
+            @copy tmp
+
+            return @
+
+
+        # multiplication
+        # ABふたつの行列の掛け算した結果をthisに保存
+        @multiply: (A, B) -&gt;
+
+            ae = A.elements
+            be = B.elements
+
+            A11 = ae[0]; A12 = ae[4]; A13 = ae[8];  A14 = ae[12];
+            A21 = ae[1]; A22 = ae[5]; A23 = ae[9];  A24 = ae[13];
+            A31 = ae[2]; A32 = ae[6]; A33 = ae[10]; A34 = ae[14];
+            A41 = ae[3]; A42 = ae[7]; A43 = ae[11]; A44 = ae[15];
+
+            B11 = be[0]; B12 = be[4]; B13 = be[8];  B14 = be[12];
+            B21 = be[1]; B22 = be[5]; B23 = be[9];  B24 = be[13];
+            B31 = be[2]; B32 = be[6]; B33 = be[10]; B34 = be[14];
+            B41 = be[3]; B42 = be[7]; B43 = be[11]; B44 = be[15];
+
+            tmp = new Matrix4
+            te  = tmp.elements
+
+            te[0]  = A11 * B11 + A12 * B21 + A13 * B31 + A14 * B41
+            te[4]  = A11 * B12 + A12 * B22 + A13 * B32 + A14 * B42
+            te[8]  = A11 * B13 + A12 * B23 + A13 * B33 + A14 * B43
+            te[12] = A11 * B14 + A12 * B24 + A13 * B34 + A14 * B44
+
+            te[1]  = A21 * B11 + A22 * B21 + A23 * B31 + A24 * B41
+            te[5]  = A21 * B12 + A22 * B22 + A23 * B32 + A24 * B42
+            te[9]  = A21 * B13 + A22 * B23 + A23 * B33 + A24 * B43
+            te[13] = A21 * B14 + A22 * B24 + A23 * B34 + A24 * B44
+
+            te[2]  = A31 * B11 + A32 * B21 + A33 * B31 + A34 * B41
+            te[6]  = A31 * B12 + A32 * B22 + A33 * B32 + A34 * B42
+            te[10] = A31 * B13 + A32 * B23 + A33 * B33 + A34 * B43
+            te[14] = A31 * B14 + A32 * B24 + A33 * B34 + A34 * B44
+
+            te[3]  = A41 * B11 + A42 * B21 + A43 * B31 + A44 * B41
+            te[7]  = A41 * B12 + A42 * B22 + A43 * B32 + A44 * B42
+            te[11] = A41 * B13 + A42 * B23 + A43 * B33 + A44 * B43
+            te[15] = A41 * B14 + A42 * B24 + A43 * B34 + A44 * B44
+
+            return tmp
+
+        ###*
+            Multiply Matrices
+            A, Bふたつの行列の掛け算した結果をthisに保存
+            @param {Matrix4} A.
+            @param {Matrix4} B.
+        ###
+        multiplyMatrices: (A, B) -&gt;
+            tmp = Matrix4.multiply A, B
+            @copy tmp
+
+            return @
+
+        ###*
+            @param {Vector3} v
+        ###
+        translate: (v) -&gt;
+
+            te = @elements
+            x = v.x
+            y = v.y
+            z = v.z
+
+            te[0] = 1; te[4] = 0; te[8]  = 0; te[12] = x;
+            te[1] = 0; te[5] = 1; te[9]  = 0; te[13] = y;
+            te[2] = 0; te[6] = 0; te[10] = 1; te[14] = z;
+            te[3] = 0; te[7] = 0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        ###*
+            @param {Vector3} eye
+            @param {Vector3} target
+            @param {Vector3} up
+        ###
+        lookAt: do -&gt;
+            #カメラに対してのX, Y, Z軸をそれぞれ定義
+            x = new Vector3
+            y = new Vector3
+            z = new Vector3
+
+            return (eye, target, up) -&gt;
+
+                te = @elements
+
+                z.subVectors(eye, target).normalize()
+                x.crossVectors(z, up).normalize()
+                y.crossVectors(x, z).normalize()
+
+                tx = eye.dot x
+                ty = eye.dot y
+                tz = eye.dot z
+
+                te[0] = x.x; te[4] = x.y; te[8]  = x.z; te[12] = -tx;
+                te[1] = y.x; te[5] = y.y; te[9]  = y.z; te[13] = -ty;
+                te[2] = z.x; te[6] = z.y; te[10] = z.z; te[14] = -tz;
+
+                return @
+
+        ###*
+            @param {number} r Rotate X
+        ###
+        rotationX: (r) -&gt;
+
+            # OpenGLのX軸による回転行列
+            # |1       0      0  0|
+            # |0  cos(r) -sin(r) 0|
+            # |0  sin(r)  cos(r) 0|
+            # |0       0      0  1|
+
+            te = @elements
+            c = cos r
+            s = sin r
+
+            te[0] = 1; te[4] = 0; te[8]  =  0; te[12] = 0;
+            te[1] = 0; te[5] = c; te[9]  = -s; te[13] = 0;
+            te[2] = 0; te[6] = s; te[10] =  c; te[14] = 0;
+            te[3] = 0; te[7] = 0; te[11] =  0; te[15] = 1;
+
+            return @
+
+        ###*
+            @param {number} r Rotate Y
+        ###
+        rotationY: (r) -&gt;
+
+            # OpenGLのY軸による回転行列
+            # | cos(r)  0  sin(r)  0|
+            # |      0  1       0  0|
+            # |-sin(r)  0  cos(r)  0|
+            # |      0  0       0  1|
+            
+            te = @elements
+            c = cos r
+            s = sin r
+
+            te[0] =  c; te[4] = 0; te[8]  = s; te[12] = 0;
+            te[1] =  0; te[5] = 1; te[9]  = 0; te[13] = 0;
+            te[2] = -s; te[6] = 0; te[10] = c; te[14] = 0;
+            te[3] =  0; te[7] = 0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        ###*
+            @param {number} r Rotate Z
+        ###
+        rotationZ: (r) -&gt;
+
+            # OpenGLのZ軸による回転行列
+            # | cos(r) -sin(r)  0  0|
+            # | sin(r)  cos(r)  0  0|
+            # |      0      0   1  0|
+            # |      0      0   0  1|
+
+            te = @elements
+            c = cos r
+            s = sin r
+
+            te[0] = c; te[4] = -s; te[8]  = 0; te[12] = 0;
+            te[1] = s; te[5] =  c; te[9]  = 0; te[13] = 0;
+            te[2] = 0; te[6] =  0; te[10] = 1; te[14] = 0;
+            te[3] = 0; te[7] =  0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        clone: -&gt;
+            tmp = new Matrix4
+            tmp.copy @
+            return tmp
+
+# -------------------------------------------------------------------------------
+
+    class Object3D
+        constructor: -&gt;
+            @parent = null
+            @children = []
+            @vertices = []
+            @position = new Vector3
+            @rotation = new Vector3
+            #@scale = new Vector3 1, 1, 1
+            @up    = new Vector3 0, 1, 0
+
+            @matrixTranslate = new Matrix4
+            @matrixRotation = new Matrix4
+            @matrix = new Matrix4
+            @matrixWorld = new Matrix4
+
+            @updateMatrix()
+
+        updateTranslate: do -&gt;
+            tm = new Matrix4
+            previous = null
+
+            return -&gt;
+                return false if previous and @position.equal previous
+
+                previous = @position.clone()
+                @matrixTranslate = tm.clone().translate(@position)
+
+                return true
+
+        updateRotation: do -&gt;
+            rmx = new Matrix4
+            rmy = new Matrix4
+            rmz = new Matrix4
+            previous = null
+
+            return -&gt;
+
+                return false if previous and @rotation.equal previous
+
+                x = @rotation.x * DEG_TO_RAD
+                y = @rotation.y * DEG_TO_RAD
+                z = @rotation.z * DEG_TO_RAD
+
+                tmp = new Matrix4
+                rmx.rotationX x
+                rmy.rotationY y
+                rmz.rotationZ z
+
+                tmp.multiplyMatrices rmx, rmy
+                tmp.multiply rmz
+
+                previous = @rotation.clone()
+                @matrixRotation = tmp
+
+                return true
+
+        updateMatrix: -&gt;
+
+            updatedRotation = @updateRotation()
+            updatedTranslate = @updateTranslate()
+
+            if updatedRotation or updatedTranslate
+                @matrix.multiplyMatrices @matrixTranslate, @matrixRotation
+
+            c.updateMatrix() for c in @children
+
+        updateMatrixWorld: (force) -&gt;
+            if not @parent
+                @matrixWorld.copy @matrix
+            else
+                @matrixWorld.multiplyMatrices @parent.matrixWorld, @matrix
+
+            c.updateMatrixWorld() for c in @children
+
+        getVerticesByProjectionMatrix: (m) -&gt;
+            ret = []
+            inFrustum = false
+
+            wm = Matrix4.multiply m, @matrixWorld
+            for v in @vertices
+                tmp = []
+                inFrustum = v.clone().applyProjection(wm, tmp) or inFrustum
+                ret = ret.concat(tmp[0].toArray().concat(tmp[1]))
+
+            return if inFrustum then ret else []
+
+        add: (object) -&gt;
+            return null if @ is object
+
+            object.parent?.remove object
+
+            @children.push object
+            object.parent = @
+
+        remove: (object) -&gt;
+            return null if @ is object
+
+            index = @children.indexOf object
+
+            return null if index is -1
+
+            ret = @children.splice index, 1
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Camera class
+        @constructor
+        @param {number} fov Field of view.
+        @param {number} aspect Aspect ratio.
+        @param {number} near Near clip.
+        @param {number} far far clip.
+        @param {Vector3} position Position vector.
+    ###
+    class Camera extends Object3D
+        constructor: (@fov, @aspect, @near, @far, @position = new Vector3(0, 0, 20)) -&gt;
+            super
+
+            @viewMatrix = new Matrix4
+            @projectionMatrix = new Matrix4
+
+        setWorld: (m) -&gt;
+            @matrixWorld = m
+
+        getProjectionMatrix: -&gt;
+            tmp = Matrix4.multiply @projectionMatrix, @viewMatrix
+            return tmp.multiply @matrixWorld
+
+        updateProjectionMatrix: -&gt;
+            @lookAt()
+            @projectionMatrix.perspectiveLH(@fov, @aspect, @near, @far)
+
+        lookAt: do -&gt;
+            m1 = new Matrix4
+
+            return (vector) -&gt;
+                @vector = vector or @vector or new Vector3
+                m1.lookAt @position, @vector, @up
+                @viewMatrix.copy m1
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Line class
+            Line -&gt; Object3D
+        @constructor
+        @param {Vector3} vec1
+        @param {Vector3} vec2
+    ###
+    class Line extends Object3D
+        constructor: (x1, y1, z1, x2, y2, z2, @color = new Color(255, 255, 255, 1)) -&gt;
+            super
+
+            @vertices.push new Vector3 x1, y1, z1
+            @vertices.push new Vector3 x2, y2, z2
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Triangle class
+            Triangle -&gt; Object3D
+        @constructor
+        @param {Array} vertecies
+        @param {Texture} texture
+    ###
+    class Triangle extends Object3D
+        constructor: (vertices, @texture) -&gt;
+            super
+
+            @vertices = []
+            for v, i in vertices by 3
+                vec3 = new Vector3 vertices[i + 0], vertices[i + 1], vertices[i + 2]
+                @vertices.push vec3
+
+        getNormal: do -&gt;
+            a = new Vector3
+            b = new Vector3
+
+            return -&gt;
+                a.subVectors(@vertices[1], @vertices[0])
+                b.subVectors(@vertices[2], @vertices[0])
+
+                return a.clone().cross(b).applyMatrix4(@matrixWorld).normalize()
+        
+# -------------------------------------------------------------------------------
+
+    ###*
+        Face class
+            Face -&gt; Object3D
+        @constructor
+        @param {number} x1
+        @param {number} y1
+        @param {number} x2
+        @param {number} y2
+        @param {Texture} texture1
+        @param {Texture} texture2
+    ###
+    class Face extends Object3D
+        constructor: (x1, y1, x2, y2, texture1, texture2) -&gt;
+            super
+
+            triangle1 = new Triangle([
+                x1, y1, 0
+                x1, y2, 0
+                x2, y1, 0
+            ], texture1)
+
+            @add triangle1
+
+            triangle2 = new Triangle([
+                x1, y2, 0
+                x2, y2, 0
+                x2, y1, 0
+            ], texture2)
+
+            @add triangle2
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Plate class
+            Plate -&gt; Object3D
+        @constructor
+        @param {number} width
+        @param {number} height
+        @param {Texture} texture1
+        @param {Texture} texture2
+    ###
+    class Plate extends Object3D
+        constructor: (width, height, texture1, texture2) -&gt;
+            super
+
+            hw = width  * 0.5
+            hh = height * 0.5
+
+            face1 = new Face -hw, hh, hw, -hh, texture1, texture2
+            face2 = new Face -hw, hh, hw, -hh, texture1, texture2
+            face2.rotation.y = 180
+
+            @add face1
+            @add face2
+
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Cube class
+        @constructor
+        @param {number} w width.
+        @param {number} h height.
+        @param {number} p profound.
+        @param {number} sx divide as x axis.
+        @param {number} sy divide as y axis.
+        @param {number} sz divide as z axis.
+        @param {&lt;Array.&lt;Texture&gt;} materials texture materials.
+    ###
+    class Cube extends Object3D
+        constructor: (w, h, p, sx = 1, sy = 1, sz = 1, materials) -&gt;
+            super
+
+            w *= 0.5
+            h *= 0.5
+            p *= 0.5
+
+            #TOP
+            topFace = new Face -w, h, w, -h, materials[0], materials[1]
+            topFace.rotation.x = -90
+            topFace.position.y = h
+
+            #BOTTOM
+            bottomFace = new Face -w, h, w, -h, materials[2], materials[3]
+            bottomFace.rotation.x = 90
+            bottomFace.position.y = -h
+
+            #FRONT
+            frontFace = new Face -w, h, w, -h, materials[4], materials[5]
+            frontFace.position.z = p
+
+            #BACK
+            backFace = new Face -w, h, w, -h, materials[6], materials[7]
+            backFace.rotation.y = 180
+            backFace.position.z = -p
+
+            #LEFT
+            leftFace = new Face -p, h, p, -h, materials[8], materials[9]
+            leftFace.rotation.y = -90
+            leftFace.position.x = -w
+
+            #RIGHT
+            rightFace = new Face -p, h, p, -h, materials[10], materials[11]
+            rightFace.rotation.y = 90
+            rightFace.position.x = w
+
+            @add rightFace
+            @add leftFace
+            @add backFace
+            @add frontFace
+            @add bottomFace
+            @add topFace
+
+# -------------------------------------------------------------------------------
+
+    class Texture
+        constructor: (@uv_data, @uv_list) -&gt;
+
+# -------------------------------------------------------------------------------
+
+    #class Particle
+    #    constructor: (@v, @sp = 1, @size = 1000, @r = 255, @g = 255, @b = 255) -&gt;
+    #        @vec = new Vector3 1, 0, 1
+
+    #    update: -&gt;
+    #        p = new Quaternion 0, @v
+
+    #        rad = @sp * DEG_TO_RAD
+
+    #        # rad角の回転クォータニオンとその共役を生成
+    #        q = makeRotatialQuaternion(rad, @vec)
+    #        r = makeRotatialQuaternion(-rad, @vec)
+
+    #        # Quaternionを以下のように計算
+    #        # RPQ (RはQの共役）
+    #        
+    #        p = r.multiply p
+    #        p = p.multiply q
+
+    #        @v = p.v
+
+# -------------------------------------------------------------------------------
+
+    class Color
+        constructor: (r = 0, g = 0, b = 0, @a = 1) -&gt;
+            d = 1 / 255
+            @r = r * d
+            @g = g * d
+            @b = b * d
+
+        copy: (c) -&gt;
+            @r = c.r
+            @g = c.g
+            @b = c.b
+            @a = c.a
+            return @
+
+        add: (c) -&gt;
+            @r = min((@r + c.r), 1)
+            @g = min((@g + c.g), 1)
+            @b = min((@b + c.b), 1)
+            @a = min((@a + c.a), 1)
+            return @
+
+        sub: (c) -&gt;
+            @r = max((@r - c.r), 0)
+            @g = max((@g - c.g), 0)
+            @b = max((@b - c.b), 0)
+            @a = max((@a - c.a), 0)
+            return @
+
+        multiplyScalar: (s) -&gt;
+            @r *= s
+            @g *= s
+            @b *= s
+            @a *= s
+            return @
+
+        clone: -&gt;
+            tmp = new Color
+            tmp.copy @
+            return tmp
+
+        toString: -&gt;
+            r = ~~min(@r * 255, 255)
+            g = ~~min(@g * 255, 255)
+            b = ~~min(@b * 255, 255)
+            a = min(@a, 1)
+
+            return &quot;rgba(#{r}, #{g}, #{b}, #{a})&quot;
+
+# -------------------------------------------------------------------------------
+
+    class Light extends Object3D
+        constructor: (@strength) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class AmbientLight extends Light
+        constructor: (strength) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class DiffuseLight extends Light
+        constructor: (strength, vector) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class DirectionalLight extends Light
+        constructor: (strength, @direction) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class Scene
+        constructor: -&gt;
+            @lights    = []
+            @materials = []
+
+        add: (material) -&gt;
+
+            if material instanceof Light
+                @lights.push material
+
+            else if material instanceof Object3D
+                @materials.push material
+
+        update: -&gt;
+            for m in @materials
+                m.updateMatrix()
+                m.updateMatrixWorld()
+
+# -------------------------------------------------------------------------------
+
+    class Renderer
+        constructor: (@cv, @clearColor = '#fff') -&gt;
+            @_dummyCv = doc.createElement 'canvas'
+            @_dummyG  = @_dummyCv.getContext '2d'
+            @g = cv.getContext '2d'
+            @w = @_dummyCv.width  = cv.width
+            @h = @_dummyCv.height = cv.height
+
+            @fog      = true
+            @lighting = true
+            @fogColor = @clearColor
+            @fogStart = 200
+            @fogEnd   = 1000
+
+        render: (scene, camera) -&gt;
+            camera.updateProjectionMatrix()
+            matProj = camera.getProjectionMatrix()
+
+            @g.beginPath()
+            @g.fillStyle = @clearColor
+            @g.fillRect 0, 0, @w, @h
+
+            scene.update()
+            lights    = scene.lights
+            vertecies = @getTransformedPoint matProj, scene.materials
+
+            @drawTriangles @g, vertecies, lights, @w, @h
+
+        drawTriangles: (g, vertecies, lights, vw, vh) -&gt;
+
+            fogColor = @fogColor
+            fogStart = @fogStart
+            fogEnd   = @fogEnd
+            fog      = @fog
+            lighting = @lighting
+
+            dcv = @_dummyCv
+            dg  = @_dummyG
+
+            for v, i in vertecies
+
+                img    = v.uvData
+                uvList = v.uvList
+                vertexList = v.vertecies
+                z = v.getZPosition()
+                fogStrength = 0
+                normal = v.normal
+
+                hvw = vw * 0.5
+                hvh = vh * 0.5
+
+                x1 = (vertexList[0] *  hvw) + hvw
+                y1 = (vertexList[1] * -hvh) + hvh
+                z1 =  vertexList[2]
+                w1 =  vertexList[3]
+                x2 = (vertexList[4] *  hvw) + hvw
+                y2 = (vertexList[5] * -hvh) + hvh
+                z2 =  vertexList[6]
+                w2 =  vertexList[7]
+                x3 = (vertexList[8] *  hvw) + hvw
+                y3 = (vertexList[9] * -hvh) + hvh
+                z3 =  vertexList[10]
+                w3 =  vertexList[11]
+
+                if not img
+                    g.save()
+
+                    if fog
+                        fogStrength = ((fogEnd - z) / (fogEnd - fogStart))
+                        fogStrength = 0 if fogStrength &lt; 0
+                        g.globalAlpha = fogStrength
+
+                    g.beginPath()
+                    g.moveTo x1, y1
+                    g.lineTo x2, y2
+                    g.closePath()
+                    g.strokeStyle = v.color.toString()
+                    g.stroke()
+                    g.restore()
+                    continue
+
+                width  = dcv.width  = img.width or img.videoWidth or 0
+                height = dcv.height = img.height or img.videoHeight or 0
+
+                # 変換後のベクトル成分を計算
+                _Ax = x2 - x1
+                _Ay = y2 - y1
+                _Az = z2 - z1
+                _Bx = x3 - x1
+                _By = y3 - y1
+                _Bz = z3 - z1
+
+                # 裏面カリング
+                # 頂点を結ぶ順が反時計回りの場合は「裏面」になり、その場合は描画をスキップ
+                # 裏面かどうかの判定は外積を利用する
+                # 判定は、p1, p2, p3の3点から、p1-&gt;p2, p1-&gt;p3のベクトルとの外積を利用する。
+                continue if (_Ax * _By) - (_Ay * _Bx) &gt; 0
+
+                # 変換前のベクトル成分を計算
+                Ax = (uvList[2] - uvList[0]) * width
+                Ay = (uvList[3] - uvList[1]) * height
+                Bx = (uvList[4] - uvList[0]) * width
+                By = (uvList[5] - uvList[1]) * height
+
+                # move position from A(Ax, Ay) to _A(_Ax, _Ay)
+                # move position from B(Ax, Ay) to _B(_Bx, _By)
+                # A,Bのベクトルを、_A,_Bのベクトルに変換することが目的。
+                # 変換を達成するには、a, b, c, dそれぞれの係数を導き出す必要がある。
+                #
+                #    ↓まずは公式。アフィン変換の移動以外を考える。
+                #
+                # _Ax = a * Ax + c * Ay
+                # _Ay = b * Ax + d * Ay
+                # _Bx = a * Bx + c * By
+                # _By = b * Bx + d * By
+                #
+                #    ↓上記の公式を行列の計算で表すと以下に。
+                #
+                # |_Ax| = |Ax Ay||a|
+                # |_Bx| = |Bx By||c|
+                #
+                #    ↓a, cについて求めたいのだから、左に掛けているものを「1」にする必要がある。
+                #    　行列を1にするには、逆行列を左から掛ければいいので、両辺に逆行列を掛ける。（^-1は逆行列の意味）
+                #
+                # |Ax Ay|^-1 |_Ax| = |a|
+                # |Bx By|    |_Bx| = |c|
+
+                # 上記の
+                # |Ax Ay|
+                # |Bx By|
+                # を生成
+                m = new Matrix2(Ax, Ay, Bx, By)
+                me = m.elements
+
+                # 逆行列を取得
+                # 上記の
+                # |Ax Ay|^-1
+                # |Bx By|
+                # を生成
+                mi  = m.getInvert()
+
+                # 逆行列が存在しない場合はスキップ
+                continue if not mi
+
+                mie = mi.elements
+
+                a = mie[0] * _Ax + mie[2] * _Bx
+                c = mie[1] * _Ax + mie[3] * _Bx
+                b = mie[0] * _Ay + mie[2] * _By
+                d = mie[1] * _Ay + mie[3] * _By
+
+                # 各頂点座標を元に三角形を作り、それでクリッピング
+                g.save()
+                dg.save()
+
+                dg.drawImage(img, 0, 0)
+
+                if lighting
+                    strength = 0
+                    color = new Color 0, 0, 0, 1
+
+                    for l in lights
+                        if l instanceof AmbientLight
+                            strength += l.strength
+
+                        else if l instanceof DirectionalLight
+                            L = l.direction
+                            N = normal.clone().add(L)
+                            factor = N.dot(L)
+                            strength += l.strength * factor
+                            
+                    color.a -= strength
+
+                    if color.a &gt; 0
+                        dg.fillStyle = color.toString()
+                        dg.fillRect 0, 0, width, height
+
+                if fog
+                    fogStrength = 1 - ((fogEnd - z) / (fogEnd - fogStart))
+                    fogStrength = 0 if fogStrength &lt; 0
+                    dg.globalAlpha = fogStrength
+                    dg.globalCompositeOperation = 'source-over'
+                    dg.fillStyle   = fogColor
+                    dg.fillRect 0, 0, width, height
+
+                g.beginPath()
+                g.moveTo(x1, y1)
+                g.lineTo(x2, y2)
+                g.lineTo(x3, y3)
+                g.closePath()
+
+                if @wireframe
+                    g.strokeStyle = 'rgba(255, 255, 255, 0.5)'
+                    g.stroke()
+
+                g.clip()
+
+                g.transform(a, b, c, d,
+                    x1 - (a * uvList[0] * width + c * uvList[1] * height),
+                    y1 - (b * uvList[0] * width + d * uvList[1] * height))
+                g.drawImage(dcv, 0, 0)
+
+                dg.clearRect 0, 0, width, height
+                dg.restore()
+                g.restore()
+ 
+
+        getTransformedPoint: (mat, materials) -&gt;
+
+            results = []
+
+            for m in materials
+                if m instanceof Triangle
+                    vertecies = m.getVerticesByProjectionMatrix(mat)
+                    uvData    = m.texture.uv_data
+                    uvList    = m.texture.uv_list
+
+                    vertex = new Vertex vertecies
+                    vertex.uvData = uvData
+                    vertex.uvList = uvList
+
+                    continue if vertex.getZPosition() &lt; 0
+
+                    vertex.normal = m.getNormal()
+                    results.push vertex
+
+                else if m instanceof Line
+                    vertecies = m.getVerticesByProjectionMatrix(mat)
+                    vertex = new Vertex vertecies
+                    vertex.color = m.color
+
+                    continue if vertex.getZPosition() &lt; 0
+
+                    results.push vertex
+
+                else
+                    tmp = @getTransformedPoint mat, m.children
+                    results = results.concat tmp
+
+            results.sort (a, b) -&gt;
+                 b.getZPosition() - a.getZPosition()
+
+            return results
+
+# ---------------------------------------------------------------------
+
+    class Quaternion
+        constructor: (@t = 0, @v) -&gt;
+
+        set: (@t, @v) -&gt;
+
+        multiply: (A) -&gt;
+            return Quaternion.multiply @, A
+
+        @multiply: (A, B) -&gt;
+
+            # Quaternionの掛け算の公式は以下。
+            # ・は内積、×は外積、U, Vはともにベクトル。
+            # ;の左が実部、右が虚部。
+            # A = (a; U) 
+            # B = (b; V) 
+            # AB = (ab - U・V; aV + bU + U×V)
+
+            Av = A.v
+            Bv = B.v
+
+            # 実部の計算
+            d1 =  A.t * B.t
+            d2 = -Av.x * Bv.x
+            d3 = -Av.y * Bv.y
+            d4 = -Av.z * Bv.z
+            t = parseFloat((d1 + d2 + d3 + d4).toFixed(5))
+
+            # 虚部xの計算
+            d1 = (A.t * Bv.x) + (B.t * Av.x)
+            d2 = (Av.y * Bv.z) - (Av.z * Bv.y)
+            x = parseFloat((d1 + d2).toFixed(5))
+
+            # 虚部yの計算
+            d1 = (A.t * Bv.y) + (B.t * Av.y)
+            d2 = (Av.z * Bv.x) - (Av.x * Bv.z)
+            y = parseFloat((d1 + d2).toFixed(5))
+
+            # 虚部zの計算
+            d1 = (A.t * Bv.z) + (B.t * Av.z)
+            d2 = (Av.x * Bv.y) - (Av.y * Bv.x)
+            z = parseFloat((d1 + d2).toFixed(5))
+
+            return new Quaternion t, new Vector3 x, y, z
+
+    ###*
+        Make rotation quaternion
+        @param {number} radian.
+        @param {Vector3} vector.
+    ###
+    makeRotatialQuaternion = (radian, vector) -&gt;
+    
+        ret = new Quaternion
+        ccc = 0
+        sss = 0
+        axis = new Vector3
+        axis.copy vector
+
+        norm = vector.norm()
+
+        return ret if norm &lt;= 0.0
+
+        axis.normalize()
+
+        ccc = cos(0.5 * radian)
+        sss = sin(0.5 * radian)
+
+        t = ccc
+        axis.multiplyScalar sss
+
+        ret.set t, axis
+
+        return ret
+
+
+    exports.Object3D = Object3D
+    exports.Matrix2  = Matrix2
+    exports.Matrix4  = Matrix4
+    exports.Camera   = Camera
+    exports.Renderer = Renderer
+    exports.Texture  = Texture
+    exports.Triangle = Triangle
+    exports.Scene = Scene
+    exports.Line  = Line
+    exports.Plate = Plate
+    exports.Cube  = Cube
+    exports.Face  = Face
+    #exports.Particle = Particle
+    exports.Texture  = Texture
+    exports.Vector3  = Vector3
+    exports.Color    = Color
+    exports.Quaternion = Quaternion
+    exports.AmbientLight = AmbientLight
+    exports.DirectionalLight = DirectionalLight
+
+    
+do (win = window, doc = window.document, exports = window) -&gt;
+
+    #Import
+    {tan, cos, sin, PI} = Math
+    {Object3D, Line, Color, AmbientLight, DirectionalLight, Plate, Face, Cube, Texture, Triangle, Matrix4, Camera, Renderer, Scene, Vector3, Particle} = window.S3D
+
+    DEG_TO_RAD = PI / 180
+
+    isTouch = 'ontouchstart' of window
+    MOUSE_DOWN = if isTouch then 'touchstart' else 'mousedown'
+    MOUSE_MOVE = if isTouch then 'touchmove' else 'mousemove'
+    MOUSE_UP   = if isTouch then 'touchend' else 'mouseup'
+
+    textureImage = null
+    logoImage    = null
+    photoImage   = null
+    rotX = 0
+    rotY = 0
+
+    renderer = null
+    camera   = null
+    scene    = null
+
+    getVideo = -&gt;
+
+        video = doc.getElementById 'video'
+        video.autoplay = true
+        video.loop = true
+
+        return video
+
+
+    init = -&gt;
+
+        video = getVideo()
+
+        cv  = doc.getElementById 'canvas'
+        ctx = cv.getContext '2d'
+        w = cv.width  = win.innerWidth
+        h = cv.height = win.innerHeight
+        fov = 60
+        aspect = w / h
+
+        cnt = 3
+        img = new Image()
+        logo = new Image()
+        photo = new Image()
+
+        img.onload = -&gt;
+            textureImage = img
+            --cnt or create()
+
+        logo.onload = -&gt;
+            logoImage = logo
+            --cnt or create()
+
+        photo.onload = -&gt;
+            photoImage = photo
+            --cnt or create()
+
+        photo.src = 'http://jsrun.it/assets/y/r/A/V/yrAVl.jpg'
+        logo.src = 'http://jsrun.it/assets/z/1/2/9/z129U.png'
+        img.src = 'http://jsrun.it/assets/k/M/J/J/kMJJS.png'
+
+        camera = new Camera 40, aspect, 0.1, 10000
+        camera.position.x = 10
+        camera.position.y = 50
+        camera.position.z = 200
+        #camera.up = new Vector3 1, 0, 0
+        camera.lookAt new Vector3 0, 0, 0
+        scene    = new Scene
+        renderer = new Renderer cv, '#111'
+        #renderer.fog      = false
+        #renderer.lighting = false
+        #renderer.wireframe = true
+
+        create = -&gt;
+
+            materials1 = [
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+            ]
+
+            materials2 = [
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+            ]
+
+            cube1 = new Cube 50, 20, 20, 1, 1, 1, materials2
+            cube1.position.z = -50
+            cube1.rotation.z = 30
+
+            cube2 = new Cube 20, 20, 20, 1, 1, 1, materials1
+            cube2.position.z = -150
+            cube2.position.x = 50
+
+            cube3 = new Cube 20, 20, 20, 1, 1, 1, materials1
+            cube3.position.z = -350
+            cube3.position.x = 50
+            cube3.position.y = 80
+
+            plate1 = new Plate 50, 50, new Texture(textureImage, [0.0, 0.5, 0.0, 1.0, 0.5, 0.5]), new Texture(textureImage, [0.0, 1.0, 0.5, 1.0, 0.5, 0.5])
+            plate1.position.x = -50
+            plate1.position.z = -300
+
+            plate2 = new Plate 50, 50, new Texture(video, [0, 0, 0, 1, 1, 0]), new Texture(video, [0, 1, 1, 1, 1, 0])
+            plate2.position.y = -100
+            plate2.position.z = -500
+
+            line1 = new Line(0, 0, -200, 0, 0, 200, new Color(255, 0, 0, 0.3))
+            line2 = new Line(-200, 0, 0, 200, 0, 0, new Color(0, 255, 0, 0.3))
+            line3 = new Line(0, 200, 0, 0, -200, 0, new Color(0, 0, 255, 0.3))
+
+            size = 300
+            container = new Object3D
+            container.position.x = -(size * 0.5)
+            container.position.z = -(size * 0.5)
+
+            for i in [0..(size / 10)]
+                z = i * 10
+                line = new Line(0, 0, z, size, 0, z, new Color(255, 255, 255, 0.3))
+                container.add line
+
+            for i in [0..(size / 10)]
+                x = i * 10
+                line = new Line(x, 0, 0, x, 0, size, new Color(255, 255, 255, 0.3))
+                container.add line
+
+            ambLight = new AmbientLight(0.1)
+            dirLight = new DirectionalLight(0.8, (new Vector3(-1, 1, 1)).normalize())
+           
+            scene.add ambLight
+            scene.add dirLight
+
+            scene.add plate1
+            scene.add plate2
+            scene.add container
+            scene.add cube1
+            scene.add cube2
+            scene.add cube3
+            scene.add line1
+            scene.add line2
+            scene.add line3
+
+            angle = 0
+
+            do _loop = -&gt;
+                angle = (++angle % 360)
+                plate1.rotation.z = angle
+                plate2.rotation.x = angle * 3
+                cube1.rotation.z = angle
+                cube2.rotation.x = angle * 2
+                cube3.rotation.x = angle * 3
+                cube3.rotation.y = angle * 3
+                cube3.rotation.z = angle * 3
+                renderer.render scene, camera
+                setTimeout _loop, 32
+
+    dragging = false
+    prevX = 0
+    prevY = 0
+
+    # Events
+    win.addEventListener 'mousewheel', (e) -&gt;
+        camera.position.z += (e.wheelDelta / 100)
+        renderer.render scene, camera
+        e.preventDefault()
+    , false
+
+    base = 100
+    startZoom = 0
+    document.addEventListener 'gesturechange', (e) -&gt;
+        num =  e.scale * base - base
+        camera.position.z = startZoom - num
+        renderer.render scene, camera
+        e.preventDefault()
+    , false
+    
+    document.addEventListener 'gesturestart', -&gt;
+        startZoom = camera.position.z
+    , false
+
+    doc.addEventListener 'touchstart', (e) -&gt;
+        e.preventDefault()
+    , false
+
+    doc.addEventListener MOUSE_DOWN, (e) -&gt;
+        dragging = true
+        prevX = if isTouch then e.touches[0].pageX else e.pageX
+        prevY = if isTouch then e.touches[0].pageY else e.pageY
+    , false
+
+    doc.addEventListener MOUSE_MOVE, (e) -&gt;
+        return if dragging is false
+
+        pageX = if isTouch then e.touches[0].pageX else e.pageX
+        pageY = if isTouch then e.touches[0].pageY else e.pageY
+
+        rotY += (prevX - pageX) / 100
+        rotX += (prevY - pageY) / 100
+
+        camera.setWorld(Matrix4.multiply((new Matrix4()).rotationY(rotY), (new Matrix4()).rotationX(rotX)))
+
+        prevX = pageX
+        prevY = pageY
+        
+        renderer.render scene, camera
+    , false
+
+    doc.addEventListener MOUSE_UP, (e) -&gt;
+        dragging = false
+    , false
+
+    doc.addEventListener 'DOMContentLoaded', init, false
+</textarea></div><!-- / .code --></div>
+<!-- / #boxEditJS --></section>
+
+<section id="boxEditHTML">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeHTML">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeHTML">&lt;div&gt;
+    &lt;canvas id=&quot;canvas&quot; width=&quot;400&quot; height=&quot;300&quot;&gt;&lt;/canvas&gt;
+    &lt;video src=&quot;http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4&quot; id=&quot;video&quot; autoplay style=&quot;display: none;&quot;&gt;&lt;/video&gt;
+&lt;/div&gt;</textarea></div>
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditCSS">
+<ul class="tabCode group">
+    <li title="forked: Canvas context 2Dで座標変換を実装してみる" class="selected tabCSS initialTab"><span id="primaryTabTitle">forked: Canvas context 2Dで座標変換を実装してみる</span></li></ul>
+<div class="code" id="boxCodeCSS">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeCSS" data-lang="css">* {
+    margin: 0;
+    padding: 0;
+}</textarea></div><!-- / .code --></div>
+<!-- / #boxEditCSS --></section>
+
+<script type="text/javascript">
+  var theme               = "default";
+  var uid                 = "fA1h";
+//  var basefiles           = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+//  var editorjs            = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+  var basefiles           = "/js/codemirror/basefiles.js".substr(15); // "basefiles.js?1278486952"
+  var editorjs            = "/js/codemirror/editor.js".substr(15);
+  var has_long_line       = {};
+  has_long_line["js"]     = 0;
+  has_long_line["css"]    = 0;
+  has_long_line["html"]   = 0;
+
+  // 1st is initial
+  var initial_tabs = { js: [""], css: [""] };
+  var code_site_uri = "http://jsrun.it/xl1/fA1h";
+  var is_danger     = 0; // 1 or 0
+  var lines         = [ 1608,4,4 ];
+</script><noscript>
+<code></code>
+<code># forked from edo_m18's &quot;Canvas context 2Dで座標変換を実装してみる&quot; http://jsdo.it/edo_m18/9Xku
+do (win = window, doc = window.document, exports = window.S3D or (window.S3D = {})) -&gt;
+
+    #Import
+    {max, min, sqrt, tan, cos, sin, PI} = Math
+
+    DEG_TO_RAD = PI / 180
+    ANGLE = PI * 2
+
+# -------------------------------------------------------------------------------
+
+    class Vertex
+        constructor: (@vertecies) -&gt;
+
+        getZPosition: -&gt;
+            ret = 0
+            cnt = 0
+            for v, i in @vertecies by 4
+                cnt++
+                ret += @vertecies[i + 2] * @vertecies[i + 3]
+
+            return ret / cnt
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Vector3 class
+        @constructor
+        @param {number} x Position of x.
+        @param {number} y Position of y.
+        @param {number} z Position of z.
+    ###
+    class Vector3
+        constructor: (@x = 0, @y = 0, @z = 0) -&gt;
+        zero: -&gt;
+            @x = @y = @z = 0;
+
+        equal: (v) -&gt;
+            return (@x is v.x) and (@y is v.y) and (@z is v.z)
+
+        sub: (v) -&gt;
+            @x -= v.x
+            @y -= v.y
+            @z -= v.z
+            return @
+
+        subVectors: (a, b) -&gt;
+            @x = a.x - b.x
+            @y = a.y - b.y
+            @z = a.z - b.z
+            return @
+
+        add: (v) -&gt;
+            @x += v.x
+            @y += v.y
+            @z += v.z
+            return @
+
+        addVectors: (a, b) -&gt;
+            @x = a.x + b.x
+            @y = a.y + b.y
+            @z = a.z + b.z
+            return @
+
+        copy: (v) -&gt;
+            @x = v.x
+            @y = v.y
+            @z = v.z
+            return @
+
+        norm: -&gt;
+            sqrt(@x * @x + @y * @y + @z * @z)
+
+        normalize: -&gt;
+            nrm = @norm()
+
+            if nrm isnt 0
+                nrm = 1 / nrm
+                @x *= nrm
+                @y *= nrm
+                @z *= nrm
+
+            return @
+
+
+        multiply: (v) -&gt;
+            @x *= v.x
+            @y *= v.y
+            @z *= v.z
+
+            return @
+
+        #scalar multiplication
+        multiplyScalar: (s) -&gt;
+            @x *= s
+            @y *= s
+            @z *= s
+            return @
+
+        multiplyVectors: (a, b) -&gt;
+            @x = a.x * b.x
+            @y = a.y * b.y
+            @z = a.z * b.z
+
+        #dot product
+        dot: (v) -&gt;
+            return @x * v.x + @y * v.y + @z * v.z
+
+        cross: (v, w) -&gt;
+
+            return @crossVectors(v, w) if w
+
+            x = @x
+            y = @y
+            z = @z
+
+            @x = (y * v.z) - (z * v.y)
+            @y = (z * v.x) - (x * v.z)
+            @z = (x * v.y) - (y * v.x)
+
+            return @
+
+        #cross product
+        crossVectors: (v, w) -&gt;
+            @x = (w.y * v.z) - (w.z * v.y)
+            @y = (w.z * v.x) - (w.x * v.z)
+            @z = (w.x * v.y) - (w.y * v.x)
+
+            return @
+
+        applyMatrix4: (m) -&gt;
+            e = m.elements
+
+            x = @x
+            y = @y
+            z = @z
+
+            @x = e[0] * x + e[4] * y + e[8]  * z + e[12]
+            @y = e[1] * x + e[5] * y + e[9]  * z + e[13]
+            @z = e[2] * x + e[5] * y + e[10] * z + e[14]
+
+            return @
+
+        ###*
+            射影投影座標変換
+
+            計算された座標変換行列をスクリーンの座標系に変換するために計算する
+            基本はスケーリング（&amp;Y軸反転）と平行移動。
+            行列で表すと
+            w = width  / 2
+            h = height / 2
+            とすると
+                        |w  0  0  0|
+            M(screen) = |0 -h  0  0|
+                        |0  0  1  0|
+                        |w  h  0  1|
+
+            4x4の変換行列を対象の1x4行列[x, y, z, 1]に適用する
+            1x4行列と4x4行列の掛け算を行う
+
+            |@_11 @_12 @_13 @_14|   |x|
+            |@_21 @_22 @_23 @_24| x |y|
+            |@_31 @_32 @_33 @_34|   |z|
+            |@_41 @_42 @_43 @_44|   |1|
+
+            @_4nは1x4行列の最後が1のため、ただ足すだけになる
+
+            @param {Array.&lt;number&gt;} out
+            @param {number} x
+            @param {number} y
+            @param {number} z
+        ###
+        applyProjection: (m, out) -&gt;
+
+            x = @x
+            y = @y
+            z = @z
+
+            e = m.elements
+
+            #Perspective divide
+            w = (e[3] * x + e[7] * y + e[11] * z + e[15])
+
+            _w = Math.abs(1 / w)
+            _x = (e[0] * x + e[4] * y + e[8]  * z + e[12])
+            _y = (e[1] * x + e[5] * y + e[9]  * z + e[13])
+            _z = (e[2] * x + e[6] * y + e[10] * z + e[14])
+
+            @x = _x * _w
+            @y = _y * _w
+            @z = _z * _w
+
+            out[0] = @
+            out[1] = w
+
+            return (-w &lt;= _x &lt;= w) or (-w &lt;= _y &lt;= w) or (-w &lt;= _z &lt;= w)
+
+        clone: -&gt;
+            vec3 = new Vector3
+            vec3.copy @
+            return vec3
+
+        toArray: -&gt;
+            return [@x, @y, @z]
+
+        toString: -&gt;
+            &quot;#{@x},#{@y},#{@z}&quot;
+
+
+# -------------------------------------------------------------------
+
+    ###*
+        Matrix2 class
+        @constructor
+    ###
+    class Matrix2
+        constructor: (m11 = 1, m12 = 0, m21 = 0, m22 = 1) -&gt;
+
+            @elements = te = new Float32Array 4
+
+            # |1 0|
+            # |0 1|
+            # ----------
+            # |m11 m12|
+            # |m21 m22|
+            # の行列で初期化
+
+            te[0] = m11; te[2] = m12;
+            te[1] = m21; te[3] = m22;
+
+        ###*
+            逆行列を生成
+            
+            [逆行列の公式]
+
+            A = |a b|
+                |c d|
+
+            について、detA = ad - bc ≠0のときAの逆行列が存在する
+
+            A^-1 = | d -b| * 1 / detA
+                   |-c  a|
+        ###
+        getInvert: -&gt;
+            out = new Matrix2()
+            oe  = out.elements
+            te  = @elements
+
+            det = te[0] * te[3] - te[2] * te[1]
+
+            return null if 0.0001 &gt; det &gt; -0.0001
+
+            oe[0] =  te[3] / det
+            oe[1] = -te[1] / det
+            oe[2] = -te[2] / det
+            oe[3] =  te[0] / det
+
+            return out
+
+# -----------------------------------------------------------
+
+    ###*
+        Matrix4 class
+        @constructor
+        @param {boolean} cpy
+    ###
+    class Matrix4
+        constructor: (cpy) -&gt;
+            @elements = new Float32Array 16
+            if (cpy) then @copy cpy else @identity()
+
+        identity: -&gt;
+
+            # 以下のように初期化
+            # |1 0 0 0|
+            # |0 1 0 0|
+            # |0 0 1 0|
+            # |0 0 0 1|
+            #
+            # |m11 m12 m13 m14|
+            # |m21 m22 m23 m24|
+            # |m31 m32 m33 m34|
+            # |m41 m42 m43 m44|
+            #
+            # OpenGLでは以下の一次元配列となる（縦横に注意）
+            # |m[0] m[4] m[8]  m[12]|
+            # |m[1] m[5] m[9]  m[13]|
+            # |m[2] m[6] m[10] m[14]|
+            # |m[3] m[7] m[11] m[15]|
+
+            te = @elements
+
+            te[0] = 1; te[4] = 0; te[8]  = 0; te[12] = 0;
+            te[1] = 0; te[5] = 1; te[9]  = 0; te[13] = 0;
+            te[2] = 0; te[6] = 0; te[10] = 1; te[14] = 0;
+            te[3] = 0; te[7] = 0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        equal: (m) -&gt;
+            te = @elements
+            me = m.elements
+
+            return (
+                (te[0] is me[0]) and (te[4] is me[4]) and (te[8]  is me[8] ) and (te[12] is me[12]) and
+                (te[1] is me[1]) and (te[5] is me[5]) and (te[9]  is me[9] ) and (te[13] is me[13]) and
+                (te[2] is me[2]) and (te[6] is me[6]) and (te[10] is me[10]) and (te[14] is me[14]) and
+                (te[3] is me[3]) and (te[7] is me[7]) and (te[11] is me[11]) and (te[15] is me[15])
+            )
+
+        getInvert: -&gt;
+            out = new Matrix4
+            oe  = out.elements
+            te  = @elements
+
+            a11 = te[0]; a12 = te[4]; a13 = te[8];  a14 = te[12];
+            a21 = te[1]; a22 = te[5]; a23 = te[9];  a24 = te[13];
+            a31 = te[2]; a32 = te[6]; a33 = te[10]; a34 = te[14];
+            a41 = te[3]; a42 = te[7]; a43 = te[11]; a44 = te[15];
+
+            det = (a11 * a22 * a33 * a44
+            + a11 * a23 * a34 * a42
+            + a11 * a24 * a32 * a43
+            + a12 * a21 * a34 * a43
+            + a12 * a23 * a31 * a44
+            + a12 * a24 * a33 * a41
+            + a13 * a21 * a32 * a44
+            + a13 * a22 * a34 * a41
+            + a13 * a24 * a31 * a42
+            + a14 * a21 * a33 * a42
+            + a14 * a22 * a31 * a43
+            + a14 * a23 * a32 * a41
+            - a11 * a22 * a34 * a43
+            - a11 * a23 * a32 * a44
+            - a11 * a24 * a33 * a42
+            - a12 * a21 * a33 * a44
+            - a12 * a23 * a34 * a41
+            - a12 * a24 * a31 * a43
+            - a13 * a21 * a34 * a42
+            - a13 * a22 * a31 * a44
+            - a13 * a24 * a32 * a41
+            - a14 * a21 * a32 * a43
+            - a14 * a22 * a33 * a41
+            - a14 * a23 * a31 * a42)
+
+            return null if 0.0001 &gt; det &gt; -0.0001
+
+            b11 = ((a22 * a33 * a44) + (a23 * a34 * a42) + (a24 * a32 * a43) - (a22 * a34 * a43) - (a23 * a32 * a44) - (a24 * a33 * a42)) / det
+            b12 = ((a12 * a34 * a43) + (a13 * a32 * a44) + (a14 * a33 * a42) - (a12 * a33 * a44) - (a13 * a34 * a42) - (a14 * a32 * a43)) / det
+            b13 = ((a12 * a23 * a44) + (a13 * a24 * a42) + (a14 * a22 * a43) - (a12 * a24 * a43) - (a13 * a22 * a44) - (a14 * a23 * a42)) / det
+            b14 = ((a12 * a24 * a33) + (a13 * a22 * a34) + (a14 * a23 * a32) - (a12 * a23 * a34) - (a13 * a24 * a32) - (a14 * a22 * a33)) / det
+
+            b21 = ((a21 * a34 * a43) + (a23 * a31 * a44) + (a24 * a33 * a41) - (a21 * a33 * a44) - (a23 * a34 * a41) - (a24 * a31 * a43)) / det
+            b22 = ((a11 * a33 * a44) + (a13 * a34 * a41) + (a14 * a31 * a43) - (a11 * a34 * a43) - (a13 * a31 * a44) - (a14 * a33 * a41)) / det
+            b23 = ((a11 * a24 * a43) + (a13 * a21 * a44) + (a14 * a23 * a41) - (a11 * a23 * a44) - (a13 * a24 * a41) - (a14 * a21 * a43)) / det
+            b24 = ((a11 * a23 * a34) + (a13 * a24 * a31) + (a14 * a21 * a33) - (a11 * a24 * a33) - (a13 * a21 * a34) - (a14 * a23 * a31)) / det
+
+            b31 = ((a21 * a32 * a44) + (a22 * a34 * a41) + (a24 * a31 * a42) - (a21 * a34 * a42) - (a22 * a31 * a44) - (a24 * a32 * a41)) / det
+            b32 = ((a11 * a34 * a42) + (a12 * a31 * a44) + (a14 * a32 * a41) - (a11 * a32 * a44) - (a12 * a34 * a41) - (a14 * a31 * a42)) / det
+            b33 = ((a11 * a22 * a44) + (a12 * a24 * a41) + (a14 * a21 * a42) - (a11 * a24 * a42) - (a12 * a21 * a44) - (a14 * a22 * a41)) / det
+            b34 = ((a11 * a24 * a32) + (a12 * a21 * a34) + (a14 * a22 * a31) - (a11 * a22 * a34) - (a12 * a24 * a31) - (a14 * a21 * a32)) / det
+
+            b41 = ((a21 * a33 * a42) + (a22 * a31 * a43) + (a23 * a32 * a41) - (a21 * a32 * a43) - (a22 * a33 * a41) - (a23 * a31 * a42)) / det
+            b42 = ((a11 * a32 * a43) + (a12 * a33 * a41) + (a13 * a31 * a42) - (a11 * a33 * a42) - (a12 * a31 * a43) - (a13 * a32 * a41)) / det
+            b43 = ((a11 * a23 * a42) + (a12 * a21 * a43) + (a13 * a22 * a41) - (a11 * a22 * a43) - (a12 * a23 * a41) - (a13 * a21 * a42)) / det
+            b44 = ((a11 * a22 * a33) + (a12 * a23 * a31) + (a13 * a21 * a32) - (a11 * a23 * a32) - (a12 * a21 * a33) - (a13 * a22 * a31)) / det
+
+            oe[0] = b11; oe[4] = b12; oe[8]  = b13; oe[12] = b14;
+            oe[1] = b21; oe[5] = b22; oe[9]  = b23; oe[13] = b24;
+            oe[2] = b31; oe[6] = b32; oe[10] = b33; oe[14] = b34;
+            oe[3] = b41; oe[7] = b42; oe[11] = b43; oe[15] = b44;
+
+            return out
+
+
+        ###*
+            Copy from `m`
+            @param {Matrix4} m
+        ###
+        copy: (m) -&gt;
+        
+            @elements = m.elements.subarray()
+            return @
+
+        makeFrustum: (left, right, bottom, top, near, far) -&gt;
+
+            te = @elements
+            vw = right - left
+            vh = top - bottom
+
+            x = 2 * near / vw
+            y = 2 * near / vh
+
+            a = (right + left) / (right - left)
+            b = (top + bottom) / (top - bottom)
+            c = - (far + near) / (far - near)
+            d = - (2 * near * far) / (far - near)
+
+
+            # W値用の値を算出
+            #
+            # Z座標は、ニアクリップ面では z/w = -1、
+            # ファークリップ面では z/w = 1 になるように
+            # バイアスされ、スケーリングされる。
+            te[0]  = x; te[4] = 0; te[8]  =  a; te[12] = 0;
+            te[1]  = 0; te[5] = y; te[9]  =  b; te[13] = 0;
+            te[2]  = 0; te[6] = 0; te[10] =  c; te[14] = d;
+            te[3]  = 0; te[7] = 0; te[11] = -1; te[15] = 0;
+
+            return @
+
+
+        perspectiveLH: (fov, aspect, near, far) -&gt;
+            tmp = Matrix4.perspectiveLH(fov, aspect, near, far)
+            @copy tmp
+
+        @perspectiveLH: (fov, aspect, near, far) -&gt;
+
+            tmp = new Matrix4
+            te  = tmp.elements
+
+            ymax = near * tan(fov * DEG_TO_RAD * 0.5)
+            ymin = -ymax
+            xmin = ymin * aspect
+            xmax = ymax * aspect
+
+            return tmp.makeFrustum xmin, xmax, ymin, ymax, near, far
+
+        multiply: (A) -&gt;
+            tmp = Matrix4.multiply(@, A)
+            @copy tmp
+
+            return @
+
+
+        # multiplication
+        # ABふたつの行列の掛け算した結果をthisに保存
+        @multiply: (A, B) -&gt;
+
+            ae = A.elements
+            be = B.elements
+
+            A11 = ae[0]; A12 = ae[4]; A13 = ae[8];  A14 = ae[12];
+            A21 = ae[1]; A22 = ae[5]; A23 = ae[9];  A24 = ae[13];
+            A31 = ae[2]; A32 = ae[6]; A33 = ae[10]; A34 = ae[14];
+            A41 = ae[3]; A42 = ae[7]; A43 = ae[11]; A44 = ae[15];
+
+            B11 = be[0]; B12 = be[4]; B13 = be[8];  B14 = be[12];
+            B21 = be[1]; B22 = be[5]; B23 = be[9];  B24 = be[13];
+            B31 = be[2]; B32 = be[6]; B33 = be[10]; B34 = be[14];
+            B41 = be[3]; B42 = be[7]; B43 = be[11]; B44 = be[15];
+
+            tmp = new Matrix4
+            te  = tmp.elements
+
+            te[0]  = A11 * B11 + A12 * B21 + A13 * B31 + A14 * B41
+            te[4]  = A11 * B12 + A12 * B22 + A13 * B32 + A14 * B42
+            te[8]  = A11 * B13 + A12 * B23 + A13 * B33 + A14 * B43
+            te[12] = A11 * B14 + A12 * B24 + A13 * B34 + A14 * B44
+
+            te[1]  = A21 * B11 + A22 * B21 + A23 * B31 + A24 * B41
+            te[5]  = A21 * B12 + A22 * B22 + A23 * B32 + A24 * B42
+            te[9]  = A21 * B13 + A22 * B23 + A23 * B33 + A24 * B43
+            te[13] = A21 * B14 + A22 * B24 + A23 * B34 + A24 * B44
+
+            te[2]  = A31 * B11 + A32 * B21 + A33 * B31 + A34 * B41
+            te[6]  = A31 * B12 + A32 * B22 + A33 * B32 + A34 * B42
+            te[10] = A31 * B13 + A32 * B23 + A33 * B33 + A34 * B43
+            te[14] = A31 * B14 + A32 * B24 + A33 * B34 + A34 * B44
+
+            te[3]  = A41 * B11 + A42 * B21 + A43 * B31 + A44 * B41
+            te[7]  = A41 * B12 + A42 * B22 + A43 * B32 + A44 * B42
+            te[11] = A41 * B13 + A42 * B23 + A43 * B33 + A44 * B43
+            te[15] = A41 * B14 + A42 * B24 + A43 * B34 + A44 * B44
+
+            return tmp
+
+        ###*
+            Multiply Matrices
+            A, Bふたつの行列の掛け算した結果をthisに保存
+            @param {Matrix4} A.
+            @param {Matrix4} B.
+        ###
+        multiplyMatrices: (A, B) -&gt;
+            tmp = Matrix4.multiply A, B
+            @copy tmp
+
+            return @
+
+        ###*
+            @param {Vector3} v
+        ###
+        translate: (v) -&gt;
+
+            te = @elements
+            x = v.x
+            y = v.y
+            z = v.z
+
+            te[0] = 1; te[4] = 0; te[8]  = 0; te[12] = x;
+            te[1] = 0; te[5] = 1; te[9]  = 0; te[13] = y;
+            te[2] = 0; te[6] = 0; te[10] = 1; te[14] = z;
+            te[3] = 0; te[7] = 0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        ###*
+            @param {Vector3} eye
+            @param {Vector3} target
+            @param {Vector3} up
+        ###
+        lookAt: do -&gt;
+            #カメラに対してのX, Y, Z軸をそれぞれ定義
+            x = new Vector3
+            y = new Vector3
+            z = new Vector3
+
+            return (eye, target, up) -&gt;
+
+                te = @elements
+
+                z.subVectors(eye, target).normalize()
+                x.crossVectors(z, up).normalize()
+                y.crossVectors(x, z).normalize()
+
+                tx = eye.dot x
+                ty = eye.dot y
+                tz = eye.dot z
+
+                te[0] = x.x; te[4] = x.y; te[8]  = x.z; te[12] = -tx;
+                te[1] = y.x; te[5] = y.y; te[9]  = y.z; te[13] = -ty;
+                te[2] = z.x; te[6] = z.y; te[10] = z.z; te[14] = -tz;
+
+                return @
+
+        ###*
+            @param {number} r Rotate X
+        ###
+        rotationX: (r) -&gt;
+
+            # OpenGLのX軸による回転行列
+            # |1       0      0  0|
+            # |0  cos(r) -sin(r) 0|
+            # |0  sin(r)  cos(r) 0|
+            # |0       0      0  1|
+
+            te = @elements
+            c = cos r
+            s = sin r
+
+            te[0] = 1; te[4] = 0; te[8]  =  0; te[12] = 0;
+            te[1] = 0; te[5] = c; te[9]  = -s; te[13] = 0;
+            te[2] = 0; te[6] = s; te[10] =  c; te[14] = 0;
+            te[3] = 0; te[7] = 0; te[11] =  0; te[15] = 1;
+
+            return @
+
+        ###*
+            @param {number} r Rotate Y
+        ###
+        rotationY: (r) -&gt;
+
+            # OpenGLのY軸による回転行列
+            # | cos(r)  0  sin(r)  0|
+            # |      0  1       0  0|
+            # |-sin(r)  0  cos(r)  0|
+            # |      0  0       0  1|
+            
+            te = @elements
+            c = cos r
+            s = sin r
+
+            te[0] =  c; te[4] = 0; te[8]  = s; te[12] = 0;
+            te[1] =  0; te[5] = 1; te[9]  = 0; te[13] = 0;
+            te[2] = -s; te[6] = 0; te[10] = c; te[14] = 0;
+            te[3] =  0; te[7] = 0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        ###*
+            @param {number} r Rotate Z
+        ###
+        rotationZ: (r) -&gt;
+
+            # OpenGLのZ軸による回転行列
+            # | cos(r) -sin(r)  0  0|
+            # | sin(r)  cos(r)  0  0|
+            # |      0      0   1  0|
+            # |      0      0   0  1|
+
+            te = @elements
+            c = cos r
+            s = sin r
+
+            te[0] = c; te[4] = -s; te[8]  = 0; te[12] = 0;
+            te[1] = s; te[5] =  c; te[9]  = 0; te[13] = 0;
+            te[2] = 0; te[6] =  0; te[10] = 1; te[14] = 0;
+            te[3] = 0; te[7] =  0; te[11] = 0; te[15] = 1;
+
+            return @
+
+        clone: -&gt;
+            tmp = new Matrix4
+            tmp.copy @
+            return tmp
+
+# -------------------------------------------------------------------------------
+
+    class Object3D
+        constructor: -&gt;
+            @parent = null
+            @children = []
+            @vertices = []
+            @position = new Vector3
+            @rotation = new Vector3
+            #@scale = new Vector3 1, 1, 1
+            @up    = new Vector3 0, 1, 0
+
+            @matrixTranslate = new Matrix4
+            @matrixRotation = new Matrix4
+            @matrix = new Matrix4
+            @matrixWorld = new Matrix4
+
+            @updateMatrix()
+
+        updateTranslate: do -&gt;
+            tm = new Matrix4
+            previous = null
+
+            return -&gt;
+                return false if previous and @position.equal previous
+
+                previous = @position.clone()
+                @matrixTranslate = tm.clone().translate(@position)
+
+                return true
+
+        updateRotation: do -&gt;
+            rmx = new Matrix4
+            rmy = new Matrix4
+            rmz = new Matrix4
+            previous = null
+
+            return -&gt;
+
+                return false if previous and @rotation.equal previous
+
+                x = @rotation.x * DEG_TO_RAD
+                y = @rotation.y * DEG_TO_RAD
+                z = @rotation.z * DEG_TO_RAD
+
+                tmp = new Matrix4
+                rmx.rotationX x
+                rmy.rotationY y
+                rmz.rotationZ z
+
+                tmp.multiplyMatrices rmx, rmy
+                tmp.multiply rmz
+
+                previous = @rotation.clone()
+                @matrixRotation = tmp
+
+                return true
+
+        updateMatrix: -&gt;
+
+            updatedRotation = @updateRotation()
+            updatedTranslate = @updateTranslate()
+
+            if updatedRotation or updatedTranslate
+                @matrix.multiplyMatrices @matrixTranslate, @matrixRotation
+
+            c.updateMatrix() for c in @children
+
+        updateMatrixWorld: (force) -&gt;
+            if not @parent
+                @matrixWorld.copy @matrix
+            else
+                @matrixWorld.multiplyMatrices @parent.matrixWorld, @matrix
+
+            c.updateMatrixWorld() for c in @children
+
+        getVerticesByProjectionMatrix: (m) -&gt;
+            ret = []
+            inFrustum = false
+
+            wm = Matrix4.multiply m, @matrixWorld
+            for v in @vertices
+                tmp = []
+                inFrustum = v.clone().applyProjection(wm, tmp) or inFrustum
+                ret = ret.concat(tmp[0].toArray().concat(tmp[1]))
+
+            return if inFrustum then ret else []
+
+        add: (object) -&gt;
+            return null if @ is object
+
+            object.parent?.remove object
+
+            @children.push object
+            object.parent = @
+
+        remove: (object) -&gt;
+            return null if @ is object
+
+            index = @children.indexOf object
+
+            return null if index is -1
+
+            ret = @children.splice index, 1
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Camera class
+        @constructor
+        @param {number} fov Field of view.
+        @param {number} aspect Aspect ratio.
+        @param {number} near Near clip.
+        @param {number} far far clip.
+        @param {Vector3} position Position vector.
+    ###
+    class Camera extends Object3D
+        constructor: (@fov, @aspect, @near, @far, @position = new Vector3(0, 0, 20)) -&gt;
+            super
+
+            @viewMatrix = new Matrix4
+            @projectionMatrix = new Matrix4
+
+        setWorld: (m) -&gt;
+            @matrixWorld = m
+
+        getProjectionMatrix: -&gt;
+            tmp = Matrix4.multiply @projectionMatrix, @viewMatrix
+            return tmp.multiply @matrixWorld
+
+        updateProjectionMatrix: -&gt;
+            @lookAt()
+            @projectionMatrix.perspectiveLH(@fov, @aspect, @near, @far)
+
+        lookAt: do -&gt;
+            m1 = new Matrix4
+
+            return (vector) -&gt;
+                @vector = vector or @vector or new Vector3
+                m1.lookAt @position, @vector, @up
+                @viewMatrix.copy m1
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Line class
+            Line -&gt; Object3D
+        @constructor
+        @param {Vector3} vec1
+        @param {Vector3} vec2
+    ###
+    class Line extends Object3D
+        constructor: (x1, y1, z1, x2, y2, z2, @color = new Color(255, 255, 255, 1)) -&gt;
+            super
+
+            @vertices.push new Vector3 x1, y1, z1
+            @vertices.push new Vector3 x2, y2, z2
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Triangle class
+            Triangle -&gt; Object3D
+        @constructor
+        @param {Array} vertecies
+        @param {Texture} texture
+    ###
+    class Triangle extends Object3D
+        constructor: (vertices, @texture) -&gt;
+            super
+
+            @vertices = []
+            for v, i in vertices by 3
+                vec3 = new Vector3 vertices[i + 0], vertices[i + 1], vertices[i + 2]
+                @vertices.push vec3
+
+        getNormal: do -&gt;
+            a = new Vector3
+            b = new Vector3
+
+            return -&gt;
+                a.subVectors(@vertices[1], @vertices[0])
+                b.subVectors(@vertices[2], @vertices[0])
+
+                return a.clone().cross(b).applyMatrix4(@matrixWorld).normalize()
+        
+# -------------------------------------------------------------------------------
+
+    ###*
+        Face class
+            Face -&gt; Object3D
+        @constructor
+        @param {number} x1
+        @param {number} y1
+        @param {number} x2
+        @param {number} y2
+        @param {Texture} texture1
+        @param {Texture} texture2
+    ###
+    class Face extends Object3D
+        constructor: (x1, y1, x2, y2, texture1, texture2) -&gt;
+            super
+
+            triangle1 = new Triangle([
+                x1, y1, 0
+                x1, y2, 0
+                x2, y1, 0
+            ], texture1)
+
+            @add triangle1
+
+            triangle2 = new Triangle([
+                x1, y2, 0
+                x2, y2, 0
+                x2, y1, 0
+            ], texture2)
+
+            @add triangle2
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Plate class
+            Plate -&gt; Object3D
+        @constructor
+        @param {number} width
+        @param {number} height
+        @param {Texture} texture1
+        @param {Texture} texture2
+    ###
+    class Plate extends Object3D
+        constructor: (width, height, texture1, texture2) -&gt;
+            super
+
+            hw = width  * 0.5
+            hh = height * 0.5
+
+            face1 = new Face -hw, hh, hw, -hh, texture1, texture2
+            face2 = new Face -hw, hh, hw, -hh, texture1, texture2
+            face2.rotation.y = 180
+
+            @add face1
+            @add face2
+
+
+# -------------------------------------------------------------------------------
+
+    ###*
+        Cube class
+        @constructor
+        @param {number} w width.
+        @param {number} h height.
+        @param {number} p profound.
+        @param {number} sx divide as x axis.
+        @param {number} sy divide as y axis.
+        @param {number} sz divide as z axis.
+        @param {&lt;Array.&lt;Texture&gt;} materials texture materials.
+    ###
+    class Cube extends Object3D
+        constructor: (w, h, p, sx = 1, sy = 1, sz = 1, materials) -&gt;
+            super
+
+            w *= 0.5
+            h *= 0.5
+            p *= 0.5
+
+            #TOP
+            topFace = new Face -w, h, w, -h, materials[0], materials[1]
+            topFace.rotation.x = -90
+            topFace.position.y = h
+
+            #BOTTOM
+            bottomFace = new Face -w, h, w, -h, materials[2], materials[3]
+            bottomFace.rotation.x = 90
+            bottomFace.position.y = -h
+
+            #FRONT
+            frontFace = new Face -w, h, w, -h, materials[4], materials[5]
+            frontFace.position.z = p
+
+            #BACK
+            backFace = new Face -w, h, w, -h, materials[6], materials[7]
+            backFace.rotation.y = 180
+            backFace.position.z = -p
+
+            #LEFT
+            leftFace = new Face -p, h, p, -h, materials[8], materials[9]
+            leftFace.rotation.y = -90
+            leftFace.position.x = -w
+
+            #RIGHT
+            rightFace = new Face -p, h, p, -h, materials[10], materials[11]
+            rightFace.rotation.y = 90
+            rightFace.position.x = w
+
+            @add rightFace
+            @add leftFace
+            @add backFace
+            @add frontFace
+            @add bottomFace
+            @add topFace
+
+# -------------------------------------------------------------------------------
+
+    class Texture
+        constructor: (@uv_data, @uv_list) -&gt;
+
+# -------------------------------------------------------------------------------
+
+    #class Particle
+    #    constructor: (@v, @sp = 1, @size = 1000, @r = 255, @g = 255, @b = 255) -&gt;
+    #        @vec = new Vector3 1, 0, 1
+
+    #    update: -&gt;
+    #        p = new Quaternion 0, @v
+
+    #        rad = @sp * DEG_TO_RAD
+
+    #        # rad角の回転クォータニオンとその共役を生成
+    #        q = makeRotatialQuaternion(rad, @vec)
+    #        r = makeRotatialQuaternion(-rad, @vec)
+
+    #        # Quaternionを以下のように計算
+    #        # RPQ (RはQの共役）
+    #        
+    #        p = r.multiply p
+    #        p = p.multiply q
+
+    #        @v = p.v
+
+# -------------------------------------------------------------------------------
+
+    class Color
+        constructor: (r = 0, g = 0, b = 0, @a = 1) -&gt;
+            d = 1 / 255
+            @r = r * d
+            @g = g * d
+            @b = b * d
+
+        copy: (c) -&gt;
+            @r = c.r
+            @g = c.g
+            @b = c.b
+            @a = c.a
+            return @
+
+        add: (c) -&gt;
+            @r = min((@r + c.r), 1)
+            @g = min((@g + c.g), 1)
+            @b = min((@b + c.b), 1)
+            @a = min((@a + c.a), 1)
+            return @
+
+        sub: (c) -&gt;
+            @r = max((@r - c.r), 0)
+            @g = max((@g - c.g), 0)
+            @b = max((@b - c.b), 0)
+            @a = max((@a - c.a), 0)
+            return @
+
+        multiplyScalar: (s) -&gt;
+            @r *= s
+            @g *= s
+            @b *= s
+            @a *= s
+            return @
+
+        clone: -&gt;
+            tmp = new Color
+            tmp.copy @
+            return tmp
+
+        toString: -&gt;
+            r = ~~min(@r * 255, 255)
+            g = ~~min(@g * 255, 255)
+            b = ~~min(@b * 255, 255)
+            a = min(@a, 1)
+
+            return &quot;rgba(#{r}, #{g}, #{b}, #{a})&quot;
+
+# -------------------------------------------------------------------------------
+
+    class Light extends Object3D
+        constructor: (@strength) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class AmbientLight extends Light
+        constructor: (strength) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class DiffuseLight extends Light
+        constructor: (strength, vector) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class DirectionalLight extends Light
+        constructor: (strength, @direction) -&gt;
+            super
+
+# -------------------------------------------------------------------------------
+
+    class Scene
+        constructor: -&gt;
+            @lights    = []
+            @materials = []
+
+        add: (material) -&gt;
+
+            if material instanceof Light
+                @lights.push material
+
+            else if material instanceof Object3D
+                @materials.push material
+
+        update: -&gt;
+            for m in @materials
+                m.updateMatrix()
+                m.updateMatrixWorld()
+
+# -------------------------------------------------------------------------------
+
+    class Renderer
+        constructor: (@cv, @clearColor = '#fff') -&gt;
+            @_dummyCv = doc.createElement 'canvas'
+            @_dummyG  = @_dummyCv.getContext '2d'
+            @g = cv.getContext '2d'
+            @w = @_dummyCv.width  = cv.width
+            @h = @_dummyCv.height = cv.height
+
+            @fog      = true
+            @lighting = true
+            @fogColor = @clearColor
+            @fogStart = 200
+            @fogEnd   = 1000
+
+        render: (scene, camera) -&gt;
+            camera.updateProjectionMatrix()
+            matProj = camera.getProjectionMatrix()
+
+            @g.beginPath()
+            @g.fillStyle = @clearColor
+            @g.fillRect 0, 0, @w, @h
+
+            scene.update()
+            lights    = scene.lights
+            vertecies = @getTransformedPoint matProj, scene.materials
+
+            @drawTriangles @g, vertecies, lights, @w, @h
+
+        drawTriangles: (g, vertecies, lights, vw, vh) -&gt;
+
+            fogColor = @fogColor
+            fogStart = @fogStart
+            fogEnd   = @fogEnd
+            fog      = @fog
+            lighting = @lighting
+
+            dcv = @_dummyCv
+            dg  = @_dummyG
+
+            for v, i in vertecies
+
+                img    = v.uvData
+                uvList = v.uvList
+                vertexList = v.vertecies
+                z = v.getZPosition()
+                fogStrength = 0
+                normal = v.normal
+
+                hvw = vw * 0.5
+                hvh = vh * 0.5
+
+                x1 = (vertexList[0] *  hvw) + hvw
+                y1 = (vertexList[1] * -hvh) + hvh
+                z1 =  vertexList[2]
+                w1 =  vertexList[3]
+                x2 = (vertexList[4] *  hvw) + hvw
+                y2 = (vertexList[5] * -hvh) + hvh
+                z2 =  vertexList[6]
+                w2 =  vertexList[7]
+                x3 = (vertexList[8] *  hvw) + hvw
+                y3 = (vertexList[9] * -hvh) + hvh
+                z3 =  vertexList[10]
+                w3 =  vertexList[11]
+
+                if not img
+                    g.save()
+
+                    if fog
+                        fogStrength = ((fogEnd - z) / (fogEnd - fogStart))
+                        fogStrength = 0 if fogStrength &lt; 0
+                        g.globalAlpha = fogStrength
+
+                    g.beginPath()
+                    g.moveTo x1, y1
+                    g.lineTo x2, y2
+                    g.closePath()
+                    g.strokeStyle = v.color.toString()
+                    g.stroke()
+                    g.restore()
+                    continue
+
+                width  = dcv.width  = img.width or img.videoWidth or 0
+                height = dcv.height = img.height or img.videoHeight or 0
+
+                # 変換後のベクトル成分を計算
+                _Ax = x2 - x1
+                _Ay = y2 - y1
+                _Az = z2 - z1
+                _Bx = x3 - x1
+                _By = y3 - y1
+                _Bz = z3 - z1
+
+                # 裏面カリング
+                # 頂点を結ぶ順が反時計回りの場合は「裏面」になり、その場合は描画をスキップ
+                # 裏面かどうかの判定は外積を利用する
+                # 判定は、p1, p2, p3の3点から、p1-&gt;p2, p1-&gt;p3のベクトルとの外積を利用する。
+                continue if (_Ax * _By) - (_Ay * _Bx) &gt; 0
+
+                # 変換前のベクトル成分を計算
+                Ax = (uvList[2] - uvList[0]) * width
+                Ay = (uvList[3] - uvList[1]) * height
+                Bx = (uvList[4] - uvList[0]) * width
+                By = (uvList[5] - uvList[1]) * height
+
+                # move position from A(Ax, Ay) to _A(_Ax, _Ay)
+                # move position from B(Ax, Ay) to _B(_Bx, _By)
+                # A,Bのベクトルを、_A,_Bのベクトルに変換することが目的。
+                # 変換を達成するには、a, b, c, dそれぞれの係数を導き出す必要がある。
+                #
+                #    ↓まずは公式。アフィン変換の移動以外を考える。
+                #
+                # _Ax = a * Ax + c * Ay
+                # _Ay = b * Ax + d * Ay
+                # _Bx = a * Bx + c * By
+                # _By = b * Bx + d * By
+                #
+                #    ↓上記の公式を行列の計算で表すと以下に。
+                #
+                # |_Ax| = |Ax Ay||a|
+                # |_Bx| = |Bx By||c|
+                #
+                #    ↓a, cについて求めたいのだから、左に掛けているものを「1」にする必要がある。
+                #    　行列を1にするには、逆行列を左から掛ければいいので、両辺に逆行列を掛ける。（^-1は逆行列の意味）
+                #
+                # |Ax Ay|^-1 |_Ax| = |a|
+                # |Bx By|    |_Bx| = |c|
+
+                # 上記の
+                # |Ax Ay|
+                # |Bx By|
+                # を生成
+                m = new Matrix2(Ax, Ay, Bx, By)
+                me = m.elements
+
+                # 逆行列を取得
+                # 上記の
+                # |Ax Ay|^-1
+                # |Bx By|
+                # を生成
+                mi  = m.getInvert()
+
+                # 逆行列が存在しない場合はスキップ
+                continue if not mi
+
+                mie = mi.elements
+
+                a = mie[0] * _Ax + mie[2] * _Bx
+                c = mie[1] * _Ax + mie[3] * _Bx
+                b = mie[0] * _Ay + mie[2] * _By
+                d = mie[1] * _Ay + mie[3] * _By
+
+                # 各頂点座標を元に三角形を作り、それでクリッピング
+                g.save()
+                dg.save()
+
+                dg.drawImage(img, 0, 0)
+
+                if lighting
+                    strength = 0
+                    color = new Color 0, 0, 0, 1
+
+                    for l in lights
+                        if l instanceof AmbientLight
+                            strength += l.strength
+
+                        else if l instanceof DirectionalLight
+                            L = l.direction
+                            N = normal.clone().add(L)
+                            factor = N.dot(L)
+                            strength += l.strength * factor
+                            
+                    color.a -= strength
+
+                    if color.a &gt; 0
+                        dg.fillStyle = color.toString()
+                        dg.fillRect 0, 0, width, height
+
+                if fog
+                    fogStrength = 1 - ((fogEnd - z) / (fogEnd - fogStart))
+                    fogStrength = 0 if fogStrength &lt; 0
+                    dg.globalAlpha = fogStrength
+                    dg.globalCompositeOperation = 'source-over'
+                    dg.fillStyle   = fogColor
+                    dg.fillRect 0, 0, width, height
+
+                g.beginPath()
+                g.moveTo(x1, y1)
+                g.lineTo(x2, y2)
+                g.lineTo(x3, y3)
+                g.closePath()
+
+                if @wireframe
+                    g.strokeStyle = 'rgba(255, 255, 255, 0.5)'
+                    g.stroke()
+
+                g.clip()
+
+                g.transform(a, b, c, d,
+                    x1 - (a * uvList[0] * width + c * uvList[1] * height),
+                    y1 - (b * uvList[0] * width + d * uvList[1] * height))
+                g.drawImage(dcv, 0, 0)
+
+                dg.clearRect 0, 0, width, height
+                dg.restore()
+                g.restore()
+ 
+
+        getTransformedPoint: (mat, materials) -&gt;
+
+            results = []
+
+            for m in materials
+                if m instanceof Triangle
+                    vertecies = m.getVerticesByProjectionMatrix(mat)
+                    uvData    = m.texture.uv_data
+                    uvList    = m.texture.uv_list
+
+                    vertex = new Vertex vertecies
+                    vertex.uvData = uvData
+                    vertex.uvList = uvList
+
+                    continue if vertex.getZPosition() &lt; 0
+
+                    vertex.normal = m.getNormal()
+                    results.push vertex
+
+                else if m instanceof Line
+                    vertecies = m.getVerticesByProjectionMatrix(mat)
+                    vertex = new Vertex vertecies
+                    vertex.color = m.color
+
+                    continue if vertex.getZPosition() &lt; 0
+
+                    results.push vertex
+
+                else
+                    tmp = @getTransformedPoint mat, m.children
+                    results = results.concat tmp
+
+            results.sort (a, b) -&gt;
+                 b.getZPosition() - a.getZPosition()
+
+            return results
+
+# ---------------------------------------------------------------------
+
+    class Quaternion
+        constructor: (@t = 0, @v) -&gt;
+
+        set: (@t, @v) -&gt;
+
+        multiply: (A) -&gt;
+            return Quaternion.multiply @, A
+
+        @multiply: (A, B) -&gt;
+
+            # Quaternionの掛け算の公式は以下。
+            # ・は内積、×は外積、U, Vはともにベクトル。
+            # ;の左が実部、右が虚部。
+            # A = (a; U) 
+            # B = (b; V) 
+            # AB = (ab - U・V; aV + bU + U×V)
+
+            Av = A.v
+            Bv = B.v
+
+            # 実部の計算
+            d1 =  A.t * B.t
+            d2 = -Av.x * Bv.x
+            d3 = -Av.y * Bv.y
+            d4 = -Av.z * Bv.z
+            t = parseFloat((d1 + d2 + d3 + d4).toFixed(5))
+
+            # 虚部xの計算
+            d1 = (A.t * Bv.x) + (B.t * Av.x)
+            d2 = (Av.y * Bv.z) - (Av.z * Bv.y)
+            x = parseFloat((d1 + d2).toFixed(5))
+
+            # 虚部yの計算
+            d1 = (A.t * Bv.y) + (B.t * Av.y)
+            d2 = (Av.z * Bv.x) - (Av.x * Bv.z)
+            y = parseFloat((d1 + d2).toFixed(5))
+
+            # 虚部zの計算
+            d1 = (A.t * Bv.z) + (B.t * Av.z)
+            d2 = (Av.x * Bv.y) - (Av.y * Bv.x)
+            z = parseFloat((d1 + d2).toFixed(5))
+
+            return new Quaternion t, new Vector3 x, y, z
+
+    ###*
+        Make rotation quaternion
+        @param {number} radian.
+        @param {Vector3} vector.
+    ###
+    makeRotatialQuaternion = (radian, vector) -&gt;
+    
+        ret = new Quaternion
+        ccc = 0
+        sss = 0
+        axis = new Vector3
+        axis.copy vector
+
+        norm = vector.norm()
+
+        return ret if norm &lt;= 0.0
+
+        axis.normalize()
+
+        ccc = cos(0.5 * radian)
+        sss = sin(0.5 * radian)
+
+        t = ccc
+        axis.multiplyScalar sss
+
+        ret.set t, axis
+
+        return ret
+
+
+    exports.Object3D = Object3D
+    exports.Matrix2  = Matrix2
+    exports.Matrix4  = Matrix4
+    exports.Camera   = Camera
+    exports.Renderer = Renderer
+    exports.Texture  = Texture
+    exports.Triangle = Triangle
+    exports.Scene = Scene
+    exports.Line  = Line
+    exports.Plate = Plate
+    exports.Cube  = Cube
+    exports.Face  = Face
+    #exports.Particle = Particle
+    exports.Texture  = Texture
+    exports.Vector3  = Vector3
+    exports.Color    = Color
+    exports.Quaternion = Quaternion
+    exports.AmbientLight = AmbientLight
+    exports.DirectionalLight = DirectionalLight
+
+    
+do (win = window, doc = window.document, exports = window) -&gt;
+
+    #Import
+    {tan, cos, sin, PI} = Math
+    {Object3D, Line, Color, AmbientLight, DirectionalLight, Plate, Face, Cube, Texture, Triangle, Matrix4, Camera, Renderer, Scene, Vector3, Particle} = window.S3D
+
+    DEG_TO_RAD = PI / 180
+
+    isTouch = 'ontouchstart' of window
+    MOUSE_DOWN = if isTouch then 'touchstart' else 'mousedown'
+    MOUSE_MOVE = if isTouch then 'touchmove' else 'mousemove'
+    MOUSE_UP   = if isTouch then 'touchend' else 'mouseup'
+
+    textureImage = null
+    logoImage    = null
+    photoImage   = null
+    rotX = 0
+    rotY = 0
+
+    renderer = null
+    camera   = null
+    scene    = null
+
+    getVideo = -&gt;
+
+        video = doc.getElementById 'video'
+        video.autoplay = true
+        video.loop = true
+
+        return video
+
+
+    init = -&gt;
+
+        video = getVideo()
+
+        cv  = doc.getElementById 'canvas'
+        ctx = cv.getContext '2d'
+        w = cv.width  = win.innerWidth
+        h = cv.height = win.innerHeight
+        fov = 60
+        aspect = w / h
+
+        cnt = 3
+        img = new Image()
+        logo = new Image()
+        photo = new Image()
+
+        img.onload = -&gt;
+            textureImage = img
+            --cnt or create()
+
+        logo.onload = -&gt;
+            logoImage = logo
+            --cnt or create()
+
+        photo.onload = -&gt;
+            photoImage = photo
+            --cnt or create()
+
+        photo.src = 'http://jsrun.it/assets/y/r/A/V/yrAVl.jpg'
+        logo.src = 'http://jsrun.it/assets/z/1/2/9/z129U.png'
+        img.src = 'http://jsrun.it/assets/k/M/J/J/kMJJS.png'
+
+        camera = new Camera 40, aspect, 0.1, 10000
+        camera.position.x = 10
+        camera.position.y = 50
+        camera.position.z = 200
+        #camera.up = new Vector3 1, 0, 0
+        camera.lookAt new Vector3 0, 0, 0
+        scene    = new Scene
+        renderer = new Renderer cv, '#111'
+        #renderer.fog      = false
+        #renderer.lighting = false
+        #renderer.wireframe = true
+
+        create = -&gt;
+
+            materials1 = [
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+                new Texture(photoImage, [0, 0, 0, 1, 1, 0])
+                new Texture(photoImage, [0, 1, 1, 1, 1, 0])
+            ]
+
+            materials2 = [
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+                new Texture(video, [0, 0, 0, 1, 1, 0])
+                new Texture(video, [0, 1, 1, 1, 1, 0])
+            ]
+
+            cube1 = new Cube 50, 20, 20, 1, 1, 1, materials2
+            cube1.position.z = -50
+            cube1.rotation.z = 30
+
+            cube2 = new Cube 20, 20, 20, 1, 1, 1, materials1
+            cube2.position.z = -150
+            cube2.position.x = 50
+
+            cube3 = new Cube 20, 20, 20, 1, 1, 1, materials1
+            cube3.position.z = -350
+            cube3.position.x = 50
+            cube3.position.y = 80
+
+            plate1 = new Plate 50, 50, new Texture(textureImage, [0.0, 0.5, 0.0, 1.0, 0.5, 0.5]), new Texture(textureImage, [0.0, 1.0, 0.5, 1.0, 0.5, 0.5])
+            plate1.position.x = -50
+            plate1.position.z = -300
+
+            plate2 = new Plate 50, 50, new Texture(video, [0, 0, 0, 1, 1, 0]), new Texture(video, [0, 1, 1, 1, 1, 0])
+            plate2.position.y = -100
+            plate2.position.z = -500
+
+            line1 = new Line(0, 0, -200, 0, 0, 200, new Color(255, 0, 0, 0.3))
+            line2 = new Line(-200, 0, 0, 200, 0, 0, new Color(0, 255, 0, 0.3))
+            line3 = new Line(0, 200, 0, 0, -200, 0, new Color(0, 0, 255, 0.3))
+
+            size = 300
+            container = new Object3D
+            container.position.x = -(size * 0.5)
+            container.position.z = -(size * 0.5)
+
+            for i in [0..(size / 10)]
+                z = i * 10
+                line = new Line(0, 0, z, size, 0, z, new Color(255, 255, 255, 0.3))
+                container.add line
+
+            for i in [0..(size / 10)]
+                x = i * 10
+                line = new Line(x, 0, 0, x, 0, size, new Color(255, 255, 255, 0.3))
+                container.add line
+
+            ambLight = new AmbientLight(0.1)
+            dirLight = new DirectionalLight(0.8, (new Vector3(-1, 1, 1)).normalize())
+           
+            scene.add ambLight
+            scene.add dirLight
+
+            scene.add plate1
+            scene.add plate2
+            scene.add container
+            scene.add cube1
+            scene.add cube2
+            scene.add cube3
+            scene.add line1
+            scene.add line2
+            scene.add line3
+
+            angle = 0
+
+            do _loop = -&gt;
+                angle = (++angle % 360)
+                plate1.rotation.z = angle
+                plate2.rotation.x = angle * 3
+                cube1.rotation.z = angle
+                cube2.rotation.x = angle * 2
+                cube3.rotation.x = angle * 3
+                cube3.rotation.y = angle * 3
+                cube3.rotation.z = angle * 3
+                renderer.render scene, camera
+                setTimeout _loop, 32
+
+    dragging = false
+    prevX = 0
+    prevY = 0
+
+    # Events
+    win.addEventListener 'mousewheel', (e) -&gt;
+        camera.position.z += (e.wheelDelta / 100)
+        renderer.render scene, camera
+        e.preventDefault()
+    , false
+
+    base = 100
+    startZoom = 0
+    document.addEventListener 'gesturechange', (e) -&gt;
+        num =  e.scale * base - base
+        camera.position.z = startZoom - num
+        renderer.render scene, camera
+        e.preventDefault()
+    , false
+    
+    document.addEventListener 'gesturestart', -&gt;
+        startZoom = camera.position.z
+    , false
+
+    doc.addEventListener 'touchstart', (e) -&gt;
+        e.preventDefault()
+    , false
+
+    doc.addEventListener MOUSE_DOWN, (e) -&gt;
+        dragging = true
+        prevX = if isTouch then e.touches[0].pageX else e.pageX
+        prevY = if isTouch then e.touches[0].pageY else e.pageY
+    , false
+
+    doc.addEventListener MOUSE_MOVE, (e) -&gt;
+        return if dragging is false
+
+        pageX = if isTouch then e.touches[0].pageX else e.pageX
+        pageY = if isTouch then e.touches[0].pageY else e.pageY
+
+        rotY += (prevX - pageX) / 100
+        rotX += (prevY - pageY) / 100
+
+        camera.setWorld(Matrix4.multiply((new Matrix4()).rotationY(rotY), (new Matrix4()).rotationX(rotX)))
+
+        prevX = pageX
+        prevY = pageY
+        
+        renderer.render scene, camera
+    , false
+
+    doc.addEventListener MOUSE_UP, (e) -&gt;
+        dragging = false
+    , false
+
+    doc.addEventListener 'DOMContentLoaded', init, false
+</code>
+<code>&lt;div&gt;
+    &lt;canvas id=&quot;canvas&quot; width=&quot;400&quot; height=&quot;300&quot;&gt;&lt;/canvas&gt;
+    &lt;video src=&quot;http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4&quot; id=&quot;video&quot; autoplay style=&quot;display: none;&quot;&gt;&lt;/video&gt;
+&lt;/div&gt;</code>
+<code>* {
+    margin: 0;
+    padding: 0;
+}</code>
+</noscript>
+
+<!-- p class="btnFullScreen"><a href="http://jsdo.it/xl1/fA1h/read">Code Fullscreen</a></p -->
+<!-- / .boxCode --></div>
+<div class="boxViewer">
+<iframe src="" width="465" height="465" id="generated_site">
+use an iframe compat browser, deer
+</iframe>
+<div id="boxThumbViewer">
+<p id="thumbnail"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/f/A/1/fA1h.jpg?t=1365310061" width="465" height="465" /></p>
+<p class="btnPlayViewer"><a href="javascript:void(0);" id="play_button" onclick="JSDoIt.CodeShow.play(); return false;"><img src="/img/common/play_button.png" alt="play" class="btn" /></a></p>
+<!-- / #bixThumbViewer --></div>
+<!-- /.boxViewer --></div>
+</div>
+
+<div id="codeUtilties" class="group">
+	<ul class="utils group">
+		<li>
+			<form id="form_fork_sub" method="post" action="http://jsdo.it/xl1/fA1h/fork">
+				<input type="submit" value="Fork" class="btnBase btnType5 btnSmall" id="fork_button_sub" name="btnFork" />
+                                <input type="hidden" name="token" value="" />          
+			</form>
+		</li>		<li id="play_on_games_button" style="display: none;"><a href="http://games.jsdo.it/xl1/fA1h" class="btnBase btnType1 btnSmall"><span>Play on jsdo.it games</span></a><p class="arrow"><img src="/img/code/game/arrow.png" alt="" /></p></li>
+		<li>
+			<ul class="btnGroup group">
+				<li class="tab" data-tab-name="author"><span class="btnBase btnType6 btnSmall">Author</span></li>
+				<li class="tab active" data-tab-name="socialFeedback"><span class="btnBase btnType6 btnSmall active">Share</span></li>
+				<li class="tab" data-tab-name="embed"><span class="btnBase btnType6 btnSmall">ブログに埋め込む</span></li>
+				<li class="tab" data-tab-name="qrcode"><span class="btnBase btnType6 btnSmall">QR</span></li>
+				<li class="tab" data-tab-name="tag"><span class="btnBase btnType6 btnSmall">Tag</span></li>
+			</ul>
+		</li>
+		<li class="download"><a href="http://jsdo.it/xl1/fA1h/download" class="btnBase btnType6 btnSmall btnInvisible" title="download"><img src="/img/common/ico/ico_download_01.png" width="17" height="13" alt="download" title="download">Download</a></li>
+	</ul>
+	<div class="utilDetails clearfix">
+		<section class="blockCodeUtil games">
+		<div class="col2">
+		<div>
+		<a href="http://games.jsdo.it" target="_blank"><img src="/img/code/jsdoitGames.png" id="jsdoitGamesImage" width="114" height="116"></a>
+
+		</div>
+		<div>
+		<p class="msgComplete">Complete!</p>
+		<div class="blockInputFormStyle1">
+		<form id="form_sub_games" action="/api/code/post_to_games" data-saved="0">
+		<input type="hidden" name="token" value="" />
+		<input type="hidden" name="uid" value="fA1h" />
+		<div class="inputItem description">
+		<h2>Description <span>What kind of game?</span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<textarea required="required" name="description"></textarea>
+		</div>
+		</div>
+		<div class="inputItem device">
+		<h2>Control Device <span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<table>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_jwc.png" alt="jsdo.it websocket controller" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="1" name="support_spctrl" value="1"  />Smartphone Controller<a href="/controller">jsdo.it WebSocket Controller</a>»</label>
+		<div class="detail device1">
+		<ul>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_arrow.png" alt=""></p>
+		<input type="text" name="stick" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_start.png"></p>
+		<input type="text" name="button_start" /value="" >
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_a.png"></p>
+		<input type="text" name="button_a" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_b.png"></p>
+		<input type="text" name="button_b" value="" />
+		</li>
+		</ul>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_mouse.png" alt="Mouse" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="3" name="support_mouse" value="1"  />Mouse</label>
+		<div class="detail device3">
+		<textarea name="mouse" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_keyboard.png" alt="keyboard" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="4" name="support_keyboard" value="1"  />Keyboard</label>
+		<div class="detail device4">
+		<textarea name="keyboard" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_smartphone.png" alt="smartphone" /></p>
+		</th><td>
+		<label><input type="checkbox" class="flag" data-device="2"  name="support_touchdevice" value="1"  />Touch Device</label>
+		<div class="detail device2">
+		<textarea name="touchdevice" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		</table>
+		</div>
+		</div>
+		<div class="inputItem screen valid">
+		<h2>Fullscreen<span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<ul>
+		<li><label><input type="radio" name="support_fullscreen" value="1" checked> Activated</label></li>
+		<li><label><input type="radio" name="support_fullscreen" value="0" > Inactivated</label></li>
+		</ul>
+		</div>
+		</div>
+		<div class="submit">
+		<a id="game_delete_button" href="javascript:void(0)" class="btnBase btnType6 btnSmall btnInvisible" >jsdo.it games から削除する</a>
+		<a id="game_submit_button" class="btnBase btnType5" disabled="disabled" href="javascript:void(0)">Submit</a>
+		</div>
+		</form><!-- form_sub_games  -->
+		<!-- / .blockInputFormStyle1 --></div>
+		</div>
+		</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil author" itemscope itemtype="http://data-vocabulary.org/Person">
+			<div class="col2 group">
+				<div class="image">
+					<p class="thumb"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="100" height="100" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+				<!-- / .image --></div>
+				<div class="information">
+					<h1 class="hidden">Author</h1>
+					<div class="user">
+						<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author"><span itemprop="name">xl1</span></a></p>
+					</div>
+					<ul class="metas group">
+                        
+                        
+                        
+                        
+					</ul>
+					<div class="discription markdown">
+						
+
+					</div>
+				<!-- / .information --></div>
+			</div>
+		<!-- / .author --></section>
+		<section class="blockCodeUtil socialFeedback active">
+			<ul class="group">
+			<li class="facebook"><fb:like href="http://jsdo.it/xl1/fA1h" send="false" layout="button_count" width="55" show_faces="false" font="verdana"></fb:like></li>
+			
+			<li class="stumbleupon"><script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script></li>
+			
+			  <a href="http://twitter.com/share" class="twitter-share-button" data-text="forked: Canvas context 2Dで座標変換を実装してみる #jsdoit" data-count="horizontal" data-related="jsdoit_team">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			  
+			<li class="plusone"><g:plusone size="medium" href="http://jsdo.it/xl1/fA1h"></g:plusone></li>
+			</ul>
+		<!-- / .socialFeedback --></section>
+		<section class="blockCodeUtil embed">
+			<div class="col2 widgetDesignBox group">
+				<div class="image">
+					<img src="/img/code/widget_design_view.png" width="660px" height="116px">
+				</div>
+				<div>
+					<div class="blockInputFormStyle1">
+						<div class="inputItem">
+							<h2>Default Panel</h2>
+							<div class="comment">
+								<ul class="select selectDefaultPanel">
+									<li><label><input type="radio" name="defaultTab" value="play">Auto play</label></li>
+									<li><label><input type="radio" name="defaultTab" value="screenshot">Screenshot</label></li>
+									<li><label><input type="radio" name="defaultTab" value="readme" checked="checked">Readme</label></li>
+									<li><label><input type="radio" name="defaultTab" value="javascript">JavaScript</label></li>
+									<li><label><input type="radio" name="defaultTab" value="html">HTML</label></li>
+									<li><label><input type="radio" name="defaultTab" value="css">CSS</label></li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>Size</h2>
+							<div class="comment">
+								<ul class="selectEmbedSize">
+									<li>Width: <input type="number" class="width inline" min="465" value="465" style="width:60px;"> px</li>
+									<li>Height: <input type="number" class="height inline" min="496" value="496" style="width:60px;"> px</li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>code</h2>
+							<div class="comment">
+								<textarea readonly="readonly" onclick="javascript:this.select();" data-url="http://jsdo.it/blogparts/fA1h/js">&lt;script type=&quot;text/javascript&quot; src=&quot;http://jsdo.it/blogparts/fA1h/js&quot;&gt;&lt;/script&gt;</textarea>
+							</div>
+						</div>
+					<!-- / .blockInputFormStyle1 --></div>
+				</div>
+			</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil qrcode">
+			<div class="col2 group">
+				<div>
+					<p class="code"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://jsdo.it" width="150" height="150" alt="QR Code"></p>
+				</div>
+				<div> 
+				</div>
+			</div>
+		<!-- / .qrcode --></section>
+		<section class="blockCodeUtil tag">
+			<ul class="listTags">
+			<li><a href="http://jsdo.it/tag/3D" rel="tag">3D</a></li>
+			<li><a href="http://jsdo.it/tag/canvas" rel="tag">canvas</a></li>
+			<li><a href="http://jsdo.it/tag/coffeescript" rel="tag">coffeescript</a></li>
+			<li><a href="http://jsdo.it/tag/HTML5" rel="tag">HTML5</a></li>
+			<li><a href="http://jsdo.it/tag/html5_elements%26api" rel="tag">html5_elements&amp;api</a></li>
+			<li><a href="http://jsdo.it/tag/library%26test" rel="tag">library&amp;test</a></li>
+			<li><a href="http://jsdo.it/tag/%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3" rel="tag">アニメーション</a></li>
+			<li><a href="http://jsdo.it/tag/%E5%BA%A7%E6%A8%99%E5%A4%89%E6%8F%9B" rel="tag">座標変換</a></li>
+			</ul>
+		<!-- / .tag --></section>	
+	<!-- / .utilDetails --></div>
+<!-- / #codeUtilties --></div>
+
+<!-- / .viewer --></section>
+
+<!-- /.code --></section>
+
+<section class="discussion">
+	<header><h1 class="ttlStyle2">Discussion</h1></header>
+	<div>
+		<ul>
+		</ul>
+		<p class="post"><a href="/qa/create?code_uri=http://jsdo.it/xl1/fA1h" class="btnBase btnType1">Questions on this code?</a></p>
+	</div>
+<!-- / .discussion --></section>
+
+<div class="ad_super_bnr btnT"><!-- jsdo.it_codepage_fullbnr_en --> <script type='text/javascript'> GA_googleFillSlot("jsdo.it_codepage_fullbnr_en"); </script>
+<!-- /.ad_super_bnr --></div>
+
+<section>
+<header><h1 class="ttlStyle2">Tags</h1></header>
+
+<ul class="listTags group">
+    
+    <li><a href="http://jsdo.it/tag/3D" title="3D" class="">3D</a></li>
+    
+    <li><a href="http://jsdo.it/tag/HTML5" title="HTML5" class="">HTML5</a></li>
+    
+    <li><a href="http://jsdo.it/tag/canvas" title="canvas" class="">canvas</a></li>
+    
+    <li><a href="http://jsdo.it/tag/coffeescript" title="coffeescript" class="">coffeescript</a></li>
+    
+    <li><a href="http://jsdo.it/tag/html5_elements%26api" title="html5_elements&amp;api" class="">html5_elements&amp;api</a></li>
+    
+    <li><a href="http://jsdo.it/tag/library%26test" title="library&amp;test" class="">library&amp;test</a></li>
+    
+    <li><a href="http://jsdo.it/tag/%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3" title="アニメーション" class="">アニメーション</a></li>
+    
+    <li><a href="http://jsdo.it/tag/%E5%BA%A7%E6%A8%99%E5%A4%89%E6%8F%9B" title="座標変換" class="">座標変換</a></li>
+</ul>
+
+<!-- /.tags --></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /#codeDetail --></article>
+
+<div id="diff_container"></div>
+<div id="diff_controller">
+  <a href="#" id="diff_close_button"><img src="/img/code/close.gif" class="btnT"></a>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=107163819375320&amp;xfbml=1"></script>
+
+<!-- /#body --></div>
+<!--/[[[ CONTENT-AREA ]]]-->
+<footer id="siteFooter" class="layoutWideContainer">
+<div class="layoutContainer layoutLiquid group">
+<div class="apps group">
+<div class="col1">
+<a href="/users"><p class="userRanking">User ranking</p></a>
+<a href="/codes/ranking"><p class="codeRanking">Code ranking</p></a>
+</div>
+<div class="col2">
+<a href="/event/topics">
+<section class="event">
+<h1>Topics &amp; Events</h1>
+<p>"I want to make something but don't know what to make." "We want to know the newest trends!" Responding to those voices, we are regularly hosting events and updating topics.</p>
+</section>
+</a>
+</div>
+<div class="col3">
+<a href="/qa">
+<section class="discussions">
+<h1>Discussions</h1>
+<p>Any questions? Ask jsdo.it users! You can post questions together with your code. You can also get answers supported by a code.</p>
+</section>
+</a>
+</div>
+<!-- / .apps --></div>
+<section class="account">
+<h1>Completely Free Account</h1>
+<p>
+<form method="post" action="/code/new">
+<input type="hidden" name="token" value="">
+<p class="btnLabel labelFree"><input type="submit" class="btnBase btnType5" value="Sign up Free and Start coding"></p>
+</form>
+</p>
+</section>
+<div class="globals group">
+<nav>
+<ul>
+
+<li><a href="http://twitter.com/#!/jsdoit_team" class="external" rel="external">@jsdoit_team</a></li>
+<li><a href="http://www.facebook.com/jsdo.it" target="_blank" class="external" rel="external">Facebook</a></li>
+
+
+</ul>
+<ul>
+<li><a href="/about" title="What's jsdo.it?">About</a></li>
+<li><a href="/assets">Assets</a></li>
+<li><a href="/help">Help</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/apidoc/">API</a></li>
+<li><a href="/terms">Term of use</a></li>
+<li><a href="/privacy_policy/">Privacy policy</a></li>
+<li><a href="/help#help_contact">Contact</a></li>
+</ul>
+</nav> 
+<p id="copyright" class="vcard"><small>Site Design &copy; <a href="http://www.jsdo.it/" title="jsdoit Inc." class="external fn org url">jsdoit Inc.</a> All Rights Reserved.</small></p>
+<!-- / .globals --></div>
+</div>
+<!-- / #siteFooter --></footer>
+
+
+<!--/#container--></div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15793157-5']);
+  _gaq.push(['_setDomainName', '.jsdo.it']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['_trackPageview', '/code/show'+location.pathname]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script type="text/javascript">
+var path  = "code/show";
+var token = "";
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/js/do.js?1441025678"></script>
+ <script type="text/javascript" src="/js/notification.js?1441025678"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+
+<script type="text/javascript" src="/js/codemirror/codemirror-compressed.js?1441025678"></script>
+</body>
+</html>

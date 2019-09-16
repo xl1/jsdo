@@ -1,0 +1,1013 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"  class="osOther" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+
+<title>input:active で animation-play-state を paused すると本当に押しやすくなるか - jsdo.it - Share JavaScript, HTML5 and CSS</title>
+
+<meta property="qc:admins" content="21506643427614" />
+<meta property="wb:webmaster" content="5c8153403c54c98f" />
+<meta name="description" content="input:active で animation-play-state を paused すると本当に押しやすくなるか by xl1 @ jsdo.it - share JavaScript, HTML5 and CSS - jsdo.it is a service to write JavaScript, HTML5, CSS in your browser and share it. You can copy and modify others' code. And also Ask questions about JavaScript, HTML5, CSS" />
+
+<meta name="keywords"  content="judo.it,JavaScript,HTML5,CSS,jsdoit" />
+
+<meta name="author" content="jsdoit Inc." />
+<meta name="license" content="&#169;jsdoit Inc." />
+
+<meta property="og:site_name" content="jsdo.it" />
+<meta property="fb:page_id" content="138382942860000" />
+<meta property="fb:app_id" content="104748116268345" />
+<meta property="og:locale" content="ja_JP">
+
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="http://jsdo.it/xl1/bzf5" />
+
+<meta property="og:description" content="input:active で animation-play-state を paused すると本当に押しやすくなるか by xl1 @ jsdo.it - input:active で animation-play-state を paused すると本当に押しやすくなるか追試
+
+結論としては押しやすくなっているような気がする
+サイズが大きい場合はもとから押しやすいので恩恵がよくわからない
+
+
+しかしこれなんの役に立つの……
+
+
+### 2013/8/31 更新
+Chrome で button の形が変わって見えなくなってたので background:silver にした" />
+<meta property="twitter:description" content="input:active で animation-play-state を paused すると本当に押しやすくなるか by xl1 @ jsdo.it - input:active で animation-play-state を paused すると本当に押しやすくなるか追試
+
+結論としては押しやすくなっているような気がする
+サイズが大きい場合はもとから押しやすいので恩恵がよくわからない
+
+
+しかしこれなんの役に立つの……
+
+
+### 2013/8/31 更新
+Chrome で button の形が変わって見えなくなってたので background:silver にした" />
+
+
+
+
+<meta property="og:image" content="http://jsdo-static-contents.s3.amazonaws.com/images/capture/b/z/f/bzf5.jpg?t=1377942219" />
+<meta property="og:image:width" content="465" />
+<meta property="og:image:height" content="465" />
+
+<meta name="twitter:site" content="@jsdo_it">
+<meta name="twitter:card" content="summary">
+
+
+
+
+<meta property="og:title" content="input:active で animation-play-state を paused すると本当に押しやすくなるか" />
+<meta name="twitter:title" content="input:active で animation-play-state を paused すると本当に押しやすくなるか" />
+
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/favicon.ico" />
+<link rel="start" href="/" title="home" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/common.css?1468627570" />
+
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/code.css?1468627570" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/codemirror.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/themes.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/SyntaxHighlighter.css?1441025678" />
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<!--[if IE 9]><body class="ie9 i_default"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><body class="i_default"><!--<![endif]-->
+
+<script type="text/javascript">
+var language = "i_default"; // used in l()
+</script>
+
+<!-- script 'type="text/javascript" src="https://www.google.com/jsapi"></script -->
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- adtype =  -->
+<!-- Google DoubleClick 広告のスクリプトページ -->
+<div id="container" class="codepage contents">
+<!--[[[ HEADER-AREA ]]]-->
+<!-- country = JP -->
+<header id="headerGlobal" class="group">
+<div class="sub">
+<div class="layoutContainer layoutLiquid group">
+
+<!-- PR欄&リンク -->
+<style>
+#headerGlobal .pr a:before {
+    content: "重要なお知らせ";
+}
+#headerGlobal .pr a {
+    color: red;
+    font-size: 14px;
+    text-shadow: none;
+    padding-right: 11px;
+}
+</style>
+<p class="pr" style="color:red; font-"><a href="http://jsdo.it/blog/2019/07/jsdoit-1.html">
+【重要】サービス終了のお知らせ</a></p>
+<!-- PR欄&リンク -->
+
+
+<ul id="headerLanguage">
+<li class="column">
+<span class="header_menu_column" id="header_menu_column_1"><a href="#"><span class="thumb"></span>English</a></span>
+<div class="navGlobalSub">
+<ul class="shadowLayor1">
+<li><a href="?lang=en" class="usa">English</a></li>
+<li style="display:none;"><a href="#" class="kor">한국어</a></li>
+<li><a href="?lang=zh-CN" class="chn">中文</a></li>
+<li><a href="?lang=ja" class="jpn">日本語</a></li>
+</ul>
+</div>
+</li>
+<!-- / #headerAccount --></ul>
+<ul id="navGlobal">
+<li><a href="/tags" title="Tags">Tags</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/event/topics" title="Topics &amp; Events">Topics &amp; Events</a></li>
+<li><a href="/qa" title="Discussions">Discussions</a></li>
+<li><a href="http://games.jsdo.it" title="jsdo.it HTML5-Games">HTML5-Games</a></li>
+<!-- / #navGlobal --></ul>
+<!-- / .layoutContainer --></div>
+<!-- / .sub --></div>
+<div class="main">
+<div class="layoutContainer layoutLiquid group">
+
+<h1 id="siteName"><a href="/"><img src="/img/common/sitename_03.png" width="79" height="39" alt="jsdo.it - Share JavaScript, HTML5 and CSS" /></a></h1>
+
+<div id="btnHeaderCodeNew">
+<form method="post" action="/code/new">
+<fieldset>
+<p><input type="submit" value="Start coding"></p>
+</fieldset>
+<input type="hidden" name="token" value="">
+</form>
+<!-- / #btnHeaderCodeNew --></div>
+
+<div id="navGlobalSearch">
+<form method="get" action="/search" class="search">
+<input id="inputSearch" type="text" name="q" class="query input-prompt" autocomplete="off" placeholder="Search"><input type="submit" value="" class="button">
+</form>
+<!--/#navGlobalSearch--></div>
+
+
+
+
+<div id="headerSignin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signup">Create account</a></p>
+<p>or</p>
+<div class="signin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signin">LOGIN</a></p>
+<div class="panel">
+<div class="shadowLayor1">
+<div class="service">
+<ul>
+<li class="google"><a href="/login/google?login=1" onClick="_gaq.push(['_trackPageview', '/login/service/google']);">Login with Google</a></li>
+<li class="facebook"><a href="/login/facebook" onClick="_gaq.push(['_trackPageview', '/login/service/facebook']);">Login with Facebook</a></li>
+<li class="twitter"><a href="/login/twitter" onClick="_gaq.push(['_trackPageview', '/login/service/twitter']);">Login with Twitter</a></li>
+
+
+
+<li class="other"><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);">Other login options</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- / #headerSignin --></div>
+
+
+
+<!-- / .layoutContainer --></div>
+<!-- / .main --></div>
+
+
+
+<div id="navPrimaryTag">
+<div class="layoutContainer layoutLiquid">
+<nav class="group">
+<div class="search">
+<form method="get" action="/search">
+<input type="text" placeholder="Search" name="q" results="10" class="text" /><input type="submit" value="Search" class="hidden">
+</form>
+</div>
+<ul class="group">
+<li class="application"><a href="/tag/application" >Application</a></li>
+<li class="ui"><a href="/tag/user_interface" >User Interface</a></li>
+<li class="html5"><a href="/tag/html5_elements&amp;api" >HTML5 Elements &amp; API</a></li>
+<li class="css"><a href="/tag/css" >CSS</a></li>
+<li class="art"><a href="/tag/art&amp;design" >Art &amp; Design</a></li>
+<li class="game"><a href="/tag/game" ">Game</a></li>
+<li class="library"><a href="/tag/library&amp;test" >Library &amp; Test</a></li>
+<li class="smartphone"><a href="/tag/smartphones&amp;tablets" >Smartphones &amp; Tablets</a></li>
+<li class="all"><a href="/codes">All</a></li>
+</ul>
+</nav>
+<!-- / .layoutContainer --></div>
+<!-- / #navPrimaryTag --></div>
+
+
+
+
+
+
+<!-- / #headerGlobal --></header>
+<!--[[[ /HEADER-AREA ]]]-->
+
+
+<!--[[[ CONTENT-AREA ]]]-->
+<div id="body">
+<article id="codeDetail" class="layoutContainer">
+
+
+
+<section class="code">
+<header class="group">
+
+<div class="main">
+<h1><a href="http://jsdo.it/xl1/bzf5" rel="bookmark">input:active で animation-play-state を paused すると本当に押しやすくなるか</a></h1>
+<div class="author group" itemscope itemtype="http://data-vocabulary.org/Person">
+<p class="image"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="30" height="30" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author" itemprop="url"><span itemprop="name">xl1</span></a></p>
+<div class="connection">
+	<div class="follow"><span onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="btnBase btnType2 btnSmall btnFollow">Follow</span></div>
+</div>
+<time datetime="2013-08-31T18:43:34">2013-08-31 18:43:34</time>
+<p class="license">License: 
+  <a href="/help#help_license">MIT License</a>
+</p>
+</div>
+<!-- / .main --></div>
+
+<div class="counts">
+<div>
+<span id="fork_button" class="fork btnBase btnType5">
+<dl>
+<dt>Fork</dt><dd>2</dd>
+</dl>
+</span>
+</div>
+<div>
+<a href="http://jsdo.it/login?redirect=http%3A%2F%2Fjsdo.it%2Fxl1%2Fbzf5" class="favorite btnBase btnType6 btnSmall">
+<span class="favoriteIcon"><img src="/img/common/ico/ico_fav_02_shadow.png" width="15px" height="12px" /></span><dl class="group">
+<dt>Fav</dt><dd>2</dd>
+</dl>
+</a><div href="/" class="pv">
+<dl class="group">
+<dt>View</dt><dd>4479</dd>
+</dl>
+</div>
+</div>
+<!-- / .counts --></div>
+</header>
+
+<script type="text/javascript">
+var user = {
+  screen_name: "xl1"
+};
+</script>
+
+
+<div class="fullscreen group">
+<div class="inner">
+<ul class="controller">
+<li class="btnBase btnType6 btnSmall btnInvisible btnStart" id="btnPlay" onclick="JSDoIt.CodeShow.play(); return false;"><span>Play</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnStop" id="btnStop" style="display: none;" onclick="JSDoIt.CodeShow.stop(); return false;"><span>Stop</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnReload" id="btnReload" style="display: none;" onclick="JSDoIt.CodeShow.reload(); return false;"><span>Reload</span></li>
+</ul>
+<p><a href="http://jsdo.it/xl1/bzf5/fullscreen" class="btnBase btnType6 btnSmall btnInvisible btnFullscreen" title="Fullscreen preview"><span>Fullscreen</span></a></p>
+<p><span title="Smart Phone Preview" class="btnBase btnType6 btnSmall btnInvisible btnSmartphone" data-size="width=320,height=480"><span>Smart Phone</span></span></p>
+<p><a href="http://jsdo.it/xl1/bzf5/tree" class="btnBase btnType6 btnSmall btnInvisible"><span>Fork tree</span></a></p>
+</div>
+</div>
+
+<fieldset>
+
+<section class="viewer group">
+
+<div class="group areaCodeViewer">
+<div class="boxCode" id="boxShowCode"><header>
+<ul class="group">
+<li class="description active" data-target-tab="boxEditDescription"><span>Readme</span></li>
+<li class="js" data-target-tab="boxEditJS">JavaScript <small>0 lines</small></li>
+<li class="html" data-target-tab="boxEditHTML">HTML <small>19 lines</small></li>
+<li class="css" data-target-tab="boxEditCSS">CSS <small>57 lines</small></li>
+</ul>
+</header>
+
+
+<section id="boxEditDescription">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeDescription">
+
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div>input:active で animation-play-state を paused すると本当に押しやすくなるか追試<br />
+<br />
+結論としては押しやすくなっているような気がする<br />
+サイズが大きい場合はもとから押しやすいので恩恵がよくわからない<br />
+<br />
+<br />
+しかしこれなんの役に立つの……<br />
+<br />
+<br />
+### 2013/8/31 更新<br />
+Chrome で button の形が変わって見えなくなってたので background:silver にした</div>
+
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditJS">
+<ul class="tabCode group">
+    <li title="input:active で animation-play-state を paused すると本当に押しやすくなるか" class="selected tabJS initialTab"><span id="primaryTabTitle">input:active で animation-play-state を paused すると本当に押しやすくなるか</span></li></ul>
+<div class="code" id="boxCodeJS"> 
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeJS" data-lang="js"></textarea></div><!-- / .code --></div>
+<!-- / #boxEditJS --></section>
+
+<section id="boxEditHTML">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeHTML">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeHTML">&lt;p&gt;
+  &lt;h1&gt;&amp;lt;input&amp;gt; を押せると青色になります&lt;/h1&gt;
+
+  (a) :active で animation-play-state 操作なし
+  &lt;input type=&quot;checkbox&quot; class=&quot;ia&quot;&gt;
+
+  (b) :active で animation-play-state: paused
+  &lt;input type=&quot;checkbox&quot; class=&quot;ib&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;h1&gt;&amp;lt;input&amp;gt; のサイズが大きい場合&lt;/h1&gt;
+    
+  (a') :active で animation-play-state 操作なし
+  &lt;input type=&quot;checkbox&quot; class=&quot;ia large&quot;&gt;
+
+  (b') :active で animation-play-state: paused
+  &lt;input type=&quot;checkbox&quot; class=&quot;ib large&quot;&gt;
+&lt;/p&gt;</textarea></div>
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditCSS">
+<ul class="tabCode group">
+    <li title="input:active で animation-play-state を paused すると本当に押しやすくなるか" class="selected tabCSS initialTab"><span id="primaryTabTitle">input:active で animation-play-state を paused すると本当に押しやすくなるか</span></li></ul>
+<div class="code" id="boxCodeCSS">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeCSS" data-lang="css">@-webkit-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-moz-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-ms-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-o-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+h1 {
+    font-size: large;
+}
+input {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: silver;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -ms-appearance: button;
+    -o-appearance: button;
+    appearance: button;
+    -webkit-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -moz-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -ms-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -o-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+}
+input:checked {
+    background: blue;
+}
+input:active {
+    background: pink;
+}
+input.large {
+    width: 100px;
+    height: 100px;
+}
+input.ib:active {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}</textarea></div><!-- / .code --></div>
+<!-- / #boxEditCSS --></section>
+
+<script type="text/javascript">
+  var theme               = "default";
+  var uid                 = "bzf5";
+//  var basefiles           = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+//  var editorjs            = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+  var basefiles           = "/js/codemirror/basefiles.js".substr(15); // "basefiles.js?1278486952"
+  var editorjs            = "/js/codemirror/editor.js".substr(15);
+  var has_long_line       = {};
+  has_long_line["js"]     = 0;
+  has_long_line["css"]    = 0;
+  has_long_line["html"]   = 0;
+
+  // 1st is initial
+  var initial_tabs = { js: [""], css: [""] };
+  var code_site_uri = "http://jsrun.it/xl1/bzf5";
+  var is_danger     = 0; // 1 or 0
+  var lines         = [ 0,19,57 ];
+</script><noscript>
+<code>input:active で animation-play-state を paused すると本当に押しやすくなるか追試
+
+結論としては押しやすくなっているような気がする
+サイズが大きい場合はもとから押しやすいので恩恵がよくわからない
+
+
+しかしこれなんの役に立つの……
+
+
+### 2013/8/31 更新
+Chrome で button の形が変わって見えなくなってたので background:silver にした</code>
+<code></code>
+<code>&lt;p&gt;
+  &lt;h1&gt;&amp;lt;input&amp;gt; を押せると青色になります&lt;/h1&gt;
+
+  (a) :active で animation-play-state 操作なし
+  &lt;input type=&quot;checkbox&quot; class=&quot;ia&quot;&gt;
+
+  (b) :active で animation-play-state: paused
+  &lt;input type=&quot;checkbox&quot; class=&quot;ib&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;h1&gt;&amp;lt;input&amp;gt; のサイズが大きい場合&lt;/h1&gt;
+    
+  (a') :active で animation-play-state 操作なし
+  &lt;input type=&quot;checkbox&quot; class=&quot;ia large&quot;&gt;
+
+  (b') :active で animation-play-state: paused
+  &lt;input type=&quot;checkbox&quot; class=&quot;ib large&quot;&gt;
+&lt;/p&gt;</code>
+<code>@-webkit-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-moz-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-ms-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-o-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+h1 {
+    font-size: large;
+}
+input {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: silver;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -ms-appearance: button;
+    -o-appearance: button;
+    appearance: button;
+    -webkit-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -moz-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -ms-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -o-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+}
+input:checked {
+    background: blue;
+}
+input:active {
+    background: pink;
+}
+input.large {
+    width: 100px;
+    height: 100px;
+}
+input.ib:active {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}</code>
+</noscript>
+
+<!-- p class="btnFullScreen"><a href="http://jsdo.it/xl1/bzf5/read">Code Fullscreen</a></p -->
+<!-- / .boxCode --></div>
+<div class="boxViewer">
+<iframe src="" width="465" height="465" id="generated_site">
+use an iframe compat browser, deer
+</iframe>
+<div id="boxThumbViewer">
+<p id="thumbnail"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/b/z/f/bzf5.jpg?t=1377942219" width="465" height="465" /></p>
+<p class="btnPlayViewer"><a href="javascript:void(0);" id="play_button" onclick="JSDoIt.CodeShow.play(); return false;"><img src="/img/common/play_button.png" alt="play" class="btn" /></a></p>
+<!-- / #bixThumbViewer --></div>
+<!-- /.boxViewer --></div>
+</div>
+
+<div id="codeUtilties" class="group">
+	<ul class="utils group">
+		<li>
+			<form id="form_fork_sub" method="post" action="http://jsdo.it/xl1/bzf5/fork">
+				<input type="submit" value="Fork" class="btnBase btnType5 btnSmall" id="fork_button_sub" name="btnFork" />
+                                <input type="hidden" name="token" value="" />          
+			</form>
+		</li>		<li id="play_on_games_button" style="display: none;"><a href="http://games.jsdo.it/xl1/bzf5" class="btnBase btnType1 btnSmall"><span>Play on jsdo.it games</span></a><p class="arrow"><img src="/img/code/game/arrow.png" alt="" /></p></li>
+		<li>
+			<ul class="btnGroup group">
+				<li class="tab" data-tab-name="author"><span class="btnBase btnType6 btnSmall">Author</span></li>
+				<li class="tab active" data-tab-name="socialFeedback"><span class="btnBase btnType6 btnSmall active">Share</span></li>
+				<li class="tab" data-tab-name="embed"><span class="btnBase btnType6 btnSmall">ブログに埋め込む</span></li>
+				<li class="tab" data-tab-name="qrcode"><span class="btnBase btnType6 btnSmall">QR</span></li>
+				<li class="tab" data-tab-name="tag"><span class="btnBase btnType6 btnSmall">Tag</span></li>
+			</ul>
+		</li>
+		<li class="download"><a href="http://jsdo.it/xl1/bzf5/download" class="btnBase btnType6 btnSmall btnInvisible" title="download"><img src="/img/common/ico/ico_download_01.png" width="17" height="13" alt="download" title="download">Download</a></li>
+	</ul>
+	<div class="utilDetails clearfix">
+		<section class="blockCodeUtil games">
+		<div class="col2">
+		<div>
+		<a href="http://games.jsdo.it" target="_blank"><img src="/img/code/jsdoitGames.png" id="jsdoitGamesImage" width="114" height="116"></a>
+
+		</div>
+		<div>
+		<p class="msgComplete">Complete!</p>
+		<div class="blockInputFormStyle1">
+		<form id="form_sub_games" action="/api/code/post_to_games" data-saved="0">
+		<input type="hidden" name="token" value="" />
+		<input type="hidden" name="uid" value="bzf5" />
+		<div class="inputItem description">
+		<h2>Description <span>What kind of game?</span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<textarea required="required" name="description">input:active で animation-play-state を paused すると本当に押しやすくなるか追試
+
+結論としては押しやすくなっているような気がする
+サイズが大きい場合はもとから押しやすいので恩恵がよくわからない
+
+
+しかしこれなんの役に立つの……
+
+
+### 2013/8/31 更新
+Chrome で button の形が変わって見えなくなってたので background:silver にした</textarea>
+		</div>
+		</div>
+		<div class="inputItem device">
+		<h2>Control Device <span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<table>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_jwc.png" alt="jsdo.it websocket controller" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="1" name="support_spctrl" value="1"  />Smartphone Controller<a href="/controller">jsdo.it WebSocket Controller</a>»</label>
+		<div class="detail device1">
+		<ul>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_arrow.png" alt=""></p>
+		<input type="text" name="stick" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_start.png"></p>
+		<input type="text" name="button_start" /value="" >
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_a.png"></p>
+		<input type="text" name="button_a" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_b.png"></p>
+		<input type="text" name="button_b" value="" />
+		</li>
+		</ul>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_mouse.png" alt="Mouse" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="3" name="support_mouse" value="1"  />Mouse</label>
+		<div class="detail device3">
+		<textarea name="mouse" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_keyboard.png" alt="keyboard" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="4" name="support_keyboard" value="1"  />Keyboard</label>
+		<div class="detail device4">
+		<textarea name="keyboard" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_smartphone.png" alt="smartphone" /></p>
+		</th><td>
+		<label><input type="checkbox" class="flag" data-device="2"  name="support_touchdevice" value="1"  />Touch Device</label>
+		<div class="detail device2">
+		<textarea name="touchdevice" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		</table>
+		</div>
+		</div>
+		<div class="inputItem screen valid">
+		<h2>Fullscreen<span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<ul>
+		<li><label><input type="radio" name="support_fullscreen" value="1" checked> Activated</label></li>
+		<li><label><input type="radio" name="support_fullscreen" value="0" > Inactivated</label></li>
+		</ul>
+		</div>
+		</div>
+		<div class="submit">
+		<a id="game_delete_button" href="javascript:void(0)" class="btnBase btnType6 btnSmall btnInvisible" >jsdo.it games から削除する</a>
+		<a id="game_submit_button" class="btnBase btnType5" disabled="disabled" href="javascript:void(0)">Submit</a>
+		</div>
+		</form><!-- form_sub_games  -->
+		<!-- / .blockInputFormStyle1 --></div>
+		</div>
+		</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil author" itemscope itemtype="http://data-vocabulary.org/Person">
+			<div class="col2 group">
+				<div class="image">
+					<p class="thumb"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="100" height="100" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+				<!-- / .image --></div>
+				<div class="information">
+					<h1 class="hidden">Author</h1>
+					<div class="user">
+						<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author"><span itemprop="name">xl1</span></a></p>
+					</div>
+					<ul class="metas group">
+                        
+                        
+                        
+                        
+					</ul>
+					<div class="discription markdown">
+						
+
+					</div>
+				<!-- / .information --></div>
+			</div>
+		<!-- / .author --></section>
+		<section class="blockCodeUtil socialFeedback active">
+			<ul class="group">
+			<li class="facebook"><fb:like href="http://jsdo.it/xl1/bzf5" send="false" layout="button_count" width="55" show_faces="false" font="verdana"></fb:like></li>
+			
+			<li class="stumbleupon"><script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script></li>
+			
+			  <a href="http://twitter.com/share" class="twitter-share-button" data-text="input:active で animation-play-state を paused すると本当に押しやすくなるか #jsdoit" data-count="horizontal" data-related="jsdoit_team">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			  
+			<li class="plusone"><g:plusone size="medium" href="http://jsdo.it/xl1/bzf5"></g:plusone></li>
+			</ul>
+		<!-- / .socialFeedback --></section>
+		<section class="blockCodeUtil embed">
+			<div class="col2 widgetDesignBox group">
+				<div class="image">
+					<img src="/img/code/widget_design_view.png" width="660px" height="116px">
+				</div>
+				<div>
+					<div class="blockInputFormStyle1">
+						<div class="inputItem">
+							<h2>Default Panel</h2>
+							<div class="comment">
+								<ul class="select selectDefaultPanel">
+									<li><label><input type="radio" name="defaultTab" value="play">Auto play</label></li>
+									<li><label><input type="radio" name="defaultTab" value="screenshot">Screenshot</label></li>
+									<li><label><input type="radio" name="defaultTab" value="readme" checked="checked">Readme</label></li>
+									<li><label><input type="radio" name="defaultTab" value="javascript">JavaScript</label></li>
+									<li><label><input type="radio" name="defaultTab" value="html">HTML</label></li>
+									<li><label><input type="radio" name="defaultTab" value="css">CSS</label></li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>Size</h2>
+							<div class="comment">
+								<ul class="selectEmbedSize">
+									<li>Width: <input type="number" class="width inline" min="465" value="465" style="width:60px;"> px</li>
+									<li>Height: <input type="number" class="height inline" min="496" value="496" style="width:60px;"> px</li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>code</h2>
+							<div class="comment">
+								<textarea readonly="readonly" onclick="javascript:this.select();" data-url="http://jsdo.it/blogparts/bzf5/js">&lt;script type=&quot;text/javascript&quot; src=&quot;http://jsdo.it/blogparts/bzf5/js&quot;&gt;&lt;/script&gt;</textarea>
+							</div>
+						</div>
+					<!-- / .blockInputFormStyle1 --></div>
+				</div>
+			</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil qrcode">
+			<div class="col2 group">
+				<div>
+					<p class="code"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://jsdo.it" width="150" height="150" alt="QR Code"></p>
+				</div>
+				<div> 
+				</div>
+			</div>
+		<!-- / .qrcode --></section>
+		<section class="blockCodeUtil tag">
+			<ul class="listTags">
+			</ul>
+		<!-- / .tag --></section>	
+	<!-- / .utilDetails --></div>
+<!-- / #codeUtilties --></div>
+
+<!-- / .viewer --></section>
+
+<!-- /.code --></section>
+
+<section class="discussion">
+	<header><h1 class="ttlStyle2">Discussion</h1></header>
+	<div>
+		<ul>
+		</ul>
+		<p class="post"><a href="/qa/create?code_uri=http://jsdo.it/xl1/bzf5" class="btnBase btnType1">Questions on this code?</a></p>
+	</div>
+<!-- / .discussion --></section>
+
+<div class="ad_super_bnr btnT"><!-- jsdo.it_codepage_fullbnr_en --> <script type='text/javascript'> GA_googleFillSlot("jsdo.it_codepage_fullbnr_en"); </script>
+<!-- /.ad_super_bnr --></div>
+
+
+
+
+
+
+
+
+
+<section class="favorite">
+<header><h1 class="ttlStyle2">Favorite by</h1></header>
+    <div class="unitGroup group">
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/LOVESANA" title="LOVESANA"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/d/d/a/2/dda2e0fd1d5e46657da2844979271ecdbcd3e898_100.jpg" width="30" height="30" alt="LOVESANA" title="LOVESANA" /></a></span><a href="http://jsdo.it/LOVESANA" title="LOVESANA">LOVESANA</a>
+          <!-- /.unitFavBy --></div>
+	<!-- /.unitGroup --></div>
+
+<div class="unitFavUserL group">
+  <p class="user"><span class="thumb"><a href="http://jsdo.it/ksk1015" title="ksk1015"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/3/3/f/0/33f08ec98409217b9c6c26cf51eda381ca91a5f3_100.jpg" width="30" height="30" alt="ksk1015" title="ksk1015" /></a></span><a href="http://jsdo.it/ksk1015" title="ksk1015">ksk1015</a>: </p>
+  <p class="comment">役に立つ</p><!-- /#unitFavUserL --></div>
+
+
+<!-- /.favorite --></section>
+
+
+
+
+
+
+
+<section class="forked group">
+<header><h1 class="ttlStyle2">Forked</h1></header>
+
+  <div class="boxSort group">
+      <p class="changeSort">sort by</p>
+      <ul class="group"><li class="selected"><em>latest</em></li>
+<li><a href="http://jsdo.it/xl1/bzf5?order=pv#code_forked">page views</a></li>
+<li><a href="http://jsdo.it/xl1/bzf5?order=favorite#code_forked">favorite</a></li>
+<li><a href="http://jsdo.it/xl1/bzf5?order=forked#code_forked">forked</a></li>
+      </ul>
+  <!-- / .boxSort --></div>
+
+  <div id="boxForkedCode" class="autopagerize_page_element">
+    <div class="unitCodeGroup group col4">
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/satoshimmyo/dyCN" rel="bookmark" title="forked: input:active で animation-play-state を paused すると本当に押しやすくなるか"><img src="//jsdo.it/img/common/thumb_nowcapturing_w.png" alt="forked: input:active で animation-play-state を paused すると本当に押しやすくなるか" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/satoshimmyo/dyCN" rel="bookmark" title="forked: input:active で animation-play-state を paused すると本当に押しやすくなるか"><span class="body">forked: input:active で animati</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/satoshimmyo" title="satoshimmyo"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="satoshimmyo" /></a></span><a href="http://jsdo.it/satoshimmyo">satoshimmyo</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">596</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">2/19/56</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/GeckoTang/9fEJ" rel="bookmark" title="forked: input:active で animation-play-state を paused すると本当に押しやすくなるか"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/9/f/E/9fEJ_w.jpg?t=1331775866" alt="forked: input:active で animation-play-state を paused すると本当に押しやすくなるか" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/GeckoTang/9fEJ" rel="bookmark" title="forked: input:active で animation-play-state を paused すると本当に押しやすくなるか"><span class="body">forked: input:active で animati</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/GeckoTang" title="GeckoTang"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/e/f/6/5/ef6574da8cc7f595bab925a96e89d64db75472f4_100.jpg" width="15" height="15" alt="GeckoTang" /></a></span><a href="http://jsdo.it/GeckoTang">GeckoTang</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">795</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">0/17/56</li>
+<li class="tag">
+<ul class="listTag">
+<li><a href="http://jsdo.it/tag/css" class="">css</a></li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+    <!--/.unitCodeGroup--></div>
+  <!-- /#boxForkedCode --></div>
+
+<!-- /.forked --></section>
+
+
+
+
+
+
+
+
+<!-- /#codeDetail --></article>
+
+<div id="diff_container"></div>
+<div id="diff_controller">
+  <a href="#" id="diff_close_button"><img src="/img/code/close.gif" class="btnT"></a>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=107163819375320&amp;xfbml=1"></script>
+
+<!-- /#body --></div>
+<!--/[[[ CONTENT-AREA ]]]-->
+<footer id="siteFooter" class="layoutWideContainer">
+<div class="layoutContainer layoutLiquid group">
+<div class="apps group">
+<div class="col1">
+<a href="/users"><p class="userRanking">User ranking</p></a>
+<a href="/codes/ranking"><p class="codeRanking">Code ranking</p></a>
+</div>
+<div class="col2">
+<a href="/event/topics">
+<section class="event">
+<h1>Topics &amp; Events</h1>
+<p>"I want to make something but don't know what to make." "We want to know the newest trends!" Responding to those voices, we are regularly hosting events and updating topics.</p>
+</section>
+</a>
+</div>
+<div class="col3">
+<a href="/qa">
+<section class="discussions">
+<h1>Discussions</h1>
+<p>Any questions? Ask jsdo.it users! You can post questions together with your code. You can also get answers supported by a code.</p>
+</section>
+</a>
+</div>
+<!-- / .apps --></div>
+<section class="account">
+<h1>Completely Free Account</h1>
+<p>
+<form method="post" action="/code/new">
+<input type="hidden" name="token" value="">
+<p class="btnLabel labelFree"><input type="submit" class="btnBase btnType5" value="Sign up Free and Start coding"></p>
+</form>
+</p>
+</section>
+<div class="globals group">
+<nav>
+<ul>
+
+<li><a href="http://twitter.com/#!/jsdoit_team" class="external" rel="external">@jsdoit_team</a></li>
+<li><a href="http://www.facebook.com/jsdo.it" target="_blank" class="external" rel="external">Facebook</a></li>
+
+
+</ul>
+<ul>
+<li><a href="/about" title="What's jsdo.it?">About</a></li>
+<li><a href="/assets">Assets</a></li>
+<li><a href="/help">Help</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/apidoc/">API</a></li>
+<li><a href="/terms">Term of use</a></li>
+<li><a href="/privacy_policy/">Privacy policy</a></li>
+<li><a href="/help#help_contact">Contact</a></li>
+</ul>
+</nav> 
+<p id="copyright" class="vcard"><small>Site Design &copy; <a href="http://www.jsdo.it/" title="jsdoit Inc." class="external fn org url">jsdoit Inc.</a> All Rights Reserved.</small></p>
+<!-- / .globals --></div>
+</div>
+<!-- / #siteFooter --></footer>
+
+
+<!--/#container--></div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15793157-5']);
+  _gaq.push(['_setDomainName', '.jsdo.it']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['_trackPageview', '/code/show'+location.pathname]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script type="text/javascript">
+var path  = "code/show";
+var token = "";
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/js/do.js?1441025678"></script>
+ <script type="text/javascript" src="/js/notification.js?1441025678"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+
+<script type="text/javascript" src="/js/codemirror/codemirror-compressed.js?1441025678"></script>
+</body>
+</html>

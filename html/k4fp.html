@@ -1,0 +1,2262 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"  class="osOther" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+
+<title>Pure CSS Scrolling Effect - jsdo.it - Share JavaScript, HTML5 and CSS</title>
+
+<meta property="qc:admins" content="21506643427614" />
+<meta property="wb:webmaster" content="5c8153403c54c98f" />
+<meta name="description" content="Pure CSS Scrolling Effect by xl1 @ jsdo.it - share JavaScript, HTML5 and CSS - jsdo.it is a service to write JavaScript, HTML5, CSS in your browser and share it. You can copy and modify others' code. And also Ask questions about JavaScript, HTML5, CSS" />
+
+<meta name="keywords"  content="judo.it,JavaScript,HTML5,CSS,jsdoit" />
+
+<meta name="author" content="jsdoit Inc." />
+<meta name="license" content="&#169;jsdoit Inc." />
+
+<meta property="og:site_name" content="jsdo.it" />
+<meta property="fb:page_id" content="138382942860000" />
+<meta property="fb:app_id" content="104748116268345" />
+<meta property="og:locale" content="ja_JP">
+
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="http://jsdo.it/xl1/k4fp" />
+
+<meta property="og:description" content="Pure CSS Scrolling Effect by xl1 @ jsdo.it - [CSS Programming Advent Calendar 2012](http://www.adventar.org/calendars/2) の 14 日目 &lt;https://gist.github.com/4281393&gt;
+
+- [**フルスクリーンのみ対応**](http://jsrun.it/xl1/k4fp)
+- `about:flags` で「試験運用版の WebKit 機能を有効にする」をオンにする必要があります
+
+### 2013/01/24 更新
+unprefixed linear-gradient の文法間違ってたので直した
+
+### 2013/06/15 更新
+translate -&gt; translate3d にするとレイヤーが切られるので描画が少なくて済む" />
+<meta property="twitter:description" content="Pure CSS Scrolling Effect by xl1 @ jsdo.it - [CSS Programming Advent Calendar 2012](http://www.adventar.org/calendars/2) の 14 日目 &lt;https://gist.github.com/4281393&gt;
+
+- [**フルスクリーンのみ対応**](http://jsrun.it/xl1/k4fp)
+- `about:flags` で「試験運用版の WebKit 機能を有効にする」をオンにする必要があります
+
+### 2013/01/24 更新
+unprefixed linear-gradient の文法間違ってたので直した
+
+### 2013/06/15 更新
+translate -&gt; translate3d にするとレイヤーが切られるので描画が少なくて済む" />
+
+
+
+
+<meta property="og:image" content="http://jsdo-static-contents.s3.amazonaws.com/images/capture/k/4/f/k4fp.jpg?t=1371286945" />
+<meta property="og:image:width" content="465" />
+<meta property="og:image:height" content="465" />
+
+<meta name="twitter:site" content="@jsdo_it">
+<meta name="twitter:card" content="summary">
+
+
+
+
+<meta property="og:title" content="Pure CSS Scrolling Effect" />
+<meta name="twitter:title" content="Pure CSS Scrolling Effect" />
+
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/favicon.ico" />
+<link rel="start" href="/" title="home" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/common.css?1468627570" />
+
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/code.css?1468627570" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/codemirror.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/themes.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/SyntaxHighlighter.css?1441025678" />
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<!--[if IE 9]><body class="ie9 i_default"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><body class="i_default"><!--<![endif]-->
+
+<script type="text/javascript">
+var language = "i_default"; // used in l()
+</script>
+
+<!-- script 'type="text/javascript" src="https://www.google.com/jsapi"></script -->
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- adtype =  -->
+<!-- Google DoubleClick 広告のスクリプトページ -->
+<div id="container" class="codepage contents">
+<!--[[[ HEADER-AREA ]]]-->
+<!-- country = JP -->
+<header id="headerGlobal" class="group">
+<div class="sub">
+<div class="layoutContainer layoutLiquid group">
+
+<!-- PR欄&リンク -->
+<style>
+#headerGlobal .pr a:before {
+    content: "重要なお知らせ";
+}
+#headerGlobal .pr a {
+    color: red;
+    font-size: 14px;
+    text-shadow: none;
+    padding-right: 11px;
+}
+</style>
+<p class="pr" style="color:red; font-"><a href="http://jsdo.it/blog/2019/07/jsdoit-1.html">
+【重要】サービス終了のお知らせ</a></p>
+<!-- PR欄&リンク -->
+
+
+<ul id="headerLanguage">
+<li class="column">
+<span class="header_menu_column" id="header_menu_column_1"><a href="#"><span class="thumb"></span>English</a></span>
+<div class="navGlobalSub">
+<ul class="shadowLayor1">
+<li><a href="?lang=en" class="usa">English</a></li>
+<li style="display:none;"><a href="#" class="kor">한국어</a></li>
+<li><a href="?lang=zh-CN" class="chn">中文</a></li>
+<li><a href="?lang=ja" class="jpn">日本語</a></li>
+</ul>
+</div>
+</li>
+<!-- / #headerAccount --></ul>
+<ul id="navGlobal">
+<li><a href="/tags" title="Tags">Tags</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/event/topics" title="Topics &amp; Events">Topics &amp; Events</a></li>
+<li><a href="/qa" title="Discussions">Discussions</a></li>
+<li><a href="http://games.jsdo.it" title="jsdo.it HTML5-Games">HTML5-Games</a></li>
+<!-- / #navGlobal --></ul>
+<!-- / .layoutContainer --></div>
+<!-- / .sub --></div>
+<div class="main">
+<div class="layoutContainer layoutLiquid group">
+
+<h1 id="siteName"><a href="/"><img src="/img/common/sitename_03.png" width="79" height="39" alt="jsdo.it - Share JavaScript, HTML5 and CSS" /></a></h1>
+
+<div id="btnHeaderCodeNew">
+<form method="post" action="/code/new">
+<fieldset>
+<p><input type="submit" value="Start coding"></p>
+</fieldset>
+<input type="hidden" name="token" value="">
+</form>
+<!-- / #btnHeaderCodeNew --></div>
+
+<div id="navGlobalSearch">
+<form method="get" action="/search" class="search">
+<input id="inputSearch" type="text" name="q" class="query input-prompt" autocomplete="off" placeholder="Search"><input type="submit" value="" class="button">
+</form>
+<!--/#navGlobalSearch--></div>
+
+
+
+
+<div id="headerSignin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signup">Create account</a></p>
+<p>or</p>
+<div class="signin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signin">LOGIN</a></p>
+<div class="panel">
+<div class="shadowLayor1">
+<div class="service">
+<ul>
+<li class="google"><a href="/login/google?login=1" onClick="_gaq.push(['_trackPageview', '/login/service/google']);">Login with Google</a></li>
+<li class="facebook"><a href="/login/facebook" onClick="_gaq.push(['_trackPageview', '/login/service/facebook']);">Login with Facebook</a></li>
+<li class="twitter"><a href="/login/twitter" onClick="_gaq.push(['_trackPageview', '/login/service/twitter']);">Login with Twitter</a></li>
+
+
+
+<li class="other"><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);">Other login options</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- / #headerSignin --></div>
+
+
+
+<!-- / .layoutContainer --></div>
+<!-- / .main --></div>
+
+
+
+<div id="navPrimaryTag">
+<div class="layoutContainer layoutLiquid">
+<nav class="group">
+<div class="search">
+<form method="get" action="/search">
+<input type="text" placeholder="Search" name="q" results="10" class="text" /><input type="submit" value="Search" class="hidden">
+</form>
+</div>
+<ul class="group">
+<li class="application"><a href="/tag/application" >Application</a></li>
+<li class="ui"><a href="/tag/user_interface" >User Interface</a></li>
+<li class="html5"><a href="/tag/html5_elements&amp;api" >HTML5 Elements &amp; API</a></li>
+<li class="css"><a href="/tag/css" >CSS</a></li>
+<li class="art"><a href="/tag/art&amp;design" >Art &amp; Design</a></li>
+<li class="game"><a href="/tag/game" ">Game</a></li>
+<li class="library"><a href="/tag/library&amp;test" >Library &amp; Test</a></li>
+<li class="smartphone"><a href="/tag/smartphones&amp;tablets" >Smartphones &amp; Tablets</a></li>
+<li class="all"><a href="/codes">All</a></li>
+</ul>
+</nav>
+<!-- / .layoutContainer --></div>
+<!-- / #navPrimaryTag --></div>
+
+
+
+
+
+
+<!-- / #headerGlobal --></header>
+<!--[[[ /HEADER-AREA ]]]-->
+
+
+<!--[[[ CONTENT-AREA ]]]-->
+<div id="body">
+<article id="codeDetail" class="layoutContainer">
+
+
+
+<section class="code">
+<header class="group">
+
+<div class="main">
+<h1><a href="http://jsdo.it/xl1/k4fp" rel="bookmark">Pure CSS Scrolling Effect</a></h1>
+<div class="author group" itemscope itemtype="http://data-vocabulary.org/Person">
+<p class="image"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="30" height="30" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author" itemprop="url"><span itemprop="name">xl1</span></a></p>
+<div class="connection">
+	<div class="follow"><span onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="btnBase btnType2 btnSmall btnFollow">Follow</span></div>
+</div>
+<time datetime="2013-06-15T18:04:45">2013-06-15 18:04:45</time>
+<p class="license">License: 
+  <a href="/help#help_license">MIT License</a>
+</p>
+</div>
+<!-- / .main --></div>
+
+<div class="counts">
+<div>
+<span id="fork_button" class="fork btnBase btnType5">
+<dl>
+<dt>Fork</dt><dd>2</dd>
+</dl>
+</span>
+</div>
+<div>
+<a href="http://jsdo.it/login?redirect=http%3A%2F%2Fjsdo.it%2Fxl1%2Fk4fp" class="favorite btnBase btnType6 btnSmall">
+<span class="favoriteIcon"><img src="/img/common/ico/ico_fav_02_shadow.png" width="15px" height="12px" /></span><dl class="group">
+<dt>Fav</dt><dd>3</dd>
+</dl>
+</a><div href="/" class="pv">
+<dl class="group">
+<dt>View</dt><dd>3553</dd>
+</dl>
+</div>
+</div>
+<!-- / .counts --></div>
+</header>
+
+<script type="text/javascript">
+var user = {
+  screen_name: "xl1"
+};
+</script>
+
+
+<div class="fullscreen group">
+<div class="inner">
+<ul class="controller">
+<li class="btnBase btnType6 btnSmall btnInvisible btnStart" id="btnPlay" onclick="JSDoIt.CodeShow.play(); return false;"><span>Play</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnStop" id="btnStop" style="display: none;" onclick="JSDoIt.CodeShow.stop(); return false;"><span>Stop</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnReload" id="btnReload" style="display: none;" onclick="JSDoIt.CodeShow.reload(); return false;"><span>Reload</span></li>
+</ul>
+<p><a href="http://jsdo.it/xl1/k4fp/fullscreen" class="btnBase btnType6 btnSmall btnInvisible btnFullscreen" title="Fullscreen preview"><span>Fullscreen</span></a></p>
+<p><span title="Smart Phone Preview" class="btnBase btnType6 btnSmall btnInvisible btnSmartphone" data-size="width=320,height=480"><span>Smart Phone</span></span></p>
+<p><a href="http://jsdo.it/xl1/k4fp/tree" class="btnBase btnType6 btnSmall btnInvisible"><span>Fork tree</span></a></p>
+</div>
+</div>
+
+<fieldset>
+
+<section class="viewer group">
+
+<div class="group areaCodeViewer">
+<div class="boxCode" id="boxShowCode"><header>
+<ul class="group">
+<li class="description active" data-target-tab="boxEditDescription"><span>Readme</span></li>
+<li class="js" data-target-tab="boxEditJS">JavaScript <small>0 lines</small></li>
+<li class="html" data-target-tab="boxEditHTML">HTML <small>128 lines</small></li>
+<li class="css" data-target-tab="boxEditCSS">SCSS <small>565 lines</small></li>
+</ul>
+</header>
+
+
+<section id="boxEditDescription">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeDescription">
+
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><div class="markdown"><p><a href="http://www.adventar.org/calendars/2">CSS Programming Advent Calendar 2012</a> の 14 日目 <a href="https://gist.github.com/4281393">https://gist.github.com/4281393</a></p>
+
+<ul>
+<li><a href="http://jsrun.it/xl1/k4fp"><strong>フルスクリーンのみ対応</strong></a></li>
+<li><code>about:flags</code> で「試験運用版の WebKit 機能を有効にする」をオンにする必要があります</li>
+</ul>
+
+<h3>2013/01/24 更新</h3>
+
+<p>unprefixed linear-gradient の文法間違ってたので直した</p>
+
+<h3>2013/06/15 更新</h3>
+
+<p>translate -&gt; translate3d にするとレイヤーが切られるので描画が少なくて済む</p>
+</div></div>
+
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditJS">
+<ul class="tabCode group">
+    <li title="Pure CSS Scrolling Effect" class="selected tabJS initialTab"><span id="primaryTabTitle">Pure CSS Scrolling Effect</span></li></ul>
+<div class="code" id="boxCodeJS"> 
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeJS" data-lang="js"></textarea></div><!-- / .code --></div>
+<!-- / #boxEditJS --></section>
+
+<section id="boxEditHTML">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeHTML">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeHTML">&lt;link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'&gt;
+
+&lt;input type=&quot;checkbox&quot; id=&quot;show-outline&quot;&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+  &lt;!-- これらは普通にスクロール --&gt;
+  &lt;section id=&quot;title&quot;&gt;
+    &lt;h1&gt;Pure CSS Scrolling Effect&lt;/h1&gt;
+    &lt;ol id=&quot;scroll-suggest&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.adventar.org/calendars/2&quot;&gt;CSS Programming Advent Calendar 2012&lt;/a&gt; Day 14&lt;/li&gt;
+      &lt;li&gt;works on: Chrome 23+&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;intro&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;Scrolling Effect ?&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://design.kayac.com/topics/2012/06/koukyuperaichi.php&quot;&gt;縦や横に長いサイト「高級ペライチ」1度は見ておきたいスクロール演出のまとめ32個！&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.google.com/search?q=scrolling+effect&quot;&gt;scrolling effect - Google 検索&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    最近では
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://special.jimin.jp/political_promise/&quot;&gt;自民党＜政権公約＞&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    →　&lt;strong&gt;それ、CSS でできるよ！&lt;/strong&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;mixin&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;SCSS Mixins&lt;/h1&gt;
+    &lt;a href=&quot;https://gist.github.com/4277256&quot;&gt;sticker.scss&lt;/a&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;code&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;これだけ&lt;/h1&gt;
+    &lt;pre&gt;&lt;code&gt;@import &quot;sticker.scss&quot;;
+@include use-stickers($height);
+
+#your-favorite-element {
+  @include sticker($start, $velocity, $range);
+}&lt;/code&gt;&lt;/pre&gt;
+  &lt;/section&gt;
+
+  &lt;section id=&quot;how&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;どうやってるの？&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        Sticky Positioning
+        &lt;div&gt;
+          参照: &lt;a href=&quot;http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit&quot;&gt;HTML5Rocks Updates&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;http://www.w3.org/TR/css3-3d-transforms/&quot;&gt;CSS Transforms&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;label for=&quot;show-outline&quot;&gt;sticker の位置を見えるようにする&lt;/label&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;why&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;なぜ CSS で?&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;strong&gt;軽い&lt;/strong&gt;&lt;br&gt;ロード時間ゼロ！ JS がない分軽い
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;strong&gt;速い&lt;/strong&gt;&lt;br&gt;スクロール遅延ゼロ！ ブラウザ側が処理してくれる
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;strong&gt;たのしい&lt;/strong&gt;&lt;br&gt;CSS でやる意味ゼロ！！
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;small&gt;※ 効果には個人差・環境差があります&lt;/small&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;more&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;もっと詳しく&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;https://gist.github.com/4281393&quot;&gt;CSS でペライチ&lt;/a&gt;&lt;br&gt;
+        （&lt;a href=&quot;http://www.adventar.org/calendars/2&quot;&gt;CSS Programming Advent Calendar 2012&lt;/a&gt; の 14日目）
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://twitter.com/xl1blue&quot;&gt;@xl1blue on Twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;end&quot;&gt;
+    &lt;h1&gt;END&lt;/h1&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;stickers&quot;&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star1&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star2&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star3&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star4&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star5&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;shootingstar&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;moon&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star1-balloon&quot;&gt;
+    &lt;pre class=&quot;balloon&quot;&gt;&lt;code&gt;sticker(
+  $start: 300px 150px,
+  $velocity: 0 -0.06,
+  $range: 0.5 1
+)&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;sunnysky&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;background-far&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;background-close&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;title-cloud-back&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;ufo&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;ufo-balloon&quot;&gt;
+    &lt;pre class=&quot;balloon&quot;&gt;&lt;code&gt;sticker(
+  $start: -550px 200px,
+  $velocity: 0.95 0.55,
+  $range: 0.40 0.53
+)&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;sled&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;sled-balloon&quot;&gt;
+    &lt;pre class=&quot;balloon&quot;&gt;&lt;code&gt;sticker(
+  $start: -720px 250px,
+  $velocity: 0.1 0,
+  $range: 0.12 1
+)&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow1&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow2&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow3&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow4&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow5&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow6&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;title-cloud-front&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;end-trees&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</textarea></div>
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditCSS">
+<ul class="tabCode group">
+    <li title="Pure CSS Scrolling Effect" class="selected tabCSS initialTab"><span id="primaryTabTitle">Pure CSS Scrolling Effect</span></li></ul>
+<div class="code" id="boxCodeCSS">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeCSS" data-lang="scss">/* --- utils --- */
+
+$vendor-prefixes: -webkit- '';
+
+// add vendor prefixes
+@mixin vendor($list) {
+  @if length(nth($list, 1)) != 2 { $list: append((), $list); }
+  @each $l in $list {
+    $prop: nth($l, 1);
+    $value: nth($l, 2);
+    @each $p in $vendor-prefixes {
+      #{$p + $prop}: $value;
+    }
+  }
+}
+
+@mixin vendor-prop($prop, $value) {
+  @each $p in $vendor-prefixes {
+    #{$prop}: #{$p + $value};
+  }
+}
+
+@function step-gradient($size, $colors...) {
+  $last: 0;
+  $result: ();
+  @each $color in $colors {
+    $result: append($result, $color $last, comma);
+    $last: $last + $size;
+    $result: append($result, $color $last);
+  }
+  @return $result;
+}
+
+
+/* --- math --- */
+
+$PI: 3.14159265;
+
+@function sqrt($x) {
+  @if x == 0 { @return 0; }
+  $s: 1;
+  $t: 0;
+  @while $t != $s { $t: $s; $s: ($s + $x / $s) / 2; }
+  @return $s;
+}
+
+@function arctan($x) {
+  @if $x == 0 { @return 0rad; }
+  @if $x == 1/0 { @return 0.5rad * $PI; }
+  @if $x == -1/0 { @return -0.5rad * $PI; }
+  
+  $r: $x &gt; 1 or $x &lt; -1;
+  @if $r { $x: 1 / $x; }
+  $a: 0;
+  $i: 10;
+  @while $i &gt;= 1 {
+    $a: $i * $i * $x * $x / (2 * $i + 1 + $a);
+    $i: $i - 1;
+  }
+  @if $r {
+    @return $x * ($PI / 2 / abs($x) - 1 / (1 + $a)) * 1rad;
+  } @else {
+    @return $x / (1 + $a) * 1rad;
+  }
+}
+
+
+/* --- sticker --- */
+
+$sticky-area: 100%;
+@mixin use-stickers($height){
+  $sticky-area: $height;
+  body {
+    margin: 0;
+    height: $height;
+    overflow-x: hidden;
+  }
+}
+
+%sticker {
+  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  @include vendor((transform-origin, 0 0));
+}
+
+@mixin sticker(
+  $start-x: 0, $start-y: 0,
+  $vel-x: 0, $vel-y: -1,
+  $range-from: 0, $range-to: 1,
+  // shorthands
+  $start: null, $velocity: null, $range: null
+){
+  @if $start != null { $start-x: nth($start, 1); $start-y: nth($start, 2);}
+  @if $velocity != null { $vel-x: nth($velocity, 1); $vel-y: nth($velocity, 2);}
+  @if $range != null { $range-from: nth($range, 1); $range-to: nth($range, 2);}
+
+  @extend %sticker;
+  &gt; * {
+    @extend %sticker;
+  }
+
+  @if $vel-x == 0 and $vel-y == -1 {
+    // static
+    left: $start-x;
+    top: $start-y;
+  } @else {
+    $scale: sqrt($vel-x * $vel-x + ($vel-y + 1) * ($vel-y + 1));
+    $sinr: -$vel-x / $scale;
+    $cosr: ($vel-y + 1) / $scale;
+
+    $rotate: arctan($sinr / $cosr);
+
+    $range: $sticky-area * ($range-to - $range-from);
+    $width: abs($range * $sinr);
+    $height: abs($range * $cosr);
+
+    $trans-x: 0;
+    $trans-y: -$width * $sinr;
+    @if $sinr &gt;= 0 and $cosr &gt; 0 {
+      $trans-x: $height * $sinr;
+      $trans-y: 0;
+    } @else if $sinr &gt; 0 and $cosr &lt;= 0 {
+      $rotate: $rotate + $PI;
+      $trans-x: -$width * $cosr + $height * $sinr;
+      $trans-y: -$height * $cosr;
+    } @else if $sinr &lt;= 0 and $cosr &lt; 0 {
+      $rotate: $rotate - $PI;
+      $trans-x: -$width * $cosr;
+      $trans-y: -$width * $sinr - $height * $cosr;
+    }
+
+    // set styles
+    width: $width / $scale;
+    height: $height / $scale;
+    @include vendor(
+      (transform, translateY($sticky-area * $range-from)
+        translate3d($trans-x, $trans-y, 0) rotate($rotate) scale($scale))
+    );
+    &gt; * {
+      @include vendor-prop(position, sticky);
+      @include vendor(
+        (transform, scale(1 / $scale) rotate(-$rotate)
+          translate3d(-$trans-x, -$trans-y, 0) translate($start-x, $start-y))
+      );
+    }
+  }
+}
+
+
+/* --- main --- */
+
+// colors
+$grass: #6c6;
+$green: #4a4;
+$sky: #9cf;
+$blue: #46a;
+$red: #f44;
+$tan: #ca4;
+$brown: #850;
+$cream: #fea;
+$white: #eee;
+$black: #000;
+
+// variables
+$title-height: 1000px;
+$section-height: 550px;
+$section-padding: 30px;
+$section-interval: 450px;
+$num-sections: 8;
+$global-height: $title-height + $num-sections * ($section-height + $section-interval);
+$global-width: 2000px;
+
+
+// stickers
+@include use-stickers($global-height);
+
+#stickers {
+  width: 100vw;
+  height: $global-height;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#background-far {
+  @include sticker($start: 0 600px, $velocity: -0.15 0);
+  &gt; div {
+    width: $global-height * 0.15 + $global-width;
+    height: 150px;
+  }
+}
+#background-close {
+  @include sticker($start: 0 750px, $velocity: -0.25 0);
+  &gt; div {
+    width: $global-height * 0.25 + $global-width;
+    height: 350px;
+  }
+}
+
+#moon {
+  @include sticker($start: 380px 150px, $velocity: 0 0, $range-from: 0.55);
+  margin-left: 50vw;
+  &gt; div {
+    width: 150px;
+    height: 150px;
+  }
+}
+#sled {
+  @include sticker($start: -720px 250px, $velocity: 0.1 0, $range: 0.12 1);
+  margin-left: 50vw;
+  &gt; div {
+    width: 640px;
+    height: 256px;
+  }
+}
+#ufo {
+  @include sticker($start: -550px 200px, $velocity: 0.95 0.55, $range: 0.4 0.53);
+  margin-left: 50vw;
+  &gt; div {
+    width: 128px;
+    height: 64px;
+  }
+}
+
+#title-cloud-front {
+  @include sticker($velocity: 0 -2);
+  &gt; div {
+    width: 2500px;
+    height: 800px;
+  }
+}
+#title-cloud-back {
+  @include sticker;
+  &gt; div {
+    width: 2500px;
+    height: 900px;
+  }
+}
+#sunnysky {
+  @include sticker;
+  &gt; div {
+    width: 2500px;
+    height: 4500px;
+  }
+}
+#end-trees {
+  @include sticker($start: 0 15900px, $vel-y: -2);
+  &gt; div {
+    width: 2500px;
+    height: 1200px;
+  }
+}
+
+#snow1 {
+  @include sticker($start: -500px -1300px, $velocity: 0.2 0.7);
+  margin-left: 80vw;
+  font-size: 200px;
+}
+#snow2 {
+  @include sticker($start: 700px 200px, $velocity: 0.4 0.9);
+  font-size: 300px;
+}
+#snow3 {
+  @include sticker($start: 100px -200px, $velocity: 0.3 0.8);
+  font-size: 250px;
+}
+#snow4 {
+  @include sticker($start: -400px -600px, $velocity: 0.3 0.9);
+  margin-left: 80vw;
+  font-size: 220px;
+}
+#snow5 {
+  @include sticker($start: 600px -900px, $velocity: 0.1 0.9);
+  font-size: 200px;
+}
+#snow6 {
+  @include sticker($start: 200px -1200px, $velocity: 0.1 0.7);
+  font-size: 160px;
+}
+#star1 {
+  @include sticker($start: 300px 150px, $vel-y: -0.06, $range-from: 0.5);
+  font-size: 75px;
+}
+#star2 {
+  @include sticker($start: 200px 500px, $vel-y: -0.06, $range-from: 0.52);
+  font-size: 90px;
+}
+#star3 {
+  @include sticker($start: 500px 300px, $vel-y: -0.06, $range-from: 0.54);
+  font-size: 80px;
+}
+#star4 {
+  @include sticker($start: -300px 500px, $vel-y: -0.06, $range-from: 0.56);
+  margin-left: 100vw;
+  font-size: 90px;
+}
+#star5 {
+  @include sticker($start: -400px 100px, $vel-y: -0.06, $range-from: 0.58);
+  margin-left: 100vw;
+  font-size: 75px;
+}
+#shootingstar {
+  @include sticker($start: 5000px -4800px, $velocity: -0.8 0.8);
+  margin-left: 50vw;
+  font-size: 50px;
+}
+
+#sled-balloon {
+  @include sticker($start: -170px 200px, $velocity: 0.1 0, $range: 0.4 0.61);
+  margin-left: 50vw;
+}
+#ufo-balloon {
+  @include sticker($start: -340px 140px, $velocity: 0.95 0.55, $range: 0.41 0.535);
+  margin-left: 50vw;
+}
+#star1-balloon {
+  @include sticker($start: 400px 100px, $vel-y: -0.06, $range: 0.5 0.65);
+}
+
+#container {
+  position: relative;
+  z-index: 10;
+}
+
+
+// appearance
+body {
+  font-size: 25px;
+  line-height: 1.7;
+  background: $blue;
+}
+a:link, a:visited {
+  color: $blue;
+}
+a:active {
+  color: $red;
+}
+pre, code {
+  margin: 0;
+}
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+section {
+  box-sizing: border-box;
+  margin: 0 auto $section-interval;
+  padding: 30px;
+  h1 {
+    font-size: 2em;
+    line-height: 1;
+    text-align: center;
+  }
+}
+
+.paper {
+  width: 800px;
+  height: $section-height;
+  background-color: $white;
+  border-bottom: 10px solid $red;
+  pre {
+    background: $cream;
+    border: 1px solid $tan;
+    padding: 20px;
+  }
+}
+
+#title {
+  height: $title-height;
+  text-align: center;
+  h1 {
+    font-family: Geo, cursive;
+    font-size: 128px;
+    color: $red;
+    text-shadow: 0 3px $cream, 0 6px $green;
+    width: 500px;
+    margin: 50px auto 20px auto;
+  }
+}
+#mixin {
+  text-align: center;
+  a {
+    font-size: 3em;
+  }
+}
+#code {
+  margin-bottom: $section-height + 2 * $section-interval;
+}
+#end {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: $white;
+  h1 {
+    font-family: Geo, cursive;
+    font-size: 160px;
+    color: $red;
+    text-shadow: 0 6px $cream;
+  }
+}
+
+#scroll-suggest::after {
+  display: block;
+  content: '\226b';
+  @include vendor((transform, rotate(90deg) scale(2)))
+}
+
+
+// stickers appearance
+#background-far &gt; div {
+  background-image: url('http://jsrun.it/assets/b/X/E/G/bXEGa');
+}
+#background-close &gt; div {
+  background-size: 1000px 350px;
+  background-position: 0, 1000px, 2000px, 3000px;
+  background-image:
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $green, $grass, $green, $grass, $green)),
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $tan, $grass, $green, $tan, $brown)),
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $green, $tan, $green, $brown, $tan)),
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $brown, $tan, $brown, $tan, $brown));
+  background-image:
+    linear-gradient(left, step-gradient(20%,
+      $green, $grass, $green, $grass, $green)),
+    linear-gradient(left, step-gradient(20%,
+      $tan, $grass, $green, $tan, $brown)),
+    linear-gradient(left, step-gradient(20%,
+      $green, $tan, $green, $brown, $tan)),
+    linear-gradient(left, step-gradient(20%,
+      $brown, $tan, $brown, $tan, $brown));
+  background-repeat: no-repeat;
+}
+
+#moon &gt; div {
+  background: $cream;
+  border-radius: 100%;
+}
+#sled &gt; div {
+  background-image: url('http://jsrun.it/assets/n/a/m/3/nam3U');
+  background-size: 640px 512px;
+  @include vendor(
+    (animation, sled 1s steps(2) infinite)
+  );
+}
+#ufo &gt; div {
+  background-image: url('http://jsrun.it/assets/i/V/R/L/iVRLn');
+  background-size: 128px 144px;
+  @include vendor(
+    (animation, ufo 1s steps(2) infinite)
+  );
+}
+
+.balloon {
+  font-size: 16px;
+  line-height: 1.2;
+  width: 220px;
+  padding: 10px;
+  background: $cream;
+
+  &amp;::before {
+    content: '';
+    background: $cream;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+
+    left: -25px;
+    @include vendor(
+      (transform-origin, 100% 100%)
+      (transform, skewX(-45deg))
+    );
+  }
+}
+.snow {
+  opacity: 0.8;
+  color: $white;
+  text-shadow: 3px 0 $blue, -3px 0 $blue, 0 3px $blue, 0 -3px $blue;
+  &amp;::before {
+    content: '\2744';
+  }
+}
+.star {
+  color: $cream;
+  &amp;::before {
+    content: '\2605';
+  }
+}
+
+@mixin title-cloud($base-color) {
+  background-size: 200px 100%;
+  background-image: -webkit-linear-gradient(110deg,
+    transparent, transparent 100px, $base-color 100px, $base-color);
+  background-image: linear-gradient(-20deg,
+    transparent, transparent 100px, $base-color 100px, $base-color);
+}
+#title-cloud-front &gt; div {
+  @include title-cloud($white);
+  border-top: 10px solid $red;
+}
+#title-cloud-back &gt; div {
+  @include title-cloud($cream);
+  background-position: 100px;
+}
+#sunnysky &gt; div {
+  $base-color: $sky;
+  background-size: 10px 4000px, 200px 500px;
+  background-position-y: 0, 4000px;
+  background-repeat: repeat-x;
+  background-image:
+    -webkit-linear-gradient($base-color, $base-color),
+    -webkit-linear-gradient(110deg,
+      transparent, transparent 100px, $base-color 100px, $base-color);
+  background-image:
+    linear-gradient($base-color, $base-color),
+    linear-gradient(-20deg,
+      transparent, transparent 100px, $base-color 100px, $base-color);
+}
+#end-trees &gt; div {
+  background-size: 200px 100%;
+  background-image: -webkit-linear-gradient(
+    290deg, transparent, transparent 100px,
+    $grass 100px, $grass 110px, $green 110px, $green
+  );
+  background-image: linear-gradient(
+    -200deg, transparent, transparent 100px,
+    $grass 100px, $grass 110px, $green 110px, $green
+  );
+}
+
+// animations
+@-webkit-keyframes ufo {
+  from { background-position-y: 0; }
+  to   { background-position-y: 128px; }
+}
+@-webkit-keyframes sled {
+  from { background-position-y: 0; }
+  to   { background-position-y: 512px; }
+}
+
+
+// showing outline
+body &gt; input {
+  display: none;
+}
+label[for=&quot;show-outline&quot;] {
+  color: $blue;
+  text-decoration: underline;
+  &amp;:hover {
+    cursor: pointer;
+  }
+  #show-outline:checked ~* &amp; {
+    background: $red;
+  }
+}
+#show-outline:checked ~ #stickers * {
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+}</textarea></div><!-- / .code --></div>
+<!-- / #boxEditCSS --></section>
+
+<script type="text/javascript">
+  var theme               = "default";
+  var uid                 = "k4fp";
+//  var basefiles           = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+//  var editorjs            = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+  var basefiles           = "/js/codemirror/basefiles.js".substr(15); // "basefiles.js?1278486952"
+  var editorjs            = "/js/codemirror/editor.js".substr(15);
+  var has_long_line       = {};
+  has_long_line["js"]     = 0;
+  has_long_line["css"]    = 0;
+  has_long_line["html"]   = 0;
+
+  // 1st is initial
+  var initial_tabs = { js: [""], css: [""] };
+  var code_site_uri = "http://jsrun.it/xl1/k4fp";
+  var is_danger     = 0; // 1 or 0
+  var lines         = [ 0,128,565 ];
+</script><noscript>
+<code>[CSS Programming Advent Calendar 2012](http://www.adventar.org/calendars/2) の 14 日目 &lt;https://gist.github.com/4281393&gt;
+
+- [**フルスクリーンのみ対応**](http://jsrun.it/xl1/k4fp)
+- `about:flags` で「試験運用版の WebKit 機能を有効にする」をオンにする必要があります
+
+### 2013/01/24 更新
+unprefixed linear-gradient の文法間違ってたので直した
+
+### 2013/06/15 更新
+translate -&gt; translate3d にするとレイヤーが切られるので描画が少なくて済む</code>
+<code></code>
+<code>&lt;link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'&gt;
+
+&lt;input type=&quot;checkbox&quot; id=&quot;show-outline&quot;&gt;
+
+&lt;div id=&quot;container&quot;&gt;
+  &lt;!-- これらは普通にスクロール --&gt;
+  &lt;section id=&quot;title&quot;&gt;
+    &lt;h1&gt;Pure CSS Scrolling Effect&lt;/h1&gt;
+    &lt;ol id=&quot;scroll-suggest&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.adventar.org/calendars/2&quot;&gt;CSS Programming Advent Calendar 2012&lt;/a&gt; Day 14&lt;/li&gt;
+      &lt;li&gt;works on: Chrome 23+&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;intro&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;Scrolling Effect ?&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://design.kayac.com/topics/2012/06/koukyuperaichi.php&quot;&gt;縦や横に長いサイト「高級ペライチ」1度は見ておきたいスクロール演出のまとめ32個！&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.google.com/search?q=scrolling+effect&quot;&gt;scrolling effect - Google 検索&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    最近では
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://special.jimin.jp/political_promise/&quot;&gt;自民党＜政権公約＞&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    →　&lt;strong&gt;それ、CSS でできるよ！&lt;/strong&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;mixin&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;SCSS Mixins&lt;/h1&gt;
+    &lt;a href=&quot;https://gist.github.com/4277256&quot;&gt;sticker.scss&lt;/a&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;code&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;これだけ&lt;/h1&gt;
+    &lt;pre&gt;&lt;code&gt;@import &quot;sticker.scss&quot;;
+@include use-stickers($height);
+
+#your-favorite-element {
+  @include sticker($start, $velocity, $range);
+}&lt;/code&gt;&lt;/pre&gt;
+  &lt;/section&gt;
+
+  &lt;section id=&quot;how&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;どうやってるの？&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        Sticky Positioning
+        &lt;div&gt;
+          参照: &lt;a href=&quot;http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit&quot;&gt;HTML5Rocks Updates&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;http://www.w3.org/TR/css3-3d-transforms/&quot;&gt;CSS Transforms&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;label for=&quot;show-outline&quot;&gt;sticker の位置を見えるようにする&lt;/label&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;why&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;なぜ CSS で?&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;strong&gt;軽い&lt;/strong&gt;&lt;br&gt;ロード時間ゼロ！ JS がない分軽い
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;strong&gt;速い&lt;/strong&gt;&lt;br&gt;スクロール遅延ゼロ！ ブラウザ側が処理してくれる
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;strong&gt;たのしい&lt;/strong&gt;&lt;br&gt;CSS でやる意味ゼロ！！
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;small&gt;※ 効果には個人差・環境差があります&lt;/small&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;more&quot; class=&quot;paper&quot;&gt;
+    &lt;h1&gt;もっと詳しく&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;https://gist.github.com/4281393&quot;&gt;CSS でペライチ&lt;/a&gt;&lt;br&gt;
+        （&lt;a href=&quot;http://www.adventar.org/calendars/2&quot;&gt;CSS Programming Advent Calendar 2012&lt;/a&gt; の 14日目）
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://twitter.com/xl1blue&quot;&gt;@xl1blue on Twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;end&quot;&gt;
+    &lt;h1&gt;END&lt;/h1&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;stickers&quot;&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star1&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star2&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star3&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star4&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star5&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;shootingstar&quot;&gt;&lt;div class=&quot;star&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;moon&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;star1-balloon&quot;&gt;
+    &lt;pre class=&quot;balloon&quot;&gt;&lt;code&gt;sticker(
+  $start: 300px 150px,
+  $velocity: 0 -0.06,
+  $range: 0.5 1
+)&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;sunnysky&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;background-far&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;background-close&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;title-cloud-back&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;ufo&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;ufo-balloon&quot;&gt;
+    &lt;pre class=&quot;balloon&quot;&gt;&lt;code&gt;sticker(
+  $start: -550px 200px,
+  $velocity: 0.95 0.55,
+  $range: 0.40 0.53
+)&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;sled&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;sled-balloon&quot;&gt;
+    &lt;pre class=&quot;balloon&quot;&gt;&lt;code&gt;sticker(
+  $start: -720px 250px,
+  $velocity: 0.1 0,
+  $range: 0.12 1
+)&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow1&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow2&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow3&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow4&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow5&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;snow6&quot;&gt;&lt;div class=&quot;snow&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;title-cloud-front&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;sticker&quot; id=&quot;end-trees&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+<code>/* --- utils --- */
+
+$vendor-prefixes: -webkit- '';
+
+// add vendor prefixes
+@mixin vendor($list) {
+  @if length(nth($list, 1)) != 2 { $list: append((), $list); }
+  @each $l in $list {
+    $prop: nth($l, 1);
+    $value: nth($l, 2);
+    @each $p in $vendor-prefixes {
+      #{$p + $prop}: $value;
+    }
+  }
+}
+
+@mixin vendor-prop($prop, $value) {
+  @each $p in $vendor-prefixes {
+    #{$prop}: #{$p + $value};
+  }
+}
+
+@function step-gradient($size, $colors...) {
+  $last: 0;
+  $result: ();
+  @each $color in $colors {
+    $result: append($result, $color $last, comma);
+    $last: $last + $size;
+    $result: append($result, $color $last);
+  }
+  @return $result;
+}
+
+
+/* --- math --- */
+
+$PI: 3.14159265;
+
+@function sqrt($x) {
+  @if x == 0 { @return 0; }
+  $s: 1;
+  $t: 0;
+  @while $t != $s { $t: $s; $s: ($s + $x / $s) / 2; }
+  @return $s;
+}
+
+@function arctan($x) {
+  @if $x == 0 { @return 0rad; }
+  @if $x == 1/0 { @return 0.5rad * $PI; }
+  @if $x == -1/0 { @return -0.5rad * $PI; }
+  
+  $r: $x &gt; 1 or $x &lt; -1;
+  @if $r { $x: 1 / $x; }
+  $a: 0;
+  $i: 10;
+  @while $i &gt;= 1 {
+    $a: $i * $i * $x * $x / (2 * $i + 1 + $a);
+    $i: $i - 1;
+  }
+  @if $r {
+    @return $x * ($PI / 2 / abs($x) - 1 / (1 + $a)) * 1rad;
+  } @else {
+    @return $x / (1 + $a) * 1rad;
+  }
+}
+
+
+/* --- sticker --- */
+
+$sticky-area: 100%;
+@mixin use-stickers($height){
+  $sticky-area: $height;
+  body {
+    margin: 0;
+    height: $height;
+    overflow-x: hidden;
+  }
+}
+
+%sticker {
+  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  @include vendor((transform-origin, 0 0));
+}
+
+@mixin sticker(
+  $start-x: 0, $start-y: 0,
+  $vel-x: 0, $vel-y: -1,
+  $range-from: 0, $range-to: 1,
+  // shorthands
+  $start: null, $velocity: null, $range: null
+){
+  @if $start != null { $start-x: nth($start, 1); $start-y: nth($start, 2);}
+  @if $velocity != null { $vel-x: nth($velocity, 1); $vel-y: nth($velocity, 2);}
+  @if $range != null { $range-from: nth($range, 1); $range-to: nth($range, 2);}
+
+  @extend %sticker;
+  &gt; * {
+    @extend %sticker;
+  }
+
+  @if $vel-x == 0 and $vel-y == -1 {
+    // static
+    left: $start-x;
+    top: $start-y;
+  } @else {
+    $scale: sqrt($vel-x * $vel-x + ($vel-y + 1) * ($vel-y + 1));
+    $sinr: -$vel-x / $scale;
+    $cosr: ($vel-y + 1) / $scale;
+
+    $rotate: arctan($sinr / $cosr);
+
+    $range: $sticky-area * ($range-to - $range-from);
+    $width: abs($range * $sinr);
+    $height: abs($range * $cosr);
+
+    $trans-x: 0;
+    $trans-y: -$width * $sinr;
+    @if $sinr &gt;= 0 and $cosr &gt; 0 {
+      $trans-x: $height * $sinr;
+      $trans-y: 0;
+    } @else if $sinr &gt; 0 and $cosr &lt;= 0 {
+      $rotate: $rotate + $PI;
+      $trans-x: -$width * $cosr + $height * $sinr;
+      $trans-y: -$height * $cosr;
+    } @else if $sinr &lt;= 0 and $cosr &lt; 0 {
+      $rotate: $rotate - $PI;
+      $trans-x: -$width * $cosr;
+      $trans-y: -$width * $sinr - $height * $cosr;
+    }
+
+    // set styles
+    width: $width / $scale;
+    height: $height / $scale;
+    @include vendor(
+      (transform, translateY($sticky-area * $range-from)
+        translate3d($trans-x, $trans-y, 0) rotate($rotate) scale($scale))
+    );
+    &gt; * {
+      @include vendor-prop(position, sticky);
+      @include vendor(
+        (transform, scale(1 / $scale) rotate(-$rotate)
+          translate3d(-$trans-x, -$trans-y, 0) translate($start-x, $start-y))
+      );
+    }
+  }
+}
+
+
+/* --- main --- */
+
+// colors
+$grass: #6c6;
+$green: #4a4;
+$sky: #9cf;
+$blue: #46a;
+$red: #f44;
+$tan: #ca4;
+$brown: #850;
+$cream: #fea;
+$white: #eee;
+$black: #000;
+
+// variables
+$title-height: 1000px;
+$section-height: 550px;
+$section-padding: 30px;
+$section-interval: 450px;
+$num-sections: 8;
+$global-height: $title-height + $num-sections * ($section-height + $section-interval);
+$global-width: 2000px;
+
+
+// stickers
+@include use-stickers($global-height);
+
+#stickers {
+  width: 100vw;
+  height: $global-height;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#background-far {
+  @include sticker($start: 0 600px, $velocity: -0.15 0);
+  &gt; div {
+    width: $global-height * 0.15 + $global-width;
+    height: 150px;
+  }
+}
+#background-close {
+  @include sticker($start: 0 750px, $velocity: -0.25 0);
+  &gt; div {
+    width: $global-height * 0.25 + $global-width;
+    height: 350px;
+  }
+}
+
+#moon {
+  @include sticker($start: 380px 150px, $velocity: 0 0, $range-from: 0.55);
+  margin-left: 50vw;
+  &gt; div {
+    width: 150px;
+    height: 150px;
+  }
+}
+#sled {
+  @include sticker($start: -720px 250px, $velocity: 0.1 0, $range: 0.12 1);
+  margin-left: 50vw;
+  &gt; div {
+    width: 640px;
+    height: 256px;
+  }
+}
+#ufo {
+  @include sticker($start: -550px 200px, $velocity: 0.95 0.55, $range: 0.4 0.53);
+  margin-left: 50vw;
+  &gt; div {
+    width: 128px;
+    height: 64px;
+  }
+}
+
+#title-cloud-front {
+  @include sticker($velocity: 0 -2);
+  &gt; div {
+    width: 2500px;
+    height: 800px;
+  }
+}
+#title-cloud-back {
+  @include sticker;
+  &gt; div {
+    width: 2500px;
+    height: 900px;
+  }
+}
+#sunnysky {
+  @include sticker;
+  &gt; div {
+    width: 2500px;
+    height: 4500px;
+  }
+}
+#end-trees {
+  @include sticker($start: 0 15900px, $vel-y: -2);
+  &gt; div {
+    width: 2500px;
+    height: 1200px;
+  }
+}
+
+#snow1 {
+  @include sticker($start: -500px -1300px, $velocity: 0.2 0.7);
+  margin-left: 80vw;
+  font-size: 200px;
+}
+#snow2 {
+  @include sticker($start: 700px 200px, $velocity: 0.4 0.9);
+  font-size: 300px;
+}
+#snow3 {
+  @include sticker($start: 100px -200px, $velocity: 0.3 0.8);
+  font-size: 250px;
+}
+#snow4 {
+  @include sticker($start: -400px -600px, $velocity: 0.3 0.9);
+  margin-left: 80vw;
+  font-size: 220px;
+}
+#snow5 {
+  @include sticker($start: 600px -900px, $velocity: 0.1 0.9);
+  font-size: 200px;
+}
+#snow6 {
+  @include sticker($start: 200px -1200px, $velocity: 0.1 0.7);
+  font-size: 160px;
+}
+#star1 {
+  @include sticker($start: 300px 150px, $vel-y: -0.06, $range-from: 0.5);
+  font-size: 75px;
+}
+#star2 {
+  @include sticker($start: 200px 500px, $vel-y: -0.06, $range-from: 0.52);
+  font-size: 90px;
+}
+#star3 {
+  @include sticker($start: 500px 300px, $vel-y: -0.06, $range-from: 0.54);
+  font-size: 80px;
+}
+#star4 {
+  @include sticker($start: -300px 500px, $vel-y: -0.06, $range-from: 0.56);
+  margin-left: 100vw;
+  font-size: 90px;
+}
+#star5 {
+  @include sticker($start: -400px 100px, $vel-y: -0.06, $range-from: 0.58);
+  margin-left: 100vw;
+  font-size: 75px;
+}
+#shootingstar {
+  @include sticker($start: 5000px -4800px, $velocity: -0.8 0.8);
+  margin-left: 50vw;
+  font-size: 50px;
+}
+
+#sled-balloon {
+  @include sticker($start: -170px 200px, $velocity: 0.1 0, $range: 0.4 0.61);
+  margin-left: 50vw;
+}
+#ufo-balloon {
+  @include sticker($start: -340px 140px, $velocity: 0.95 0.55, $range: 0.41 0.535);
+  margin-left: 50vw;
+}
+#star1-balloon {
+  @include sticker($start: 400px 100px, $vel-y: -0.06, $range: 0.5 0.65);
+}
+
+#container {
+  position: relative;
+  z-index: 10;
+}
+
+
+// appearance
+body {
+  font-size: 25px;
+  line-height: 1.7;
+  background: $blue;
+}
+a:link, a:visited {
+  color: $blue;
+}
+a:active {
+  color: $red;
+}
+pre, code {
+  margin: 0;
+}
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+section {
+  box-sizing: border-box;
+  margin: 0 auto $section-interval;
+  padding: 30px;
+  h1 {
+    font-size: 2em;
+    line-height: 1;
+    text-align: center;
+  }
+}
+
+.paper {
+  width: 800px;
+  height: $section-height;
+  background-color: $white;
+  border-bottom: 10px solid $red;
+  pre {
+    background: $cream;
+    border: 1px solid $tan;
+    padding: 20px;
+  }
+}
+
+#title {
+  height: $title-height;
+  text-align: center;
+  h1 {
+    font-family: Geo, cursive;
+    font-size: 128px;
+    color: $red;
+    text-shadow: 0 3px $cream, 0 6px $green;
+    width: 500px;
+    margin: 50px auto 20px auto;
+  }
+}
+#mixin {
+  text-align: center;
+  a {
+    font-size: 3em;
+  }
+}
+#code {
+  margin-bottom: $section-height + 2 * $section-interval;
+}
+#end {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: $white;
+  h1 {
+    font-family: Geo, cursive;
+    font-size: 160px;
+    color: $red;
+    text-shadow: 0 6px $cream;
+  }
+}
+
+#scroll-suggest::after {
+  display: block;
+  content: '\226b';
+  @include vendor((transform, rotate(90deg) scale(2)))
+}
+
+
+// stickers appearance
+#background-far &gt; div {
+  background-image: url('http://jsrun.it/assets/b/X/E/G/bXEGa');
+}
+#background-close &gt; div {
+  background-size: 1000px 350px;
+  background-position: 0, 1000px, 2000px, 3000px;
+  background-image:
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $green, $grass, $green, $grass, $green)),
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $tan, $grass, $green, $tan, $brown)),
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $green, $tan, $green, $brown, $tan)),
+    -webkit-linear-gradient(left, step-gradient(20%,
+      $brown, $tan, $brown, $tan, $brown));
+  background-image:
+    linear-gradient(left, step-gradient(20%,
+      $green, $grass, $green, $grass, $green)),
+    linear-gradient(left, step-gradient(20%,
+      $tan, $grass, $green, $tan, $brown)),
+    linear-gradient(left, step-gradient(20%,
+      $green, $tan, $green, $brown, $tan)),
+    linear-gradient(left, step-gradient(20%,
+      $brown, $tan, $brown, $tan, $brown));
+  background-repeat: no-repeat;
+}
+
+#moon &gt; div {
+  background: $cream;
+  border-radius: 100%;
+}
+#sled &gt; div {
+  background-image: url('http://jsrun.it/assets/n/a/m/3/nam3U');
+  background-size: 640px 512px;
+  @include vendor(
+    (animation, sled 1s steps(2) infinite)
+  );
+}
+#ufo &gt; div {
+  background-image: url('http://jsrun.it/assets/i/V/R/L/iVRLn');
+  background-size: 128px 144px;
+  @include vendor(
+    (animation, ufo 1s steps(2) infinite)
+  );
+}
+
+.balloon {
+  font-size: 16px;
+  line-height: 1.2;
+  width: 220px;
+  padding: 10px;
+  background: $cream;
+
+  &amp;::before {
+    content: '';
+    background: $cream;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+
+    left: -25px;
+    @include vendor(
+      (transform-origin, 100% 100%)
+      (transform, skewX(-45deg))
+    );
+  }
+}
+.snow {
+  opacity: 0.8;
+  color: $white;
+  text-shadow: 3px 0 $blue, -3px 0 $blue, 0 3px $blue, 0 -3px $blue;
+  &amp;::before {
+    content: '\2744';
+  }
+}
+.star {
+  color: $cream;
+  &amp;::before {
+    content: '\2605';
+  }
+}
+
+@mixin title-cloud($base-color) {
+  background-size: 200px 100%;
+  background-image: -webkit-linear-gradient(110deg,
+    transparent, transparent 100px, $base-color 100px, $base-color);
+  background-image: linear-gradient(-20deg,
+    transparent, transparent 100px, $base-color 100px, $base-color);
+}
+#title-cloud-front &gt; div {
+  @include title-cloud($white);
+  border-top: 10px solid $red;
+}
+#title-cloud-back &gt; div {
+  @include title-cloud($cream);
+  background-position: 100px;
+}
+#sunnysky &gt; div {
+  $base-color: $sky;
+  background-size: 10px 4000px, 200px 500px;
+  background-position-y: 0, 4000px;
+  background-repeat: repeat-x;
+  background-image:
+    -webkit-linear-gradient($base-color, $base-color),
+    -webkit-linear-gradient(110deg,
+      transparent, transparent 100px, $base-color 100px, $base-color);
+  background-image:
+    linear-gradient($base-color, $base-color),
+    linear-gradient(-20deg,
+      transparent, transparent 100px, $base-color 100px, $base-color);
+}
+#end-trees &gt; div {
+  background-size: 200px 100%;
+  background-image: -webkit-linear-gradient(
+    290deg, transparent, transparent 100px,
+    $grass 100px, $grass 110px, $green 110px, $green
+  );
+  background-image: linear-gradient(
+    -200deg, transparent, transparent 100px,
+    $grass 100px, $grass 110px, $green 110px, $green
+  );
+}
+
+// animations
+@-webkit-keyframes ufo {
+  from { background-position-y: 0; }
+  to   { background-position-y: 128px; }
+}
+@-webkit-keyframes sled {
+  from { background-position-y: 0; }
+  to   { background-position-y: 512px; }
+}
+
+
+// showing outline
+body &gt; input {
+  display: none;
+}
+label[for=&quot;show-outline&quot;] {
+  color: $blue;
+  text-decoration: underline;
+  &amp;:hover {
+    cursor: pointer;
+  }
+  #show-outline:checked ~* &amp; {
+    background: $red;
+  }
+}
+#show-outline:checked ~ #stickers * {
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+}</code>
+</noscript>
+
+<!-- p class="btnFullScreen"><a href="http://jsdo.it/xl1/k4fp/read">Code Fullscreen</a></p -->
+<!-- / .boxCode --></div>
+<div class="boxViewer">
+<iframe src="" width="465" height="465" id="generated_site">
+use an iframe compat browser, deer
+</iframe>
+<div id="boxThumbViewer">
+<p id="thumbnail"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/k/4/f/k4fp.jpg?t=1371286945" width="465" height="465" /></p>
+<p class="btnPlayViewer"><a href="javascript:void(0);" id="play_button" onclick="JSDoIt.CodeShow.play(); return false;"><img src="/img/common/play_button.png" alt="play" class="btn" /></a></p>
+<!-- / #bixThumbViewer --></div>
+<!-- /.boxViewer --></div>
+</div>
+
+<div id="codeUtilties" class="group">
+	<ul class="utils group">
+		<li>
+			<form id="form_fork_sub" method="post" action="http://jsdo.it/xl1/k4fp/fork">
+				<input type="submit" value="Fork" class="btnBase btnType5 btnSmall" id="fork_button_sub" name="btnFork" />
+                                <input type="hidden" name="token" value="" />          
+			</form>
+		</li>		<li id="play_on_games_button" style="display: none;"><a href="http://games.jsdo.it/xl1/k4fp" class="btnBase btnType1 btnSmall"><span>Play on jsdo.it games</span></a><p class="arrow"><img src="/img/code/game/arrow.png" alt="" /></p></li>
+		<li>
+			<ul class="btnGroup group">
+				<li class="tab" data-tab-name="author"><span class="btnBase btnType6 btnSmall">Author</span></li>
+				<li class="tab active" data-tab-name="socialFeedback"><span class="btnBase btnType6 btnSmall active">Share</span></li>
+				<li class="tab" data-tab-name="embed"><span class="btnBase btnType6 btnSmall">ブログに埋め込む</span></li>
+				<li class="tab" data-tab-name="qrcode"><span class="btnBase btnType6 btnSmall">QR</span></li>
+				<li class="tab" data-tab-name="tag"><span class="btnBase btnType6 btnSmall">Tag</span></li>
+			</ul>
+		</li>
+		<li class="download"><a href="http://jsdo.it/xl1/k4fp/download" class="btnBase btnType6 btnSmall btnInvisible" title="download"><img src="/img/common/ico/ico_download_01.png" width="17" height="13" alt="download" title="download">Download</a></li>
+	</ul>
+	<div class="utilDetails clearfix">
+		<section class="blockCodeUtil games">
+		<div class="col2">
+		<div>
+		<a href="http://games.jsdo.it" target="_blank"><img src="/img/code/jsdoitGames.png" id="jsdoitGamesImage" width="114" height="116"></a>
+
+		</div>
+		<div>
+		<p class="msgComplete">Complete!</p>
+		<div class="blockInputFormStyle1">
+		<form id="form_sub_games" action="/api/code/post_to_games" data-saved="0">
+		<input type="hidden" name="token" value="" />
+		<input type="hidden" name="uid" value="k4fp" />
+		<div class="inputItem description">
+		<h2>Description <span>What kind of game?</span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<textarea required="required" name="description">[CSS Programming Advent Calendar 2012](http://www.adventar.org/calendars/2) の 14 日目 &lt;https://gist.github.com/4281393&gt;
+
+- [**フルスクリーンのみ対応**](http://jsrun.it/xl1/k4fp)
+- `about:flags` で「試験運用版の WebKit 機能を有効にする」をオンにする必要があります
+
+### 2013/01/24 更新
+unprefixed linear-gradient の文法間違ってたので直した
+
+### 2013/06/15 更新
+translate -&gt; translate3d にするとレイヤーが切られるので描画が少なくて済む</textarea>
+		</div>
+		</div>
+		<div class="inputItem device">
+		<h2>Control Device <span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<table>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_jwc.png" alt="jsdo.it websocket controller" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="1" name="support_spctrl" value="1"  />Smartphone Controller<a href="/controller">jsdo.it WebSocket Controller</a>»</label>
+		<div class="detail device1">
+		<ul>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_arrow.png" alt=""></p>
+		<input type="text" name="stick" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_start.png"></p>
+		<input type="text" name="button_start" /value="" >
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_a.png"></p>
+		<input type="text" name="button_a" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_b.png"></p>
+		<input type="text" name="button_b" value="" />
+		</li>
+		</ul>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_mouse.png" alt="Mouse" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="3" name="support_mouse" value="1"  />Mouse</label>
+		<div class="detail device3">
+		<textarea name="mouse" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_keyboard.png" alt="keyboard" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="4" name="support_keyboard" value="1"  />Keyboard</label>
+		<div class="detail device4">
+		<textarea name="keyboard" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_smartphone.png" alt="smartphone" /></p>
+		</th><td>
+		<label><input type="checkbox" class="flag" data-device="2"  name="support_touchdevice" value="1"  />Touch Device</label>
+		<div class="detail device2">
+		<textarea name="touchdevice" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		</table>
+		</div>
+		</div>
+		<div class="inputItem screen valid">
+		<h2>Fullscreen<span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<ul>
+		<li><label><input type="radio" name="support_fullscreen" value="1" checked> Activated</label></li>
+		<li><label><input type="radio" name="support_fullscreen" value="0" > Inactivated</label></li>
+		</ul>
+		</div>
+		</div>
+		<div class="submit">
+		<a id="game_delete_button" href="javascript:void(0)" class="btnBase btnType6 btnSmall btnInvisible" >jsdo.it games から削除する</a>
+		<a id="game_submit_button" class="btnBase btnType5" disabled="disabled" href="javascript:void(0)">Submit</a>
+		</div>
+		</form><!-- form_sub_games  -->
+		<!-- / .blockInputFormStyle1 --></div>
+		</div>
+		</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil author" itemscope itemtype="http://data-vocabulary.org/Person">
+			<div class="col2 group">
+				<div class="image">
+					<p class="thumb"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="100" height="100" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+				<!-- / .image --></div>
+				<div class="information">
+					<h1 class="hidden">Author</h1>
+					<div class="user">
+						<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author"><span itemprop="name">xl1</span></a></p>
+					</div>
+					<ul class="metas group">
+                        
+                        
+                        
+                        
+					</ul>
+					<div class="discription markdown">
+						
+
+					</div>
+				<!-- / .information --></div>
+			</div>
+		<!-- / .author --></section>
+		<section class="blockCodeUtil socialFeedback active">
+			<ul class="group">
+			<li class="facebook"><fb:like href="http://jsdo.it/xl1/k4fp" send="false" layout="button_count" width="55" show_faces="false" font="verdana"></fb:like></li>
+			
+			<li class="stumbleupon"><script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script></li>
+			
+			  <a href="http://twitter.com/share" class="twitter-share-button" data-text="Pure CSS Scrolling Effect #jsdoit" data-count="horizontal" data-related="jsdoit_team">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			  
+			<li class="plusone"><g:plusone size="medium" href="http://jsdo.it/xl1/k4fp"></g:plusone></li>
+			</ul>
+		<!-- / .socialFeedback --></section>
+		<section class="blockCodeUtil embed">
+			<div class="col2 widgetDesignBox group">
+				<div class="image">
+					<img src="/img/code/widget_design_view.png" width="660px" height="116px">
+				</div>
+				<div>
+					<div class="blockInputFormStyle1">
+						<div class="inputItem">
+							<h2>Default Panel</h2>
+							<div class="comment">
+								<ul class="select selectDefaultPanel">
+									<li><label><input type="radio" name="defaultTab" value="play">Auto play</label></li>
+									<li><label><input type="radio" name="defaultTab" value="screenshot">Screenshot</label></li>
+									<li><label><input type="radio" name="defaultTab" value="readme" checked="checked">Readme</label></li>
+									<li><label><input type="radio" name="defaultTab" value="javascript">JavaScript</label></li>
+									<li><label><input type="radio" name="defaultTab" value="html">HTML</label></li>
+									<li><label><input type="radio" name="defaultTab" value="css">CSS</label></li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>Size</h2>
+							<div class="comment">
+								<ul class="selectEmbedSize">
+									<li>Width: <input type="number" class="width inline" min="465" value="465" style="width:60px;"> px</li>
+									<li>Height: <input type="number" class="height inline" min="496" value="496" style="width:60px;"> px</li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>code</h2>
+							<div class="comment">
+								<textarea readonly="readonly" onclick="javascript:this.select();" data-url="http://jsdo.it/blogparts/k4fp/js">&lt;script type=&quot;text/javascript&quot; src=&quot;http://jsdo.it/blogparts/k4fp/js&quot;&gt;&lt;/script&gt;</textarea>
+							</div>
+						</div>
+					<!-- / .blockInputFormStyle1 --></div>
+				</div>
+			</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil qrcode">
+			<div class="col2 group">
+				<div>
+					<p class="code"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://jsdo.it" width="150" height="150" alt="QR Code"></p>
+				</div>
+				<div> 
+				</div>
+			</div>
+		<!-- / .qrcode --></section>
+		<section class="blockCodeUtil tag">
+			<ul class="listTags">
+			<li><a href="http://jsdo.it/tag/css" rel="tag">css</a></li>
+			</ul>
+		<!-- / .tag --></section>	
+	<!-- / .utilDetails --></div>
+<!-- / #codeUtilties --></div>
+
+<!-- / .viewer --></section>
+
+<!-- /.code --></section>
+
+<section class="discussion">
+	<header><h1 class="ttlStyle2">Discussion</h1></header>
+	<div>
+		<ul>
+		</ul>
+		<p class="post"><a href="/qa/create?code_uri=http://jsdo.it/xl1/k4fp" class="btnBase btnType1">Questions on this code?</a></p>
+	</div>
+<!-- / .discussion --></section>
+
+<div class="ad_super_bnr btnT"><!-- jsdo.it_codepage_fullbnr_en --> <script type='text/javascript'> GA_googleFillSlot("jsdo.it_codepage_fullbnr_en"); </script>
+<!-- /.ad_super_bnr --></div>
+
+<section>
+<header><h1 class="ttlStyle2">Tags</h1></header>
+
+<ul class="listTags group">
+    
+    <li><a href="http://jsdo.it/tag/css" title="css" class="">css</a></li>
+</ul>
+
+<!-- /.tags --></section>
+
+
+
+
+
+
+
+
+<section class="favorite">
+<header><h1 class="ttlStyle2">Favorite by</h1></header>
+    <div class="unitGroup group">
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/Tetsuro.Kondoh" title="Tetsuro.Kondoh"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/a/7/7/4/a7744b9fc748cbdf0ddd0618f029dfe6cd359c3b_100.jpg" width="30" height="30" alt="Tetsuro.Kondoh" title="Tetsuro.Kondoh" /></a></span><a href="http://jsdo.it/Tetsuro.Kondoh" title="Tetsuro.Kondoh">Tetsuro.Kond</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/No_1026" title="No_1026"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/1/5/5/d/155d7093a026afdd5cc80e216d58e95190936969_100.jpg" width="30" height="30" alt="No_1026" title="No_1026" /></a></span><a href="http://jsdo.it/No_1026" title="No_1026">No_1026</a>
+          <!-- /.unitFavBy --></div>
+          <div class="unitFavBy"><span class="thumb"><a href="http://jsdo.it/turusuke" title="turusuke"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/f/2/f/a/f2fa7dd28b99ff1adddefb4f905a11f4a88ac54e_100.jpg" width="30" height="30" alt="turusuke" title="turusuke" /></a></span><a href="http://jsdo.it/turusuke" title="turusuke">turusuke</a>
+          <!-- /.unitFavBy --></div>
+	<!-- /.unitGroup --></div>
+
+
+<!-- /.favorite --></section>
+
+
+
+
+
+
+
+<section class="forked group">
+<header><h1 class="ttlStyle2">Forked</h1></header>
+
+  <div class="boxSort group">
+      <p class="changeSort">sort by</p>
+      <ul class="group"><li class="selected"><em>latest</em></li>
+<li><a href="http://jsdo.it/xl1/k4fp?order=pv#code_forked">page views</a></li>
+<li><a href="http://jsdo.it/xl1/k4fp?order=favorite#code_forked">favorite</a></li>
+<li><a href="http://jsdo.it/xl1/k4fp?order=forked#code_forked">forked</a></li>
+      </ul>
+  <!-- / .boxSort --></div>
+
+  <div id="boxForkedCode" class="autopagerize_page_element">
+    <div class="unitCodeGroup group col4">
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/teetteet/cIlQ" rel="bookmark" title="forked: Pure CSS Scrolling Effect"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/c/I/l/cIlQ_w.jpg?t=1358560042" alt="forked: Pure CSS Scrolling Effect" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/teetteet/cIlQ" rel="bookmark" title="forked: Pure CSS Scrolling Effect"><span class="body">forked: Pure CSS Scrolling Eff</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/teetteet" title="teetteet"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="teetteet" /></a></span><a href="http://jsdo.it/teetteet">teetteet</a>
+</p>
+
+
+<ul class="data">
+<li class="forked"><a href="#code_forked" title="forked from forked: Pure CSS Scrolling Effect">1</a></li><li class="fav">0</li>
+<li class="pv">1234</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">2/128/560</li>
+<li class="tag">
+<ul class="listTag">
+<li><a href="http://jsdo.it/tag/css" class="">css</a></li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/teetteet/hnwo" rel="bookmark" title="forked: Pure CSS Scrolling Effect"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/h/n/w/hnwo_w.jpg?t=1355490618" alt="forked: Pure CSS Scrolling Effect" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/teetteet/hnwo" rel="bookmark" title="forked: Pure CSS Scrolling Effect"><span class="body">forked: Pure CSS Scrolling Eff</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/teetteet" title="teetteet"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="teetteet" /></a></span><a href="http://jsdo.it/teetteet">teetteet</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">771</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">2/128/560</li>
+<li class="tag">
+<ul class="listTag">
+<li><a href="http://jsdo.it/tag/css" class="">css</a></li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+    <!--/.unitCodeGroup--></div>
+  <!-- /#boxForkedCode --></div>
+
+<!-- /.forked --></section>
+
+
+
+
+
+
+
+
+<!-- /#codeDetail --></article>
+
+<div id="diff_container"></div>
+<div id="diff_controller">
+  <a href="#" id="diff_close_button"><img src="/img/code/close.gif" class="btnT"></a>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=107163819375320&amp;xfbml=1"></script>
+
+<!-- /#body --></div>
+<!--/[[[ CONTENT-AREA ]]]-->
+<footer id="siteFooter" class="layoutWideContainer">
+<div class="layoutContainer layoutLiquid group">
+<div class="apps group">
+<div class="col1">
+<a href="/users"><p class="userRanking">User ranking</p></a>
+<a href="/codes/ranking"><p class="codeRanking">Code ranking</p></a>
+</div>
+<div class="col2">
+<a href="/event/topics">
+<section class="event">
+<h1>Topics &amp; Events</h1>
+<p>"I want to make something but don't know what to make." "We want to know the newest trends!" Responding to those voices, we are regularly hosting events and updating topics.</p>
+</section>
+</a>
+</div>
+<div class="col3">
+<a href="/qa">
+<section class="discussions">
+<h1>Discussions</h1>
+<p>Any questions? Ask jsdo.it users! You can post questions together with your code. You can also get answers supported by a code.</p>
+</section>
+</a>
+</div>
+<!-- / .apps --></div>
+<section class="account">
+<h1>Completely Free Account</h1>
+<p>
+<form method="post" action="/code/new">
+<input type="hidden" name="token" value="">
+<p class="btnLabel labelFree"><input type="submit" class="btnBase btnType5" value="Sign up Free and Start coding"></p>
+</form>
+</p>
+</section>
+<div class="globals group">
+<nav>
+<ul>
+
+<li><a href="http://twitter.com/#!/jsdoit_team" class="external" rel="external">@jsdoit_team</a></li>
+<li><a href="http://www.facebook.com/jsdo.it" target="_blank" class="external" rel="external">Facebook</a></li>
+
+
+</ul>
+<ul>
+<li><a href="/about" title="What's jsdo.it?">About</a></li>
+<li><a href="/assets">Assets</a></li>
+<li><a href="/help">Help</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/apidoc/">API</a></li>
+<li><a href="/terms">Term of use</a></li>
+<li><a href="/privacy_policy/">Privacy policy</a></li>
+<li><a href="/help#help_contact">Contact</a></li>
+</ul>
+</nav> 
+<p id="copyright" class="vcard"><small>Site Design &copy; <a href="http://www.jsdo.it/" title="jsdoit Inc." class="external fn org url">jsdoit Inc.</a> All Rights Reserved.</small></p>
+<!-- / .globals --></div>
+</div>
+<!-- / #siteFooter --></footer>
+
+
+<!--/#container--></div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15793157-5']);
+  _gaq.push(['_setDomainName', '.jsdo.it']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['_trackPageview', '/code/show'+location.pathname]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script type="text/javascript">
+var path  = "code/show";
+var token = "";
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/js/do.js?1441025678"></script>
+ <script type="text/javascript" src="/js/notification.js?1441025678"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+
+<script type="text/javascript" src="/js/codemirror/codemirror-compressed.js?1441025678"></script>
+</body>
+</html>

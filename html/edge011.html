@@ -1,0 +1,943 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"  class="osOther" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+
+<title>[library] edge.0.1.1.min.js - jsdo.it - Share JavaScript, HTML5 and CSS</title>
+
+<meta property="qc:admins" content="21506643427614" />
+<meta property="wb:webmaster" content="5c8153403c54c98f" />
+<meta name="description" content="[library] edge.0.1.1.min.js by xl1 @ jsdo.it - share JavaScript, HTML5 and CSS - jsdo.it is a service to write JavaScript, HTML5, CSS in your browser and share it. You can copy and modify others' code. And also Ask questions about JavaScript, HTML5, CSS" />
+
+<meta name="keywords"  content="judo.it,JavaScript,HTML5,CSS,jsdoit" />
+
+<meta name="author" content="jsdoit Inc." />
+<meta name="license" content="&#169;jsdoit Inc." />
+
+<meta property="og:site_name" content="jsdo.it" />
+<meta property="fb:page_id" content="138382942860000" />
+<meta property="fb:app_id" content="104748116268345" />
+<meta property="og:locale" content="ja_JP">
+
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="http://jsdo.it/xl1/edge011" />
+
+<meta property="og:description" content="[library] edge.0.1.1.min.js by xl1 @ jsdo.it - " />
+<meta property="twitter:description" content="[library] edge.0.1.1.min.js by xl1 @ jsdo.it - " />
+
+
+
+
+<meta property="og:image" content="http://jsdo-static-contents.s3.amazonaws.com/images/capture/p/O/D/pODv.jpg?t=1312255936" />
+<meta property="og:image:width" content="465" />
+<meta property="og:image:height" content="465" />
+
+<meta name="twitter:site" content="@jsdo_it">
+<meta name="twitter:card" content="summary">
+
+
+
+
+<meta property="og:title" content="[library] edge.0.1.1.min.js" />
+<meta name="twitter:title" content="[library] edge.0.1.1.min.js" />
+
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/favicon.ico" />
+<link rel="start" href="/" title="home" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/common.css?1468627570" />
+
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/code.css?1468627570" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/codemirror.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/themes.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/SyntaxHighlighter.css?1441025678" />
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<!--[if IE 9]><body class="ie9 i_default"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><body class="i_default"><!--<![endif]-->
+
+<script type="text/javascript">
+var language = "i_default"; // used in l()
+</script>
+
+<!-- script 'type="text/javascript" src="https://www.google.com/jsapi"></script -->
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- adtype =  -->
+<!-- Google DoubleClick 広告のスクリプトページ -->
+<div id="container" class="codepage contents">
+<!--[[[ HEADER-AREA ]]]-->
+<!-- country = JP -->
+<header id="headerGlobal" class="group">
+<div class="sub">
+<div class="layoutContainer layoutLiquid group">
+
+<!-- PR欄&リンク -->
+<style>
+#headerGlobal .pr a:before {
+    content: "重要なお知らせ";
+}
+#headerGlobal .pr a {
+    color: red;
+    font-size: 14px;
+    text-shadow: none;
+    padding-right: 11px;
+}
+</style>
+<p class="pr" style="color:red; font-"><a href="http://jsdo.it/blog/2019/07/jsdoit-1.html">
+【重要】サービス終了のお知らせ</a></p>
+<!-- PR欄&リンク -->
+
+
+<ul id="headerLanguage">
+<li class="column">
+<span class="header_menu_column" id="header_menu_column_1"><a href="#"><span class="thumb"></span>English</a></span>
+<div class="navGlobalSub">
+<ul class="shadowLayor1">
+<li><a href="?lang=en" class="usa">English</a></li>
+<li style="display:none;"><a href="#" class="kor">한국어</a></li>
+<li><a href="?lang=zh-CN" class="chn">中文</a></li>
+<li><a href="?lang=ja" class="jpn">日本語</a></li>
+</ul>
+</div>
+</li>
+<!-- / #headerAccount --></ul>
+<ul id="navGlobal">
+<li><a href="/tags" title="Tags">Tags</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/event/topics" title="Topics &amp; Events">Topics &amp; Events</a></li>
+<li><a href="/qa" title="Discussions">Discussions</a></li>
+<li><a href="http://games.jsdo.it" title="jsdo.it HTML5-Games">HTML5-Games</a></li>
+<!-- / #navGlobal --></ul>
+<!-- / .layoutContainer --></div>
+<!-- / .sub --></div>
+<div class="main">
+<div class="layoutContainer layoutLiquid group">
+
+<h1 id="siteName"><a href="/"><img src="/img/common/sitename_03.png" width="79" height="39" alt="jsdo.it - Share JavaScript, HTML5 and CSS" /></a></h1>
+
+<div id="btnHeaderCodeNew">
+<form method="post" action="/code/new">
+<fieldset>
+<p><input type="submit" value="Start coding"></p>
+</fieldset>
+<input type="hidden" name="token" value="">
+</form>
+<!-- / #btnHeaderCodeNew --></div>
+
+<div id="navGlobalSearch">
+<form method="get" action="/search" class="search">
+<input id="inputSearch" type="text" name="q" class="query input-prompt" autocomplete="off" placeholder="Search"><input type="submit" value="" class="button">
+</form>
+<!--/#navGlobalSearch--></div>
+
+
+
+
+<div id="headerSignin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signup">Create account</a></p>
+<p>or</p>
+<div class="signin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signin">LOGIN</a></p>
+<div class="panel">
+<div class="shadowLayor1">
+<div class="service">
+<ul>
+<li class="google"><a href="/login/google?login=1" onClick="_gaq.push(['_trackPageview', '/login/service/google']);">Login with Google</a></li>
+<li class="facebook"><a href="/login/facebook" onClick="_gaq.push(['_trackPageview', '/login/service/facebook']);">Login with Facebook</a></li>
+<li class="twitter"><a href="/login/twitter" onClick="_gaq.push(['_trackPageview', '/login/service/twitter']);">Login with Twitter</a></li>
+
+
+
+<li class="other"><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);">Other login options</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- / #headerSignin --></div>
+
+
+
+<!-- / .layoutContainer --></div>
+<!-- / .main --></div>
+
+
+
+<div id="navPrimaryTag">
+<div class="layoutContainer layoutLiquid">
+<nav class="group">
+<div class="search">
+<form method="get" action="/search">
+<input type="text" placeholder="Search" name="q" results="10" class="text" /><input type="submit" value="Search" class="hidden">
+</form>
+</div>
+<ul class="group">
+<li class="application"><a href="/tag/application" >Application</a></li>
+<li class="ui"><a href="/tag/user_interface" >User Interface</a></li>
+<li class="html5"><a href="/tag/html5_elements&amp;api" >HTML5 Elements &amp; API</a></li>
+<li class="css"><a href="/tag/css" >CSS</a></li>
+<li class="art"><a href="/tag/art&amp;design" >Art &amp; Design</a></li>
+<li class="game"><a href="/tag/game" ">Game</a></li>
+<li class="library"><a href="/tag/library&amp;test" >Library &amp; Test</a></li>
+<li class="smartphone"><a href="/tag/smartphones&amp;tablets" >Smartphones &amp; Tablets</a></li>
+<li class="all"><a href="/codes">All</a></li>
+</ul>
+</nav>
+<!-- / .layoutContainer --></div>
+<!-- / #navPrimaryTag --></div>
+
+
+
+
+
+
+<!-- / #headerGlobal --></header>
+<!--[[[ /HEADER-AREA ]]]-->
+
+
+<!--[[[ CONTENT-AREA ]]]-->
+<div id="body">
+<article id="codeDetail" class="layoutContainer">
+
+
+
+<section class="code">
+<header class="group">
+
+<div class="main">
+<h1><a href="http://jsdo.it/xl1/edge011" rel="bookmark">[library] edge.0.1.1.min.js</a></h1>
+<div class="author group" itemscope itemtype="http://data-vocabulary.org/Person">
+<p class="image"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="30" height="30" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author" itemprop="url"><span itemprop="name">xl1</span></a></p>
+<div class="connection">
+	<div class="follow"><span onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="btnBase btnType2 btnSmall btnFollow">Follow</span></div>
+</div>
+<time datetime="2011-08-02T12:32:18">2011-08-02 12:32:18</time>
+<p class="license">License: 
+  Refer to code comments
+</p>
+</div>
+<!-- / .main --></div>
+
+<div class="counts">
+<div>
+<span id="fork_button" class="fork btnBase btnType5">
+<dl>
+<dt>Fork</dt><dd>1</dd>
+</dl>
+</span>
+</div>
+<div>
+<a href="http://jsdo.it/login?redirect=http%3A%2F%2Fjsdo.it%2Fxl1%2Fedge011" class="favorite btnBase btnType6 btnSmall">
+<span class="favoriteIcon"><img src="/img/common/ico/ico_fav_02_shadow.png" width="15px" height="12px" /></span><dl class="group">
+<dt>Fav</dt><dd>0</dd>
+</dl>
+</a><div href="/" class="pv">
+<dl class="group">
+<dt>View</dt><dd>606</dd>
+</dl>
+</div>
+</div>
+<!-- / .counts --></div>
+</header>
+
+<script type="text/javascript">
+var user = {
+  screen_name: "xl1"
+};
+</script>
+
+
+<div class="fullscreen group">
+<div class="inner">
+<ul class="controller">
+<li class="btnBase btnType6 btnSmall btnInvisible btnStart" id="btnPlay" onclick="JSDoIt.CodeShow.play(); return false;"><span>Play</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnStop" id="btnStop" style="display: none;" onclick="JSDoIt.CodeShow.stop(); return false;"><span>Stop</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnReload" id="btnReload" style="display: none;" onclick="JSDoIt.CodeShow.reload(); return false;"><span>Reload</span></li>
+</ul>
+<p><a href="http://jsdo.it/xl1/edge011/fullscreen" class="btnBase btnType6 btnSmall btnInvisible btnFullscreen" title="Fullscreen preview"><span>Fullscreen</span></a></p>
+<p><span title="Smart Phone Preview" class="btnBase btnType6 btnSmall btnInvisible btnSmartphone" data-size="width=320,height=480"><span>Smart Phone</span></span></p>
+<p><a href="http://jsdo.it/xl1/edge011/tree" class="btnBase btnType6 btnSmall btnInvisible"><span>Fork tree</span></a></p>
+</div>
+</div>
+
+<fieldset>
+
+<section class="viewer group">
+
+<div class="group areaCodeViewer">
+<div class="boxCode" id="boxShowCode"><header>
+<ul class="group">
+<li class="description active" data-target-tab="boxEditDescription"><span>Readme</span></li>
+<li class="js" data-target-tab="boxEditJS">JavaScript <small>91 lines</small></li>
+<li class="html" data-target-tab="boxEditHTML">HTML <small>0 lines</small></li>
+<li class="css" data-target-tab="boxEditCSS">CSS <small>0 lines</small></li>
+</ul>
+</header>
+
+
+<section id="boxEditDescription">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeDescription">
+
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div></div>
+
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditJS">
+<ul class="tabCode group">
+    <li title="[library] edge.0.1.1.min.js" class="selected tabJS initialTab"><span id="primaryTabTitle">[library] edge.0.1.1.min.js</span></li></ul>
+<div class="code" id="boxCodeJS"> 
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeJS" data-lang="">//Copyright (c) 2011. Adobe Systems Incorporated.
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+//   * Redistributions of source code must retain the above copyright notice,
+//     this list of conditions and the following disclaimer.
+//   * Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//   * Neither the name of Adobe Systems Incorporated nor the names of its
+//     contributors may be used to endorse or promote products derived from this
+//     software without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// AdobePatentID=&quot;B1316&quot;
+// AdobePatentID=&quot;B1318&quot;
+//
+// edge.0.0.1.min.js - version 0.1.1
+ 
+(function(m){if(typeof m.Edge===&quot;undefined&quot;)m.Edge={};var d=m.Edge;d.version=&quot;0.1.1&quot;;d.cloneJSONObject=function(n){var l,c;if(m.isArray(n)){l=[];var g,j=n.length;for(g=0;g&lt;j;g++)c=n[g],l[g]=typeof c===&quot;object&quot;?d.cloneJSONObject(c):c}else for(g in l={},n)g!=&quot;prototype&quot;&amp;&amp;(c=n[g],l[g]=typeof c===&quot;object&quot;?d.cloneJSONObject(c):c);return l};d.Notifier=function(){this.observers=[];this.notificationLevel=this.suppressNotifications=0};m.extend(d.Notifier.prototype,{addObserver:function(d){if(d){for(var l=
+this.observers.length,c=0;c&lt;l;c++)if(this.observers[c].observer==d)return;this.observers[l]={observer:d}}},removeObserver:function(d){if(d)for(var l=0;l&lt;this.observers.length;l++)if(this.observers[l].observer==d)if(this.notificationLevel===0){this.observers.splice(l,1);break}else this.observers[l].deleted=!0},notifyObservers:function(d,l){if(d&amp;&amp;!this.suppressNotifications){l||(l={});l.methodName=d;this.notificationLevel++;var c;for(c=0;c&lt;this.observers.length;c++){var g=this.observers[c];if(g=g&amp;&amp;
+!g.deleted?g.observer:void 0)if(typeof g==&quot;function&quot;)g(d,this,l);else if(g[d])g[d](this,l)}this.notificationLevel--;if(this.notificationLevel===0)for(c=this.observers.length-1;c&gt;=0;c--)this.observers[c].deleted&amp;&amp;this.observers.splice(c,1)}},enableNotifications:function(){if(--this.suppressNotifications&lt;0)this.suppressNotifications=0,d.Debug.reportError(&quot;Unbalanced enableNotifications() call!\n&quot;)},disableNotifications:function(){++this.suppressNotifications}});d.trimString=function(d){return d.replace(/^\s+|\s+$/g,
+&quot;&quot;)}})(jQuery);(function(m,d){function n(){d.Notifier.call(this);this.animationID=&quot;animID-&quot;+n.nextID++}function l(a,b,c){d.Animation.call(this);if(typeof a==&quot;function&quot;)this.handler=a;else if(typeof a==&quot;string&quot;)this.eventType=a;this.handlerContext=c;this.data=b}function c(a,b,o,k){d.Notifier.call(this);this.animation=a;this.position=0;this.duration=-1;this.easing=typeof k==&quot;function&quot;?k:k&amp;&amp;m.easing[k]?k:c.defaultEasing;if(b!==void 0)this.position=b;if(o!==void 0)this.duration=o;this.timeline=null;this.dScale=1;this.dDuration=
+0;this.done=!1}function g(a){this.parameters={};a&amp;&amp;m.extend(this,a)}function j(a){d.Animation.call(this);m.extend(this,d.Timeline.config);m.extend(this,a);this.duration=this.currentPosition=this.startPosition=this.timerStart=this.timer=0;this.interval=1E3/this.fps;this.objects=[]}var i={};n.nextID=1;m.extend(n.prototype,d.Notifier.prototype,{constructor:n,_setup:function(){},_update:function(){},getDuration:function(){return 0}});m.extend(l.prototype,n.prototype,{constructor:l,_update:function(a){this.done||
+(this.handler?this.handler.call(this.handlerContext,a,this.data):this.eventType&amp;&amp;this.timeline&amp;&amp;this.timeline.notifyObservers(this.eventType,{elapsed:a,data:this.data}));this.done=!0},_setup:function(a){this.timeline=a;this.done=!1}});c.defaultEasing=&quot;linear&quot;;m.extend(c.prototype,d.Notifier.prototype,{constructor:c,_setup:function(a,b){this.timeline=a;var c=this.duration,k=null;this.animation&amp;&amp;this.animation.getDuration&amp;&amp;(k=this.animation.getDuration());this.dScale=c!=-1&amp;&amp;c!==0?k/c:1;this.dDuration=
+c!=-1?c:k;this.done=!1;this.animation&amp;&amp;this.animation.setup&amp;&amp;this.animation.setup(a,b)},_update:function(a,b){if(!this.done){var c=a,k=this.dDuration;if(this.animation){var g;k===0?g=c&gt;=0?1:0:(c&gt;=k&amp;&amp;(c=k),c&lt;=0&amp;&amp;(c=0),g=m.easing[this.easing](c/k,c,0,1,k));this.animation.update(c*this.dScale,g,b)}(b.playDirection==&quot;reverse&quot;?c&lt;=0:c&gt;=k)&amp;&amp;this.complete()}},complete:function(){this.done=!0;this.timeline&amp;&amp;this.timeline._updateComplete(this)},getPosition:function(){return this.position},setPosition:function(a){this.position=
+a},getDuration:function(){return this.duration!=-1?this.duration:this.animation&amp;&amp;this.animation.getDuration?this.animation.getDuration():0},setDuration:function(a){this.duration=a&gt;=0?a:-1}});j.config={dropFrames:!0,fps:60};var r=[];j.tick=function(){var a=r.slice(0);r=[];for(var b=a.length,c=0;c&lt;b;c++)a[c].call()};m.extend(j.prototype,n.prototype,{constructor:j,play:function(a){this.notifyObservers(&quot;onPlay&quot;);var b=new g(a);b.timeline=this;this._setup(this,a);this.timerStart=(new Date).getTime();this.startPosition=
+this.currentPosition;var c=this,k=function(){c._handleTimer(b,k)};this._handleTimer(b,k)},stop:function(){this.notifyObservers(&quot;onStop&quot;);this.timer&amp;&amp;clearTimeout(this.timer);this.timerStart=this.timer=0},seek:function(a,b){this.notifyObservers(&quot;onSeek&quot;);this.stop();var c=this.currentPosition;this.currentPosition=a;var k=new g(b);k.timeline=this;this._setup(this,b);this._updateSeek(this.currentPosition,1,k,c)},add:function(a,b,g,k){this.objects.push(new c(a,b,g,k));this.objects.sort(function(a,b){return a.position-
+b.position})},getDuration:function(){for(var a=0,b=this.objects,c=this.objects.length,k=Math.max,g=0;g&lt;c;g++)var d=b[g],a=k(a,d.position+d.getDuration());return a},currentPosition:function(){return this.currentPosition},_update:function(a,b,c){this.notifyObservers(&quot;onPreUpdate&quot;,{elapsed:a,easingConst:b});for(var k=this.objects,g=k.length,d=c.playDirection!=&quot;reverse&quot;,j=0;j&lt;g;j++){var i=k[d?j:g-j-1];if(d?a&gt;=i.position:a&lt;=i.position+i.duration)i.animation.isTrigger?i.animation.fire():i._update(a-i.position,
+c)}this.notifyObservers(&quot;onUpdate&quot;,{elapsed:a,easingConst:b});this.notifyObservers(&quot;onPostUpdate&quot;,{elapsed:a,easingConst:b,context:c})},_handleTimer:function(a,b){var c=(new Date).getTime()-this.timerStart,k=a.playDirection==&quot;reverse&quot;,g=this.startPosition+(k?-c:c);this.currentPosition=g=Math.max(0,Math.min(g,this.duration));this._update(g,1,a);(!k?g&lt;this.duration:g&gt;0)?a.externalClock?r.push(b):this.timer=setTimeout(b,this.interval):(this.stop(),this.notifyObservers(&quot;onComplete&quot;,{elapsed:c}))},_setup:function(a,
+b){d.Animation.prototype._setup.call(this,a);for(var c=this.objects,k=this.objects.length,g=0;g&lt;k;g++){var j=c[g];j._done=!1;j._setup(this,b)}this.duration=this.getDuration()},_updateComplete:function(a){a._done=!0}});j.prototype._updateSeek=j.prototype._update;d.Animation=n;d.TimelineObject=c;d.Timeline=j;d.Timeline.createTimeline=function(a){return new d.Timeline(a)};d.Timeline.createTween=function(a){var b=i[a];if(b)return b.func.apply(b.context,Array.prototype.slice.call(arguments,1));return null};
+d.Timeline.addTweenType=function(a,b,c){i[a]={func:b,context:c}};d.Timeline.createTrigger=function(a,b){return new l(a,b,arguments[arguments.length-1])};d.Timeline.createTimelineFromData=function(a){for(var b=jQuery.Edge.Timeline.createTimeline(),c=a.length,k=0;k&lt;c;k++){var g=a[k],j=null;g.timeline?j=d.Timeline.createTimelineFromData(g.timeline):g.tween?j=d.Timeline.createTween.apply(null,g.tween):g.trigger&amp;&amp;(j=g.trigger.slice(0,2),j.push(this),j=d.Timeline.createTrigger.apply(null,j));j&amp;&amp;b.add(j,
+g.position,g.duration,g.easing)}return b}})(jQuery,jQuery.Edge);(function(m,d){function n(c,g,j,i,m){d.Animation.call(this);this.name=&quot;prop tween&quot;;this.sourceElements=this.elements=g;this.deferElementResolution=!0;this.tweenType=l[c];this.updateTriggered=!1;this.property=j;this.fromValue=void 0;this.toValue=i;this.duration=1E3;this.fromValues=this.tokens=this.valueTemplate=null;m&amp;&amp;$.extend(this,m);this.deferElementResolution=this.deferElementResolution||typeof g==&quot;string&quot;&amp;&amp;g.search(/\$\{[^\{\}]+\}/)!=-1;if(!this.deferElementResolution)this.elements=this.resolveElementSelector(g);
+var m=this.toValues=[],a=this.parseValue(i);$.isArray(i)||(i=[i]);if(!a||a.length===0)a=i;g=a.length;for(c=0;c&lt;g;c++){var j=a[c],b={};typeof j==&quot;string&quot;?(b.value=parseFloat(j.replace(/[a-zA-Z%]+$/,&quot;&quot;)),b.unit=j.replace(/^-?[0-9]*(\.[0-9]+)?/,&quot;&quot;)):(typeof j==&quot;number&quot;&amp;&amp;(j=parseFloat(j)),b.value=j,b.unit=&quot;&quot;);m.push(b)}i.length&gt;1&amp;&amp;!this.valueTemplate&amp;&amp;alert(&quot;Multiple values specified for attribute tween, but no template was provided!&quot;);i.length&gt;1&amp;&amp;(!this.fromValue||!$.isArray(this.fromValue))&amp;&amp;alert(&quot;Multiple values specified for attribute tween, but no from values specified!&quot;);
+if(this.fromValue){i=this.fromValues=[];if((c=this.parseValue(this.fromValue))&amp;&amp;c.length&gt;0)this.fromValue=c;else if(!$.isArray(this.fromValue))this.fromValue=[this.fromValue];g=this.fromValue.length;for(c=0;c&lt;g;c++)j=this.fromValue[c],typeof j==&quot;string&quot;?i[c]=parseFloat(j.replace(/[a-zA-Z%]+$/,&quot;&quot;)):(typeof j==&quot;number&quot;&amp;&amp;(j=parseFloat(j)),i[c]=j);this.toValues.length!=this.fromValues.length&amp;&amp;alert(&quot;Number of 'from' and 'to' values does not match for &quot;+this.tweenType+&quot; tween.&quot;)}if(this.filter){if(!$.isArray(this.filter))this.filter=
+[this.filter];i=this.filter;g=i.length;for(c=0;c&lt;g;c++)typeof i[c]==&quot;string&quot;&amp;&amp;(i[c]=Math[i[c]]),typeof i[c]!=&quot;function&quot;&amp;&amp;(i[c]=null)}if(this.valueTemplate)this.tokens=this.parseTemplate(this.valueTemplate)}var l={style:0,attribute:1,property:2};n.Token=function(c,g){this.value=c;this.isPlaceholder=g};n.substituteParameters=function(c,g){for(var j=c;g&amp;&amp;typeof j==&quot;string&quot;&amp;&amp;j.search(/\$\{/)!=-1;){var i=j.search(/\$\{/),l=j.search(/\}/);(i=j.slice(i+2,l))||alert(&quot;Invalid parameter name: &quot;+i);typeof i==
+&quot;string&quot;&amp;&amp;(i=d.trimString(i),i=i.replace(/[\&quot;\']/g,&quot;&quot;));j=j.replace(/\$\{[^\}]*\}/,g[i]);typeof j==&quot;undefined&quot;&amp;&amp;alert(&quot;Animation parameter ${&quot;+i+&quot;} is undefined!&quot;)}return j};$.extend(n.prototype,d.Animation.prototype,{constructor:n,setup:function(){this.updateTriggered=!1},update:function(c,g,d){var i=this.getElementSet(d);if(!this.updateTriggered)this.updateTriggered=!0,this.setupForAnimation(d);var l=this,a=this.tweenType,b=this.property,o;i.each(function(){var k=l.getPropertyTweenData(this,a,b);
+if(k.animationID==l.animationID){var d=k.fromValues,j=k.toValues,k=k.tokens,i=l.filter,m=d.length,n=[];for(o=0;o&lt;m;o++){var u=d[o],w=j[o];u+=(w.value-u)*g;i&amp;&amp;i[o]&amp;&amp;(u=i[o](u));n.push(u+w.unit)}d=&quot;&quot;;d=l.formatValue(n);if(!(d.length&gt;0))if(k){d=k.length;j=[];for(o=0;o&lt;d;o++)i=k[o],i.isPlaceholder?j.push(n[i.value]):j.push(i.value);d=j.join(&quot;&quot;)}else d=n.join(&quot;&quot;);l.setValue.call(this,a,b,d);l.notifyObservers(&quot;onUpdate&quot;,{elapsed:c,easingConst:g,property:b,value:d,element:this})}})},setValue:function(c,
+g,d){switch(c){case 0:$(this).css(g,d);break;case 1:this.setAttribute(g,d);break;case 2:this[g]=d}},getDuration:function(){return this.duration},resolveElementSelector:function(c){c=n.substituteParameters(this.elements,c.parameters);if(!c)c=this.elements;return $(c)},getElementSet:function(c){var g=this.animationID;if(!c.animData)c.animData={};var d=c.animData[g];d||(d=c.animData[g]=this.deferElementResolution?this.resolveElementSelector(c):this.elements);return d},getValue:function(c,g){var d;switch(g){case 0:d=
+$(this).css(c);break;case 1:d=this.getAttribute(c);break;case 2:d=this[c]+&quot;&quot;}return d},setupForAnimation:function(c){var g=this,d=this.tweenType,i=this.property;this.getElementSet(c).each(function(){var c=g.getPropertyTweenData(this,d,i);c.animationID=g.animationID;c.toValues=g.toValues;c.tokens=g.tokens;if(g.fromValues)c.fromValues=g.fromValues;else{var a=g.getValue.call(this,i,d);a===void 0&amp;&amp;(a=&quot;0&quot;);var b=g.parseValue(a);if(b&amp;&amp;b.length&gt;0)for(var c=c.fromValues=[],a=b.length,o=0;o&lt;a;o++){var k=b[o];
+c[o]=typeof k==&quot;string&quot;?parseFloat(k.replace(/[a-zA-Z%]+$/,&quot;&quot;)):k}else c.fromValues=[parseFloat(a.replace(/[a-zA-Z%]+$/,&quot;&quot;))]}})},parseTemplate:function(c){for(var d=c.length,j=[],i=0,l=/@@[0-9]+@@/g,a=null;i&lt;d&amp;&amp;(a=l.exec(c));)a.index!=i&amp;&amp;j.push(new n.Token(c.substring(i,a.index),!1)),j.push(new n.Token(parseInt(a[0].replace(/@@/g,&quot;&quot;),10),!0)),i=l.lastIndex;i&lt;d&amp;&amp;j.push(new n.Token(c.substring(i,d),!1));return j},parseValue:function(){return[]},formatValue:function(){return&quot;&quot;},getPropertyTweenData:function(c,
+d,j){var i=$.data(c,&quot;tweenData&quot;);i||(i={},$.data(c,&quot;tweenData&quot;,i));(c=i[d])||(c=i[d]={});(d=c[j])||(d=c[j]={animationID:-1});return d}});d.PropertyTween=n;d.Timeline.addTweenType(&quot;style&quot;,function(c,d,j,i){return new n(&quot;style&quot;,c,d,j,i)});d.Timeline.addTweenType(&quot;attribute&quot;,function(c,d,j,i){return new n(&quot;attribute&quot;,c,d,j,i)});d.Timeline.addTweenType(&quot;property&quot;,function(c,d,j,i){return new n(&quot;property&quot;,c,d,j,i)})})(jQuery,jQuery.Edge);(function(m,d,n){function l(q,e,a,f,h){d.PropertyTween.call(this,q,e,a,f,h);this.name=&quot;transformTween&quot;}var c,g,j=Math.asin,i=Math.sin,r=Math.cos,a=Math.tan,b=Math.atan2,o=Math.PI/180,k=180/Math.PI;l.removeData=function(q){var e=m.data(q,l.dataName);e&amp;&amp;(e.timeline&amp;&amp;c.unRegister(e.timeline,e.id),$ele.removeData(q,l.dataName))};var p=function(q){var e=0;typeof q==&quot;string&quot;?e=parseFloat(q.replace(/[a-zA-Z%]+$/,&quot;&quot;)):typeof q==&quot;number&quot;&amp;&amp;(e=q);return e};l.applyTransform=function(q,e,a,f){var q=m(q),h=&quot;webkitAppearance&quot;in
+document.documentElement.style,b=!0;f&amp;&amp;(b=!f.dontForceZ);if(h){f=&quot;translate(&quot;+e.translateX+&quot;,&quot;+e.translateY+&quot;)&quot;;h=p(e.translateZ);if(h!==0||b)f+=&quot; translateZ(&quot;+e.translateZ+&quot;)&quot;;f+=&quot; rotate(&quot;+e.rotateZ+&quot;) &quot;;h=p(e.rotateY);h!==0&amp;&amp;(f+=&quot; rotateY(&quot;+e.rotateY+&quot;)&quot;);h=p(e.rotateX);h!==0&amp;&amp;(f+=&quot; rotateX(&quot;+e.rotateX+&quot;)&quot;);f+=&quot; skew(&quot;+e.skewX+&quot;,&quot;+e.skewY+&quot;) scale(&quot;+e.scaleX+&quot;,&quot;+e.scaleY+&quot;) &quot;;h=p(e.scaleZ);h!=1&amp;&amp;(f+=&quot; scaleZ(&quot;+e.scaleZ+&quot;)&quot;);e=&quot;-webkit-transform&quot;;q.css(e,f);a&amp;&amp;a.observers.length&amp;&amp;a.notifyObservers(&quot;onUpdate&quot;,
+{elapsed:0,easingConst:0,property:e,value:f,element:q[0]})}else a=p(e.rotateY),f=p(e.rotateX),a=e.scaleX*r(o*a),b=e.scaleY*r(o*f),f=&quot;translate(&quot;+e.translateX+&quot;,&quot;+e.translateY+&quot;)&quot;,f+=&quot; rotate(&quot;+e.rotateZ+&quot;)&quot;,f+=&quot; skew(&quot;+e.skewX+&quot;, &quot;+e.skewY+&quot;)&quot;,f+=&quot; scale(&quot;+a+&quot;,&quot;+b+&quot;)&quot;,q.css(&quot;-moz-transform&quot;,f),q.css(&quot;-o-transform&quot;,f),q.css(&quot;-ms-transform&quot;,f),q.css(&quot;msTransform&quot;,f)};var t=function(a){if(a!==0&amp;&amp;Math.abs(a)&lt;1.0E-6)return a.toFixed(6);return a.toString()};l.dataName=&quot;EdgeTransformData&quot;;var y=1;m.extend(l.prototype,
+n.prototype,{constructor:l,setup:function(){this.updateTriggered=!1},setValue:function(a,e,b){m.data(this,l.dataName)[e]=b},getValue:function(){m.data(this,l.dataName)},setupForAnimation:function(a){var e=this;this.getElementSet(a).each(function(){var a=m.data(this,l.dataName);a||(a=e.buildTransformData(this),m.data(this,l.dataName,a))});n.prototype.setupForAnimation.call(this,a)},update:function(a,e,b){n.prototype.update.call(this,a,e,b);var f=this,h=this.property,d=this.tweenType;this.getElementSet(b).each(function(){if(f.getPropertyTweenData(this,
+d,h).animationID==f.animationID){var a=m.data(this,l.dataName);a.timeline=b.timeline;a.tween=f;c.Register(b.timeline,a.id,a)}})},buildTransformData:function(a){var e=d.parseCanonicalTransform(a);if(e===null){var e={},b=d.getTransformProps(a);e.translateX=&quot;0px&quot;;e.translateY=&quot;0px&quot;;e.translateZ=&quot;0px&quot;;e.scaleX=1;e.scaleY=1;e.scaleZ=1;e.rotateX=&quot;0deg&quot;;e.rotateY=&quot;0deg&quot;;e.rotateZ=&quot;0deg&quot;;e.skewXZ=0;e.skewXY=0;e.skewYZ=0;e.skewX=&quot;0deg&quot;;e.skewY=&quot;0deg&quot;;e.matrix&amp;&amp;delete e.matrix;if(b)e.translateX=t(b.translation[0])+
+&quot;px&quot;,e.translateY=t(b.translation[1])+&quot;px&quot;,e.translateZ=t(b.translation[2])+&quot;px&quot;,e.scaleX=t(b.scale[0]),e.scaleY=t(b.scale[1]),e.scaleZ=t(b.scale[2]),e.rotateX=t(b.rotation[0]*k)+&quot;deg&quot;,e.rotateY=t(b.rotation[1]*k)+&quot;deg&quot;,e.rotateZ=t(b.rotation[2]*k)+&quot;deg&quot;,e.skewXY=b.skew[0],e.skewXZ=b.skew[1],e.skewYZ=b.skew[2],e.skewX=t(Math.atan(b.skew[0])*k)+&quot;deg&quot;}e===null&amp;&amp;(e={});e.id=&quot;transform_&quot;+y++;e.element=a;e.onFinalUpdate=c.prototype._applyTransform;return e}});var J={translate3d:0,translate:0,translateX:0,
+translateY:0,translateZ:0,rotate:1,rotateZ:1,rotateX:1,rotateY:1,rotate3d:1,skew:2,skewX:2,skewY:2,scale3d:3,scale:3,scaleX:3,scaleY:3,scaleZ:3,perspective:4};d.getTransformProps=function(a,e){var b=typeof e==&quot;string&quot;?e:d.getTransform(a),f=&quot;webkitAppearance&quot;in document.documentElement.style;if(b&amp;&amp;b!=&quot;none&quot;&amp;&amp;f)f=new d.CSSMatrix,f.setMatrixValue(b),b=g.fromCSSMatrix(f);else if(b&amp;&amp;b!=&quot;none&quot;)b=g.fromCSSMatrixString(b);else return;return d.decomposeTransform(b)};d.getTransform=function(a){var e;&quot;webkitAppearance&quot;in
+document.documentElement.style&amp;&amp;(e=m(a).css(&quot;-webkit-transform&quot;));e||(e=m(a).css(&quot;-ms-transform&quot;));e||(e=m(a).css(&quot;-moz-transform&quot;));e||(e=m(a).css(&quot;-o-transform&quot;));e||(e=m(a).css(&quot;transform&quot;));return e};d.parseCanonicalTransform=function(a,e){var b=(typeof e==&quot;string&quot;?e:d.getTransform(a)).match(/(\w+\s*\([^\)]*\))/g);if(!b)return null;var f={},h={translateX:&quot;0px&quot;,translateY:&quot;0px&quot;,translateZ:&quot;0px&quot;,scaleX:1,scaleY:1,scaleZ:1,rotateX:&quot;0deg&quot;,rotateY:&quot;0deg&quot;,rotateZ:&quot;0deg&quot;,skewXZ:0,skewXY:0,skewYZ:0,skewX:&quot;0deg&quot;,
+skewY:&quot;0deg&quot;},c;for(c=0;c&lt;b.length;c++){var k=b[c].match(/\w+/);if(f[k[0]]||J[k[0]]&lt;0)return null;var g=b[c].match(/\([^\)]*\)/),g=g[0].replace(/[\(\)]/g,&quot;&quot;),g=g.split(&quot;,&quot;);switch(k[0]){case &quot;matrix&quot;:return null;case &quot;translate3d&quot;:h.translateX=g[0];h.translateY=g.length&gt;1?g[1]:&quot;0px&quot;;h.translateZ=g.length&gt;2?g[2]:&quot;0px&quot;;f.translate3d=f.translate=f.translateX=f.translateY=f.translateZ=!0;break;case &quot;translate&quot;:h.translateX=g[0];h.translateY=g.length&gt;1?g[1]:&quot;0px&quot;;f.translate3d=f.translate=f.translateX=
+f.translateY=!0;break;case &quot;translateX&quot;:h.translateX=g[0];f.translate3d=f.translate=f.translateX=!0;break;case &quot;translateY&quot;:h.translateY=g[0];f.translate3d=f.translate=f.translateY=!0;break;case &quot;translateZ&quot;:h.translateZ=g[0];f.translate3d=f.translateZ=!0;break;case &quot;rotate3d&quot;:return f.rotate3d=f.rotate=f.rotateX=f.rotateY=f.rotateZ=!0,null;case &quot;rotateX&quot;:h.rotateX=g[0];f.rotate3d=f.rotateX=!0;break;case &quot;rotateY&quot;:h.rotateY=g[0];f.rotate3d=f.rotateY=!0;break;case &quot;rotateZ&quot;:case &quot;rotate&quot;:h.rotateZ=
+g[0];f.rotate3d=f.rotate=f.rotateZ=!0;break;case &quot;skew&quot;:h.skewX=g[0];h.skewY=g.length&gt;1?g[1]:&quot;0px&quot;;f.skew=f.skewX=f.skewY=!0;break;case &quot;skewX&quot;:h.skewX=g[0];f.skew=f.skewX=!0;break;case &quot;skewY&quot;:h.skewY=g[0];f.skew=f.skewY=!0;break;case &quot;scale3d&quot;:h.scaleX=g[0];h.scaleY=g.length&gt;1?g[1]:&quot;0px&quot;;h.scaleZ=g.length&gt;2?g[2]:&quot;0px&quot;;f.scale3d=f.scale=f.scaleX=f.scaleY=f.scaleZ=!0;break;case &quot;scale&quot;:h.scaleX=g[0];h.scaleY=g.length&gt;1?g[1]:&quot;0px&quot;;f.scale=f.scaleX=f.scaleY=!0;break;case &quot;scaleX&quot;:h.scaleX=g[0];f.scale3d=
+f.scale=f.scaleX=!0;break;case &quot;scaleY&quot;:h.scaleY=g[0];f.scale3d=f.scale=f.scaleY=!0;break;case &quot;scaleZ&quot;:h.scaleZ=g[0];f.scale3d=f.scaleZ=!0;break;case &quot;perspective&quot;:f.perspective=!0}}return h};d.TransformTween=l;c=function(a){this.handlers={};this.timeline=a};c.Register=function(a,e,b){var f=a.updateFinalizer;if(typeof f==&quot;undefined&quot;)f=new c(a),a.updateFinalizer=f,a.addObserver(f);f.handlers[e]=b};c.unRegister=function(a,e){var b=a.updateFinalizer;typeof b!=&quot;undefined&quot;&amp;&amp;delete b.handlers[e]};m.extend(c.prototype,
+{_finalizeUpdate:function(a,e){var b={elapsed:a,context:e},f;for(f in this.handlers)if(this.handlers.hasOwnProperty(f)){var h=this.handlers[f];if(h.onFinalUpdate)h.onFinalUpdate(b)}},onUpdate:function(a,e){this._finalizeUpdate(e.elapsed,e.context)},onComplete:function(){this.timeline&amp;&amp;this.timeline.removeObserver(this);this.timeline.updateFinalizer=void 0},_applyTransform:function(a){var e=m.data(this.element,l.dataName);l.applyTransform(this.element,e,e.tween,a.context)}});l.UpdateFinalizer=c;if(typeof CSSMatrix==
+&quot;undefined&quot;)if(typeof WebKitCSSMatrix!=&quot;undefined&quot;)d.CSSMatrix=WebKitCSSMatrix;else{if(typeof MozCSSMatrix!=&quot;undefined&quot;)d.CSSMatrix=MozCSSMatrix}else d.CSSMatrix=CSSMatrix;var x=function(a,e){for(var b=0,f=a.length,h=0;h&lt;f;h++)b+=a[h]*e[h];return b},u=function(a){for(var e=0,b=a.length,f=0;f&lt;b;f++)e+=a[f]*a[f];return Math.sqrt(e)},w=function(a){var e=a.length,b=u(a),f=Array(e);b===0&amp;&amp;(b=1);for(var h=0;h&lt;e;h++)f[h]=a[h]/b;return f},I=function(a,e,b,f){var h=Array(3);h[0]=b*a[0]+f*e[0];h[1]=b*a[1]+
+f*e[1];h[2]=b*a[2]+f*e[2];return h};g=function(a){var e,b;if(a)for(e=0;e&lt;4;e++){this[e]=Array(4);for(b=0;b&lt;4;b++)this[e][b]=a[e][b]}else for(e=0;e&lt;4;e++){this[e]=Array(4);for(b=0;b&lt;4;b++)this[e][b]=0;this[e][e]=1}this.size=4};g.fromCSSMatrix=function(a){var e=new g;e[0][0]=a.m11;e[0][1]=a.m12;e[0][2]=a.m13;e[0][3]=a.m14;e[1][0]=a.m21;e[1][1]=a.m22;e[1][2]=a.m23;e[1][3]=a.m24;e[2][0]=a.m31;e[2][1]=a.m32;e[2][2]=a.m33;e[2][3]=a.m34;e[3][0]=a.m41;e[3][1]=a.m42;e[3][2]=a.m43;e[3][3]=a.m44;return e};var s=
+function(a){var e={};e.num=parseFloat(a);e.units=a.match(/\w+$/);if(typeof e.unit==&quot;array&quot;)e.units=e.units[0];return e},v=function(a){a=a.toLowerCase();if(typeof a!=&quot;string&quot;)return 0;a=s(a);a.units==&quot;deg&quot;&amp;&amp;(a.num*=o);return a.num};g.fromCSSMatrixString=function(a){var e=new g,a=a.match(/(\w+\s*\([^\)]*\))/g);if(typeof a==&quot;undefined&quot;||a===null)return e;var b;for(b=0;b&lt;a.length;b++){var f=a[b].match(/\w+/),h=a[b].match(/\([^\)]*\)/),h=h[0].replace(/[\(\)]/g,&quot;&quot;),h=h.split(&quot;,&quot;),c,d;switch(f[0]){case &quot;matrix&quot;:f=
+new g;h.length==6&amp;&amp;(f[0][0]=parseFloat(h[0]),f[0][1]=parseFloat(h[1]),f[1][0]=parseFloat(h[2]),f[1][1]=parseFloat(h[3]),f[3][0]=parseFloat(h[4]),f[3][1]=parseFloat(h[5]),e.preMultiplyBy(f));break;case &quot;translate3d&quot;:f=s(h[0]).num;c=h.length&gt;1?s(h[1]).num:0;d=h.length&gt;2?s(h[2]).num:0;e.translate3d(f,c,d);break;case &quot;translate&quot;:f=s(h[0]).num;c=h.length&gt;1?s(h[1]).num:0;e.translate3d(f,c,0);break;case &quot;translateX&quot;:h=s(h[0]).num;e.translate3d(h,0,0);break;case &quot;translateY&quot;:h=s(h[0]).num;e.translate3d(0,
+h,0);break;case &quot;translateZ&quot;:h=s(h[0]).num;e.translate3d(0,0,h);break;case &quot;rotate3d&quot;:if(h.length&gt;=3)f=s(h[0]).num,c=s(h[1]).num,d=s(h[2]).num,h=v(h[3]),e.rotate3d(f,c,d,h,!0);break;case &quot;rotateX&quot;:h=v(h[0]);e.rotateX(h);break;case &quot;rotateY&quot;:h=v(h[0]);e.rotateY(h);break;case &quot;rotateZ&quot;:case &quot;rotate&quot;:h=v(h[0]);e.rotateZ(h);break;case &quot;skew&quot;:f=v(h[0]);h=v(h[1]);e.skew(f,h);break;case &quot;skewX&quot;:h=v(h[0]);e.skew(h,0);break;case &quot;skewY&quot;:h=v(h[0]);e.skew(0,h);break;case &quot;scale3d&quot;:f=parseFloat(h[0]);c=h.length&gt;
+1?parseFloat(h[1]):1;h=h.length&gt;2?parseFloat(h[2]):1;e.scale(f,c,h);break;case &quot;scale&quot;:f=parseFloat(h[0]);c=h.length&gt;1?parseFloat(h[1]):1;e.scale(f,c,0);break;case &quot;scaleX&quot;:h=parseFloat(h[0]);e.scale(h,0,0);break;case &quot;scaleY&quot;:h=parseFloat(h[0]);e.scale(0,h,0);break;case &quot;scaleZ&quot;:h=parseFloat(h[0]);e.scale(0,0,h);break;case &quot;perspective&quot;:h=parseFloat(h[0]),e.perspective(h)}}return e};m.extend(g.prototype,{identity:function(){for(var a=0;a&lt;4;a++){this[a]=Array(4);for(var e=0;e&lt;4;e++)this[a][e]=0;this[a][a]=
+1}return this},determinant:function(){var a=this[0][0],e=this[0][1],b=this[0][2],f=this[0][3],h=this[1][0],c=this[1][1],d=this[1][2],g=this[1][3],k=this[2][0],j=this[2][1],i=this[2][2],o=this[2][3],l=this[3][0],m=this[3][1],n=this[3][2],p=this[3][3];return f*d*j*l-b*g*j*l-f*c*i*l+e*g*i*l+b*c*o*l-e*d*o*l-f*d*k*m+b*g*k*m+f*h*i*m-a*g*i*m-b*h*o*m+a*d*o*m+f*c*k*n-e*g*k*n-f*h*j*n+a*g*j*n+e*h*o*n-a*c*o*n-b*c*k*p+e*d*k*p+b*h*j*p-a*d*j*p-e*h*i*p+a*c*i*p},normalizeTransform:function(){if(this[3][3]===0)return!1;
+for(var a=0;a&lt;4;a++)for(var e=0;e&lt;4;e++)this[a][e]/=this[3][3];return!0},transpose:function(){for(var a=new g,e=0;e&lt;4;e++)for(var b=0;b&lt;4;b++)a[e][b]=this[b][e];return a},toCSSMatrix:function(){var a=new d.CSSMatrix;a.m11=this[0][0];a.m12=this[0][1];a.m13=this[0][2];a.m14=this[0][3];a.m21=this[1][0];a.m22=this[1][1];a.m23=this[1][2];a.m24=this[1][3];a.m31=this[2][0];a.m32=this[2][1];a.m33=this[2][2];a.m34=this[2][3];a.m41=this[3][0];a.m42=this[3][1];a.m43=this[3][2];a.m44=this[3][3];return a},_inverse:function(){return this},
+inverse:function(){if(d.CSSMatrix!==void 0){var a=this.toCSSMatrix().inverse();return g.fromCSSMatrix(a)}return this._inverse()},rotate3d:function(a,b,c,f,h){var g=new d.Matrix4x4;h||(f*=o);f&amp;&amp;(h=Math.sqrt(a*a+b*b+c*c),h!==0&amp;&amp;(a/=h,b/=h,c/=h,h=i(f),f=r(f),g[0][0]=1+(1-f)*(a*a-1),g[1][0]=-c*h+(1-f)*a*b,g[2][0]=b*h+(1-f)*a*c,g[3][0]=0,g[0][1]=c*h+(1-f)*a*b,g[1][1]=1+(1-f)*(b*b-1),g[2][1]=-a*h+(1-f)*b*c,g[3][1]=0,g[0][2]=-b*h+(1-f)*a*c,g[1][2]=a*h+(1-f)*b*c,g[2][2]=1+(1-f)*(c*c-1),g[3][2]=0,g[0][3]=
+0,g[1][3]=0,g[2][3]=0,g[3][3]=1));return this.preMultiplyBy(g)},rotateX:function(a){return this.rotate3d(1,0,0,a)},rotateY:function(a){return this.rotate3d(0,1,0,a)},rotateZ:function(a){return this.rotate3d(0,0,1,a)},translate3d:function(a,b,c){this[3][0]+=a;this[3][1]+=b;this[3][2]+=c;return this},scale:function(a,b,c){if(a!=1||b!=1||c!=1){var f=new d.Matrix4x4;f[0][0]=a;f[1][1]=b;f[2][2]=c;return this.preMultiplyBy(f)}return this},skew:function(b,e,c){c||(b*=o,e*=o);b!==0&amp;&amp;(c=new d.Matrix4x4,c[1][0]=
+a(b),this.preMultiplyBy(c));e!==0&amp;&amp;(b=new d.Matrix4x4,b[0][1]=a(e),this.preMultiplyBy(b));return this},perspective:function(a){if(a!==0){var b=new d.Matrix4x4;b[2][3]=1/a;this.preMultiplyBy(b)}return this},skewByFactors:function(a,b,c){a=new d.Matrix4x4;a[2][1]=c;this.preMultiplyBy(a);a.identity();a[2][0]=c;this.preMultiplyBy(a);a.identity();a[1][0]=c;this.preMultiplyBy(a);return this},applyPerspective:function(a,b,c,f){var h=new d.Matrix4x4;h[0][3]=a;h[1][3]=b;h[2][3]=c;h[3][3]=f;this.preMultiplyBy(h);
+return this},preMultiplyBy:function(a){var b=a[0][0],c=a[0][1],f=a[0][2],h=a[0][3],g=a[1][0],d=a[1][1],k=a[1][2],j=a[1][3],i=a[2][0],o=a[2][1],l=a[2][2],m=a[2][3],n=a[3][0],p=a[3][1],t=a[3][2],a=a[3][3],r=this[0][0],s=this[0][1],y=this[0][2],u=this[0][3],v=this[1][0],w=this[1][1],x=this[1][2],z=this[1][3],A=this[2][0],B=this[2][1],C=this[2][2],D=this[2][3],E=this[3][0],F=this[3][1],G=this[3][2],H=this[3][3];this[0][0]=b*r+c*v+f*A+h*E;this[0][1]=b*s+c*w+f*B+h*F;this[0][2]=b*y+c*x+f*C+h*G;this[0][3]=
+b*u+c*z+f*D+h*H;this[1][0]=g*r+d*v+k*A+j*E;this[1][1]=g*s+d*w+k*B+j*F;this[1][2]=g*y+d*x+k*C+j*G;this[1][3]=g*u+d*z+k*D+j*H;this[2][0]=i*r+o*v+l*A+m*E;this[2][1]=i*s+o*w+l*B+m*F;this[2][2]=i*y+o*x+l*C+m*G;this[2][3]=i*u+o*z+l*D+m*H;this[3][0]=n*r+p*v+t*A+a*E;this[3][1]=n*s+p*w+t*B+a*F;this[3][2]=n*y+p*x+t*C+a*G;this[3][3]=n*u+p*z+t*D+a*H;return this}});d.Matrix4x4=g;d.decomposeTransform=function(a){var e={},c=new g(a);if(!c.normalizeTransform())return null;e=new g(a);for(a=0;a&lt;3;a++)e[a][3]=0;e[3][3]=
+1;if(e.determinant(e)===0)return window.edge_authoring_mode&amp;&amp;alert(&quot;Bad perspective matrix&quot;),null;var f=Array(4),a=Array(4);if(c[0][3]!==0||c[1][3]!==0||c[2][3]!==0){f[0]=c[0][3];f[1]=c[1][3];f[2]=c[2][3];f[3]=c[3][3];a=e.inverse();if(!a)return!1;a=a.transpose().rightMultiply(f);c[0][3]=c[1][3]=c[2][3]=0;c[3][3]=1}else a[0]=a[1]=a[2]=0,a[3]=1;e=Array(3);e[0]=c[3][0];c[3][0]=0;e[1]=c[3][1];c[3][1]=0;e[2]=c[3][2];c[3][2]=0;f=Array(3);f[0]=Array(3);f[1]=Array(3);f[2]=Array(3);for(var h=0;h&lt;3;h++)f[h][0]=
+c[h][0],f[h][1]=c[h][1],f[h][2]=c[h][2];c=Array(3);c[0]=u(f[0]);f[0]=w(f[0]);h=Array(3);h[0]=x(f[0],f[1]);f[1]=I(f[1],f[0],1,-h[0]);c[1]=u(f[1]);f[1]=w(f[1]);c[1]!==0&amp;&amp;(h[0]/=c[1]);h[1]=x(f[0],f[2]);f[2]=I(f[2],f[0],1,-h[1]);h[2]=x(f[1],f[2]);f[2]=I(f[2],f[1],1,-h[2]);c[2]=u(f[2]);c[2]!==0&amp;&amp;(f[2]=w(f[2]));c[2]!==0&amp;&amp;(h[1]/=c[2],h[2]/=c[2]);var d;d=f[1];var k=f[2],i=Array(3);d.length!=3||k.length!=3?d=null:(i[0]=d[1]*k[2]-d[2]*k[1],i[1]=d[2]*k[0]-d[0]*k[2],i[2]=d[0]*k[1]-d[1]*k[0],d=i);if(x(f[0],d)&lt;
+0)for(d=0;d&lt;3;d++)c[d]*=-1,f[d][0]*=-1,f[d][1]*=-1,f[d][2]*=-1;d=Array(3);d[1]=j(-f[0][2]);r(d[1])!==0?(d[0]=b(f[1][2],f[2][2]),d[2]=b(f[0][1],f[0][0])):(d[0]=b(-f[2][0],f[1][1]),d[2]=0);return e={translation:e,rotation:d,scale:c,skew:h,perspective:a}};d.Timeline.addTweenType(&quot;transform&quot;,function(a,b,c,f){return new l(&quot;transform&quot;,a,b,c,f)})})(jQuery,jQuery.Edge,jQuery.Edge.PropertyTween);(function(m,d,n){function l(a,b,c,g,i){d.PropertyTween.call(this,a,b,c,g,i);this.name=&quot;colorTween&quot;}m.extend(l.prototype,n.prototype,{constructor:l,getValue:function(a){return m(this).css(a)},setValue:function(a,b,c){m(this).css(b,c)},parseValue:function(a){var b=d.parseColorValue(a);if(b&amp;&amp;b.colorFunction&amp;&amp;b.values){var a=b.values,b=b.colorFunction,c=/hsl/gi;if(b.match(/rgb/gi))if(this.animationColorSpace&amp;&amp;this.animationColorSpace==&quot;HSL&quot;)b={r:a[0],g:a[1],b:a[2]},(b=d.rgbToHSL(b))?a.length&gt;3?(a=a[3],
+a=[b.h,b.s,b.l,a]):a=[b.h,b.s,b.l]:a=[];else if(this.animationColorSpace){if(this.animationColorSpace!=&quot;RGB&quot;)return a}else this.animationColorSpace=&quot;RGB&quot;;else if(b.match(c))if(this.animationColorSpace&amp;&amp;this.animationColorSpace==&quot;RGB&quot;)b={h:a[0],s:a[1],l:a[2]},(b=d.hslToRGB(b))?a.length&gt;3?(a=a[3],a=[b.r,b.g,b.b,a]):a=[b.r,b.g,b.b]:a=[];else if(this.animationColorSpace){if(this.animationColorSpace!=&quot;HSL&quot;)return a}else this.animationColorSpace=&quot;HSL&quot;;a.length==3&amp;&amp;(a[3]=1);return a}},formatValue:function(a){if(a){var b;
+this.animationColorSpace==&quot;HSL&quot;?(b=&quot;hsl&quot;,a=a.length==4?b+&quot;a(&quot;+a[0]+&quot;,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%,&quot;+a[3]+&quot;)&quot;:b+&quot;(&quot;+a[0]+&quot;,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%)&quot;):(b=&quot;rgb&quot;,a=a.length==4?b+&quot;a(&quot;+a[0]+&quot;%,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%,&quot;+a[3]+&quot;)&quot;:b+&quot;(&quot;+a[0]+&quot;%,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%)&quot;);return a}}});d.ColorTween=l;d.parseColorValue=function(a){if(a){var b=[],c,d,g=/^\s*#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])\s*$/;(d=/^\s*#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})\s*$/.exec(a))?(b=[parseInt(d[1],16)/255*100,parseInt(d[2],16)/255*100,parseInt(d[3],
+16)/255*100],c=&quot;rgb&quot;):(d=g.exec(a))?(b=[parseInt(d[1]+d[1],16)/255*100,parseInt(d[2]+d[2],16)/255*100,parseInt(d[3]+d[3],16)/255*100],c=&quot;rgb&quot;):a==&quot;transparent&quot;&amp;&amp;(b=[0,0,0,0],c=&quot;rgb&quot;);c||(c=a.match(/\w+/),m.isArray(c)?c=c[0]:c||(c=&quot;&quot;),(d=a.match(/\([^\)]*\)/))&amp;&amp;d.length&gt;0&amp;&amp;(d=d[0].replace(/[\(\)]/g,&quot;&quot;)));a=/rgb/gi;g=/hsl/gi;if(b.length===0)if(c.match(a))if((g=/^\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*(?:,\s*([0-9](?:\.[0-9]+)?)\s*)?$/.exec(d))&amp;&amp;g.length&gt;=4){for(a=0;a&lt;3;a++)b[a]=g[a+
+1]/255*100;g.length&gt;4&amp;&amp;(g[4]||(g[4]=1),b[3]=g[4])}else{if((d=/^\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*(?:,\s*([0-9](?:\.[0-9]+)?)\s*)?$/.exec(d))&amp;&amp;d.length&gt;=4){if(d.length&gt;=5)d.length=5,d[4]||(d[4]=1);for(a=0;a&lt;d.length-1;a++)b[a]=d[a+1]}}else if(c.match(g)&amp;&amp;(d=/^\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*(?:,\s*([0-9](?:\.[0-9]+)?)\s*)?$/.exec(d))&amp;&amp;d.length&gt;=4){if(d.length&gt;=
+5)d.length=5,d[4]||(d[4]=1);for(a=0;a&lt;d.length-1;a++)b[a]=d[a+1]}if(b)for(a=0;a&lt;b.length;a++)b[a]=Math.round(b[a]*1E4)/1E4;return{colorFunction:c,values:b}}};var c=1/3,g=1/6,j=2/3,i=function(a){return a&lt;0?a+1:a&gt;1?a-1:a},r=function(a,b,c,d){return d&lt;g?a+c*d:d&lt;0.5?b:d&lt;j?a+c*(j-d):a};d.hslToRGB=function(a){if(a===null||a.s&lt;0||a.s&gt;100||a.l&lt;0||a.l&gt;100)return null;for(;a.h&gt;360;)a.h-=360;for(;a.h&lt;0;)a.h=360+a.h;var b={},d=a.h/360,g=a.s/100,a=a.l/100;if(g===0)b.r=b.g=b.b=1;else{var g=a&lt;=0.5?a*(1+g):a+g-a*
+g,a=2*a-g,j=i(d+c),l=i(d),d=i(d-c),m=(g-a)*6;b.r=r(a,g,m,j);b.g=r(a,g,m,l);b.b=r(a,g,m,d)}b.r=Math.min(b.r*100,100);b.g=Math.min(b.g*100,100);b.b=Math.min(b.b*100,100);b.r=Math.round(b.r*1E4)/1E4;b.g=Math.round(b.g*1E4)/1E4;b.b=Math.round(b.b*1E4)/1E4;return b};d.rgbToHSL=function(a){if(a===null||a.r&lt;0||a.r&gt;100||a.g&lt;0||a.g&gt;100||a.b&lt;0||a.b&gt;100)return null;var b={h:0,s:0,l:0},c=a.r/100,d=a.g/100,a=a.b/100,g=Math.max(c,d,a),i=Math.min(c,d,a);b.l=(g+i)/2;if(g==i||b.l&lt;=0)return b;var j=g-i;b.s=b.l&lt;=0.5?
+j/(g+i):j/(2-g-i);b.h=g==a?4+(c-d)/j:g==d?2+(a-c)/j:(d-a)/j;b.h*=60;if(b.h&gt;360)b.h-=360;else if(b.h&lt;0)b.h=360+b.h;b.s=Math.min(b.s*100,100);b.l=Math.min(b.l*100,100);b.h=Math.round(b.h*1E4)/1E4;b.s=Math.round(b.s*1E4)/1E4;b.l=Math.round(b.l*1E4)/1E4;return b};d.Timeline.addTweenType(&quot;color&quot;,function(a,b,c,d){return new l(&quot;color&quot;,a,b,c,d)})})(jQuery,jQuery.Edge,jQuery.Edge.PropertyTween);
+</textarea></div><!-- / .code --></div>
+<!-- / #boxEditJS --></section>
+
+<section id="boxEditHTML">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeHTML">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeHTML"></textarea></div>
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditCSS">
+<ul class="tabCode group">
+    <li title="[library] edge.0.1.1.min.js" class="selected tabCSS initialTab"><span id="primaryTabTitle">[library] edge.0.1.1.min.js</span></li></ul>
+<div class="code" id="boxCodeCSS">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeCSS" data-lang=""></textarea></div><!-- / .code --></div>
+<!-- / #boxEditCSS --></section>
+
+<script type="text/javascript">
+  var theme               = "default";
+  var uid                 = "pODv";
+//  var basefiles           = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+//  var editorjs            = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+  var basefiles           = "/js/codemirror/basefiles.js".substr(15); // "basefiles.js?1278486952"
+  var editorjs            = "/js/codemirror/editor.js".substr(15);
+  var has_long_line       = {};
+  has_long_line["js"]     = 0;
+  has_long_line["css"]    = 0;
+  has_long_line["html"]   = 0;
+
+  // 1st is initial
+  var initial_tabs = { js: [""], css: [""] };
+  var code_site_uri = "http://jsrun.it/xl1/edge011";
+  var is_danger     = 0; // 1 or 0
+  var lines         = [ 91,0,0 ];
+</script><noscript>
+<code></code>
+<code>//Copyright (c) 2011. Adobe Systems Incorporated.
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+//   * Redistributions of source code must retain the above copyright notice,
+//     this list of conditions and the following disclaimer.
+//   * Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//   * Neither the name of Adobe Systems Incorporated nor the names of its
+//     contributors may be used to endorse or promote products derived from this
+//     software without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// AdobePatentID=&quot;B1316&quot;
+// AdobePatentID=&quot;B1318&quot;
+//
+// edge.0.0.1.min.js - version 0.1.1
+ 
+(function(m){if(typeof m.Edge===&quot;undefined&quot;)m.Edge={};var d=m.Edge;d.version=&quot;0.1.1&quot;;d.cloneJSONObject=function(n){var l,c;if(m.isArray(n)){l=[];var g,j=n.length;for(g=0;g&lt;j;g++)c=n[g],l[g]=typeof c===&quot;object&quot;?d.cloneJSONObject(c):c}else for(g in l={},n)g!=&quot;prototype&quot;&amp;&amp;(c=n[g],l[g]=typeof c===&quot;object&quot;?d.cloneJSONObject(c):c);return l};d.Notifier=function(){this.observers=[];this.notificationLevel=this.suppressNotifications=0};m.extend(d.Notifier.prototype,{addObserver:function(d){if(d){for(var l=
+this.observers.length,c=0;c&lt;l;c++)if(this.observers[c].observer==d)return;this.observers[l]={observer:d}}},removeObserver:function(d){if(d)for(var l=0;l&lt;this.observers.length;l++)if(this.observers[l].observer==d)if(this.notificationLevel===0){this.observers.splice(l,1);break}else this.observers[l].deleted=!0},notifyObservers:function(d,l){if(d&amp;&amp;!this.suppressNotifications){l||(l={});l.methodName=d;this.notificationLevel++;var c;for(c=0;c&lt;this.observers.length;c++){var g=this.observers[c];if(g=g&amp;&amp;
+!g.deleted?g.observer:void 0)if(typeof g==&quot;function&quot;)g(d,this,l);else if(g[d])g[d](this,l)}this.notificationLevel--;if(this.notificationLevel===0)for(c=this.observers.length-1;c&gt;=0;c--)this.observers[c].deleted&amp;&amp;this.observers.splice(c,1)}},enableNotifications:function(){if(--this.suppressNotifications&lt;0)this.suppressNotifications=0,d.Debug.reportError(&quot;Unbalanced enableNotifications() call!\n&quot;)},disableNotifications:function(){++this.suppressNotifications}});d.trimString=function(d){return d.replace(/^\s+|\s+$/g,
+&quot;&quot;)}})(jQuery);(function(m,d){function n(){d.Notifier.call(this);this.animationID=&quot;animID-&quot;+n.nextID++}function l(a,b,c){d.Animation.call(this);if(typeof a==&quot;function&quot;)this.handler=a;else if(typeof a==&quot;string&quot;)this.eventType=a;this.handlerContext=c;this.data=b}function c(a,b,o,k){d.Notifier.call(this);this.animation=a;this.position=0;this.duration=-1;this.easing=typeof k==&quot;function&quot;?k:k&amp;&amp;m.easing[k]?k:c.defaultEasing;if(b!==void 0)this.position=b;if(o!==void 0)this.duration=o;this.timeline=null;this.dScale=1;this.dDuration=
+0;this.done=!1}function g(a){this.parameters={};a&amp;&amp;m.extend(this,a)}function j(a){d.Animation.call(this);m.extend(this,d.Timeline.config);m.extend(this,a);this.duration=this.currentPosition=this.startPosition=this.timerStart=this.timer=0;this.interval=1E3/this.fps;this.objects=[]}var i={};n.nextID=1;m.extend(n.prototype,d.Notifier.prototype,{constructor:n,_setup:function(){},_update:function(){},getDuration:function(){return 0}});m.extend(l.prototype,n.prototype,{constructor:l,_update:function(a){this.done||
+(this.handler?this.handler.call(this.handlerContext,a,this.data):this.eventType&amp;&amp;this.timeline&amp;&amp;this.timeline.notifyObservers(this.eventType,{elapsed:a,data:this.data}));this.done=!0},_setup:function(a){this.timeline=a;this.done=!1}});c.defaultEasing=&quot;linear&quot;;m.extend(c.prototype,d.Notifier.prototype,{constructor:c,_setup:function(a,b){this.timeline=a;var c=this.duration,k=null;this.animation&amp;&amp;this.animation.getDuration&amp;&amp;(k=this.animation.getDuration());this.dScale=c!=-1&amp;&amp;c!==0?k/c:1;this.dDuration=
+c!=-1?c:k;this.done=!1;this.animation&amp;&amp;this.animation.setup&amp;&amp;this.animation.setup(a,b)},_update:function(a,b){if(!this.done){var c=a,k=this.dDuration;if(this.animation){var g;k===0?g=c&gt;=0?1:0:(c&gt;=k&amp;&amp;(c=k),c&lt;=0&amp;&amp;(c=0),g=m.easing[this.easing](c/k,c,0,1,k));this.animation.update(c*this.dScale,g,b)}(b.playDirection==&quot;reverse&quot;?c&lt;=0:c&gt;=k)&amp;&amp;this.complete()}},complete:function(){this.done=!0;this.timeline&amp;&amp;this.timeline._updateComplete(this)},getPosition:function(){return this.position},setPosition:function(a){this.position=
+a},getDuration:function(){return this.duration!=-1?this.duration:this.animation&amp;&amp;this.animation.getDuration?this.animation.getDuration():0},setDuration:function(a){this.duration=a&gt;=0?a:-1}});j.config={dropFrames:!0,fps:60};var r=[];j.tick=function(){var a=r.slice(0);r=[];for(var b=a.length,c=0;c&lt;b;c++)a[c].call()};m.extend(j.prototype,n.prototype,{constructor:j,play:function(a){this.notifyObservers(&quot;onPlay&quot;);var b=new g(a);b.timeline=this;this._setup(this,a);this.timerStart=(new Date).getTime();this.startPosition=
+this.currentPosition;var c=this,k=function(){c._handleTimer(b,k)};this._handleTimer(b,k)},stop:function(){this.notifyObservers(&quot;onStop&quot;);this.timer&amp;&amp;clearTimeout(this.timer);this.timerStart=this.timer=0},seek:function(a,b){this.notifyObservers(&quot;onSeek&quot;);this.stop();var c=this.currentPosition;this.currentPosition=a;var k=new g(b);k.timeline=this;this._setup(this,b);this._updateSeek(this.currentPosition,1,k,c)},add:function(a,b,g,k){this.objects.push(new c(a,b,g,k));this.objects.sort(function(a,b){return a.position-
+b.position})},getDuration:function(){for(var a=0,b=this.objects,c=this.objects.length,k=Math.max,g=0;g&lt;c;g++)var d=b[g],a=k(a,d.position+d.getDuration());return a},currentPosition:function(){return this.currentPosition},_update:function(a,b,c){this.notifyObservers(&quot;onPreUpdate&quot;,{elapsed:a,easingConst:b});for(var k=this.objects,g=k.length,d=c.playDirection!=&quot;reverse&quot;,j=0;j&lt;g;j++){var i=k[d?j:g-j-1];if(d?a&gt;=i.position:a&lt;=i.position+i.duration)i.animation.isTrigger?i.animation.fire():i._update(a-i.position,
+c)}this.notifyObservers(&quot;onUpdate&quot;,{elapsed:a,easingConst:b});this.notifyObservers(&quot;onPostUpdate&quot;,{elapsed:a,easingConst:b,context:c})},_handleTimer:function(a,b){var c=(new Date).getTime()-this.timerStart,k=a.playDirection==&quot;reverse&quot;,g=this.startPosition+(k?-c:c);this.currentPosition=g=Math.max(0,Math.min(g,this.duration));this._update(g,1,a);(!k?g&lt;this.duration:g&gt;0)?a.externalClock?r.push(b):this.timer=setTimeout(b,this.interval):(this.stop(),this.notifyObservers(&quot;onComplete&quot;,{elapsed:c}))},_setup:function(a,
+b){d.Animation.prototype._setup.call(this,a);for(var c=this.objects,k=this.objects.length,g=0;g&lt;k;g++){var j=c[g];j._done=!1;j._setup(this,b)}this.duration=this.getDuration()},_updateComplete:function(a){a._done=!0}});j.prototype._updateSeek=j.prototype._update;d.Animation=n;d.TimelineObject=c;d.Timeline=j;d.Timeline.createTimeline=function(a){return new d.Timeline(a)};d.Timeline.createTween=function(a){var b=i[a];if(b)return b.func.apply(b.context,Array.prototype.slice.call(arguments,1));return null};
+d.Timeline.addTweenType=function(a,b,c){i[a]={func:b,context:c}};d.Timeline.createTrigger=function(a,b){return new l(a,b,arguments[arguments.length-1])};d.Timeline.createTimelineFromData=function(a){for(var b=jQuery.Edge.Timeline.createTimeline(),c=a.length,k=0;k&lt;c;k++){var g=a[k],j=null;g.timeline?j=d.Timeline.createTimelineFromData(g.timeline):g.tween?j=d.Timeline.createTween.apply(null,g.tween):g.trigger&amp;&amp;(j=g.trigger.slice(0,2),j.push(this),j=d.Timeline.createTrigger.apply(null,j));j&amp;&amp;b.add(j,
+g.position,g.duration,g.easing)}return b}})(jQuery,jQuery.Edge);(function(m,d){function n(c,g,j,i,m){d.Animation.call(this);this.name=&quot;prop tween&quot;;this.sourceElements=this.elements=g;this.deferElementResolution=!0;this.tweenType=l[c];this.updateTriggered=!1;this.property=j;this.fromValue=void 0;this.toValue=i;this.duration=1E3;this.fromValues=this.tokens=this.valueTemplate=null;m&amp;&amp;$.extend(this,m);this.deferElementResolution=this.deferElementResolution||typeof g==&quot;string&quot;&amp;&amp;g.search(/\$\{[^\{\}]+\}/)!=-1;if(!this.deferElementResolution)this.elements=this.resolveElementSelector(g);
+var m=this.toValues=[],a=this.parseValue(i);$.isArray(i)||(i=[i]);if(!a||a.length===0)a=i;g=a.length;for(c=0;c&lt;g;c++){var j=a[c],b={};typeof j==&quot;string&quot;?(b.value=parseFloat(j.replace(/[a-zA-Z%]+$/,&quot;&quot;)),b.unit=j.replace(/^-?[0-9]*(\.[0-9]+)?/,&quot;&quot;)):(typeof j==&quot;number&quot;&amp;&amp;(j=parseFloat(j)),b.value=j,b.unit=&quot;&quot;);m.push(b)}i.length&gt;1&amp;&amp;!this.valueTemplate&amp;&amp;alert(&quot;Multiple values specified for attribute tween, but no template was provided!&quot;);i.length&gt;1&amp;&amp;(!this.fromValue||!$.isArray(this.fromValue))&amp;&amp;alert(&quot;Multiple values specified for attribute tween, but no from values specified!&quot;);
+if(this.fromValue){i=this.fromValues=[];if((c=this.parseValue(this.fromValue))&amp;&amp;c.length&gt;0)this.fromValue=c;else if(!$.isArray(this.fromValue))this.fromValue=[this.fromValue];g=this.fromValue.length;for(c=0;c&lt;g;c++)j=this.fromValue[c],typeof j==&quot;string&quot;?i[c]=parseFloat(j.replace(/[a-zA-Z%]+$/,&quot;&quot;)):(typeof j==&quot;number&quot;&amp;&amp;(j=parseFloat(j)),i[c]=j);this.toValues.length!=this.fromValues.length&amp;&amp;alert(&quot;Number of 'from' and 'to' values does not match for &quot;+this.tweenType+&quot; tween.&quot;)}if(this.filter){if(!$.isArray(this.filter))this.filter=
+[this.filter];i=this.filter;g=i.length;for(c=0;c&lt;g;c++)typeof i[c]==&quot;string&quot;&amp;&amp;(i[c]=Math[i[c]]),typeof i[c]!=&quot;function&quot;&amp;&amp;(i[c]=null)}if(this.valueTemplate)this.tokens=this.parseTemplate(this.valueTemplate)}var l={style:0,attribute:1,property:2};n.Token=function(c,g){this.value=c;this.isPlaceholder=g};n.substituteParameters=function(c,g){for(var j=c;g&amp;&amp;typeof j==&quot;string&quot;&amp;&amp;j.search(/\$\{/)!=-1;){var i=j.search(/\$\{/),l=j.search(/\}/);(i=j.slice(i+2,l))||alert(&quot;Invalid parameter name: &quot;+i);typeof i==
+&quot;string&quot;&amp;&amp;(i=d.trimString(i),i=i.replace(/[\&quot;\']/g,&quot;&quot;));j=j.replace(/\$\{[^\}]*\}/,g[i]);typeof j==&quot;undefined&quot;&amp;&amp;alert(&quot;Animation parameter ${&quot;+i+&quot;} is undefined!&quot;)}return j};$.extend(n.prototype,d.Animation.prototype,{constructor:n,setup:function(){this.updateTriggered=!1},update:function(c,g,d){var i=this.getElementSet(d);if(!this.updateTriggered)this.updateTriggered=!0,this.setupForAnimation(d);var l=this,a=this.tweenType,b=this.property,o;i.each(function(){var k=l.getPropertyTweenData(this,a,b);
+if(k.animationID==l.animationID){var d=k.fromValues,j=k.toValues,k=k.tokens,i=l.filter,m=d.length,n=[];for(o=0;o&lt;m;o++){var u=d[o],w=j[o];u+=(w.value-u)*g;i&amp;&amp;i[o]&amp;&amp;(u=i[o](u));n.push(u+w.unit)}d=&quot;&quot;;d=l.formatValue(n);if(!(d.length&gt;0))if(k){d=k.length;j=[];for(o=0;o&lt;d;o++)i=k[o],i.isPlaceholder?j.push(n[i.value]):j.push(i.value);d=j.join(&quot;&quot;)}else d=n.join(&quot;&quot;);l.setValue.call(this,a,b,d);l.notifyObservers(&quot;onUpdate&quot;,{elapsed:c,easingConst:g,property:b,value:d,element:this})}})},setValue:function(c,
+g,d){switch(c){case 0:$(this).css(g,d);break;case 1:this.setAttribute(g,d);break;case 2:this[g]=d}},getDuration:function(){return this.duration},resolveElementSelector:function(c){c=n.substituteParameters(this.elements,c.parameters);if(!c)c=this.elements;return $(c)},getElementSet:function(c){var g=this.animationID;if(!c.animData)c.animData={};var d=c.animData[g];d||(d=c.animData[g]=this.deferElementResolution?this.resolveElementSelector(c):this.elements);return d},getValue:function(c,g){var d;switch(g){case 0:d=
+$(this).css(c);break;case 1:d=this.getAttribute(c);break;case 2:d=this[c]+&quot;&quot;}return d},setupForAnimation:function(c){var g=this,d=this.tweenType,i=this.property;this.getElementSet(c).each(function(){var c=g.getPropertyTweenData(this,d,i);c.animationID=g.animationID;c.toValues=g.toValues;c.tokens=g.tokens;if(g.fromValues)c.fromValues=g.fromValues;else{var a=g.getValue.call(this,i,d);a===void 0&amp;&amp;(a=&quot;0&quot;);var b=g.parseValue(a);if(b&amp;&amp;b.length&gt;0)for(var c=c.fromValues=[],a=b.length,o=0;o&lt;a;o++){var k=b[o];
+c[o]=typeof k==&quot;string&quot;?parseFloat(k.replace(/[a-zA-Z%]+$/,&quot;&quot;)):k}else c.fromValues=[parseFloat(a.replace(/[a-zA-Z%]+$/,&quot;&quot;))]}})},parseTemplate:function(c){for(var d=c.length,j=[],i=0,l=/@@[0-9]+@@/g,a=null;i&lt;d&amp;&amp;(a=l.exec(c));)a.index!=i&amp;&amp;j.push(new n.Token(c.substring(i,a.index),!1)),j.push(new n.Token(parseInt(a[0].replace(/@@/g,&quot;&quot;),10),!0)),i=l.lastIndex;i&lt;d&amp;&amp;j.push(new n.Token(c.substring(i,d),!1));return j},parseValue:function(){return[]},formatValue:function(){return&quot;&quot;},getPropertyTweenData:function(c,
+d,j){var i=$.data(c,&quot;tweenData&quot;);i||(i={},$.data(c,&quot;tweenData&quot;,i));(c=i[d])||(c=i[d]={});(d=c[j])||(d=c[j]={animationID:-1});return d}});d.PropertyTween=n;d.Timeline.addTweenType(&quot;style&quot;,function(c,d,j,i){return new n(&quot;style&quot;,c,d,j,i)});d.Timeline.addTweenType(&quot;attribute&quot;,function(c,d,j,i){return new n(&quot;attribute&quot;,c,d,j,i)});d.Timeline.addTweenType(&quot;property&quot;,function(c,d,j,i){return new n(&quot;property&quot;,c,d,j,i)})})(jQuery,jQuery.Edge);(function(m,d,n){function l(q,e,a,f,h){d.PropertyTween.call(this,q,e,a,f,h);this.name=&quot;transformTween&quot;}var c,g,j=Math.asin,i=Math.sin,r=Math.cos,a=Math.tan,b=Math.atan2,o=Math.PI/180,k=180/Math.PI;l.removeData=function(q){var e=m.data(q,l.dataName);e&amp;&amp;(e.timeline&amp;&amp;c.unRegister(e.timeline,e.id),$ele.removeData(q,l.dataName))};var p=function(q){var e=0;typeof q==&quot;string&quot;?e=parseFloat(q.replace(/[a-zA-Z%]+$/,&quot;&quot;)):typeof q==&quot;number&quot;&amp;&amp;(e=q);return e};l.applyTransform=function(q,e,a,f){var q=m(q),h=&quot;webkitAppearance&quot;in
+document.documentElement.style,b=!0;f&amp;&amp;(b=!f.dontForceZ);if(h){f=&quot;translate(&quot;+e.translateX+&quot;,&quot;+e.translateY+&quot;)&quot;;h=p(e.translateZ);if(h!==0||b)f+=&quot; translateZ(&quot;+e.translateZ+&quot;)&quot;;f+=&quot; rotate(&quot;+e.rotateZ+&quot;) &quot;;h=p(e.rotateY);h!==0&amp;&amp;(f+=&quot; rotateY(&quot;+e.rotateY+&quot;)&quot;);h=p(e.rotateX);h!==0&amp;&amp;(f+=&quot; rotateX(&quot;+e.rotateX+&quot;)&quot;);f+=&quot; skew(&quot;+e.skewX+&quot;,&quot;+e.skewY+&quot;) scale(&quot;+e.scaleX+&quot;,&quot;+e.scaleY+&quot;) &quot;;h=p(e.scaleZ);h!=1&amp;&amp;(f+=&quot; scaleZ(&quot;+e.scaleZ+&quot;)&quot;);e=&quot;-webkit-transform&quot;;q.css(e,f);a&amp;&amp;a.observers.length&amp;&amp;a.notifyObservers(&quot;onUpdate&quot;,
+{elapsed:0,easingConst:0,property:e,value:f,element:q[0]})}else a=p(e.rotateY),f=p(e.rotateX),a=e.scaleX*r(o*a),b=e.scaleY*r(o*f),f=&quot;translate(&quot;+e.translateX+&quot;,&quot;+e.translateY+&quot;)&quot;,f+=&quot; rotate(&quot;+e.rotateZ+&quot;)&quot;,f+=&quot; skew(&quot;+e.skewX+&quot;, &quot;+e.skewY+&quot;)&quot;,f+=&quot; scale(&quot;+a+&quot;,&quot;+b+&quot;)&quot;,q.css(&quot;-moz-transform&quot;,f),q.css(&quot;-o-transform&quot;,f),q.css(&quot;-ms-transform&quot;,f),q.css(&quot;msTransform&quot;,f)};var t=function(a){if(a!==0&amp;&amp;Math.abs(a)&lt;1.0E-6)return a.toFixed(6);return a.toString()};l.dataName=&quot;EdgeTransformData&quot;;var y=1;m.extend(l.prototype,
+n.prototype,{constructor:l,setup:function(){this.updateTriggered=!1},setValue:function(a,e,b){m.data(this,l.dataName)[e]=b},getValue:function(){m.data(this,l.dataName)},setupForAnimation:function(a){var e=this;this.getElementSet(a).each(function(){var a=m.data(this,l.dataName);a||(a=e.buildTransformData(this),m.data(this,l.dataName,a))});n.prototype.setupForAnimation.call(this,a)},update:function(a,e,b){n.prototype.update.call(this,a,e,b);var f=this,h=this.property,d=this.tweenType;this.getElementSet(b).each(function(){if(f.getPropertyTweenData(this,
+d,h).animationID==f.animationID){var a=m.data(this,l.dataName);a.timeline=b.timeline;a.tween=f;c.Register(b.timeline,a.id,a)}})},buildTransformData:function(a){var e=d.parseCanonicalTransform(a);if(e===null){var e={},b=d.getTransformProps(a);e.translateX=&quot;0px&quot;;e.translateY=&quot;0px&quot;;e.translateZ=&quot;0px&quot;;e.scaleX=1;e.scaleY=1;e.scaleZ=1;e.rotateX=&quot;0deg&quot;;e.rotateY=&quot;0deg&quot;;e.rotateZ=&quot;0deg&quot;;e.skewXZ=0;e.skewXY=0;e.skewYZ=0;e.skewX=&quot;0deg&quot;;e.skewY=&quot;0deg&quot;;e.matrix&amp;&amp;delete e.matrix;if(b)e.translateX=t(b.translation[0])+
+&quot;px&quot;,e.translateY=t(b.translation[1])+&quot;px&quot;,e.translateZ=t(b.translation[2])+&quot;px&quot;,e.scaleX=t(b.scale[0]),e.scaleY=t(b.scale[1]),e.scaleZ=t(b.scale[2]),e.rotateX=t(b.rotation[0]*k)+&quot;deg&quot;,e.rotateY=t(b.rotation[1]*k)+&quot;deg&quot;,e.rotateZ=t(b.rotation[2]*k)+&quot;deg&quot;,e.skewXY=b.skew[0],e.skewXZ=b.skew[1],e.skewYZ=b.skew[2],e.skewX=t(Math.atan(b.skew[0])*k)+&quot;deg&quot;}e===null&amp;&amp;(e={});e.id=&quot;transform_&quot;+y++;e.element=a;e.onFinalUpdate=c.prototype._applyTransform;return e}});var J={translate3d:0,translate:0,translateX:0,
+translateY:0,translateZ:0,rotate:1,rotateZ:1,rotateX:1,rotateY:1,rotate3d:1,skew:2,skewX:2,skewY:2,scale3d:3,scale:3,scaleX:3,scaleY:3,scaleZ:3,perspective:4};d.getTransformProps=function(a,e){var b=typeof e==&quot;string&quot;?e:d.getTransform(a),f=&quot;webkitAppearance&quot;in document.documentElement.style;if(b&amp;&amp;b!=&quot;none&quot;&amp;&amp;f)f=new d.CSSMatrix,f.setMatrixValue(b),b=g.fromCSSMatrix(f);else if(b&amp;&amp;b!=&quot;none&quot;)b=g.fromCSSMatrixString(b);else return;return d.decomposeTransform(b)};d.getTransform=function(a){var e;&quot;webkitAppearance&quot;in
+document.documentElement.style&amp;&amp;(e=m(a).css(&quot;-webkit-transform&quot;));e||(e=m(a).css(&quot;-ms-transform&quot;));e||(e=m(a).css(&quot;-moz-transform&quot;));e||(e=m(a).css(&quot;-o-transform&quot;));e||(e=m(a).css(&quot;transform&quot;));return e};d.parseCanonicalTransform=function(a,e){var b=(typeof e==&quot;string&quot;?e:d.getTransform(a)).match(/(\w+\s*\([^\)]*\))/g);if(!b)return null;var f={},h={translateX:&quot;0px&quot;,translateY:&quot;0px&quot;,translateZ:&quot;0px&quot;,scaleX:1,scaleY:1,scaleZ:1,rotateX:&quot;0deg&quot;,rotateY:&quot;0deg&quot;,rotateZ:&quot;0deg&quot;,skewXZ:0,skewXY:0,skewYZ:0,skewX:&quot;0deg&quot;,
+skewY:&quot;0deg&quot;},c;for(c=0;c&lt;b.length;c++){var k=b[c].match(/\w+/);if(f[k[0]]||J[k[0]]&lt;0)return null;var g=b[c].match(/\([^\)]*\)/),g=g[0].replace(/[\(\)]/g,&quot;&quot;),g=g.split(&quot;,&quot;);switch(k[0]){case &quot;matrix&quot;:return null;case &quot;translate3d&quot;:h.translateX=g[0];h.translateY=g.length&gt;1?g[1]:&quot;0px&quot;;h.translateZ=g.length&gt;2?g[2]:&quot;0px&quot;;f.translate3d=f.translate=f.translateX=f.translateY=f.translateZ=!0;break;case &quot;translate&quot;:h.translateX=g[0];h.translateY=g.length&gt;1?g[1]:&quot;0px&quot;;f.translate3d=f.translate=f.translateX=
+f.translateY=!0;break;case &quot;translateX&quot;:h.translateX=g[0];f.translate3d=f.translate=f.translateX=!0;break;case &quot;translateY&quot;:h.translateY=g[0];f.translate3d=f.translate=f.translateY=!0;break;case &quot;translateZ&quot;:h.translateZ=g[0];f.translate3d=f.translateZ=!0;break;case &quot;rotate3d&quot;:return f.rotate3d=f.rotate=f.rotateX=f.rotateY=f.rotateZ=!0,null;case &quot;rotateX&quot;:h.rotateX=g[0];f.rotate3d=f.rotateX=!0;break;case &quot;rotateY&quot;:h.rotateY=g[0];f.rotate3d=f.rotateY=!0;break;case &quot;rotateZ&quot;:case &quot;rotate&quot;:h.rotateZ=
+g[0];f.rotate3d=f.rotate=f.rotateZ=!0;break;case &quot;skew&quot;:h.skewX=g[0];h.skewY=g.length&gt;1?g[1]:&quot;0px&quot;;f.skew=f.skewX=f.skewY=!0;break;case &quot;skewX&quot;:h.skewX=g[0];f.skew=f.skewX=!0;break;case &quot;skewY&quot;:h.skewY=g[0];f.skew=f.skewY=!0;break;case &quot;scale3d&quot;:h.scaleX=g[0];h.scaleY=g.length&gt;1?g[1]:&quot;0px&quot;;h.scaleZ=g.length&gt;2?g[2]:&quot;0px&quot;;f.scale3d=f.scale=f.scaleX=f.scaleY=f.scaleZ=!0;break;case &quot;scale&quot;:h.scaleX=g[0];h.scaleY=g.length&gt;1?g[1]:&quot;0px&quot;;f.scale=f.scaleX=f.scaleY=!0;break;case &quot;scaleX&quot;:h.scaleX=g[0];f.scale3d=
+f.scale=f.scaleX=!0;break;case &quot;scaleY&quot;:h.scaleY=g[0];f.scale3d=f.scale=f.scaleY=!0;break;case &quot;scaleZ&quot;:h.scaleZ=g[0];f.scale3d=f.scaleZ=!0;break;case &quot;perspective&quot;:f.perspective=!0}}return h};d.TransformTween=l;c=function(a){this.handlers={};this.timeline=a};c.Register=function(a,e,b){var f=a.updateFinalizer;if(typeof f==&quot;undefined&quot;)f=new c(a),a.updateFinalizer=f,a.addObserver(f);f.handlers[e]=b};c.unRegister=function(a,e){var b=a.updateFinalizer;typeof b!=&quot;undefined&quot;&amp;&amp;delete b.handlers[e]};m.extend(c.prototype,
+{_finalizeUpdate:function(a,e){var b={elapsed:a,context:e},f;for(f in this.handlers)if(this.handlers.hasOwnProperty(f)){var h=this.handlers[f];if(h.onFinalUpdate)h.onFinalUpdate(b)}},onUpdate:function(a,e){this._finalizeUpdate(e.elapsed,e.context)},onComplete:function(){this.timeline&amp;&amp;this.timeline.removeObserver(this);this.timeline.updateFinalizer=void 0},_applyTransform:function(a){var e=m.data(this.element,l.dataName);l.applyTransform(this.element,e,e.tween,a.context)}});l.UpdateFinalizer=c;if(typeof CSSMatrix==
+&quot;undefined&quot;)if(typeof WebKitCSSMatrix!=&quot;undefined&quot;)d.CSSMatrix=WebKitCSSMatrix;else{if(typeof MozCSSMatrix!=&quot;undefined&quot;)d.CSSMatrix=MozCSSMatrix}else d.CSSMatrix=CSSMatrix;var x=function(a,e){for(var b=0,f=a.length,h=0;h&lt;f;h++)b+=a[h]*e[h];return b},u=function(a){for(var e=0,b=a.length,f=0;f&lt;b;f++)e+=a[f]*a[f];return Math.sqrt(e)},w=function(a){var e=a.length,b=u(a),f=Array(e);b===0&amp;&amp;(b=1);for(var h=0;h&lt;e;h++)f[h]=a[h]/b;return f},I=function(a,e,b,f){var h=Array(3);h[0]=b*a[0]+f*e[0];h[1]=b*a[1]+
+f*e[1];h[2]=b*a[2]+f*e[2];return h};g=function(a){var e,b;if(a)for(e=0;e&lt;4;e++){this[e]=Array(4);for(b=0;b&lt;4;b++)this[e][b]=a[e][b]}else for(e=0;e&lt;4;e++){this[e]=Array(4);for(b=0;b&lt;4;b++)this[e][b]=0;this[e][e]=1}this.size=4};g.fromCSSMatrix=function(a){var e=new g;e[0][0]=a.m11;e[0][1]=a.m12;e[0][2]=a.m13;e[0][3]=a.m14;e[1][0]=a.m21;e[1][1]=a.m22;e[1][2]=a.m23;e[1][3]=a.m24;e[2][0]=a.m31;e[2][1]=a.m32;e[2][2]=a.m33;e[2][3]=a.m34;e[3][0]=a.m41;e[3][1]=a.m42;e[3][2]=a.m43;e[3][3]=a.m44;return e};var s=
+function(a){var e={};e.num=parseFloat(a);e.units=a.match(/\w+$/);if(typeof e.unit==&quot;array&quot;)e.units=e.units[0];return e},v=function(a){a=a.toLowerCase();if(typeof a!=&quot;string&quot;)return 0;a=s(a);a.units==&quot;deg&quot;&amp;&amp;(a.num*=o);return a.num};g.fromCSSMatrixString=function(a){var e=new g,a=a.match(/(\w+\s*\([^\)]*\))/g);if(typeof a==&quot;undefined&quot;||a===null)return e;var b;for(b=0;b&lt;a.length;b++){var f=a[b].match(/\w+/),h=a[b].match(/\([^\)]*\)/),h=h[0].replace(/[\(\)]/g,&quot;&quot;),h=h.split(&quot;,&quot;),c,d;switch(f[0]){case &quot;matrix&quot;:f=
+new g;h.length==6&amp;&amp;(f[0][0]=parseFloat(h[0]),f[0][1]=parseFloat(h[1]),f[1][0]=parseFloat(h[2]),f[1][1]=parseFloat(h[3]),f[3][0]=parseFloat(h[4]),f[3][1]=parseFloat(h[5]),e.preMultiplyBy(f));break;case &quot;translate3d&quot;:f=s(h[0]).num;c=h.length&gt;1?s(h[1]).num:0;d=h.length&gt;2?s(h[2]).num:0;e.translate3d(f,c,d);break;case &quot;translate&quot;:f=s(h[0]).num;c=h.length&gt;1?s(h[1]).num:0;e.translate3d(f,c,0);break;case &quot;translateX&quot;:h=s(h[0]).num;e.translate3d(h,0,0);break;case &quot;translateY&quot;:h=s(h[0]).num;e.translate3d(0,
+h,0);break;case &quot;translateZ&quot;:h=s(h[0]).num;e.translate3d(0,0,h);break;case &quot;rotate3d&quot;:if(h.length&gt;=3)f=s(h[0]).num,c=s(h[1]).num,d=s(h[2]).num,h=v(h[3]),e.rotate3d(f,c,d,h,!0);break;case &quot;rotateX&quot;:h=v(h[0]);e.rotateX(h);break;case &quot;rotateY&quot;:h=v(h[0]);e.rotateY(h);break;case &quot;rotateZ&quot;:case &quot;rotate&quot;:h=v(h[0]);e.rotateZ(h);break;case &quot;skew&quot;:f=v(h[0]);h=v(h[1]);e.skew(f,h);break;case &quot;skewX&quot;:h=v(h[0]);e.skew(h,0);break;case &quot;skewY&quot;:h=v(h[0]);e.skew(0,h);break;case &quot;scale3d&quot;:f=parseFloat(h[0]);c=h.length&gt;
+1?parseFloat(h[1]):1;h=h.length&gt;2?parseFloat(h[2]):1;e.scale(f,c,h);break;case &quot;scale&quot;:f=parseFloat(h[0]);c=h.length&gt;1?parseFloat(h[1]):1;e.scale(f,c,0);break;case &quot;scaleX&quot;:h=parseFloat(h[0]);e.scale(h,0,0);break;case &quot;scaleY&quot;:h=parseFloat(h[0]);e.scale(0,h,0);break;case &quot;scaleZ&quot;:h=parseFloat(h[0]);e.scale(0,0,h);break;case &quot;perspective&quot;:h=parseFloat(h[0]),e.perspective(h)}}return e};m.extend(g.prototype,{identity:function(){for(var a=0;a&lt;4;a++){this[a]=Array(4);for(var e=0;e&lt;4;e++)this[a][e]=0;this[a][a]=
+1}return this},determinant:function(){var a=this[0][0],e=this[0][1],b=this[0][2],f=this[0][3],h=this[1][0],c=this[1][1],d=this[1][2],g=this[1][3],k=this[2][0],j=this[2][1],i=this[2][2],o=this[2][3],l=this[3][0],m=this[3][1],n=this[3][2],p=this[3][3];return f*d*j*l-b*g*j*l-f*c*i*l+e*g*i*l+b*c*o*l-e*d*o*l-f*d*k*m+b*g*k*m+f*h*i*m-a*g*i*m-b*h*o*m+a*d*o*m+f*c*k*n-e*g*k*n-f*h*j*n+a*g*j*n+e*h*o*n-a*c*o*n-b*c*k*p+e*d*k*p+b*h*j*p-a*d*j*p-e*h*i*p+a*c*i*p},normalizeTransform:function(){if(this[3][3]===0)return!1;
+for(var a=0;a&lt;4;a++)for(var e=0;e&lt;4;e++)this[a][e]/=this[3][3];return!0},transpose:function(){for(var a=new g,e=0;e&lt;4;e++)for(var b=0;b&lt;4;b++)a[e][b]=this[b][e];return a},toCSSMatrix:function(){var a=new d.CSSMatrix;a.m11=this[0][0];a.m12=this[0][1];a.m13=this[0][2];a.m14=this[0][3];a.m21=this[1][0];a.m22=this[1][1];a.m23=this[1][2];a.m24=this[1][3];a.m31=this[2][0];a.m32=this[2][1];a.m33=this[2][2];a.m34=this[2][3];a.m41=this[3][0];a.m42=this[3][1];a.m43=this[3][2];a.m44=this[3][3];return a},_inverse:function(){return this},
+inverse:function(){if(d.CSSMatrix!==void 0){var a=this.toCSSMatrix().inverse();return g.fromCSSMatrix(a)}return this._inverse()},rotate3d:function(a,b,c,f,h){var g=new d.Matrix4x4;h||(f*=o);f&amp;&amp;(h=Math.sqrt(a*a+b*b+c*c),h!==0&amp;&amp;(a/=h,b/=h,c/=h,h=i(f),f=r(f),g[0][0]=1+(1-f)*(a*a-1),g[1][0]=-c*h+(1-f)*a*b,g[2][0]=b*h+(1-f)*a*c,g[3][0]=0,g[0][1]=c*h+(1-f)*a*b,g[1][1]=1+(1-f)*(b*b-1),g[2][1]=-a*h+(1-f)*b*c,g[3][1]=0,g[0][2]=-b*h+(1-f)*a*c,g[1][2]=a*h+(1-f)*b*c,g[2][2]=1+(1-f)*(c*c-1),g[3][2]=0,g[0][3]=
+0,g[1][3]=0,g[2][3]=0,g[3][3]=1));return this.preMultiplyBy(g)},rotateX:function(a){return this.rotate3d(1,0,0,a)},rotateY:function(a){return this.rotate3d(0,1,0,a)},rotateZ:function(a){return this.rotate3d(0,0,1,a)},translate3d:function(a,b,c){this[3][0]+=a;this[3][1]+=b;this[3][2]+=c;return this},scale:function(a,b,c){if(a!=1||b!=1||c!=1){var f=new d.Matrix4x4;f[0][0]=a;f[1][1]=b;f[2][2]=c;return this.preMultiplyBy(f)}return this},skew:function(b,e,c){c||(b*=o,e*=o);b!==0&amp;&amp;(c=new d.Matrix4x4,c[1][0]=
+a(b),this.preMultiplyBy(c));e!==0&amp;&amp;(b=new d.Matrix4x4,b[0][1]=a(e),this.preMultiplyBy(b));return this},perspective:function(a){if(a!==0){var b=new d.Matrix4x4;b[2][3]=1/a;this.preMultiplyBy(b)}return this},skewByFactors:function(a,b,c){a=new d.Matrix4x4;a[2][1]=c;this.preMultiplyBy(a);a.identity();a[2][0]=c;this.preMultiplyBy(a);a.identity();a[1][0]=c;this.preMultiplyBy(a);return this},applyPerspective:function(a,b,c,f){var h=new d.Matrix4x4;h[0][3]=a;h[1][3]=b;h[2][3]=c;h[3][3]=f;this.preMultiplyBy(h);
+return this},preMultiplyBy:function(a){var b=a[0][0],c=a[0][1],f=a[0][2],h=a[0][3],g=a[1][0],d=a[1][1],k=a[1][2],j=a[1][3],i=a[2][0],o=a[2][1],l=a[2][2],m=a[2][3],n=a[3][0],p=a[3][1],t=a[3][2],a=a[3][3],r=this[0][0],s=this[0][1],y=this[0][2],u=this[0][3],v=this[1][0],w=this[1][1],x=this[1][2],z=this[1][3],A=this[2][0],B=this[2][1],C=this[2][2],D=this[2][3],E=this[3][0],F=this[3][1],G=this[3][2],H=this[3][3];this[0][0]=b*r+c*v+f*A+h*E;this[0][1]=b*s+c*w+f*B+h*F;this[0][2]=b*y+c*x+f*C+h*G;this[0][3]=
+b*u+c*z+f*D+h*H;this[1][0]=g*r+d*v+k*A+j*E;this[1][1]=g*s+d*w+k*B+j*F;this[1][2]=g*y+d*x+k*C+j*G;this[1][3]=g*u+d*z+k*D+j*H;this[2][0]=i*r+o*v+l*A+m*E;this[2][1]=i*s+o*w+l*B+m*F;this[2][2]=i*y+o*x+l*C+m*G;this[2][3]=i*u+o*z+l*D+m*H;this[3][0]=n*r+p*v+t*A+a*E;this[3][1]=n*s+p*w+t*B+a*F;this[3][2]=n*y+p*x+t*C+a*G;this[3][3]=n*u+p*z+t*D+a*H;return this}});d.Matrix4x4=g;d.decomposeTransform=function(a){var e={},c=new g(a);if(!c.normalizeTransform())return null;e=new g(a);for(a=0;a&lt;3;a++)e[a][3]=0;e[3][3]=
+1;if(e.determinant(e)===0)return window.edge_authoring_mode&amp;&amp;alert(&quot;Bad perspective matrix&quot;),null;var f=Array(4),a=Array(4);if(c[0][3]!==0||c[1][3]!==0||c[2][3]!==0){f[0]=c[0][3];f[1]=c[1][3];f[2]=c[2][3];f[3]=c[3][3];a=e.inverse();if(!a)return!1;a=a.transpose().rightMultiply(f);c[0][3]=c[1][3]=c[2][3]=0;c[3][3]=1}else a[0]=a[1]=a[2]=0,a[3]=1;e=Array(3);e[0]=c[3][0];c[3][0]=0;e[1]=c[3][1];c[3][1]=0;e[2]=c[3][2];c[3][2]=0;f=Array(3);f[0]=Array(3);f[1]=Array(3);f[2]=Array(3);for(var h=0;h&lt;3;h++)f[h][0]=
+c[h][0],f[h][1]=c[h][1],f[h][2]=c[h][2];c=Array(3);c[0]=u(f[0]);f[0]=w(f[0]);h=Array(3);h[0]=x(f[0],f[1]);f[1]=I(f[1],f[0],1,-h[0]);c[1]=u(f[1]);f[1]=w(f[1]);c[1]!==0&amp;&amp;(h[0]/=c[1]);h[1]=x(f[0],f[2]);f[2]=I(f[2],f[0],1,-h[1]);h[2]=x(f[1],f[2]);f[2]=I(f[2],f[1],1,-h[2]);c[2]=u(f[2]);c[2]!==0&amp;&amp;(f[2]=w(f[2]));c[2]!==0&amp;&amp;(h[1]/=c[2],h[2]/=c[2]);var d;d=f[1];var k=f[2],i=Array(3);d.length!=3||k.length!=3?d=null:(i[0]=d[1]*k[2]-d[2]*k[1],i[1]=d[2]*k[0]-d[0]*k[2],i[2]=d[0]*k[1]-d[1]*k[0],d=i);if(x(f[0],d)&lt;
+0)for(d=0;d&lt;3;d++)c[d]*=-1,f[d][0]*=-1,f[d][1]*=-1,f[d][2]*=-1;d=Array(3);d[1]=j(-f[0][2]);r(d[1])!==0?(d[0]=b(f[1][2],f[2][2]),d[2]=b(f[0][1],f[0][0])):(d[0]=b(-f[2][0],f[1][1]),d[2]=0);return e={translation:e,rotation:d,scale:c,skew:h,perspective:a}};d.Timeline.addTweenType(&quot;transform&quot;,function(a,b,c,f){return new l(&quot;transform&quot;,a,b,c,f)})})(jQuery,jQuery.Edge,jQuery.Edge.PropertyTween);(function(m,d,n){function l(a,b,c,g,i){d.PropertyTween.call(this,a,b,c,g,i);this.name=&quot;colorTween&quot;}m.extend(l.prototype,n.prototype,{constructor:l,getValue:function(a){return m(this).css(a)},setValue:function(a,b,c){m(this).css(b,c)},parseValue:function(a){var b=d.parseColorValue(a);if(b&amp;&amp;b.colorFunction&amp;&amp;b.values){var a=b.values,b=b.colorFunction,c=/hsl/gi;if(b.match(/rgb/gi))if(this.animationColorSpace&amp;&amp;this.animationColorSpace==&quot;HSL&quot;)b={r:a[0],g:a[1],b:a[2]},(b=d.rgbToHSL(b))?a.length&gt;3?(a=a[3],
+a=[b.h,b.s,b.l,a]):a=[b.h,b.s,b.l]:a=[];else if(this.animationColorSpace){if(this.animationColorSpace!=&quot;RGB&quot;)return a}else this.animationColorSpace=&quot;RGB&quot;;else if(b.match(c))if(this.animationColorSpace&amp;&amp;this.animationColorSpace==&quot;RGB&quot;)b={h:a[0],s:a[1],l:a[2]},(b=d.hslToRGB(b))?a.length&gt;3?(a=a[3],a=[b.r,b.g,b.b,a]):a=[b.r,b.g,b.b]:a=[];else if(this.animationColorSpace){if(this.animationColorSpace!=&quot;HSL&quot;)return a}else this.animationColorSpace=&quot;HSL&quot;;a.length==3&amp;&amp;(a[3]=1);return a}},formatValue:function(a){if(a){var b;
+this.animationColorSpace==&quot;HSL&quot;?(b=&quot;hsl&quot;,a=a.length==4?b+&quot;a(&quot;+a[0]+&quot;,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%,&quot;+a[3]+&quot;)&quot;:b+&quot;(&quot;+a[0]+&quot;,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%)&quot;):(b=&quot;rgb&quot;,a=a.length==4?b+&quot;a(&quot;+a[0]+&quot;%,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%,&quot;+a[3]+&quot;)&quot;:b+&quot;(&quot;+a[0]+&quot;%,&quot;+a[1]+&quot;%,&quot;+a[2]+&quot;%)&quot;);return a}}});d.ColorTween=l;d.parseColorValue=function(a){if(a){var b=[],c,d,g=/^\s*#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])\s*$/;(d=/^\s*#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})\s*$/.exec(a))?(b=[parseInt(d[1],16)/255*100,parseInt(d[2],16)/255*100,parseInt(d[3],
+16)/255*100],c=&quot;rgb&quot;):(d=g.exec(a))?(b=[parseInt(d[1]+d[1],16)/255*100,parseInt(d[2]+d[2],16)/255*100,parseInt(d[3]+d[3],16)/255*100],c=&quot;rgb&quot;):a==&quot;transparent&quot;&amp;&amp;(b=[0,0,0,0],c=&quot;rgb&quot;);c||(c=a.match(/\w+/),m.isArray(c)?c=c[0]:c||(c=&quot;&quot;),(d=a.match(/\([^\)]*\)/))&amp;&amp;d.length&gt;0&amp;&amp;(d=d[0].replace(/[\(\)]/g,&quot;&quot;)));a=/rgb/gi;g=/hsl/gi;if(b.length===0)if(c.match(a))if((g=/^\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*(?:,\s*([0-9](?:\.[0-9]+)?)\s*)?$/.exec(d))&amp;&amp;g.length&gt;=4){for(a=0;a&lt;3;a++)b[a]=g[a+
+1]/255*100;g.length&gt;4&amp;&amp;(g[4]||(g[4]=1),b[3]=g[4])}else{if((d=/^\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*(?:,\s*([0-9](?:\.[0-9]+)?)\s*)?$/.exec(d))&amp;&amp;d.length&gt;=4){if(d.length&gt;=5)d.length=5,d[4]||(d[4]=1);for(a=0;a&lt;d.length-1;a++)b[a]=d[a+1]}}else if(c.match(g)&amp;&amp;(d=/^\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*,\s*([0-9]{1,3}(?:\.[0-9]+)?)\s*%\s*(?:,\s*([0-9](?:\.[0-9]+)?)\s*)?$/.exec(d))&amp;&amp;d.length&gt;=4){if(d.length&gt;=
+5)d.length=5,d[4]||(d[4]=1);for(a=0;a&lt;d.length-1;a++)b[a]=d[a+1]}if(b)for(a=0;a&lt;b.length;a++)b[a]=Math.round(b[a]*1E4)/1E4;return{colorFunction:c,values:b}}};var c=1/3,g=1/6,j=2/3,i=function(a){return a&lt;0?a+1:a&gt;1?a-1:a},r=function(a,b,c,d){return d&lt;g?a+c*d:d&lt;0.5?b:d&lt;j?a+c*(j-d):a};d.hslToRGB=function(a){if(a===null||a.s&lt;0||a.s&gt;100||a.l&lt;0||a.l&gt;100)return null;for(;a.h&gt;360;)a.h-=360;for(;a.h&lt;0;)a.h=360+a.h;var b={},d=a.h/360,g=a.s/100,a=a.l/100;if(g===0)b.r=b.g=b.b=1;else{var g=a&lt;=0.5?a*(1+g):a+g-a*
+g,a=2*a-g,j=i(d+c),l=i(d),d=i(d-c),m=(g-a)*6;b.r=r(a,g,m,j);b.g=r(a,g,m,l);b.b=r(a,g,m,d)}b.r=Math.min(b.r*100,100);b.g=Math.min(b.g*100,100);b.b=Math.min(b.b*100,100);b.r=Math.round(b.r*1E4)/1E4;b.g=Math.round(b.g*1E4)/1E4;b.b=Math.round(b.b*1E4)/1E4;return b};d.rgbToHSL=function(a){if(a===null||a.r&lt;0||a.r&gt;100||a.g&lt;0||a.g&gt;100||a.b&lt;0||a.b&gt;100)return null;var b={h:0,s:0,l:0},c=a.r/100,d=a.g/100,a=a.b/100,g=Math.max(c,d,a),i=Math.min(c,d,a);b.l=(g+i)/2;if(g==i||b.l&lt;=0)return b;var j=g-i;b.s=b.l&lt;=0.5?
+j/(g+i):j/(2-g-i);b.h=g==a?4+(c-d)/j:g==d?2+(a-c)/j:(d-a)/j;b.h*=60;if(b.h&gt;360)b.h-=360;else if(b.h&lt;0)b.h=360+b.h;b.s=Math.min(b.s*100,100);b.l=Math.min(b.l*100,100);b.h=Math.round(b.h*1E4)/1E4;b.s=Math.round(b.s*1E4)/1E4;b.l=Math.round(b.l*1E4)/1E4;return b};d.Timeline.addTweenType(&quot;color&quot;,function(a,b,c,d){return new l(&quot;color&quot;,a,b,c,d)})})(jQuery,jQuery.Edge,jQuery.Edge.PropertyTween);
+</code>
+<code></code>
+<code></code>
+</noscript>
+
+<!-- p class="btnFullScreen"><a href="http://jsdo.it/xl1/edge011/read">Code Fullscreen</a></p -->
+<!-- / .boxCode --></div>
+<div class="boxViewer">
+<iframe src="" width="465" height="465" id="generated_site">
+use an iframe compat browser, deer
+</iframe>
+<div id="boxThumbViewer">
+<p id="thumbnail"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/p/O/D/pODv.jpg?t=1312255936" width="465" height="465" /></p>
+<p class="btnPlayViewer"><a href="javascript:void(0);" id="play_button" onclick="JSDoIt.CodeShow.play(); return false;"><img src="/img/common/play_button.png" alt="play" class="btn" /></a></p>
+<!-- / #bixThumbViewer --></div>
+<!-- /.boxViewer --></div>
+</div>
+
+<div id="codeUtilties" class="group">
+	<ul class="utils group">
+		<li>
+			<form id="form_fork_sub" method="post" action="http://jsdo.it/xl1/edge011/fork">
+				<input type="submit" value="Fork" class="btnBase btnType5 btnSmall" id="fork_button_sub" name="btnFork" />
+                                <input type="hidden" name="token" value="" />          
+			</form>
+		</li>		<li id="play_on_games_button" style="display: none;"><a href="http://games.jsdo.it/xl1/edge011" class="btnBase btnType1 btnSmall"><span>Play on jsdo.it games</span></a><p class="arrow"><img src="/img/code/game/arrow.png" alt="" /></p></li>
+		<li>
+			<ul class="btnGroup group">
+				<li class="tab" data-tab-name="author"><span class="btnBase btnType6 btnSmall">Author</span></li>
+				<li class="tab active" data-tab-name="socialFeedback"><span class="btnBase btnType6 btnSmall active">Share</span></li>
+				<li class="tab" data-tab-name="embed"><span class="btnBase btnType6 btnSmall">ブログに埋め込む</span></li>
+				<li class="tab" data-tab-name="qrcode"><span class="btnBase btnType6 btnSmall">QR</span></li>
+				<li class="tab" data-tab-name="tag"><span class="btnBase btnType6 btnSmall">Tag</span></li>
+			</ul>
+		</li>
+		<li class="download"><a href="http://jsdo.it/xl1/edge011/download" class="btnBase btnType6 btnSmall btnInvisible" title="download"><img src="/img/common/ico/ico_download_01.png" width="17" height="13" alt="download" title="download">Download</a></li>
+	</ul>
+	<div class="utilDetails clearfix">
+		<section class="blockCodeUtil games">
+		<div class="col2">
+		<div>
+		<a href="http://games.jsdo.it" target="_blank"><img src="/img/code/jsdoitGames.png" id="jsdoitGamesImage" width="114" height="116"></a>
+
+		</div>
+		<div>
+		<p class="msgComplete">Complete!</p>
+		<div class="blockInputFormStyle1">
+		<form id="form_sub_games" action="/api/code/post_to_games" data-saved="0">
+		<input type="hidden" name="token" value="" />
+		<input type="hidden" name="uid" value="pODv" />
+		<div class="inputItem description">
+		<h2>Description <span>What kind of game?</span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<textarea required="required" name="description"></textarea>
+		</div>
+		</div>
+		<div class="inputItem device">
+		<h2>Control Device <span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<table>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_jwc.png" alt="jsdo.it websocket controller" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="1" name="support_spctrl" value="1"  />Smartphone Controller<a href="/controller">jsdo.it WebSocket Controller</a>»</label>
+		<div class="detail device1">
+		<ul>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_arrow.png" alt=""></p>
+		<input type="text" name="stick" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_start.png"></p>
+		<input type="text" name="button_start" /value="" >
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_a.png"></p>
+		<input type="text" name="button_a" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_b.png"></p>
+		<input type="text" name="button_b" value="" />
+		</li>
+		</ul>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_mouse.png" alt="Mouse" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="3" name="support_mouse" value="1"  />Mouse</label>
+		<div class="detail device3">
+		<textarea name="mouse" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_keyboard.png" alt="keyboard" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="4" name="support_keyboard" value="1"  />Keyboard</label>
+		<div class="detail device4">
+		<textarea name="keyboard" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_smartphone.png" alt="smartphone" /></p>
+		</th><td>
+		<label><input type="checkbox" class="flag" data-device="2"  name="support_touchdevice" value="1"  />Touch Device</label>
+		<div class="detail device2">
+		<textarea name="touchdevice" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		</table>
+		</div>
+		</div>
+		<div class="inputItem screen valid">
+		<h2>Fullscreen<span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<ul>
+		<li><label><input type="radio" name="support_fullscreen" value="1" checked> Activated</label></li>
+		<li><label><input type="radio" name="support_fullscreen" value="0" > Inactivated</label></li>
+		</ul>
+		</div>
+		</div>
+		<div class="submit">
+		<a id="game_delete_button" href="javascript:void(0)" class="btnBase btnType6 btnSmall btnInvisible" >jsdo.it games から削除する</a>
+		<a id="game_submit_button" class="btnBase btnType5" disabled="disabled" href="javascript:void(0)">Submit</a>
+		</div>
+		</form><!-- form_sub_games  -->
+		<!-- / .blockInputFormStyle1 --></div>
+		</div>
+		</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil author" itemscope itemtype="http://data-vocabulary.org/Person">
+			<div class="col2 group">
+				<div class="image">
+					<p class="thumb"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="100" height="100" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+				<!-- / .image --></div>
+				<div class="information">
+					<h1 class="hidden">Author</h1>
+					<div class="user">
+						<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author"><span itemprop="name">xl1</span></a></p>
+					</div>
+					<ul class="metas group">
+                        
+                        
+                        
+                        
+					</ul>
+					<div class="discription markdown">
+						
+
+					</div>
+				<!-- / .information --></div>
+			</div>
+		<!-- / .author --></section>
+		<section class="blockCodeUtil socialFeedback active">
+			<ul class="group">
+			<li class="facebook"><fb:like href="http://jsdo.it/xl1/edge011" send="false" layout="button_count" width="55" show_faces="false" font="verdana"></fb:like></li>
+			
+			<li class="stumbleupon"><script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script></li>
+			
+			  <a href="http://twitter.com/share" class="twitter-share-button" data-text="[library] edge.0.1.1.min.js #jsdoit" data-count="horizontal" data-related="jsdoit_team">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			  
+			<li class="plusone"><g:plusone size="medium" href="http://jsdo.it/xl1/edge011"></g:plusone></li>
+			</ul>
+		<!-- / .socialFeedback --></section>
+		<section class="blockCodeUtil embed">
+			<div class="col2 widgetDesignBox group">
+				<div class="image">
+					<img src="/img/code/widget_design_view.png" width="660px" height="116px">
+				</div>
+				<div>
+					<div class="blockInputFormStyle1">
+						<div class="inputItem">
+							<h2>Default Panel</h2>
+							<div class="comment">
+								<ul class="select selectDefaultPanel">
+									<li><label><input type="radio" name="defaultTab" value="play">Auto play</label></li>
+									<li><label><input type="radio" name="defaultTab" value="screenshot">Screenshot</label></li>
+									<li><label><input type="radio" name="defaultTab" value="readme" checked="checked">Readme</label></li>
+									<li><label><input type="radio" name="defaultTab" value="javascript">JavaScript</label></li>
+									<li><label><input type="radio" name="defaultTab" value="html">HTML</label></li>
+									<li><label><input type="radio" name="defaultTab" value="css">CSS</label></li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>Size</h2>
+							<div class="comment">
+								<ul class="selectEmbedSize">
+									<li>Width: <input type="number" class="width inline" min="465" value="465" style="width:60px;"> px</li>
+									<li>Height: <input type="number" class="height inline" min="496" value="496" style="width:60px;"> px</li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>code</h2>
+							<div class="comment">
+								<textarea readonly="readonly" onclick="javascript:this.select();" data-url="http://jsdo.it/blogparts/pODv/js">&lt;script type=&quot;text/javascript&quot; src=&quot;http://jsdo.it/blogparts/pODv/js&quot;&gt;&lt;/script&gt;</textarea>
+							</div>
+						</div>
+					<!-- / .blockInputFormStyle1 --></div>
+				</div>
+			</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil qrcode">
+			<div class="col2 group">
+				<div>
+					<p class="code"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://jsdo.it" width="150" height="150" alt="QR Code"></p>
+				</div>
+				<div> 
+				</div>
+			</div>
+		<!-- / .qrcode --></section>
+		<section class="blockCodeUtil tag">
+			<ul class="listTags">
+			</ul>
+		<!-- / .tag --></section>	
+	<!-- / .utilDetails --></div>
+<!-- / #codeUtilties --></div>
+
+<!-- / .viewer --></section>
+
+<!-- /.code --></section>
+
+<section class="discussion">
+	<header><h1 class="ttlStyle2">Discussion</h1></header>
+	<div>
+		<ul>
+		</ul>
+		<p class="post"><a href="/qa/create?code_uri=http://jsdo.it/xl1/edge011" class="btnBase btnType1">Questions on this code?</a></p>
+	</div>
+<!-- / .discussion --></section>
+
+<div class="ad_super_bnr btnT"><!-- jsdo.it_codepage_fullbnr_en --> <script type='text/javascript'> GA_googleFillSlot("jsdo.it_codepage_fullbnr_en"); </script>
+<!-- /.ad_super_bnr --></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="forked group">
+<header><h1 class="ttlStyle2">Forked</h1></header>
+
+  <div class="boxSort group">
+      <p class="changeSort">sort by</p>
+      <ul class="group"><li class="selected"><em>latest</em></li>
+<li><a href="http://jsdo.it/xl1/edge011?order=pv#code_forked">page views</a></li>
+<li><a href="http://jsdo.it/xl1/edge011?order=favorite#code_forked">favorite</a></li>
+<li><a href="http://jsdo.it/xl1/edge011?order=forked#code_forked">forked</a></li>
+      </ul>
+  <!-- / .boxSort --></div>
+
+  <div id="boxForkedCode" class="autopagerize_page_element">
+    <div class="unitCodeGroup group col4">
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/kyo_ago/rIC2" rel="bookmark" title="forked: [library] edge.0.1.1.min.js"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/r/I/C/rIC2_w.jpg?t=1312270987" alt="forked: [library] edge.0.1.1.min.js" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/kyo_ago/rIC2" rel="bookmark" title="forked: [library] edge.0.1.1.min.js"><span class="body">forked: [library] edge.0.1.1.m</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/kyo_ago" title="kyo_ago"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/4/f/4/0/4f404b86e6ba1fbb2ea71bed4f9241a1b840bd88_100.jpg" width="15" height="15" alt="kyo_ago" /></a></span><a href="http://jsdo.it/kyo_ago">kyo_ago</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">286</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">1399/1/1</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+    <!--/.unitCodeGroup--></div>
+  <!-- /#boxForkedCode --></div>
+
+<!-- /.forked --></section>
+
+
+
+
+
+
+
+
+<!-- /#codeDetail --></article>
+
+<div id="diff_container"></div>
+<div id="diff_controller">
+  <a href="#" id="diff_close_button"><img src="/img/code/close.gif" class="btnT"></a>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=107163819375320&amp;xfbml=1"></script>
+
+<!-- /#body --></div>
+<!--/[[[ CONTENT-AREA ]]]-->
+<footer id="siteFooter" class="layoutWideContainer">
+<div class="layoutContainer layoutLiquid group">
+<div class="apps group">
+<div class="col1">
+<a href="/users"><p class="userRanking">User ranking</p></a>
+<a href="/codes/ranking"><p class="codeRanking">Code ranking</p></a>
+</div>
+<div class="col2">
+<a href="/event/topics">
+<section class="event">
+<h1>Topics &amp; Events</h1>
+<p>"I want to make something but don't know what to make." "We want to know the newest trends!" Responding to those voices, we are regularly hosting events and updating topics.</p>
+</section>
+</a>
+</div>
+<div class="col3">
+<a href="/qa">
+<section class="discussions">
+<h1>Discussions</h1>
+<p>Any questions? Ask jsdo.it users! You can post questions together with your code. You can also get answers supported by a code.</p>
+</section>
+</a>
+</div>
+<!-- / .apps --></div>
+<section class="account">
+<h1>Completely Free Account</h1>
+<p>
+<form method="post" action="/code/new">
+<input type="hidden" name="token" value="">
+<p class="btnLabel labelFree"><input type="submit" class="btnBase btnType5" value="Sign up Free and Start coding"></p>
+</form>
+</p>
+</section>
+<div class="globals group">
+<nav>
+<ul>
+
+<li><a href="http://twitter.com/#!/jsdoit_team" class="external" rel="external">@jsdoit_team</a></li>
+<li><a href="http://www.facebook.com/jsdo.it" target="_blank" class="external" rel="external">Facebook</a></li>
+
+
+</ul>
+<ul>
+<li><a href="/about" title="What's jsdo.it?">About</a></li>
+<li><a href="/assets">Assets</a></li>
+<li><a href="/help">Help</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/apidoc/">API</a></li>
+<li><a href="/terms">Term of use</a></li>
+<li><a href="/privacy_policy/">Privacy policy</a></li>
+<li><a href="/help#help_contact">Contact</a></li>
+</ul>
+</nav> 
+<p id="copyright" class="vcard"><small>Site Design &copy; <a href="http://www.jsdo.it/" title="jsdoit Inc." class="external fn org url">jsdoit Inc.</a> All Rights Reserved.</small></p>
+<!-- / .globals --></div>
+</div>
+<!-- / #siteFooter --></footer>
+
+
+<!--/#container--></div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15793157-5']);
+  _gaq.push(['_setDomainName', '.jsdo.it']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['_trackPageview', '/code/show'+location.pathname]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script type="text/javascript">
+var path  = "code/show";
+var token = "";
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/js/do.js?1441025678"></script>
+ <script type="text/javascript" src="/js/notification.js?1441025678"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+
+<script type="text/javascript" src="/js/codemirror/codemirror-compressed.js?1441025678"></script>
+</body>
+</html>

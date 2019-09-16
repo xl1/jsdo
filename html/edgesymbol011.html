@@ -1,0 +1,951 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"  class="osOther" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+
+<title>[library] edge.symbol.0.1.1.min.js - jsdo.it - Share JavaScript, HTML5 and CSS</title>
+
+<meta property="qc:admins" content="21506643427614" />
+<meta property="wb:webmaster" content="5c8153403c54c98f" />
+<meta name="description" content="[library] edge.symbol.0.1.1.min.js by xl1 @ jsdo.it - share JavaScript, HTML5 and CSS - jsdo.it is a service to write JavaScript, HTML5, CSS in your browser and share it. You can copy and modify others' code. And also Ask questions about JavaScript, HTML5, CSS" />
+
+<meta name="keywords"  content="judo.it,JavaScript,HTML5,CSS,jsdoit" />
+
+<meta name="author" content="jsdoit Inc." />
+<meta name="license" content="&#169;jsdoit Inc." />
+
+<meta property="og:site_name" content="jsdo.it" />
+<meta property="fb:page_id" content="138382942860000" />
+<meta property="fb:app_id" content="104748116268345" />
+<meta property="og:locale" content="ja_JP">
+
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="http://jsdo.it/xl1/edgesymbol011" />
+
+<meta property="og:description" content="[library] edge.symbol.0.1.1.min.js by xl1 @ jsdo.it - " />
+<meta property="twitter:description" content="[library] edge.symbol.0.1.1.min.js by xl1 @ jsdo.it - " />
+
+
+
+
+<meta property="og:image" content="http://jsdo-static-contents.s3.amazonaws.com/images/capture/9/d/n/9dna.jpg?t=1312255995" />
+<meta property="og:image:width" content="465" />
+<meta property="og:image:height" content="465" />
+
+<meta name="twitter:site" content="@jsdo_it">
+<meta name="twitter:card" content="summary">
+
+
+
+
+<meta property="og:title" content="[library] edge.symbol.0.1.1.min.js" />
+<meta name="twitter:title" content="[library] edge.symbol.0.1.1.min.js" />
+
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/img/favicon.ico" />
+<link rel="start" href="/" title="home" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/common.css?1468627570" />
+
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/code.css?1468627570" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/codemirror.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/codemirror/themes.css?1441025678" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="/css/SyntaxHighlighter.css?1441025678" />
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<!--[if IE 9]><body class="ie9 i_default"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><body class="i_default"><!--<![endif]-->
+
+<script type="text/javascript">
+var language = "i_default"; // used in l()
+</script>
+
+<!-- script 'type="text/javascript" src="https://www.google.com/jsapi"></script -->
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- adtype =  -->
+<!-- Google DoubleClick 広告のスクリプトページ -->
+<div id="container" class="codepage contents">
+<!--[[[ HEADER-AREA ]]]-->
+<!-- country = JP -->
+<header id="headerGlobal" class="group">
+<div class="sub">
+<div class="layoutContainer layoutLiquid group">
+
+<!-- PR欄&リンク -->
+<style>
+#headerGlobal .pr a:before {
+    content: "重要なお知らせ";
+}
+#headerGlobal .pr a {
+    color: red;
+    font-size: 14px;
+    text-shadow: none;
+    padding-right: 11px;
+}
+</style>
+<p class="pr" style="color:red; font-"><a href="http://jsdo.it/blog/2019/07/jsdoit-1.html">
+【重要】サービス終了のお知らせ</a></p>
+<!-- PR欄&リンク -->
+
+
+<ul id="headerLanguage">
+<li class="column">
+<span class="header_menu_column" id="header_menu_column_1"><a href="#"><span class="thumb"></span>English</a></span>
+<div class="navGlobalSub">
+<ul class="shadowLayor1">
+<li><a href="?lang=en" class="usa">English</a></li>
+<li style="display:none;"><a href="#" class="kor">한국어</a></li>
+<li><a href="?lang=zh-CN" class="chn">中文</a></li>
+<li><a href="?lang=ja" class="jpn">日本語</a></li>
+</ul>
+</div>
+</li>
+<!-- / #headerAccount --></ul>
+<ul id="navGlobal">
+<li><a href="/tags" title="Tags">Tags</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/event/topics" title="Topics &amp; Events">Topics &amp; Events</a></li>
+<li><a href="/qa" title="Discussions">Discussions</a></li>
+<li><a href="http://games.jsdo.it" title="jsdo.it HTML5-Games">HTML5-Games</a></li>
+<!-- / #navGlobal --></ul>
+<!-- / .layoutContainer --></div>
+<!-- / .sub --></div>
+<div class="main">
+<div class="layoutContainer layoutLiquid group">
+
+<h1 id="siteName"><a href="/"><img src="/img/common/sitename_03.png" width="79" height="39" alt="jsdo.it - Share JavaScript, HTML5 and CSS" /></a></h1>
+
+<div id="btnHeaderCodeNew">
+<form method="post" action="/code/new">
+<fieldset>
+<p><input type="submit" value="Start coding"></p>
+</fieldset>
+<input type="hidden" name="token" value="">
+</form>
+<!-- / #btnHeaderCodeNew --></div>
+
+<div id="navGlobalSearch">
+<form method="get" action="/search" class="search">
+<input id="inputSearch" type="text" name="q" class="query input-prompt" autocomplete="off" placeholder="Search"><input type="submit" value="" class="button">
+</form>
+<!--/#navGlobalSearch--></div>
+
+
+
+
+<div id="headerSignin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signup">Create account</a></p>
+<p>or</p>
+<div class="signin">
+<p><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="signin">LOGIN</a></p>
+<div class="panel">
+<div class="shadowLayor1">
+<div class="service">
+<ul>
+<li class="google"><a href="/login/google?login=1" onClick="_gaq.push(['_trackPageview', '/login/service/google']);">Login with Google</a></li>
+<li class="facebook"><a href="/login/facebook" onClick="_gaq.push(['_trackPageview', '/login/service/facebook']);">Login with Facebook</a></li>
+<li class="twitter"><a href="/login/twitter" onClick="_gaq.push(['_trackPageview', '/login/service/twitter']);">Login with Twitter</a></li>
+
+
+
+<li class="other"><a href="/login" onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);">Other login options</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- / #headerSignin --></div>
+
+
+
+<!-- / .layoutContainer --></div>
+<!-- / .main --></div>
+
+
+
+<div id="navPrimaryTag">
+<div class="layoutContainer layoutLiquid">
+<nav class="group">
+<div class="search">
+<form method="get" action="/search">
+<input type="text" placeholder="Search" name="q" results="10" class="text" /><input type="submit" value="Search" class="hidden">
+</form>
+</div>
+<ul class="group">
+<li class="application"><a href="/tag/application" >Application</a></li>
+<li class="ui"><a href="/tag/user_interface" >User Interface</a></li>
+<li class="html5"><a href="/tag/html5_elements&amp;api" >HTML5 Elements &amp; API</a></li>
+<li class="css"><a href="/tag/css" >CSS</a></li>
+<li class="art"><a href="/tag/art&amp;design" >Art &amp; Design</a></li>
+<li class="game"><a href="/tag/game" ">Game</a></li>
+<li class="library"><a href="/tag/library&amp;test" >Library &amp; Test</a></li>
+<li class="smartphone"><a href="/tag/smartphones&amp;tablets" >Smartphones &amp; Tablets</a></li>
+<li class="all"><a href="/codes">All</a></li>
+</ul>
+</nav>
+<!-- / .layoutContainer --></div>
+<!-- / #navPrimaryTag --></div>
+
+
+
+
+
+
+<!-- / #headerGlobal --></header>
+<!--[[[ /HEADER-AREA ]]]-->
+
+
+<!--[[[ CONTENT-AREA ]]]-->
+<div id="body">
+<article id="codeDetail" class="layoutContainer">
+
+
+
+<section class="code">
+<header class="group">
+
+<div class="main">
+<h1><a href="http://jsdo.it/xl1/edgesymbol011" rel="bookmark">[library] edge.symbol.0.1.1.min.js</a></h1>
+<div class="author group" itemscope itemtype="http://data-vocabulary.org/Person">
+<p class="image"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="30" height="30" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author" itemprop="url"><span itemprop="name">xl1</span></a></p>
+<div class="connection">
+	<div class="follow"><span onclick="this.href='/login?redirect=' + encodeURIComponent(location.pathname);" class="btnBase btnType2 btnSmall btnFollow">Follow</span></div>
+</div>
+<time datetime="2011-08-02T12:33:15">2011-08-02 12:33:15</time>
+<p class="license">License: 
+  Refer to code comments
+</p>
+</div>
+<!-- / .main --></div>
+
+<div class="counts">
+<div>
+<span id="fork_button" class="fork btnBase btnType5">
+<dl>
+<dt>Fork</dt><dd>1</dd>
+</dl>
+</span>
+</div>
+<div>
+<a href="http://jsdo.it/login?redirect=http%3A%2F%2Fjsdo.it%2Fxl1%2Fedgesymbol011" class="favorite btnBase btnType6 btnSmall">
+<span class="favoriteIcon"><img src="/img/common/ico/ico_fav_02_shadow.png" width="15px" height="12px" /></span><dl class="group">
+<dt>Fav</dt><dd>0</dd>
+</dl>
+</a><div href="/" class="pv">
+<dl class="group">
+<dt>View</dt><dd>2054</dd>
+</dl>
+</div>
+</div>
+<!-- / .counts --></div>
+</header>
+
+<script type="text/javascript">
+var user = {
+  screen_name: "xl1"
+};
+</script>
+
+
+<div class="fullscreen group">
+<div class="inner">
+<ul class="controller">
+<li class="btnBase btnType6 btnSmall btnInvisible btnStart" id="btnPlay" onclick="JSDoIt.CodeShow.play(); return false;"><span>Play</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnStop" id="btnStop" style="display: none;" onclick="JSDoIt.CodeShow.stop(); return false;"><span>Stop</span></li>
+<li class="btnBase btnType6 btnSmall btnInvisible btnReload" id="btnReload" style="display: none;" onclick="JSDoIt.CodeShow.reload(); return false;"><span>Reload</span></li>
+</ul>
+<p><a href="http://jsdo.it/xl1/edgesymbol011/fullscreen" class="btnBase btnType6 btnSmall btnInvisible btnFullscreen" title="Fullscreen preview"><span>Fullscreen</span></a></p>
+<p><span title="Smart Phone Preview" class="btnBase btnType6 btnSmall btnInvisible btnSmartphone" data-size="width=320,height=480"><span>Smart Phone</span></span></p>
+<p><a href="http://jsdo.it/xl1/edgesymbol011/tree" class="btnBase btnType6 btnSmall btnInvisible"><span>Fork tree</span></a></p>
+</div>
+</div>
+
+<fieldset>
+
+<section class="viewer group">
+
+<div class="group areaCodeViewer">
+<div class="boxCode" id="boxShowCode"><header>
+<ul class="group">
+<li class="description active" data-target-tab="boxEditDescription"><span>Readme</span></li>
+<li class="js" data-target-tab="boxEditJS">JavaScript <small>80 lines</small></li>
+<li class="html" data-target-tab="boxEditHTML">HTML <small>0 lines</small></li>
+<li class="css" data-target-tab="boxEditCSS">CSS <small>0 lines</small></li>
+</ul>
+</header>
+
+
+<section id="boxEditDescription">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeDescription">
+
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div></div>
+
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditJS">
+<ul class="tabCode group">
+    <li title="[library] edge.symbol.0.1.1.min.js" class="selected tabJS initialTab"><span id="primaryTabTitle">[library] edge.symbol.0.1.1.min.js</span></li></ul>
+<div class="code" id="boxCodeJS"> 
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeJS" data-lang="">/*************************************************************************
+Copyright (c) 2011. Adobe Systems Incorporated. All rights reserved.
+
+You may distribute this file in source code or object code, solely in
+unmodified form, and in all cases only as incorporated into your own
+application created with the Adobe software.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+**************************************************************************/
+/*************************************************************************
+ AdobePatentID=&quot;B1316&quot;
+ AdobePatentID=&quot;B1318&quot;
+ edge.authoring.0.0.1.min.js - version 0.1.1
+**************************************************************************/
+(function(j,h){var n=h.triggerDict={element:function(b,d,a){b&amp;&amp;j(d).bind(a,b)},timeline:function(b,d,a){if(b&amp;&amp;d){var c=this.getTimelineData(d),e=c.toState,c=c.fromState;if(!this.tlProxy)this.tlProxy={};this.tlProxy[a]=b;this._getTimeline(d,e,c).addObserver(this.tlProxy)}}},o=h.Symbol=function(b,d){h.Notifier.call(this);this.widgetEventPrefix=&quot;edgeSym_&quot;;this.element=null;this.options={data:null,initialState:null};this.states={};this.timelines={};this.timelineCache={};this.timelineStateMap={};this.defaultBaseState=
+&quot;Base State&quot;;this.baseState=null;this._init(b,d)};h.symbol=o;var s=h.PropertyTween,r=s.substituteParameters;o._substituteParameters=r;var m,p=h.symbolDefns={};h.baseDataName=&quot;edgeBaseData&quot;;j.extend(o.prototype,h.Notifier.prototype,{constructor:o,_init:function(b,d){if(d&amp;&amp;(j.extend(this.options,d),j.isArray(d.observers)&amp;&amp;d.observers.length))for(var a=d.observers.length,c=0;c&lt;a;c++)this.addObserver(d.observers[c]);if(!this.options.data)return null;this.element=b;c=this._createEvent();this.notifyObservers(&quot;onPreSymbolInit&quot;,
+c);a=this._createEvent();if(c.performDefaultAction){c=j(b);c.data(&quot;edgeSymbol&quot;,this);if(!c.get(0).id)c.get(0).id=o._makeUniqueID();var e=this.options.data;this.parameterValues=this._makeDefaultParameters();j.extend(this.parameterValues,this.options.parameters);e.content&amp;&amp;this._injectMarkup();e.actions&amp;&amp;this._addActionsFromData(e.actions);e.timelines&amp;&amp;this._createTimelineSetFromData(e.timelines,e.states);e.bindings&amp;&amp;e.bindings.length&amp;&amp;this._addBindingsFromData(e.bindings);var f=c[0].nodeName==&quot;BODY&quot;;
+e.content&amp;&amp;e.content.dom&amp;&amp;!f&amp;&amp;(e=c.css(&quot;position&quot;),e!=&quot;absolute&quot;&amp;&amp;e!=&quot;relative&quot;&amp;&amp;c.css(&quot;position&quot;,&quot;relative&quot;));this._goToInitialState();if(b[0].style&amp;&amp;(typeof b[0].style.webkitTransform==&quot;undefined&quot;||b[0].style.webkitTransform===&quot;&quot;||b[0].style.webkitTransform==&quot;none&quot;))b[0].style.webkitTransform=&quot;translateZ(0)&quot;;this.notifyObservers(&quot;onPostSymbolInit&quot;,a);return this}else this.notifyObservers(&quot;onPostSymbolInit&quot;,a)},_createEvent:function(b){var d={Symbol:this,element:this.element,performDefaultAction:!0};
+j.extend(d,b);return d},_makeDefaultParameters:function(){var b={},d=this.options.data.parameters;if(d)for(var a in d)if(d.hasOwnProperty(a))b[a]=d[a].defaultValue;j.extend(b,this._getSymbolParams());return b},_injectMarkup:function(b){var d=b,a=this._createEvent({markup:d});this.notifyObservers(&quot;onPreInjectMarkup&quot;,a);d=a.markup;b=this._createEvent({markup:d});if(a.performDefaultAction){var c,a=this.parameterValues;c=this.options.data.content;if(!d&amp;&amp;c)if(c.ref)d=&quot;&quot;,j(c.ref).each(function(a,c){d+=
+j(c).html()});else if(c.markup)d=c.markup;else if(c.dom){var e=h.DeclareMarkup;if(e){var f=c.dom,k=c.symbolInstances;if(this.options.opts&amp;&amp;this.options.opts.regenerateID===!0){JSON.parse(JSON.stringify(c.dom));k=[];c.symbolInstances&amp;&amp;(k=JSON.parse(JSON.stringify(c.symbolInstances)));var g=f.length;for(c=0;c&lt;g;c++)this._reIdDOMElements(f[c],k)}e.renderDOM(f,this.element.get(0),a,this.getSymbolTypeName(),k);k&amp;&amp;k.length&gt;0&amp;&amp;this._processNestedSymbolInstances(k)}}if(d){if((e=this._getParentSymbol())&amp;&amp;
+e.options.data.actors&amp;&amp;e.options.data.actors.instance_parameters){f=e.options.data.actors.instance_parameters;k=f.length;for(c=0;c&lt;k;c++)g=s.substituteParameters(f[c].selector,e._getSymbolParams()),j(g).filter(j(this.element)).length&amp;&amp;j.extend(a,f[c].parameters)}d=r(d,a);j(d).appendTo(this.element)}}this.notifyObservers(&quot;onPostInjectMarkup&quot;,b)},_processNestedSymbolInstances:function(b){if(b)for(var d=b.length,a=0;a&lt;d;a++){console.log(&quot;sym inst id: &quot;+b[a].id);var c=j(&quot;#&quot;+b[a].id).get(0);c&amp;&amp;h.convertElementToSymbolInstance(c,
+b[a].symbolName)}},_reIdDOMElements:function(b,d){var a=j(this.element).get(0).id,c=b.id;if(!c||c===&quot;&quot;)c=o._makeUniqueID();for(var a=a+&quot;_&quot;+c,c=d.length,e=0;c;e++)if(d[e].id==b.id)d[e].id=a;b.id=a;objLen=b.length;for(a=0;a&lt;objLen;a++)this._reIdDOMElements(b[a],d)},_getParentSymbol:function(){for(var b=j(this.element).parents(),d=b.length,a=0;a&lt;d;a++){var c=o.get(b[a]);if(c)return c}return null},_createTimelineSetFromData:function(b,d){this.states=d;this.timelines=b;this.baseState=this.options.data.baseState;
+if(!this.baseState)this.baseState=&quot;Base State&quot;;return this},_addBindingsFromData:function(b){for(var d=b.length,a=0;a&lt;d;a++){var c=b[a],e=c[0];if(e[0]==&quot;element&quot;){var f=r(e[1],this._getSymbolParams());f!=e[1]&amp;&amp;(e=h.cloneJSONObject(e),e[1]=f)}if(f=n[e[0]])(c=this._getActionCallbackFunc(e[0],e[1],c.slice(1)))&amp;&amp;f.apply(this,[c].concat(e.slice(1)))}},_getActionCallbackFunc:function(b,d,a){var c=this[a[0]],e=this;if(typeof c==&quot;function&quot;)if(a.slice(1),b==&quot;element&quot;)return function(){var a=Array.prototype.slice.call(arguments);
+return c.apply(e,a)};else if(b==&quot;timeline&quot;)return function(){var a=Array.prototype.slice.call(arguments),k=j.Event(b);a.splice(0,0,k,d);return c.apply(e,a)};return null},_addActionsFromData:function(b){j.extend(this,b)},_getSymbolParams:function(){return{symbolSelector:&quot;#&quot;+j(this.element).get(0).id}},_flushCache:function(){var b=this.timelines,d;for(d in b)b.hasOwnProperty(d)&amp;&amp;this._dirtyTimeline(d)},_goToInitialState:function(){var b={parameters:this.parameterValues},d=this.options.data.initialState;
+if(!d)d=this.options.data.baseState;o.useCSSAnimation||(d?this._applyRules(this._buildStateForCache(null,d,b)):(this.options.data.autoPlay||this.getTimelineData(&quot;Default Timeline&quot;))&amp;&amp;this.seek(&quot;Default Timeline&quot;,0))},_preNotify:function(b,d,a){var c={};j.extend(c,a);a=this._createEvent({tlName:d,tlOptions:c});this.notifyObservers(b,a);if(a.performDefaultAction)return a.tlOptions;else c=a.tlOptions,d={Symbol:this,timelineName:d,tlOptions:c,performDefaultAction:!0},b=b.replace(/onPre/,&quot;onPost&quot;),this.notifyObservers(b,
+d)},play:function(b,d){var a=this._preNotify(&quot;onPreSymbolPlay&quot;,b,d);if(typeof a!==void 0){if(typeof b===&quot;string&quot;){this._rememberBaseStateForTimeline(b);var c={parameters:this.parameterValues};j.extend(c,a);this.timelines&amp;&amp;(this._seek(b,0,c),this._play(b,c))}this.notifyObservers(&quot;onPostSymbolPlay&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}},playContinue:function(b,d){var a=this._preNotify(&quot;onPreSymbolPlayContinue&quot;,b,d);if(typeof a!==void 0){if(typeof b===&quot;string&quot;){this._rememberBaseStateForTimeline(b);
+var c={parameters:this.parameterValues};j.extend(c,a);this.timelines&amp;&amp;this._play(b,c)}this.notifyObservers(&quot;onPostSymbolPlayContinue&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}},seek:function(b,d,a){a=this._preNotify(&quot;onPreSymbolSeek&quot;,b,a);if(typeof a===void 0)return null;if(typeof b===&quot;string&quot;){this._rememberBaseStateForTimeline(b);var c={parameters:this.parameterValues};j.extend(c,a);this.timelines&amp;&amp;this._seek(b,d,c)}this.notifyObservers(&quot;onPostSymbolSeek&quot;,this._createEvent({timeline:b,
+tlOptions:a}));return null},getSymbolTypeName:function(){for(var b=j(this.element)[0].className.split(&quot; &quot;),d=b.length,a=0;a&lt;d;a++)if(b[a].search(/^symbol_/)&gt;=0)return b[a].replace(/^symbol_/,&quot;&quot;);return null},getParameter:function(b){return this.parameterValues[b]},setParameter:function(b,d){this.parameterValues[b]=d},destroy:function(){j(this.ele).removeData(&quot;edgeSymbol&quot;);return this},_addState:function(b,d){this.states[b]=d},_addTimelineData:function(b,d){this.timelines[b]=d;if(d.fromState&amp;&amp;d.toState)this.timelineStateMap=
+{}},_getTimelineFromStates:function(b,d){if(typeof this.timelineStateMap[b+&quot;//&quot;+d]==&quot;undefined&quot;){for(var a in this.timelines)if(this.timelines.hasOwnProperty(a)){var c=this.timelines[a];this.timelineStateMap[c.fromState+&quot;//&quot;+c.toState]=a}typeof this.timelineStateMap[b+&quot;//&quot;+d]==&quot;undefined&quot;&amp;&amp;(this.timelineStateMap[b+&quot;//&quot;+d]=null);return this.timelineStateMap[b+&quot;//&quot;+d]}},_setTimelineData:function(b,d){var a=this.timelines[b],c=this._getTimeline(b,a.toState,a.fromState),e=c.observers.slice(0);this._dirtyTimeline(b);
+if(a&amp;&amp;a.fromState&amp;&amp;a.toState)this.timelineStateMap={};this._addTimelineData(b,d);var f=e.length;if(f){c=this._getTimeline(b,a.toState,a.fromState);for(a=0;a&lt;f;a++)c.addObserver(e[a])}},_saveObservers:function(b){var d=this.timelines[b],d=this._getTimeline(b,d.toState,d.fromState);if(!this.timelineObservers)this.timelineObservers={};this.timelineObservers[b]=d.observers.slice(0)},_restoreObservers:function(b,d){if(this.timelineObservers&amp;&amp;this.timelineObservers[b]){var a=this.timelineObservers[b];if(a){var c,
+e=a.length;for(c=0;c&lt;e;c++)d.addObserver(a[c])}}},_dirtyTimeline:function(b){this._saveObservers(b);this.timelineCache[this._makeTimelineKey(b)]=null;this.timelineStateMap={};this.toStateCache=this.fromStateCache=null},_isCacheDIrty:function(b){return this.timelineCache[this._makeTimelineKey(b)]===null},_getStateData:function(b){return this.states[b]},getTimelineData:function(b){return this.timelines[b]},_makeTimelineKey:function(b,d,a){var c=null;if(!d||!a)c=this.getTimelineData(b);if(!d)d=c.toState;
+if(!a)a=c.fromState;return b+&quot;-&quot;+(d?d:&quot;&quot;)+&quot;-&quot;+(a?a:&quot;&quot;)},_getBaseStateData:function(){if(this.baseState)return this._getStateData(this.baseState);else for(var b in this.states)if(this.states[b].baseState)return this.baseState=b,this._getStateData(this.baseState);return this._getStateData(this.defaultBaseState)},_mergeBaseState:function(b){var d=h.cloneJSONObject(this._getBaseStateData()),a;for(a in b)b.hasOwnProperty(a)&amp;&amp;(d[a]||(d[a]=[]),d[a]=d[a].concat(b[a]));return d},_getTimeline:function(b,d,
+a){var c=this._makeTimelineKey(b,d,a);if(this.timelineCache[c])return this.timelineCache[c];var e=this.getTimelineData(b).timeline;if(d||a)e=h.cloneJSONObject(e);for(var f=e.length,k={},g={},i,l,j=0;j&lt;f;j++)l=e[j],l.tween&amp;&amp;(i=l.tween[1],k[i]||(k[i]=[]),k[i].push(l),i=l.tween[0]+&quot;:&quot;+l.tween[1]+&quot;:&quot;+l.tween[2],g[i]||(g[i]=[]),g[i].push(l));l=function(a,c){return a.position-c.position};for(i in g)g.hasOwnProperty(i)&amp;&amp;g[i].sort(l);var o,m,n,p,r,s,t,u;if(d)for(o in d=this._mergeBaseState(this._getStateData(d)),
+d)if(d.hasOwnProperty(i)){j=d[o];m=k[o];n=j.length;for(t=0;t&lt;n;t++){l=j[t];p=l[0];r=l[1];s=l[2];var q=null,v=-1,f=m.length;for(u=0;m&amp;&amp;u&lt;f;u++)if(l=m[u],i=l.tween,i[0]==p&amp;&amp;i[2]==r&amp;&amp;(v==-1||l.position+l.duration&gt;v))q=l,v=l.position+l.duration;q&amp;&amp;q.tween.length&gt;4&amp;&amp;q.tween[4]&amp;&amp;q.tween[4].copyToState&amp;&amp;(q.tween[3]=s)}}d={};if(a)for(o in a=this._getStateData(a),a)if(a.hasOwnProperty(o)){j=a[o];m=k[o];n=j.length;for(t=0;t&lt;n;t++){l=j[t];p=l[0];r=l[1];s=l[2];d[p+&quot;:&quot;+o+&quot;:&quot;+r]=s;q=null;v=-1;if(m)f=m.length;for(u=
+0;m&amp;&amp;u&lt;f;u++)if(l=m[u],i=l.tween,i[0]==p&amp;&amp;i[2]==r&amp;&amp;(v==-1||l.position&lt;v))q=l,v=l.position;if(q&amp;&amp;(l=q.tween.length&gt;4&amp;&amp;q.tween[4]&amp;&amp;q.tween[4].copyFromState,q.tween.length&lt;4||!q.tween[4]||typeof q.tween[4].fromValue==&quot;undefined&quot;||l))q.tween[4]||(q.tween[4]={}),q.tween[4].fromValue=s}}if(a)for(i in g)if(g.hasOwnProperty(i)&amp;&amp;g[i][0].position&gt;0&amp;&amp;(a=d[i],a!==void 0))l=h.cloneJSONObject(g[i][0]),l.tween[3]=l.tween[4].fromValue=a,a=l.position,l.position=0,l.duration=a,e.push(l);e=this._createTimelineFromData(e);
+this._restoreObservers(b,e);return this.timelineCache[c]=e},_createTimelineFromData:function(b){for(var d=jQuery.Edge.Timeline.createTimeline(),a=b.length,c=0;c&lt;a;c++){var e=b[c],f=null;e.timeline?f=o.prototype._createTimelineFromData(e.timeline):e.tween?f=h.Timeline.createTween.apply(null,e.tween):e.trigger&amp;&amp;(f=e.trigger.slice(0,2),f.push(this),f=h.Timeline.createTrigger.apply(null,f));f&amp;&amp;d.add(f,e.position,e.duration,e.easing)}return d},playReverse:function(b,d){if(!(typeof b!=&quot;string&quot;||b.length===
+0)){var a=this._preNotify(&quot;onPreSymbolPlayReverse&quot;,b,d);if(typeof a!==void 0){this._rememberBaseStateForTimeline(b);var c=this.getTimelineData(b).fromState,e=this.getTimelineData(b).toState,f={};j.extend(f,a,this.opts,{playDirection:&quot;reverse&quot;},{parameters:this.parameterValues});f.continueFromCurrentPos||this._ensureToState(b,f);if(c=this._getTimeline(b,e,c)){if(!this.tlPlayHandler){var k=this;this.tlPlayHandler={};this.tlPlayHandler.onComplete=function(){k._ensureFromState(this.timelineName,this.opts);
+this.tl.removeObserver(k.tlPlayHandler)}}j.extend(this.tlPlayHandler,{tl:c,timelineName:b,opts:f});c.addObserver(this.tlPlayHandler);f.continueFromCurrentPos||c.seek(c.getDuration());c.play(f)}this.notifyObservers(&quot;onPostSymbolPlayReverse&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}}},playReverseContinue:function(b,d){var a=this._preNotify(&quot;onPreSymbolPlayReverseContinue&quot;,b,d);if(typeof a!==void 0){this._rememberBaseStateForTimeline(b);if(typeof b===&quot;string&quot;){var c={};j.extend(c,a,{continueFromCurrentPos:!0},
+{parameters:this.parameterValues});this.playReverse(b,c)}this.notifyObservers(&quot;onPostSymbolPlayReverseContinue&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}},_buildStateForCache:function(b,d){var a={};if(d){var c=this.states[d];if(c){var e={},f,k,g;if(b){var i=this.getTimelineData(b).timeline,l=i.length;for(f=0;f&lt;l;f++)g=i[f],g.tween&amp;&amp;(k=r(g.tween[1],this.parameterValues),k=g.tween[0]+&quot;:&quot;+k+&quot;:&quot;+g.tween[2],e[k]||(e[k]=[]),e[k].push(g))}for(var h in c)if(h!==&quot;prototype&quot;){e=c[h];for(f=0;f&lt;
+e.length;f++)if(i=e[f],k=r(h,this.parameterValues),i[0]==&quot;style&quot;||i[0]==&quot;transform&quot;||i[0]==&quot;color&quot;){a[k]||(a[k]=[]);g=i[2];if(i[3]&amp;&amp;i[3].valueTemplate)if(l=s.prototype.parseTemplate.call(null,i[3].valueTemplate)){var o=l.length,m=[],n=i[2];j.isArray(n)||(n=[n]);for(var p=0;p&lt;o;p++)g=l[p],g.isPlaceholder?m.push(n[g.value]):m.push(g.value);g=m.join(&quot;&quot;)}else g=i[2].join(&quot;&quot;);a[k].push({decl:i,value:g})}}return a}}},_ensureState:function(b,d,a){var c=d+&quot;Cache&quot;;this[c]||(this[c]={});var e=null;this[c][b]?
+e=this[c][b]:(d=this.getTimelineData(b)[d],e=this._buildStateForCache(b,d,a),!this._isParameterizedActorTL(b)&amp;&amp;!this._isParameterizedActorState(d)&amp;&amp;(this[c][b]=e));this._applyRules(e,a)},_applyRules:function(b,d){var a=this,c,e=function(){var b=j(this),e={},f=j.data(this,&quot;edgeBaseData&quot;);f||(a._rememberBaseState(b),f=j.data(this,&quot;edgeBaseData&quot;));j.extend(e,f.transformData,c);j.data(this,h.TransformTween.dataName,e);f=!1;if(d)f=d.dontForceZ;h.TransformTween.applyTransform(b,e,void 0,{dontForceZ:f});
+(e=j.data(this,&quot;ui_visibility&quot;))&amp;&amp;b.css(&quot;visibility&quot;,e)},f;for(f in b)if(b.hasOwnProperty(f)){var k=b[f],g=k.length;c=null;for(var i=0;i&lt;g;i++){var l=k[i].decl,z=l[1];l[0]==&quot;transform&quot;?(c||(c={}),c[z]=k[i].value):(l=k[i].decl,l=k[i].value,j(f).css(z,l))}c&amp;&amp;h.TransformTween&amp;&amp;j(f).each(e)}},_ensureFromState:function(b,d){this.getTimelineData(b).fromState==this.baseState&amp;&amp;this._ensureBaseState(b);this._ensureState(b,&quot;fromState&quot;,d)},_ensureToState:function(b,d){this.getTimelineData(b).toState==this.baseState&amp;&amp;
+this._ensureBaseState(b);this._ensureState(b,&quot;toState&quot;,d)},_ensureBaseState:function(b){if(b)for(var b=this.getTimelineData(b).timeline,d=b.length,a=function(){var a=j(this);h.TransformTween.removeData(a);var c=j.data(this,&quot;edgeBaseData&quot;);c?(c.inlineValue?a.attr(&quot;style&quot;,c.inlineValue):a.removeAttr(&quot;style&quot;),c.transformData&amp;&amp;j.data(this,h.TransformTween.dataName,c.transformData),(c=j.data(this,&quot;ui_visibility&quot;))&amp;&amp;a.css(&quot;visibility&quot;,c)):alert(&quot;Attempt to restore base state without base state data!&quot;)},
+c=0;c&lt;d;c++){var e=b[c];e.tween&amp;&amp;(e=r(e.tween[1],this.parameterValues),j(e).each(a))}},_isParameterizedActorTL:function(b){for(var b=this.getTimelineData(b).timeline,d=b.length,a=0;a&lt;d;a++){var c=b[a];if(c.tween&amp;&amp;typeof c.tween[1]==&quot;string&quot;&amp;&amp;c.tween[1].search(/\$\{/)!=-1)return!0}return!1},_isParameterizedActorState:function(b){if(!b)return!1;b=this.states[b];if(!b)return!1;for(var d in b)if(d.search(/\$\{/)!=-1)return!0;return!1},_isReverse:function(b){return typeof b==&quot;object&quot;&amp;&amp;typeof b.playDirection==
+&quot;string&quot;&amp;&amp;b.playDirection==&quot;reverse&quot;},_play:function(b,d){var a=this.getTimelineData(b);if(a){var c=a.toState;if(b&amp;&amp;(a=this._getTimeline(b,c,a.fromState))){if(c&amp;&amp;!this._isReverse(d)){if(!this.tlPlayHandler){var e=this;this.tlPlayHandler={};this.tlPlayHandler.onComplete=function(){e._ensureToState(this.timelineName,this.opts);this.tl.removeObserver(e.tlPlayHandler)}}j.extend(this.tlPlayHandler,{tl:a,timelineName:b,opts:d});a.addObserver(this.tlPlayHandler)}a.play(d)}}},_seek:function(b,d,a){var c=
+this._isCacheDIrty(b),e=this.getTimelineData(b);if(e){var f=e.toState,e=e.fromState;a||(a={});!c&amp;&amp;a.skipFromState?a.assumeStateUnchanged=!0:(this._ensureFromState(b,a),a.assumeStateUnchanged=!1);c=0;if(b&amp;&amp;(f=this._getTimeline(b,f,e)))c=f.getDuration(),f.seek(d,a);d&gt;=c&amp;&amp;this._ensureToState(b,a)}},_rememberBaseStateForTimeline:function(b){if(b&amp;&amp;(b=this.getTimelineData(b)))for(var b=b.timeline,d=b.length,a=0;a&lt;d;a++){var c=b[a];c.tween&amp;&amp;this._rememberBaseState(r(c.tween[1],this.parameterValues))}},_rememberBaseState:function(b){j(b).each(function(){var b=
+j(this),a=j.data(this,&quot;edgeBaseData&quot;);if(!a)a={},j.data(this,&quot;edgeBaseData&quot;,a),a.inlineValue=b.attr(&quot;style&quot;),a.transformData=h.TransformTween.prototype.buildTransformData.call(null,this)})},compute:function(b,d,a,c,e){var f;if(b){var k=this.getTimelineData(b);(b=this._getTimeline(b,k.toState,k.fromState))&amp;&amp;(f=b.compute(d,a,c,e))}return f},findNext:function(b,d,a,c,e,f,k){if(b){var g=this.getTimelineData(b),c=c.toString();if(b=this._getTimeline(b,g.toState,g.fromState)){var i,g=b.getDuration()+10,
+c=parseFloat(c.replace(/[a-zA-Z%]+$/,&quot;&quot;)),j=f+10;i=b.compute(d,a,f,k);for(var h=i[e],h=parseFloat(h.replace(/[a-zA-Z%]+$/,&quot;&quot;)),j=f;j&lt;=g;j+=10)if((i=b.compute(d,a,j,k))&amp;&amp;i.length){f=i[e];f=parseFloat(f.replace(/[a-zA-Z%]+$/,&quot;&quot;));if(c&gt;=Math.min(h,f)&amp;&amp;c&lt;=Math.max(h,f))return j;h=f}}}return-1},remove:function(){var b=this._createEvent({});this.notifyObservers(&quot;onPreRemove&quot;,b);if(b.performDefaultAction){j(this.element).removeData(&quot;edgeSymbol&quot;);if(m)for(var d=m.length;d&gt;=0;d--)m[d]==this&amp;&amp;m.splice(d,1);
+this.element=null;this.notifyObservers(&quot;onPostRemove&quot;,b)}}});o.get=function(b){return j(b).data(&quot;edgeSymbol&quot;)};o.getDefaultEasing=function(){return h.TimelineObject.defaultEasing};var x=(new Date).getTime(),y=function(){for(var b=&quot;eid_&quot;+x++;j(&quot;#&quot;+b).length&gt;0;)b=&quot;eid_&quot;+x++;return b};o._makeUniqueID=y;h.setSymbolClassName=function(b,d){j(b).attr(&quot;class&quot;,&quot;symbol_&quot;+d)};var w;h.initialize=function(b,d,a){if(!window.edge_authoring_mode||a||window.edge_remote_authoring){if(typeof m==&quot;undefined&quot;)m=h.symbolInstances=
+[];j.extend(p,b);w(p);var b=m,c;for(c in p)if(p.hasOwnProperty(c)){var a=[],a=&quot;.symbol_&quot;+c,a=d?j(d).find(&quot;*&quot;).andSelf().filter(a):j(a),e=a.size(),f;for(f=0;a&amp;&amp;f&lt;e;f++){var k=new o(j(a.get(f)),{data:p[c]});m.push(k);if(c==&quot;stage&quot;)h.stage=k}}if(b.length===0||!h.stage)h.stage=new o(j(&quot;body&quot;),{data:p.stage}),m.push(h.stage);window.runtimeReady&amp;&amp;window.runtimeReady()}};h.convertElementToSymbolInstance=function(b,d){if(b&amp;&amp;j(b)&amp;&amp;m&amp;&amp;p[d]){h.setSymbolClassName(b,d);var a=new o(j(b),{data:p[d],opts:{regenerateID:!0}});
+m.push(a)}};h.getSymbolInstances=function(b){var d=[];if(!m)return d;for(var a=m.length,c=0;c&lt;a;c++)for(var e in b)b.hasOwnProperty(e)&amp;&amp;m[c].getSymbolTypeName()==e&amp;&amp;d.push(m[c]);return d};h.removeSymbolInstance=function(b){m&amp;&amp;(b=o.get(b))&amp;&amp;b.remove()};w=function(b){for(var d in b)if(b.hasOwnProperty(d)&amp;&amp;b[d].timelines)for(var a in b[d].timelines)if(b[d].timelines.hasOwnProperty(a))for(var c=b[d].timelines[a].timeline,e=c.length,f=0;f&lt;e;f++){var k=c[f];if(!k.id)k.id=y()}};h.play=function(b){if(!window.edge_authoring_mode||
+b)if(typeof h.autoPlay==&quot;undefined&quot;||h.autoPlay)for(var b=this.symbolInstances.length,d=0;d&lt;b;d++){var a=m[d],c=a.options.data.autoPlay;typeof c==&quot;string&quot;&amp;&amp;c!=&quot;true&quot;?a.play(c):(typeof c==&quot;undefined&quot;||c===!0||c==&quot;true&quot;)&amp;&amp;a.play(&quot;Default Timeline&quot;)}};h.logDebug=function(){};h.logInfo=function(){};h.logWarn=function(){};h.logError=function(){};h.logFatal=function(){};j.extend(h.TimelineObject.prototype,{compute:function(b,d,a,c){if(!this.dDuration){var e=this.duration,f=null;this.animation&amp;&amp;this.animation.getDuration&amp;&amp;
+(f=this.animation.getDuration());this.dScale=e!=-1&amp;&amp;e!==0?f/e:1;this.dDuration=e!=-1?e:f}e=this.dDuration;e=e===0?1:e;a&gt;=e&amp;&amp;(a=e);a&lt;=0&amp;&amp;(a=0);if(this.animation)return e=j.easing[this.easing](a/e,a,0,1,e),this.animation.compute(b,d,a*this.dScale,e,c)}});j.extend(h.Timeline.prototype,{compute:function(b,d,a,c){for(var e=this.objects,f=e.length,k=[],g={obj:null,end:0},i={obj:null,start:this.getDuration()},l=0;l&lt;f;l++){var h=e[l];if(!h.animation.isTrigger&amp;&amp;d==h.animation.property&amp;&amp;b==h.animation.elements)if(a&gt;=
+h.position&amp;&amp;a&lt;=h.position+h.duration){if(h=h.compute(b,d,a-h.position,c))j.isArray(h)||(h=[h]),k=h}else if(a&lt;h.position){if(h.position&lt;=i.start)i.start=h.position,i.obj=h}else if(a&gt;h.position+h.duration&amp;&amp;h.position+h.duration&gt;=g.end)g.end=h.position,g.obj=h}if(!k||j.isArray(k)&amp;&amp;k.length===0)if(g.obj&amp;&amp;g.obj.animation.toValue)k=g.obj.animation.toValue;else if(i.obj&amp;&amp;i.obj.animation.fromValue)k=i.obj.animation.fromValue;j.isArray(k)||(k=[k]);return k}});j.extend(s.prototype,{compute:function(b,d,a,c){a=
+this.property;if(b!=this.elements||d!=a)return null;for(var b=this.fromValues,d=this.toValues,a=this.filter,e=b.length,f=[],k=0;k&lt;e;k++){var g=b[k],i=d[k];g+=(i.value-g)*c;a&amp;&amp;a[k]&amp;&amp;(g=a[k](g));f.push(g+i.unit)}return f}});j.extend(h.TransformTween.prototype,{compute:s.prototype.compute})})(jQuery,jQuery.Edge);(function(j,h){if(typeof h.DeclareMarkup==&quot;undefined&quot;){var n=function(){function j(a,c,b,d,k){var g=document.createElement(a);g.id=c;g.style.position=&quot;absolute&quot;;$(g).css(&quot;left&quot;,b.rect[0]+&quot;px&quot;);$(g).css(&quot;top&quot;,b.rect[1]+&quot;px&quot;);b.rect[2]&gt;0&amp;&amp;$(g).css(&quot;width&quot;,b.rect[2]+&quot;px&quot;);b.rect[3]&gt;0&amp;&amp;$(g).css(&quot;height&quot;,b.rect[3]+&quot;px&quot;);b.overflow&amp;&amp;($(g).css(&quot;overflow&quot;,b.overflow),(b.overflow==&quot;hidden&quot;||b.overflow==&quot;scroll&quot;)&amp;&amp;$(g).css(&quot;text-overflow&quot;,&quot;clip&quot;));b.br&amp;&amp;(b.br.length==1?$(g).css(&quot;border-radius&quot;,b.br[0]+&quot;px&quot;):
+($(g).css(&quot;border-top-left-radius&quot;,b.br[0]),$(g).css(&quot;border-top-right-radius&quot;,b.br[1]),$(g).css(&quot;border-bottom-right-radius&quot;,b.br[2]),$(g).css(&quot;border-bottom-left-radius&quot;,b.br[3])));if(b.tf){for(var c=[],i=[[3,0],[3,0],[2,0],[3,1],[2,&quot;50%&quot;]],h=0;h&lt;i.length;h++){c[h]=[];b.tf[h]||(b.tf[h]=[]);for(var m=0;m&lt;i[h][0];m++)b.tf[h][m]||(b.tf[h][m]=i[h][1]),c[h][m]=b.tf[h][m]}i=typeof c[4][0]==&quot;string&quot;?c[4][0]+&quot; &quot;+c[4][1]:c[4][0]+&quot;px &quot;+c[4][1]+&quot;px&quot;;$(g).css(&quot;-webkit-transform-origin&quot;,i);$(g).css(&quot;-moz-transform-origin&quot;,
+i);$(g).css(&quot;-ms-transform-origin&quot;,i);$(g).css(&quot;-o-transform-origin&quot;,i);&quot;webkitAppearance&quot;in document.documentElement.style?$(g).css(&quot;-webkit-transform&quot;,&quot;translate3d(&quot;+c[0][0]+&quot;px,&quot;+c[0][1]+&quot;px,&quot;+c[0][2]+&quot;px) rotateZ(&quot;+c[1][0]+&quot;deg) rotateX(&quot;+c[1][1]+&quot;deg) rotateY(&quot;+c[1][2]+&quot;deg) skew(&quot;+c[2][0]+&quot;deg,&quot;+c[2][1]+&quot;deg) scale3d(&quot;+c[3][0]+&quot;,&quot;+c[3][1]+&quot;,&quot;+c[3][2]+&quot;)&quot;):(i=&quot;translate(&quot;+c[0][0]+&quot;px,&quot;+c[0][1]+&quot;px) rotate(&quot;+c[1][0]+&quot;deg)  skewX(&quot;+c[2][0]+&quot;deg) skewY(&quot;+c[2][1]+&quot;deg) scale(&quot;+c[3][0]+&quot;,&quot;+b.tf[3][1]+
+&quot;)&quot;,$(g).css(&quot;-moz-transform&quot;,i),$(g).css(&quot;-ms-transform&quot;,i),$(g).css(&quot;-o-transform&quot;,i))}else g.style.webkitTransform=&quot;translateZ(0)&quot;;b.opacity&amp;&amp;$(g).css(&quot;opacity&quot;,b.opacity);b.stroke&amp;&amp;((c=b.stroke[0])||(c=0),(i=b.stroke[1])?typeof i==&quot;string&quot;&amp;&amp;(i=[i]):i=[&quot;rgba(0,0,0,0)&quot;],(h=b.stroke[2])||(h=&quot;none&quot;),$(g).css(&quot;border&quot;,&quot;&quot;+c+&quot;px &quot;+h+&quot; &quot;+i[0]));if(b.fill&amp;&amp;(c=b.fill[0],typeof c==&quot;string&quot;&amp;&amp;(c=[c]),(i=b.fill[1])||(i=&quot;solid&quot;),i==&quot;solid&quot;&amp;&amp;c&amp;&amp;$(g).css(&quot;background-color&quot;,c[0]),b.fill[1])){c=b.fill[1];typeof c==
+&quot;string&quot;?c=[c]:typeof c==&quot;object&quot;&amp;&amp;((i=c[window.EdgeScreenProfile.name])||(i=c[&quot;default&quot;]),c=i);if(c[0]&amp;&amp;($(g).css(&quot;background-image&quot;,&quot;url(&quot;+c[0]+&quot;)&quot;),c[1]||c[2]))c[1]||(c[1]=&quot;0px&quot;),c[2]||(c[2]=&quot;0px&quot;),$(g).css(&quot;background-position&quot;,c[1]+&quot; &quot;+c[2]);c[3]||$(g).css(&quot;background-repeat&quot;,&quot;no-repeat&quot;);c[4]&amp;&amp;c[4]!=&quot;scroll&quot;&amp;&amp;$(g).css(&quot;background-attachment&quot;,c[4])}b.source&amp;&amp;(g.setAttribute(&quot;src&quot;,b.source),a==&quot;video&quot;&amp;&amp;g.setAttribute(&quot;controls&quot;,&quot;controls&quot;),a==&quot;audio&quot;&amp;&amp;g.setAttribute(&quot;autoplay&quot;,&quot;autoplay&quot;));if(d){if(!d.appendChild)return g;
+d.firstChild&amp;&amp;k&gt;=0&amp;&amp;d.children&amp;&amp;k&lt;d.children.length?d.insertBefore(g,d.children[k]):d.appendChild(g)}return g}function h(a,c,e,f,k){var l;w(c,f);var g=null;e&amp;&amp;e.nodeName&amp;&amp;e.nodeName.toLowerCase()==&quot;canvas&quot;&amp;&amp;(l=g=n.stageLookup[e.id],e=l);var i=null;switch(c.t){case &quot;def&quot;:break;case &quot;rect&quot;:case &quot;elipse&quot;:case &quot;image&quot;:case &quot;group&quot;:i=j(&quot;div&quot;,a,c,e,k);break;case &quot;video&quot;:i=j(&quot;video&quot;,a,c,e,k);break;case &quot;audio&quot;:i=j(&quot;audio&quot;,a,c,e,k);break;case &quot;text&quot;:i=j(&quot;div&quot;,a,c,e,k);c.font&amp;&amp;(c.font[0]&amp;&amp;c.font[0]!==&quot;&quot;&amp;&amp;
+$(i).css(&quot;font-family&quot;,c.font[0]),typeof c.font[1]!=&quot;object&quot;&amp;&amp;(c.font[1]=[c.font[1]]),c.font[1][1]||(c.font[1][1]=&quot;px&quot;),c.font[1][0]&amp;&amp;c.font[1][0]!==&quot;&quot;&amp;&amp;$(i).css(&quot;font-size&quot;,c.font[1][0]+c.font[1][1]),c.font[2]&amp;&amp;c.font[2]!==&quot;&quot;&amp;&amp;$(i).css(&quot;color&quot;,c.font[2]),c.font[3]&amp;&amp;c.font[3]!==&quot;&quot;&amp;&amp;$(i).css(&quot;font-weight&quot;,c.font[3]),c.font[4]&amp;&amp;c.font[4]!==&quot;&quot;&amp;&amp;$(i).css(&quot;text-decoration&quot;,c.font[4]),c.font[5]&amp;&amp;c.font[5]!==&quot;&quot;&amp;&amp;$(i).css(&quot;font-style&quot;,c.font[5]));c.align&amp;&amp;$(i).css(&quot;text-align&quot;,c.align);if(c.position)i.style.position=
+c.position;i.appendChild(document.createTextNode(c.text));break;case &quot;canvas&quot;:i=j(&quot;canvas&quot;,a,c,e,k);g={def:c,params:f,stage:new b(i),children:{}};g.obj=g.stage;g.obj.width=c.rect[2];g.obj.height=c.rect[3];n.stageLookup[a]=g;break;case &quot;line&quot;:break;case &quot;shape&quot;:if(!e)break;a={def:c,params:f,obj:new d,stage:e.stage,children:{}};a.obj.x=c.rect[0];a.obj.y=c.rect[1];a.obj.width=c.rect[2];a.obj.height=c.rect[3];e.children[c.id]=a;e.obj.addChild(a.obj);i=a;break;default:alert(&quot;unhandled type == &quot;+c.t)}return i}
+function r(a,c,b,d,k){if(b=h(a,c,d,k,0)){n.nodeSymbolInstanceLookup[a]&amp;&amp;$.Edge.setSymbolClassName(b,n.nodeSymbolInstanceLookup[a]);n.DOMNodeStarted(b,d,c);if(c.c)for(a=0;a&lt;c.c.length;a++)d=c.c[a],r(d.id,d,c,b,k);n.DOMNodeCompleted(b)}return b}function m(a,b){var d=a,f;if(a.base){if(typeof a.base==&quot;string&quot;)a.base=[a.base];if(a.base.length&gt;0){d={};for(f=0;f&lt;a.base.length;f++){var h=n.nodeLookup[a.base[f]];h&amp;&amp;$.extend(!0,d,h)}$.extend(!0,d,a)}}d.base=null;for(f=0;d.c&amp;&amp;f&lt;d.c.length;f++)d.c[f]=m(d.c[f],
+b);return d}function p(a,b){w(a,b);if(!a.id||a.id===&quot;&quot;)alert(&quot;elements without ids are not yet supported&quot;);else{n.nodeLookup[a.id]=a;for(var d=0;a.children&amp;&amp;d&lt;a.children.length;d++)p(a.children[d])}}function x(a,b){if(!a)return b;if(typeof b==&quot;string&quot;){var d=b.search(/\$\{/);if(d&gt;=0){var f=b.search(/\}/);if(f&gt;d)return d=b.slice(d+2,f),a[d]}}return b}function y(a,b){var d=a.obj.graphics,f=a.params;d.clear();var h=&quot;rgba(0,0,0,0)&quot;;a.def.fill&amp;&amp;typeof a.def.fill==&quot;object&quot;&amp;&amp;(h=a.def.fill[0]);d.beginFill(h).drawRect(0,
+0,x(f,a.def.rect[2]),x(f,a.def.rect[3]));for(var g in a.children)a.children.hasOwnProperty(g)&amp;&amp;y(b.children[g])}var w,b,d;w=function(a,b){if(a.type)a.t=a.type;if(a.t)a.t=a.t.toLowerCase();a.type=a.t;a.children?a.c=a.children:a.children=a.c;a.rect?a.r=a.rect:a.rect=a.r;if(!a.rect)a.rect=[];for(;a.rect.length&lt;4;)a.rect[a.rect.length]=0;a.borderRadius?a.br=a.borderRadius:a.borderRadius=a.br;a.shape?a.sh=a.shape:a.shape=a.sh;a.transform?a.tf=a.transform:a.transform=a.tf;if(a.tf){for(;a.tf.length&lt;5;)a.tf[a.tf.length]=
+0;for(;a.transform.length&lt;8;)a.tf[a.tf.length]=1}a.opacity?a.o=a.opacity:a.opacity=a.o;if(a.stroke)a.s=a.stroke;a.stroke=a.s;if(a.fill)a.f=a.fill;if(a.f&amp;&amp;b){var d=b[a.f];if(d)a.f=d}a.fill=a.f};return{stageLookup:{},nodeLookup:{},nodeSymbolInstanceLookup:{},DOMNodeSeek:function(){},DOMNodeReset:function(){},DOMNodeStarted:function(){},DOMNodeCompleted:function(){},renderDOM:function(a,b,d,f,h){window.EdgeScreenProfile={name:&quot;detected&quot;,dim:[screen.width,screen.height]};n.nodeLookup={};var g;for(g=0;g&lt;
+a.length;g++)p(a[g],d);for(g=0;g&lt;a.length;g++)a[g]=m(a[g],d);n.nodeSymbolInstanceLookup={};if(h)for(g=0;g&lt;h.length;g++)n.nodeSymbolInstanceLookup[h[g].id]=h[g].symbolName;n.DOMNodeSeek(b,f);for(g=0;g&lt;a.length;g++)f=a[g],(f=r(f.id,f,null,null,d))&amp;&amp;b.appendChild(f);n.DOMNodeReset()},drawSceneGraph:function(){for(var a in n.stageLookup)if(n.stageLookup.hasOwnProperty(a)){var b=n.stageLookup[a],d;for(d in b.children)b.children.hasOwnProperty(d)&amp;&amp;y(b.children[d],b);b.stage.update()}},createElement:h}}();
+h.DeclareMarkup=n}})(jQuery,jQuery.Edge);
+</textarea></div><!-- / .code --></div>
+<!-- / #boxEditJS --></section>
+
+<section id="boxEditHTML">
+<ul class="tabCode group">
+</ul>
+<div class="code" id="boxCodeHTML">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeHTML"></textarea></div>
+<!-- / .code --></div>
+<!-- / #boxEditHTML --></section>
+
+<section id="boxEditCSS">
+<ul class="tabCode group">
+    <li title="[library] edge.symbol.0.1.1.min.js" class="selected tabCSS initialTab"><span id="primaryTabTitle">[library] edge.symbol.0.1.1.min.js</span></li></ul>
+<div class="code" id="boxCodeCSS">
+<div class="editorBox"><div class="transparent"><img src="/img/spacer.gif" /></div><textarea id="codeCSS" data-lang=""></textarea></div><!-- / .code --></div>
+<!-- / #boxEditCSS --></section>
+
+<script type="text/javascript">
+  var theme               = "default";
+  var uid                 = "9dna";
+//  var basefiles           = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+//  var editorjs            = "/js/ace/ace.min.js?1441025678".match(/.+\/(.+?)$/).pop();
+  var basefiles           = "/js/codemirror/basefiles.js".substr(15); // "basefiles.js?1278486952"
+  var editorjs            = "/js/codemirror/editor.js".substr(15);
+  var has_long_line       = {};
+  has_long_line["js"]     = 0;
+  has_long_line["css"]    = 0;
+  has_long_line["html"]   = 0;
+
+  // 1st is initial
+  var initial_tabs = { js: [""], css: [""] };
+  var code_site_uri = "http://jsrun.it/xl1/edgesymbol011";
+  var is_danger     = 0; // 1 or 0
+  var lines         = [ 80,0,0 ];
+</script><noscript>
+<code></code>
+<code>/*************************************************************************
+Copyright (c) 2011. Adobe Systems Incorporated. All rights reserved.
+
+You may distribute this file in source code or object code, solely in
+unmodified form, and in all cases only as incorporated into your own
+application created with the Adobe software.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+**************************************************************************/
+/*************************************************************************
+ AdobePatentID=&quot;B1316&quot;
+ AdobePatentID=&quot;B1318&quot;
+ edge.authoring.0.0.1.min.js - version 0.1.1
+**************************************************************************/
+(function(j,h){var n=h.triggerDict={element:function(b,d,a){b&amp;&amp;j(d).bind(a,b)},timeline:function(b,d,a){if(b&amp;&amp;d){var c=this.getTimelineData(d),e=c.toState,c=c.fromState;if(!this.tlProxy)this.tlProxy={};this.tlProxy[a]=b;this._getTimeline(d,e,c).addObserver(this.tlProxy)}}},o=h.Symbol=function(b,d){h.Notifier.call(this);this.widgetEventPrefix=&quot;edgeSym_&quot;;this.element=null;this.options={data:null,initialState:null};this.states={};this.timelines={};this.timelineCache={};this.timelineStateMap={};this.defaultBaseState=
+&quot;Base State&quot;;this.baseState=null;this._init(b,d)};h.symbol=o;var s=h.PropertyTween,r=s.substituteParameters;o._substituteParameters=r;var m,p=h.symbolDefns={};h.baseDataName=&quot;edgeBaseData&quot;;j.extend(o.prototype,h.Notifier.prototype,{constructor:o,_init:function(b,d){if(d&amp;&amp;(j.extend(this.options,d),j.isArray(d.observers)&amp;&amp;d.observers.length))for(var a=d.observers.length,c=0;c&lt;a;c++)this.addObserver(d.observers[c]);if(!this.options.data)return null;this.element=b;c=this._createEvent();this.notifyObservers(&quot;onPreSymbolInit&quot;,
+c);a=this._createEvent();if(c.performDefaultAction){c=j(b);c.data(&quot;edgeSymbol&quot;,this);if(!c.get(0).id)c.get(0).id=o._makeUniqueID();var e=this.options.data;this.parameterValues=this._makeDefaultParameters();j.extend(this.parameterValues,this.options.parameters);e.content&amp;&amp;this._injectMarkup();e.actions&amp;&amp;this._addActionsFromData(e.actions);e.timelines&amp;&amp;this._createTimelineSetFromData(e.timelines,e.states);e.bindings&amp;&amp;e.bindings.length&amp;&amp;this._addBindingsFromData(e.bindings);var f=c[0].nodeName==&quot;BODY&quot;;
+e.content&amp;&amp;e.content.dom&amp;&amp;!f&amp;&amp;(e=c.css(&quot;position&quot;),e!=&quot;absolute&quot;&amp;&amp;e!=&quot;relative&quot;&amp;&amp;c.css(&quot;position&quot;,&quot;relative&quot;));this._goToInitialState();if(b[0].style&amp;&amp;(typeof b[0].style.webkitTransform==&quot;undefined&quot;||b[0].style.webkitTransform===&quot;&quot;||b[0].style.webkitTransform==&quot;none&quot;))b[0].style.webkitTransform=&quot;translateZ(0)&quot;;this.notifyObservers(&quot;onPostSymbolInit&quot;,a);return this}else this.notifyObservers(&quot;onPostSymbolInit&quot;,a)},_createEvent:function(b){var d={Symbol:this,element:this.element,performDefaultAction:!0};
+j.extend(d,b);return d},_makeDefaultParameters:function(){var b={},d=this.options.data.parameters;if(d)for(var a in d)if(d.hasOwnProperty(a))b[a]=d[a].defaultValue;j.extend(b,this._getSymbolParams());return b},_injectMarkup:function(b){var d=b,a=this._createEvent({markup:d});this.notifyObservers(&quot;onPreInjectMarkup&quot;,a);d=a.markup;b=this._createEvent({markup:d});if(a.performDefaultAction){var c,a=this.parameterValues;c=this.options.data.content;if(!d&amp;&amp;c)if(c.ref)d=&quot;&quot;,j(c.ref).each(function(a,c){d+=
+j(c).html()});else if(c.markup)d=c.markup;else if(c.dom){var e=h.DeclareMarkup;if(e){var f=c.dom,k=c.symbolInstances;if(this.options.opts&amp;&amp;this.options.opts.regenerateID===!0){JSON.parse(JSON.stringify(c.dom));k=[];c.symbolInstances&amp;&amp;(k=JSON.parse(JSON.stringify(c.symbolInstances)));var g=f.length;for(c=0;c&lt;g;c++)this._reIdDOMElements(f[c],k)}e.renderDOM(f,this.element.get(0),a,this.getSymbolTypeName(),k);k&amp;&amp;k.length&gt;0&amp;&amp;this._processNestedSymbolInstances(k)}}if(d){if((e=this._getParentSymbol())&amp;&amp;
+e.options.data.actors&amp;&amp;e.options.data.actors.instance_parameters){f=e.options.data.actors.instance_parameters;k=f.length;for(c=0;c&lt;k;c++)g=s.substituteParameters(f[c].selector,e._getSymbolParams()),j(g).filter(j(this.element)).length&amp;&amp;j.extend(a,f[c].parameters)}d=r(d,a);j(d).appendTo(this.element)}}this.notifyObservers(&quot;onPostInjectMarkup&quot;,b)},_processNestedSymbolInstances:function(b){if(b)for(var d=b.length,a=0;a&lt;d;a++){console.log(&quot;sym inst id: &quot;+b[a].id);var c=j(&quot;#&quot;+b[a].id).get(0);c&amp;&amp;h.convertElementToSymbolInstance(c,
+b[a].symbolName)}},_reIdDOMElements:function(b,d){var a=j(this.element).get(0).id,c=b.id;if(!c||c===&quot;&quot;)c=o._makeUniqueID();for(var a=a+&quot;_&quot;+c,c=d.length,e=0;c;e++)if(d[e].id==b.id)d[e].id=a;b.id=a;objLen=b.length;for(a=0;a&lt;objLen;a++)this._reIdDOMElements(b[a],d)},_getParentSymbol:function(){for(var b=j(this.element).parents(),d=b.length,a=0;a&lt;d;a++){var c=o.get(b[a]);if(c)return c}return null},_createTimelineSetFromData:function(b,d){this.states=d;this.timelines=b;this.baseState=this.options.data.baseState;
+if(!this.baseState)this.baseState=&quot;Base State&quot;;return this},_addBindingsFromData:function(b){for(var d=b.length,a=0;a&lt;d;a++){var c=b[a],e=c[0];if(e[0]==&quot;element&quot;){var f=r(e[1],this._getSymbolParams());f!=e[1]&amp;&amp;(e=h.cloneJSONObject(e),e[1]=f)}if(f=n[e[0]])(c=this._getActionCallbackFunc(e[0],e[1],c.slice(1)))&amp;&amp;f.apply(this,[c].concat(e.slice(1)))}},_getActionCallbackFunc:function(b,d,a){var c=this[a[0]],e=this;if(typeof c==&quot;function&quot;)if(a.slice(1),b==&quot;element&quot;)return function(){var a=Array.prototype.slice.call(arguments);
+return c.apply(e,a)};else if(b==&quot;timeline&quot;)return function(){var a=Array.prototype.slice.call(arguments),k=j.Event(b);a.splice(0,0,k,d);return c.apply(e,a)};return null},_addActionsFromData:function(b){j.extend(this,b)},_getSymbolParams:function(){return{symbolSelector:&quot;#&quot;+j(this.element).get(0).id}},_flushCache:function(){var b=this.timelines,d;for(d in b)b.hasOwnProperty(d)&amp;&amp;this._dirtyTimeline(d)},_goToInitialState:function(){var b={parameters:this.parameterValues},d=this.options.data.initialState;
+if(!d)d=this.options.data.baseState;o.useCSSAnimation||(d?this._applyRules(this._buildStateForCache(null,d,b)):(this.options.data.autoPlay||this.getTimelineData(&quot;Default Timeline&quot;))&amp;&amp;this.seek(&quot;Default Timeline&quot;,0))},_preNotify:function(b,d,a){var c={};j.extend(c,a);a=this._createEvent({tlName:d,tlOptions:c});this.notifyObservers(b,a);if(a.performDefaultAction)return a.tlOptions;else c=a.tlOptions,d={Symbol:this,timelineName:d,tlOptions:c,performDefaultAction:!0},b=b.replace(/onPre/,&quot;onPost&quot;),this.notifyObservers(b,
+d)},play:function(b,d){var a=this._preNotify(&quot;onPreSymbolPlay&quot;,b,d);if(typeof a!==void 0){if(typeof b===&quot;string&quot;){this._rememberBaseStateForTimeline(b);var c={parameters:this.parameterValues};j.extend(c,a);this.timelines&amp;&amp;(this._seek(b,0,c),this._play(b,c))}this.notifyObservers(&quot;onPostSymbolPlay&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}},playContinue:function(b,d){var a=this._preNotify(&quot;onPreSymbolPlayContinue&quot;,b,d);if(typeof a!==void 0){if(typeof b===&quot;string&quot;){this._rememberBaseStateForTimeline(b);
+var c={parameters:this.parameterValues};j.extend(c,a);this.timelines&amp;&amp;this._play(b,c)}this.notifyObservers(&quot;onPostSymbolPlayContinue&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}},seek:function(b,d,a){a=this._preNotify(&quot;onPreSymbolSeek&quot;,b,a);if(typeof a===void 0)return null;if(typeof b===&quot;string&quot;){this._rememberBaseStateForTimeline(b);var c={parameters:this.parameterValues};j.extend(c,a);this.timelines&amp;&amp;this._seek(b,d,c)}this.notifyObservers(&quot;onPostSymbolSeek&quot;,this._createEvent({timeline:b,
+tlOptions:a}));return null},getSymbolTypeName:function(){for(var b=j(this.element)[0].className.split(&quot; &quot;),d=b.length,a=0;a&lt;d;a++)if(b[a].search(/^symbol_/)&gt;=0)return b[a].replace(/^symbol_/,&quot;&quot;);return null},getParameter:function(b){return this.parameterValues[b]},setParameter:function(b,d){this.parameterValues[b]=d},destroy:function(){j(this.ele).removeData(&quot;edgeSymbol&quot;);return this},_addState:function(b,d){this.states[b]=d},_addTimelineData:function(b,d){this.timelines[b]=d;if(d.fromState&amp;&amp;d.toState)this.timelineStateMap=
+{}},_getTimelineFromStates:function(b,d){if(typeof this.timelineStateMap[b+&quot;//&quot;+d]==&quot;undefined&quot;){for(var a in this.timelines)if(this.timelines.hasOwnProperty(a)){var c=this.timelines[a];this.timelineStateMap[c.fromState+&quot;//&quot;+c.toState]=a}typeof this.timelineStateMap[b+&quot;//&quot;+d]==&quot;undefined&quot;&amp;&amp;(this.timelineStateMap[b+&quot;//&quot;+d]=null);return this.timelineStateMap[b+&quot;//&quot;+d]}},_setTimelineData:function(b,d){var a=this.timelines[b],c=this._getTimeline(b,a.toState,a.fromState),e=c.observers.slice(0);this._dirtyTimeline(b);
+if(a&amp;&amp;a.fromState&amp;&amp;a.toState)this.timelineStateMap={};this._addTimelineData(b,d);var f=e.length;if(f){c=this._getTimeline(b,a.toState,a.fromState);for(a=0;a&lt;f;a++)c.addObserver(e[a])}},_saveObservers:function(b){var d=this.timelines[b],d=this._getTimeline(b,d.toState,d.fromState);if(!this.timelineObservers)this.timelineObservers={};this.timelineObservers[b]=d.observers.slice(0)},_restoreObservers:function(b,d){if(this.timelineObservers&amp;&amp;this.timelineObservers[b]){var a=this.timelineObservers[b];if(a){var c,
+e=a.length;for(c=0;c&lt;e;c++)d.addObserver(a[c])}}},_dirtyTimeline:function(b){this._saveObservers(b);this.timelineCache[this._makeTimelineKey(b)]=null;this.timelineStateMap={};this.toStateCache=this.fromStateCache=null},_isCacheDIrty:function(b){return this.timelineCache[this._makeTimelineKey(b)]===null},_getStateData:function(b){return this.states[b]},getTimelineData:function(b){return this.timelines[b]},_makeTimelineKey:function(b,d,a){var c=null;if(!d||!a)c=this.getTimelineData(b);if(!d)d=c.toState;
+if(!a)a=c.fromState;return b+&quot;-&quot;+(d?d:&quot;&quot;)+&quot;-&quot;+(a?a:&quot;&quot;)},_getBaseStateData:function(){if(this.baseState)return this._getStateData(this.baseState);else for(var b in this.states)if(this.states[b].baseState)return this.baseState=b,this._getStateData(this.baseState);return this._getStateData(this.defaultBaseState)},_mergeBaseState:function(b){var d=h.cloneJSONObject(this._getBaseStateData()),a;for(a in b)b.hasOwnProperty(a)&amp;&amp;(d[a]||(d[a]=[]),d[a]=d[a].concat(b[a]));return d},_getTimeline:function(b,d,
+a){var c=this._makeTimelineKey(b,d,a);if(this.timelineCache[c])return this.timelineCache[c];var e=this.getTimelineData(b).timeline;if(d||a)e=h.cloneJSONObject(e);for(var f=e.length,k={},g={},i,l,j=0;j&lt;f;j++)l=e[j],l.tween&amp;&amp;(i=l.tween[1],k[i]||(k[i]=[]),k[i].push(l),i=l.tween[0]+&quot;:&quot;+l.tween[1]+&quot;:&quot;+l.tween[2],g[i]||(g[i]=[]),g[i].push(l));l=function(a,c){return a.position-c.position};for(i in g)g.hasOwnProperty(i)&amp;&amp;g[i].sort(l);var o,m,n,p,r,s,t,u;if(d)for(o in d=this._mergeBaseState(this._getStateData(d)),
+d)if(d.hasOwnProperty(i)){j=d[o];m=k[o];n=j.length;for(t=0;t&lt;n;t++){l=j[t];p=l[0];r=l[1];s=l[2];var q=null,v=-1,f=m.length;for(u=0;m&amp;&amp;u&lt;f;u++)if(l=m[u],i=l.tween,i[0]==p&amp;&amp;i[2]==r&amp;&amp;(v==-1||l.position+l.duration&gt;v))q=l,v=l.position+l.duration;q&amp;&amp;q.tween.length&gt;4&amp;&amp;q.tween[4]&amp;&amp;q.tween[4].copyToState&amp;&amp;(q.tween[3]=s)}}d={};if(a)for(o in a=this._getStateData(a),a)if(a.hasOwnProperty(o)){j=a[o];m=k[o];n=j.length;for(t=0;t&lt;n;t++){l=j[t];p=l[0];r=l[1];s=l[2];d[p+&quot;:&quot;+o+&quot;:&quot;+r]=s;q=null;v=-1;if(m)f=m.length;for(u=
+0;m&amp;&amp;u&lt;f;u++)if(l=m[u],i=l.tween,i[0]==p&amp;&amp;i[2]==r&amp;&amp;(v==-1||l.position&lt;v))q=l,v=l.position;if(q&amp;&amp;(l=q.tween.length&gt;4&amp;&amp;q.tween[4]&amp;&amp;q.tween[4].copyFromState,q.tween.length&lt;4||!q.tween[4]||typeof q.tween[4].fromValue==&quot;undefined&quot;||l))q.tween[4]||(q.tween[4]={}),q.tween[4].fromValue=s}}if(a)for(i in g)if(g.hasOwnProperty(i)&amp;&amp;g[i][0].position&gt;0&amp;&amp;(a=d[i],a!==void 0))l=h.cloneJSONObject(g[i][0]),l.tween[3]=l.tween[4].fromValue=a,a=l.position,l.position=0,l.duration=a,e.push(l);e=this._createTimelineFromData(e);
+this._restoreObservers(b,e);return this.timelineCache[c]=e},_createTimelineFromData:function(b){for(var d=jQuery.Edge.Timeline.createTimeline(),a=b.length,c=0;c&lt;a;c++){var e=b[c],f=null;e.timeline?f=o.prototype._createTimelineFromData(e.timeline):e.tween?f=h.Timeline.createTween.apply(null,e.tween):e.trigger&amp;&amp;(f=e.trigger.slice(0,2),f.push(this),f=h.Timeline.createTrigger.apply(null,f));f&amp;&amp;d.add(f,e.position,e.duration,e.easing)}return d},playReverse:function(b,d){if(!(typeof b!=&quot;string&quot;||b.length===
+0)){var a=this._preNotify(&quot;onPreSymbolPlayReverse&quot;,b,d);if(typeof a!==void 0){this._rememberBaseStateForTimeline(b);var c=this.getTimelineData(b).fromState,e=this.getTimelineData(b).toState,f={};j.extend(f,a,this.opts,{playDirection:&quot;reverse&quot;},{parameters:this.parameterValues});f.continueFromCurrentPos||this._ensureToState(b,f);if(c=this._getTimeline(b,e,c)){if(!this.tlPlayHandler){var k=this;this.tlPlayHandler={};this.tlPlayHandler.onComplete=function(){k._ensureFromState(this.timelineName,this.opts);
+this.tl.removeObserver(k.tlPlayHandler)}}j.extend(this.tlPlayHandler,{tl:c,timelineName:b,opts:f});c.addObserver(this.tlPlayHandler);f.continueFromCurrentPos||c.seek(c.getDuration());c.play(f)}this.notifyObservers(&quot;onPostSymbolPlayReverse&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}}},playReverseContinue:function(b,d){var a=this._preNotify(&quot;onPreSymbolPlayReverseContinue&quot;,b,d);if(typeof a!==void 0){this._rememberBaseStateForTimeline(b);if(typeof b===&quot;string&quot;){var c={};j.extend(c,a,{continueFromCurrentPos:!0},
+{parameters:this.parameterValues});this.playReverse(b,c)}this.notifyObservers(&quot;onPostSymbolPlayReverseContinue&quot;,this._createEvent({timeline:b,tlOptions:a}));return this}},_buildStateForCache:function(b,d){var a={};if(d){var c=this.states[d];if(c){var e={},f,k,g;if(b){var i=this.getTimelineData(b).timeline,l=i.length;for(f=0;f&lt;l;f++)g=i[f],g.tween&amp;&amp;(k=r(g.tween[1],this.parameterValues),k=g.tween[0]+&quot;:&quot;+k+&quot;:&quot;+g.tween[2],e[k]||(e[k]=[]),e[k].push(g))}for(var h in c)if(h!==&quot;prototype&quot;){e=c[h];for(f=0;f&lt;
+e.length;f++)if(i=e[f],k=r(h,this.parameterValues),i[0]==&quot;style&quot;||i[0]==&quot;transform&quot;||i[0]==&quot;color&quot;){a[k]||(a[k]=[]);g=i[2];if(i[3]&amp;&amp;i[3].valueTemplate)if(l=s.prototype.parseTemplate.call(null,i[3].valueTemplate)){var o=l.length,m=[],n=i[2];j.isArray(n)||(n=[n]);for(var p=0;p&lt;o;p++)g=l[p],g.isPlaceholder?m.push(n[g.value]):m.push(g.value);g=m.join(&quot;&quot;)}else g=i[2].join(&quot;&quot;);a[k].push({decl:i,value:g})}}return a}}},_ensureState:function(b,d,a){var c=d+&quot;Cache&quot;;this[c]||(this[c]={});var e=null;this[c][b]?
+e=this[c][b]:(d=this.getTimelineData(b)[d],e=this._buildStateForCache(b,d,a),!this._isParameterizedActorTL(b)&amp;&amp;!this._isParameterizedActorState(d)&amp;&amp;(this[c][b]=e));this._applyRules(e,a)},_applyRules:function(b,d){var a=this,c,e=function(){var b=j(this),e={},f=j.data(this,&quot;edgeBaseData&quot;);f||(a._rememberBaseState(b),f=j.data(this,&quot;edgeBaseData&quot;));j.extend(e,f.transformData,c);j.data(this,h.TransformTween.dataName,e);f=!1;if(d)f=d.dontForceZ;h.TransformTween.applyTransform(b,e,void 0,{dontForceZ:f});
+(e=j.data(this,&quot;ui_visibility&quot;))&amp;&amp;b.css(&quot;visibility&quot;,e)},f;for(f in b)if(b.hasOwnProperty(f)){var k=b[f],g=k.length;c=null;for(var i=0;i&lt;g;i++){var l=k[i].decl,z=l[1];l[0]==&quot;transform&quot;?(c||(c={}),c[z]=k[i].value):(l=k[i].decl,l=k[i].value,j(f).css(z,l))}c&amp;&amp;h.TransformTween&amp;&amp;j(f).each(e)}},_ensureFromState:function(b,d){this.getTimelineData(b).fromState==this.baseState&amp;&amp;this._ensureBaseState(b);this._ensureState(b,&quot;fromState&quot;,d)},_ensureToState:function(b,d){this.getTimelineData(b).toState==this.baseState&amp;&amp;
+this._ensureBaseState(b);this._ensureState(b,&quot;toState&quot;,d)},_ensureBaseState:function(b){if(b)for(var b=this.getTimelineData(b).timeline,d=b.length,a=function(){var a=j(this);h.TransformTween.removeData(a);var c=j.data(this,&quot;edgeBaseData&quot;);c?(c.inlineValue?a.attr(&quot;style&quot;,c.inlineValue):a.removeAttr(&quot;style&quot;),c.transformData&amp;&amp;j.data(this,h.TransformTween.dataName,c.transformData),(c=j.data(this,&quot;ui_visibility&quot;))&amp;&amp;a.css(&quot;visibility&quot;,c)):alert(&quot;Attempt to restore base state without base state data!&quot;)},
+c=0;c&lt;d;c++){var e=b[c];e.tween&amp;&amp;(e=r(e.tween[1],this.parameterValues),j(e).each(a))}},_isParameterizedActorTL:function(b){for(var b=this.getTimelineData(b).timeline,d=b.length,a=0;a&lt;d;a++){var c=b[a];if(c.tween&amp;&amp;typeof c.tween[1]==&quot;string&quot;&amp;&amp;c.tween[1].search(/\$\{/)!=-1)return!0}return!1},_isParameterizedActorState:function(b){if(!b)return!1;b=this.states[b];if(!b)return!1;for(var d in b)if(d.search(/\$\{/)!=-1)return!0;return!1},_isReverse:function(b){return typeof b==&quot;object&quot;&amp;&amp;typeof b.playDirection==
+&quot;string&quot;&amp;&amp;b.playDirection==&quot;reverse&quot;},_play:function(b,d){var a=this.getTimelineData(b);if(a){var c=a.toState;if(b&amp;&amp;(a=this._getTimeline(b,c,a.fromState))){if(c&amp;&amp;!this._isReverse(d)){if(!this.tlPlayHandler){var e=this;this.tlPlayHandler={};this.tlPlayHandler.onComplete=function(){e._ensureToState(this.timelineName,this.opts);this.tl.removeObserver(e.tlPlayHandler)}}j.extend(this.tlPlayHandler,{tl:a,timelineName:b,opts:d});a.addObserver(this.tlPlayHandler)}a.play(d)}}},_seek:function(b,d,a){var c=
+this._isCacheDIrty(b),e=this.getTimelineData(b);if(e){var f=e.toState,e=e.fromState;a||(a={});!c&amp;&amp;a.skipFromState?a.assumeStateUnchanged=!0:(this._ensureFromState(b,a),a.assumeStateUnchanged=!1);c=0;if(b&amp;&amp;(f=this._getTimeline(b,f,e)))c=f.getDuration(),f.seek(d,a);d&gt;=c&amp;&amp;this._ensureToState(b,a)}},_rememberBaseStateForTimeline:function(b){if(b&amp;&amp;(b=this.getTimelineData(b)))for(var b=b.timeline,d=b.length,a=0;a&lt;d;a++){var c=b[a];c.tween&amp;&amp;this._rememberBaseState(r(c.tween[1],this.parameterValues))}},_rememberBaseState:function(b){j(b).each(function(){var b=
+j(this),a=j.data(this,&quot;edgeBaseData&quot;);if(!a)a={},j.data(this,&quot;edgeBaseData&quot;,a),a.inlineValue=b.attr(&quot;style&quot;),a.transformData=h.TransformTween.prototype.buildTransformData.call(null,this)})},compute:function(b,d,a,c,e){var f;if(b){var k=this.getTimelineData(b);(b=this._getTimeline(b,k.toState,k.fromState))&amp;&amp;(f=b.compute(d,a,c,e))}return f},findNext:function(b,d,a,c,e,f,k){if(b){var g=this.getTimelineData(b),c=c.toString();if(b=this._getTimeline(b,g.toState,g.fromState)){var i,g=b.getDuration()+10,
+c=parseFloat(c.replace(/[a-zA-Z%]+$/,&quot;&quot;)),j=f+10;i=b.compute(d,a,f,k);for(var h=i[e],h=parseFloat(h.replace(/[a-zA-Z%]+$/,&quot;&quot;)),j=f;j&lt;=g;j+=10)if((i=b.compute(d,a,j,k))&amp;&amp;i.length){f=i[e];f=parseFloat(f.replace(/[a-zA-Z%]+$/,&quot;&quot;));if(c&gt;=Math.min(h,f)&amp;&amp;c&lt;=Math.max(h,f))return j;h=f}}}return-1},remove:function(){var b=this._createEvent({});this.notifyObservers(&quot;onPreRemove&quot;,b);if(b.performDefaultAction){j(this.element).removeData(&quot;edgeSymbol&quot;);if(m)for(var d=m.length;d&gt;=0;d--)m[d]==this&amp;&amp;m.splice(d,1);
+this.element=null;this.notifyObservers(&quot;onPostRemove&quot;,b)}}});o.get=function(b){return j(b).data(&quot;edgeSymbol&quot;)};o.getDefaultEasing=function(){return h.TimelineObject.defaultEasing};var x=(new Date).getTime(),y=function(){for(var b=&quot;eid_&quot;+x++;j(&quot;#&quot;+b).length&gt;0;)b=&quot;eid_&quot;+x++;return b};o._makeUniqueID=y;h.setSymbolClassName=function(b,d){j(b).attr(&quot;class&quot;,&quot;symbol_&quot;+d)};var w;h.initialize=function(b,d,a){if(!window.edge_authoring_mode||a||window.edge_remote_authoring){if(typeof m==&quot;undefined&quot;)m=h.symbolInstances=
+[];j.extend(p,b);w(p);var b=m,c;for(c in p)if(p.hasOwnProperty(c)){var a=[],a=&quot;.symbol_&quot;+c,a=d?j(d).find(&quot;*&quot;).andSelf().filter(a):j(a),e=a.size(),f;for(f=0;a&amp;&amp;f&lt;e;f++){var k=new o(j(a.get(f)),{data:p[c]});m.push(k);if(c==&quot;stage&quot;)h.stage=k}}if(b.length===0||!h.stage)h.stage=new o(j(&quot;body&quot;),{data:p.stage}),m.push(h.stage);window.runtimeReady&amp;&amp;window.runtimeReady()}};h.convertElementToSymbolInstance=function(b,d){if(b&amp;&amp;j(b)&amp;&amp;m&amp;&amp;p[d]){h.setSymbolClassName(b,d);var a=new o(j(b),{data:p[d],opts:{regenerateID:!0}});
+m.push(a)}};h.getSymbolInstances=function(b){var d=[];if(!m)return d;for(var a=m.length,c=0;c&lt;a;c++)for(var e in b)b.hasOwnProperty(e)&amp;&amp;m[c].getSymbolTypeName()==e&amp;&amp;d.push(m[c]);return d};h.removeSymbolInstance=function(b){m&amp;&amp;(b=o.get(b))&amp;&amp;b.remove()};w=function(b){for(var d in b)if(b.hasOwnProperty(d)&amp;&amp;b[d].timelines)for(var a in b[d].timelines)if(b[d].timelines.hasOwnProperty(a))for(var c=b[d].timelines[a].timeline,e=c.length,f=0;f&lt;e;f++){var k=c[f];if(!k.id)k.id=y()}};h.play=function(b){if(!window.edge_authoring_mode||
+b)if(typeof h.autoPlay==&quot;undefined&quot;||h.autoPlay)for(var b=this.symbolInstances.length,d=0;d&lt;b;d++){var a=m[d],c=a.options.data.autoPlay;typeof c==&quot;string&quot;&amp;&amp;c!=&quot;true&quot;?a.play(c):(typeof c==&quot;undefined&quot;||c===!0||c==&quot;true&quot;)&amp;&amp;a.play(&quot;Default Timeline&quot;)}};h.logDebug=function(){};h.logInfo=function(){};h.logWarn=function(){};h.logError=function(){};h.logFatal=function(){};j.extend(h.TimelineObject.prototype,{compute:function(b,d,a,c){if(!this.dDuration){var e=this.duration,f=null;this.animation&amp;&amp;this.animation.getDuration&amp;&amp;
+(f=this.animation.getDuration());this.dScale=e!=-1&amp;&amp;e!==0?f/e:1;this.dDuration=e!=-1?e:f}e=this.dDuration;e=e===0?1:e;a&gt;=e&amp;&amp;(a=e);a&lt;=0&amp;&amp;(a=0);if(this.animation)return e=j.easing[this.easing](a/e,a,0,1,e),this.animation.compute(b,d,a*this.dScale,e,c)}});j.extend(h.Timeline.prototype,{compute:function(b,d,a,c){for(var e=this.objects,f=e.length,k=[],g={obj:null,end:0},i={obj:null,start:this.getDuration()},l=0;l&lt;f;l++){var h=e[l];if(!h.animation.isTrigger&amp;&amp;d==h.animation.property&amp;&amp;b==h.animation.elements)if(a&gt;=
+h.position&amp;&amp;a&lt;=h.position+h.duration){if(h=h.compute(b,d,a-h.position,c))j.isArray(h)||(h=[h]),k=h}else if(a&lt;h.position){if(h.position&lt;=i.start)i.start=h.position,i.obj=h}else if(a&gt;h.position+h.duration&amp;&amp;h.position+h.duration&gt;=g.end)g.end=h.position,g.obj=h}if(!k||j.isArray(k)&amp;&amp;k.length===0)if(g.obj&amp;&amp;g.obj.animation.toValue)k=g.obj.animation.toValue;else if(i.obj&amp;&amp;i.obj.animation.fromValue)k=i.obj.animation.fromValue;j.isArray(k)||(k=[k]);return k}});j.extend(s.prototype,{compute:function(b,d,a,c){a=
+this.property;if(b!=this.elements||d!=a)return null;for(var b=this.fromValues,d=this.toValues,a=this.filter,e=b.length,f=[],k=0;k&lt;e;k++){var g=b[k],i=d[k];g+=(i.value-g)*c;a&amp;&amp;a[k]&amp;&amp;(g=a[k](g));f.push(g+i.unit)}return f}});j.extend(h.TransformTween.prototype,{compute:s.prototype.compute})})(jQuery,jQuery.Edge);(function(j,h){if(typeof h.DeclareMarkup==&quot;undefined&quot;){var n=function(){function j(a,c,b,d,k){var g=document.createElement(a);g.id=c;g.style.position=&quot;absolute&quot;;$(g).css(&quot;left&quot;,b.rect[0]+&quot;px&quot;);$(g).css(&quot;top&quot;,b.rect[1]+&quot;px&quot;);b.rect[2]&gt;0&amp;&amp;$(g).css(&quot;width&quot;,b.rect[2]+&quot;px&quot;);b.rect[3]&gt;0&amp;&amp;$(g).css(&quot;height&quot;,b.rect[3]+&quot;px&quot;);b.overflow&amp;&amp;($(g).css(&quot;overflow&quot;,b.overflow),(b.overflow==&quot;hidden&quot;||b.overflow==&quot;scroll&quot;)&amp;&amp;$(g).css(&quot;text-overflow&quot;,&quot;clip&quot;));b.br&amp;&amp;(b.br.length==1?$(g).css(&quot;border-radius&quot;,b.br[0]+&quot;px&quot;):
+($(g).css(&quot;border-top-left-radius&quot;,b.br[0]),$(g).css(&quot;border-top-right-radius&quot;,b.br[1]),$(g).css(&quot;border-bottom-right-radius&quot;,b.br[2]),$(g).css(&quot;border-bottom-left-radius&quot;,b.br[3])));if(b.tf){for(var c=[],i=[[3,0],[3,0],[2,0],[3,1],[2,&quot;50%&quot;]],h=0;h&lt;i.length;h++){c[h]=[];b.tf[h]||(b.tf[h]=[]);for(var m=0;m&lt;i[h][0];m++)b.tf[h][m]||(b.tf[h][m]=i[h][1]),c[h][m]=b.tf[h][m]}i=typeof c[4][0]==&quot;string&quot;?c[4][0]+&quot; &quot;+c[4][1]:c[4][0]+&quot;px &quot;+c[4][1]+&quot;px&quot;;$(g).css(&quot;-webkit-transform-origin&quot;,i);$(g).css(&quot;-moz-transform-origin&quot;,
+i);$(g).css(&quot;-ms-transform-origin&quot;,i);$(g).css(&quot;-o-transform-origin&quot;,i);&quot;webkitAppearance&quot;in document.documentElement.style?$(g).css(&quot;-webkit-transform&quot;,&quot;translate3d(&quot;+c[0][0]+&quot;px,&quot;+c[0][1]+&quot;px,&quot;+c[0][2]+&quot;px) rotateZ(&quot;+c[1][0]+&quot;deg) rotateX(&quot;+c[1][1]+&quot;deg) rotateY(&quot;+c[1][2]+&quot;deg) skew(&quot;+c[2][0]+&quot;deg,&quot;+c[2][1]+&quot;deg) scale3d(&quot;+c[3][0]+&quot;,&quot;+c[3][1]+&quot;,&quot;+c[3][2]+&quot;)&quot;):(i=&quot;translate(&quot;+c[0][0]+&quot;px,&quot;+c[0][1]+&quot;px) rotate(&quot;+c[1][0]+&quot;deg)  skewX(&quot;+c[2][0]+&quot;deg) skewY(&quot;+c[2][1]+&quot;deg) scale(&quot;+c[3][0]+&quot;,&quot;+b.tf[3][1]+
+&quot;)&quot;,$(g).css(&quot;-moz-transform&quot;,i),$(g).css(&quot;-ms-transform&quot;,i),$(g).css(&quot;-o-transform&quot;,i))}else g.style.webkitTransform=&quot;translateZ(0)&quot;;b.opacity&amp;&amp;$(g).css(&quot;opacity&quot;,b.opacity);b.stroke&amp;&amp;((c=b.stroke[0])||(c=0),(i=b.stroke[1])?typeof i==&quot;string&quot;&amp;&amp;(i=[i]):i=[&quot;rgba(0,0,0,0)&quot;],(h=b.stroke[2])||(h=&quot;none&quot;),$(g).css(&quot;border&quot;,&quot;&quot;+c+&quot;px &quot;+h+&quot; &quot;+i[0]));if(b.fill&amp;&amp;(c=b.fill[0],typeof c==&quot;string&quot;&amp;&amp;(c=[c]),(i=b.fill[1])||(i=&quot;solid&quot;),i==&quot;solid&quot;&amp;&amp;c&amp;&amp;$(g).css(&quot;background-color&quot;,c[0]),b.fill[1])){c=b.fill[1];typeof c==
+&quot;string&quot;?c=[c]:typeof c==&quot;object&quot;&amp;&amp;((i=c[window.EdgeScreenProfile.name])||(i=c[&quot;default&quot;]),c=i);if(c[0]&amp;&amp;($(g).css(&quot;background-image&quot;,&quot;url(&quot;+c[0]+&quot;)&quot;),c[1]||c[2]))c[1]||(c[1]=&quot;0px&quot;),c[2]||(c[2]=&quot;0px&quot;),$(g).css(&quot;background-position&quot;,c[1]+&quot; &quot;+c[2]);c[3]||$(g).css(&quot;background-repeat&quot;,&quot;no-repeat&quot;);c[4]&amp;&amp;c[4]!=&quot;scroll&quot;&amp;&amp;$(g).css(&quot;background-attachment&quot;,c[4])}b.source&amp;&amp;(g.setAttribute(&quot;src&quot;,b.source),a==&quot;video&quot;&amp;&amp;g.setAttribute(&quot;controls&quot;,&quot;controls&quot;),a==&quot;audio&quot;&amp;&amp;g.setAttribute(&quot;autoplay&quot;,&quot;autoplay&quot;));if(d){if(!d.appendChild)return g;
+d.firstChild&amp;&amp;k&gt;=0&amp;&amp;d.children&amp;&amp;k&lt;d.children.length?d.insertBefore(g,d.children[k]):d.appendChild(g)}return g}function h(a,c,e,f,k){var l;w(c,f);var g=null;e&amp;&amp;e.nodeName&amp;&amp;e.nodeName.toLowerCase()==&quot;canvas&quot;&amp;&amp;(l=g=n.stageLookup[e.id],e=l);var i=null;switch(c.t){case &quot;def&quot;:break;case &quot;rect&quot;:case &quot;elipse&quot;:case &quot;image&quot;:case &quot;group&quot;:i=j(&quot;div&quot;,a,c,e,k);break;case &quot;video&quot;:i=j(&quot;video&quot;,a,c,e,k);break;case &quot;audio&quot;:i=j(&quot;audio&quot;,a,c,e,k);break;case &quot;text&quot;:i=j(&quot;div&quot;,a,c,e,k);c.font&amp;&amp;(c.font[0]&amp;&amp;c.font[0]!==&quot;&quot;&amp;&amp;
+$(i).css(&quot;font-family&quot;,c.font[0]),typeof c.font[1]!=&quot;object&quot;&amp;&amp;(c.font[1]=[c.font[1]]),c.font[1][1]||(c.font[1][1]=&quot;px&quot;),c.font[1][0]&amp;&amp;c.font[1][0]!==&quot;&quot;&amp;&amp;$(i).css(&quot;font-size&quot;,c.font[1][0]+c.font[1][1]),c.font[2]&amp;&amp;c.font[2]!==&quot;&quot;&amp;&amp;$(i).css(&quot;color&quot;,c.font[2]),c.font[3]&amp;&amp;c.font[3]!==&quot;&quot;&amp;&amp;$(i).css(&quot;font-weight&quot;,c.font[3]),c.font[4]&amp;&amp;c.font[4]!==&quot;&quot;&amp;&amp;$(i).css(&quot;text-decoration&quot;,c.font[4]),c.font[5]&amp;&amp;c.font[5]!==&quot;&quot;&amp;&amp;$(i).css(&quot;font-style&quot;,c.font[5]));c.align&amp;&amp;$(i).css(&quot;text-align&quot;,c.align);if(c.position)i.style.position=
+c.position;i.appendChild(document.createTextNode(c.text));break;case &quot;canvas&quot;:i=j(&quot;canvas&quot;,a,c,e,k);g={def:c,params:f,stage:new b(i),children:{}};g.obj=g.stage;g.obj.width=c.rect[2];g.obj.height=c.rect[3];n.stageLookup[a]=g;break;case &quot;line&quot;:break;case &quot;shape&quot;:if(!e)break;a={def:c,params:f,obj:new d,stage:e.stage,children:{}};a.obj.x=c.rect[0];a.obj.y=c.rect[1];a.obj.width=c.rect[2];a.obj.height=c.rect[3];e.children[c.id]=a;e.obj.addChild(a.obj);i=a;break;default:alert(&quot;unhandled type == &quot;+c.t)}return i}
+function r(a,c,b,d,k){if(b=h(a,c,d,k,0)){n.nodeSymbolInstanceLookup[a]&amp;&amp;$.Edge.setSymbolClassName(b,n.nodeSymbolInstanceLookup[a]);n.DOMNodeStarted(b,d,c);if(c.c)for(a=0;a&lt;c.c.length;a++)d=c.c[a],r(d.id,d,c,b,k);n.DOMNodeCompleted(b)}return b}function m(a,b){var d=a,f;if(a.base){if(typeof a.base==&quot;string&quot;)a.base=[a.base];if(a.base.length&gt;0){d={};for(f=0;f&lt;a.base.length;f++){var h=n.nodeLookup[a.base[f]];h&amp;&amp;$.extend(!0,d,h)}$.extend(!0,d,a)}}d.base=null;for(f=0;d.c&amp;&amp;f&lt;d.c.length;f++)d.c[f]=m(d.c[f],
+b);return d}function p(a,b){w(a,b);if(!a.id||a.id===&quot;&quot;)alert(&quot;elements without ids are not yet supported&quot;);else{n.nodeLookup[a.id]=a;for(var d=0;a.children&amp;&amp;d&lt;a.children.length;d++)p(a.children[d])}}function x(a,b){if(!a)return b;if(typeof b==&quot;string&quot;){var d=b.search(/\$\{/);if(d&gt;=0){var f=b.search(/\}/);if(f&gt;d)return d=b.slice(d+2,f),a[d]}}return b}function y(a,b){var d=a.obj.graphics,f=a.params;d.clear();var h=&quot;rgba(0,0,0,0)&quot;;a.def.fill&amp;&amp;typeof a.def.fill==&quot;object&quot;&amp;&amp;(h=a.def.fill[0]);d.beginFill(h).drawRect(0,
+0,x(f,a.def.rect[2]),x(f,a.def.rect[3]));for(var g in a.children)a.children.hasOwnProperty(g)&amp;&amp;y(b.children[g])}var w,b,d;w=function(a,b){if(a.type)a.t=a.type;if(a.t)a.t=a.t.toLowerCase();a.type=a.t;a.children?a.c=a.children:a.children=a.c;a.rect?a.r=a.rect:a.rect=a.r;if(!a.rect)a.rect=[];for(;a.rect.length&lt;4;)a.rect[a.rect.length]=0;a.borderRadius?a.br=a.borderRadius:a.borderRadius=a.br;a.shape?a.sh=a.shape:a.shape=a.sh;a.transform?a.tf=a.transform:a.transform=a.tf;if(a.tf){for(;a.tf.length&lt;5;)a.tf[a.tf.length]=
+0;for(;a.transform.length&lt;8;)a.tf[a.tf.length]=1}a.opacity?a.o=a.opacity:a.opacity=a.o;if(a.stroke)a.s=a.stroke;a.stroke=a.s;if(a.fill)a.f=a.fill;if(a.f&amp;&amp;b){var d=b[a.f];if(d)a.f=d}a.fill=a.f};return{stageLookup:{},nodeLookup:{},nodeSymbolInstanceLookup:{},DOMNodeSeek:function(){},DOMNodeReset:function(){},DOMNodeStarted:function(){},DOMNodeCompleted:function(){},renderDOM:function(a,b,d,f,h){window.EdgeScreenProfile={name:&quot;detected&quot;,dim:[screen.width,screen.height]};n.nodeLookup={};var g;for(g=0;g&lt;
+a.length;g++)p(a[g],d);for(g=0;g&lt;a.length;g++)a[g]=m(a[g],d);n.nodeSymbolInstanceLookup={};if(h)for(g=0;g&lt;h.length;g++)n.nodeSymbolInstanceLookup[h[g].id]=h[g].symbolName;n.DOMNodeSeek(b,f);for(g=0;g&lt;a.length;g++)f=a[g],(f=r(f.id,f,null,null,d))&amp;&amp;b.appendChild(f);n.DOMNodeReset()},drawSceneGraph:function(){for(var a in n.stageLookup)if(n.stageLookup.hasOwnProperty(a)){var b=n.stageLookup[a],d;for(d in b.children)b.children.hasOwnProperty(d)&amp;&amp;y(b.children[d],b);b.stage.update()}},createElement:h}}();
+h.DeclareMarkup=n}})(jQuery,jQuery.Edge);
+</code>
+<code></code>
+<code></code>
+</noscript>
+
+<!-- p class="btnFullScreen"><a href="http://jsdo.it/xl1/edgesymbol011/read">Code Fullscreen</a></p -->
+<!-- / .boxCode --></div>
+<div class="boxViewer">
+<iframe src="" width="465" height="465" id="generated_site">
+use an iframe compat browser, deer
+</iframe>
+<div id="boxThumbViewer">
+<p id="thumbnail"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/9/d/n/9dna.jpg?t=1312255995" width="465" height="465" /></p>
+<p class="btnPlayViewer"><a href="javascript:void(0);" id="play_button" onclick="JSDoIt.CodeShow.play(); return false;"><img src="/img/common/play_button.png" alt="play" class="btn" /></a></p>
+<!-- / #bixThumbViewer --></div>
+<!-- /.boxViewer --></div>
+</div>
+
+<div id="codeUtilties" class="group">
+	<ul class="utils group">
+		<li>
+			<form id="form_fork_sub" method="post" action="http://jsdo.it/xl1/edgesymbol011/fork">
+				<input type="submit" value="Fork" class="btnBase btnType5 btnSmall" id="fork_button_sub" name="btnFork" />
+                                <input type="hidden" name="token" value="" />          
+			</form>
+		</li>		<li id="play_on_games_button" style="display: none;"><a href="http://games.jsdo.it/xl1/edgesymbol011" class="btnBase btnType1 btnSmall"><span>Play on jsdo.it games</span></a><p class="arrow"><img src="/img/code/game/arrow.png" alt="" /></p></li>
+		<li>
+			<ul class="btnGroup group">
+				<li class="tab" data-tab-name="author"><span class="btnBase btnType6 btnSmall">Author</span></li>
+				<li class="tab active" data-tab-name="socialFeedback"><span class="btnBase btnType6 btnSmall active">Share</span></li>
+				<li class="tab" data-tab-name="embed"><span class="btnBase btnType6 btnSmall">ブログに埋め込む</span></li>
+				<li class="tab" data-tab-name="qrcode"><span class="btnBase btnType6 btnSmall">QR</span></li>
+				<li class="tab" data-tab-name="tag"><span class="btnBase btnType6 btnSmall">Tag</span></li>
+			</ul>
+		</li>
+		<li class="download"><a href="http://jsdo.it/xl1/edgesymbol011/download" class="btnBase btnType6 btnSmall btnInvisible" title="download"><img src="/img/common/ico/ico_download_01.png" width="17" height="13" alt="download" title="download">Download</a></li>
+	</ul>
+	<div class="utilDetails clearfix">
+		<section class="blockCodeUtil games">
+		<div class="col2">
+		<div>
+		<a href="http://games.jsdo.it" target="_blank"><img src="/img/code/jsdoitGames.png" id="jsdoitGamesImage" width="114" height="116"></a>
+
+		</div>
+		<div>
+		<p class="msgComplete">Complete!</p>
+		<div class="blockInputFormStyle1">
+		<form id="form_sub_games" action="/api/code/post_to_games" data-saved="0">
+		<input type="hidden" name="token" value="" />
+		<input type="hidden" name="uid" value="9dna" />
+		<div class="inputItem description">
+		<h2>Description <span>What kind of game?</span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<textarea required="required" name="description"></textarea>
+		</div>
+		</div>
+		<div class="inputItem device">
+		<h2>Control Device <span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<table>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_jwc.png" alt="jsdo.it websocket controller" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="1" name="support_spctrl" value="1"  />Smartphone Controller<a href="/controller">jsdo.it WebSocket Controller</a>»</label>
+		<div class="detail device1">
+		<ul>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_arrow.png" alt=""></p>
+		<input type="text" name="stick" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_start.png"></p>
+		<input type="text" name="button_start" /value="" >
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_a.png"></p>
+		<input type="text" name="button_a" value="" />
+		</li>
+		<li>
+		<p class="icon"><img src="/img/code/game/btn_b.png"></p>
+		<input type="text" name="button_b" value="" />
+		</li>
+		</ul>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_mouse.png" alt="Mouse" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="3" name="support_mouse" value="1"  />Mouse</label>
+		<div class="detail device3">
+		<textarea name="mouse" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_keyboard.png" alt="keyboard" /></p>
+		</th>
+		<td>
+		<label><input type="checkbox" class="flag" data-device="4" name="support_keyboard" value="1"  />Keyboard</label>
+		<div class="detail device4">
+		<textarea name="keyboard" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		<tr>
+		<th scope="row">
+		<p class="image"><img src="/img/code/game/ico_smartphone.png" alt="smartphone" /></p>
+		</th><td>
+		<label><input type="checkbox" class="flag" data-device="2"  name="support_touchdevice" value="1"  />Touch Device</label>
+		<div class="detail device2">
+		<textarea name="touchdevice" placeholder="How to play"></textarea>
+		</div>
+		</td>
+		</tr>
+		</table>
+		</div>
+		</div>
+		<div class="inputItem screen valid">
+		<h2>Fullscreen<span></span></h2>
+		<p class="msgError txtError"></p>
+		<div class="comment">
+		<ul>
+		<li><label><input type="radio" name="support_fullscreen" value="1" checked> Activated</label></li>
+		<li><label><input type="radio" name="support_fullscreen" value="0" > Inactivated</label></li>
+		</ul>
+		</div>
+		</div>
+		<div class="submit">
+		<a id="game_delete_button" href="javascript:void(0)" class="btnBase btnType6 btnSmall btnInvisible" >jsdo.it games から削除する</a>
+		<a id="game_submit_button" class="btnBase btnType5" disabled="disabled" href="javascript:void(0)">Submit</a>
+		</div>
+		</form><!-- form_sub_games  -->
+		<!-- / .blockInputFormStyle1 --></div>
+		</div>
+		</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil author" itemscope itemtype="http://data-vocabulary.org/Person">
+			<div class="col2 group">
+				<div class="image">
+					<p class="thumb"><a href="http://jsdo.it/xl1" title="xl1"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/8/6/d/6/86d60104ce558994d02cd5e2e1cc4fdcbaccf61e_100.jpg" width="100" height="100" alt="xl1" title="xl1" itemprop="photo" /></a></p>
+				<!-- / .image --></div>
+				<div class="information">
+					<h1 class="hidden">Author</h1>
+					<div class="user">
+						<p class="name"><a href="http://jsdo.it/xl1" title="xl1" rel="author"><span itemprop="name">xl1</span></a></p>
+					</div>
+					<ul class="metas group">
+                        
+                        
+                        
+                        
+					</ul>
+					<div class="discription markdown">
+						
+
+					</div>
+				<!-- / .information --></div>
+			</div>
+		<!-- / .author --></section>
+		<section class="blockCodeUtil socialFeedback active">
+			<ul class="group">
+			<li class="facebook"><fb:like href="http://jsdo.it/xl1/edgesymbol011" send="false" layout="button_count" width="55" show_faces="false" font="verdana"></fb:like></li>
+			
+			<li class="stumbleupon"><script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script></li>
+			
+			  <a href="http://twitter.com/share" class="twitter-share-button" data-text="[library] edge.symbol.0.1.1.min.js #jsdoit" data-count="horizontal" data-related="jsdoit_team">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			  
+			<li class="plusone"><g:plusone size="medium" href="http://jsdo.it/xl1/edgesymbol011"></g:plusone></li>
+			</ul>
+		<!-- / .socialFeedback --></section>
+		<section class="blockCodeUtil embed">
+			<div class="col2 widgetDesignBox group">
+				<div class="image">
+					<img src="/img/code/widget_design_view.png" width="660px" height="116px">
+				</div>
+				<div>
+					<div class="blockInputFormStyle1">
+						<div class="inputItem">
+							<h2>Default Panel</h2>
+							<div class="comment">
+								<ul class="select selectDefaultPanel">
+									<li><label><input type="radio" name="defaultTab" value="play">Auto play</label></li>
+									<li><label><input type="radio" name="defaultTab" value="screenshot">Screenshot</label></li>
+									<li><label><input type="radio" name="defaultTab" value="readme" checked="checked">Readme</label></li>
+									<li><label><input type="radio" name="defaultTab" value="javascript">JavaScript</label></li>
+									<li><label><input type="radio" name="defaultTab" value="html">HTML</label></li>
+									<li><label><input type="radio" name="defaultTab" value="css">CSS</label></li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>Size</h2>
+							<div class="comment">
+								<ul class="selectEmbedSize">
+									<li>Width: <input type="number" class="width inline" min="465" value="465" style="width:60px;"> px</li>
+									<li>Height: <input type="number" class="height inline" min="496" value="496" style="width:60px;"> px</li>
+								</ul>
+							</div>
+						</div>
+						<div class="inputItem">
+							<h2>code</h2>
+							<div class="comment">
+								<textarea readonly="readonly" onclick="javascript:this.select();" data-url="http://jsdo.it/blogparts/9dna/js">&lt;script type=&quot;text/javascript&quot; src=&quot;http://jsdo.it/blogparts/9dna/js&quot;&gt;&lt;/script&gt;</textarea>
+							</div>
+						</div>
+					<!-- / .blockInputFormStyle1 --></div>
+				</div>
+			</div>
+		<!-- / .embed --></section>
+		<section class="blockCodeUtil qrcode">
+			<div class="col2 group">
+				<div>
+					<p class="code"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://jsdo.it" width="150" height="150" alt="QR Code"></p>
+				</div>
+				<div> 
+				</div>
+			</div>
+		<!-- / .qrcode --></section>
+		<section class="blockCodeUtil tag">
+			<ul class="listTags">
+			</ul>
+		<!-- / .tag --></section>	
+	<!-- / .utilDetails --></div>
+<!-- / #codeUtilties --></div>
+
+<!-- / .viewer --></section>
+
+<!-- /.code --></section>
+
+<section class="discussion">
+	<header><h1 class="ttlStyle2">Discussion</h1></header>
+	<div>
+		<ul>
+		</ul>
+		<p class="post"><a href="/qa/create?code_uri=http://jsdo.it/xl1/edgesymbol011" class="btnBase btnType1">Questions on this code?</a></p>
+	</div>
+<!-- / .discussion --></section>
+
+<div class="ad_super_bnr btnT"><!-- jsdo.it_codepage_fullbnr_en --> <script type='text/javascript'> GA_googleFillSlot("jsdo.it_codepage_fullbnr_en"); </script>
+<!-- /.ad_super_bnr --></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="forked group">
+<header><h1 class="ttlStyle2">Forked</h1></header>
+
+  <div class="boxSort group">
+      <p class="changeSort">sort by</p>
+      <ul class="group"><li class="selected"><em>latest</em></li>
+<li><a href="http://jsdo.it/xl1/edgesymbol011?order=pv#code_forked">page views</a></li>
+<li><a href="http://jsdo.it/xl1/edgesymbol011?order=favorite#code_forked">favorite</a></li>
+<li><a href="http://jsdo.it/xl1/edgesymbol011?order=forked#code_forked">forked</a></li>
+      </ul>
+  <!-- / .boxSort --></div>
+
+  <div id="boxForkedCode" class="autopagerize_page_element">
+    <div class="unitCodeGroup group col4">
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/yktmnb/9vxJ" rel="bookmark" title="forked: [library] edge.symbol.0.1.1.min.js"><img src="//jsdo.it/img/common/thumb_nowcapturing_w.png" alt="forked: [library] edge.symbol.0.1.1.min.js" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/yktmnb/9vxJ" rel="bookmark" title="forked: [library] edge.symbol.0.1.1.min.js"><span class="body">forked: [library] edge.symbol.</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/yktmnb" title="yktmnb"><img src="/img/common/img_user_anonymous.gif" width="15" height="15" alt="yktmnb" /></a></span><a href="http://jsdo.it/yktmnb">yktmnb</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">479</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">81/1/1</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+          
+<div class="unitCode">
+<div class="inner group">
+<div class="unitCodeThumb">
+
+<p class="thumb"><a href="http://jsdo.it/kyo_ago/s9qi" rel="bookmark" title="forked: [library] edge.symbol.0.1.1.min.js"><img src="//jsdo-static-contents.s3.amazonaws.com/images/capture/s/9/q/s9qi_w.jpg?t=1312270956" alt="forked: [library] edge.symbol.0.1.1.min.js" width="205" height="100" /></a></p>
+<p class="ttl"><a href="http://jsdo.it/kyo_ago/s9qi" rel="bookmark" title="forked: [library] edge.symbol.0.1.1.min.js"><span class="body">forked: [library] edge.symbol.</span></a></p>
+
+</div>
+
+
+<p class="user"><span class="thumb"><a href="http://jsdo.it/kyo_ago" title="kyo_ago"><img src="//jsdo-static-contents.s3.amazonaws.com/images/icon/4/f/4/0/4f404b86e6ba1fbb2ea71bed4f9241a1b840bd88_100.jpg" width="15" height="15" alt="kyo_ago" /></a></span><a href="http://jsdo.it/kyo_ago">kyo_ago</a>
+</p>
+
+
+<ul class="data">
+<li class="forked">0</li><li class="fav">0</li>
+<li class="pv">588</li>
+
+</ul>
+
+<ul class="data sub">
+
+<li class="lines">1077/1/1</li>
+
+</ul>
+
+</div>
+<!-- /.unitCode --></div>
+
+    <!--/.unitCodeGroup--></div>
+  <!-- /#boxForkedCode --></div>
+
+<!-- /.forked --></section>
+
+
+
+
+
+
+
+
+<!-- /#codeDetail --></article>
+
+<div id="diff_container"></div>
+<div id="diff_controller">
+  <a href="#" id="diff_close_button"><img src="/img/code/close.gif" class="btnT"></a>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=107163819375320&amp;xfbml=1"></script>
+
+<!-- /#body --></div>
+<!--/[[[ CONTENT-AREA ]]]-->
+<footer id="siteFooter" class="layoutWideContainer">
+<div class="layoutContainer layoutLiquid group">
+<div class="apps group">
+<div class="col1">
+<a href="/users"><p class="userRanking">User ranking</p></a>
+<a href="/codes/ranking"><p class="codeRanking">Code ranking</p></a>
+</div>
+<div class="col2">
+<a href="/event/topics">
+<section class="event">
+<h1>Topics &amp; Events</h1>
+<p>"I want to make something but don't know what to make." "We want to know the newest trends!" Responding to those voices, we are regularly hosting events and updating topics.</p>
+</section>
+</a>
+</div>
+<div class="col3">
+<a href="/qa">
+<section class="discussions">
+<h1>Discussions</h1>
+<p>Any questions? Ask jsdo.it users! You can post questions together with your code. You can also get answers supported by a code.</p>
+</section>
+</a>
+</div>
+<!-- / .apps --></div>
+<section class="account">
+<h1>Completely Free Account</h1>
+<p>
+<form method="post" action="/code/new">
+<input type="hidden" name="token" value="">
+<p class="btnLabel labelFree"><input type="submit" class="btnBase btnType5" value="Sign up Free and Start coding"></p>
+</form>
+</p>
+</section>
+<div class="globals group">
+<nav>
+<ul>
+
+<li><a href="http://twitter.com/#!/jsdoit_team" class="external" rel="external">@jsdoit_team</a></li>
+<li><a href="http://www.facebook.com/jsdo.it" target="_blank" class="external" rel="external">Facebook</a></li>
+
+
+</ul>
+<ul>
+<li><a href="/about" title="What's jsdo.it?">About</a></li>
+<li><a href="/assets">Assets</a></li>
+<li><a href="/help">Help</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/apidoc/">API</a></li>
+<li><a href="/terms">Term of use</a></li>
+<li><a href="/privacy_policy/">Privacy policy</a></li>
+<li><a href="/help#help_contact">Contact</a></li>
+</ul>
+</nav> 
+<p id="copyright" class="vcard"><small>Site Design &copy; <a href="http://www.jsdo.it/" title="jsdoit Inc." class="external fn org url">jsdoit Inc.</a> All Rights Reserved.</small></p>
+<!-- / .globals --></div>
+</div>
+<!-- / #siteFooter --></footer>
+
+
+<!--/#container--></div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15793157-5']);
+  _gaq.push(['_setDomainName', '.jsdo.it']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['_trackPageview', '/code/show'+location.pathname]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<script type="text/javascript">
+var path  = "code/show";
+var token = "";
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/js/do.js?1441025678"></script>
+ <script type="text/javascript" src="/js/notification.js?1441025678"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+
+<script type="text/javascript" src="/js/codemirror/codemirror-compressed.js?1441025678"></script>
+</body>
+</html>
