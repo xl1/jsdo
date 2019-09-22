@@ -7,6 +7,7 @@
             --bg: #ddd;
             --header-height: 30px;
             --frame-size: 465px;
+            --tab-size: 200px;
         }
         body {
             margin: 0;
@@ -25,6 +26,31 @@
             grid-area: header;
             background-color: var(--bg);
         }
+            .header__selector {
+                width: var(--frame-size);
+            }
+            .header__switcher {
+                display: inline-flex;
+                margin: 0;
+                padding: 0;
+            }
+            .header__switcherButton {
+                display: block;
+            }
+            .header__switcherButton input {
+                display: none;
+            }
+            .header__switcherButton label {
+                display: block;
+                width: var(--tab-size);
+                height: var(--header-height);
+                line-height: var(--header-height);
+                text-align: center;
+                cursor: pointer;
+            }
+            .header__switcherButton :checked + label {
+                background: white;
+            }
         .player {
             grid-area: player;
         }
@@ -42,12 +68,12 @@
             }
         .description {
             grid-area: desc;
-            box-sizing: border-box;
             border-top: 1px solid var(--bg);
+            overflow: auto;
+            word-break: break-word;
         }
         .editor {
             grid-area: editor;
-            box-sizing: border-box;
             border-left: 1px solid var(--bg);
         }
     </style>
@@ -61,33 +87,35 @@
                 <option disabled value="">Select file</option>
                 <option v-for="p in pages" :value="p.name">{{ p.title }}</option>
             </select>
+            <ul class="header__switcher">
+                <li class="header__switcherButton">
+                    <input type="radio" name="codeType" id="html" value="html" v-model="codeType"><label for="html">HTML</label>
+                </li>
+                <li class="header__switcherButton">
+                    <input type="radio" name="codeType" id="js" value="js" v-model="codeType"><label for="js">JS</label>
+                </li>
+                <li class="header__switcherButton">
+                    <input type="radio" name="codeType" id="css" value="css" v-model="codeType"><label for="css">CSS</label>
+                </li>
+            </ul>
         </div>
         <div class="player">
             <iframe
                 class="player__iframe"
                 width="465" height="465"
-                sandbox="allow-forms allow-modals allow-scripts allow-top-navigation"
-                ref="iframe"></iframe>
+                :src="src"></iframe>
             <div class="player__button" :hidden="isPlaying" @click="play">▶ Play</div>
         </div>
         <div class="description" v-html="description"></div>
         <div class="editor">
-            <ul>
-                <li v-for="l in libraries">{{ l }}</li>
-            </ul>
-            <ul class="editor__switcher">
-                <li>
-                    <label><input type="radio" value="html" v-model="codeType"> HTML</label>
-                </li>
-                <li>
-                    <label><input type="radio" value="js" v-model="codeType"> JS</label>
-                </li>
-                <li>
-                    <label><input type="radio" value="css" v-model="codeType"> CSS</label>
-                </li>
-            </ul>
-            <div class="editor__editor">
-                <code><pre>{{ code }}</pre></code>
+            <div class="editor__editor" v-show="codeType === 'html'">
+                <code><pre>{{ codes.html }}</pre></code>
+            </div>
+            <div class="editor__editor" v-show="codeType === 'js'">
+                <code><pre>{{ codes.js }}</pre></code>
+            </div>
+            <div class="editor__editor" v-show="codeType === 'css'">
+                <code><pre>{{ codes.css }}</pre></code>
             </div>
         </div>
     </div>

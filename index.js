@@ -17,15 +17,16 @@ const vApp = new Vue({
         isPlaying: false,
     },
     computed: {
-        code() {
-            return this.codes[this.codeType];
+        src() {
+            if (!this.isPlaying) return 'data:text/html;charset=utf-8,';
+            return `data/${this.selectedPage}.html`;
         }
     },
     methods: {
         async pageChanged() {
             if (!this.selectedPage) return;
             this.pause();
-            const page = await fetch(`./data/${this.selectedPage}.json`).then(r => r.json());
+            const page = await fetch(`data/${this.selectedPage}.json`).then(r => r.json());
             this.title = page.title;
             this.description = page.description;
             this.libraries = page.libraries;
@@ -34,21 +35,10 @@ const vApp = new Vue({
             this.codes.js = page.js.content;
         },
         play() {
-            if (!this.selectedPage) return;
-            this.isPlaying = true;
-            this.$refs.iframe.srcdoc = `<!doctype html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>${this.title}</title>
-<style>${this.codes.css}</style>
-</head>
-<body>${this.codes.html}<script>${this.codes.js}</script></body>
-`;
+            this.isPlaying = !!this.selectedPage;
         },
         pause() {
             this.isPlaying = false;
-            this.$refs.iframe.srcdoc = '';
         },
     },
     async created() {
