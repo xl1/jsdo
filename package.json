@@ -9,6 +9,10 @@
   "author": "xl1",
   "license": "MIT",
   "devDependencies": {
-    "@types/cheerio": "^0.22.13"
+    "@types/cheerio": "^0.22.13",
+    "@types/coffeescript": "file:types/coffeescript",
+    "@types/node-sass": "^4.11.0",
+    "coffeescript": "^1.4.0",
+    "node-sass": "^4.12.0"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "name": "@types/coffeescript",
+  "version": "1.4.0",
+  "main": "",
+  "author": "",
+  "types": "index",
+  "license": "MIT"
+}
