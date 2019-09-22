@@ -2,13 +2,14 @@
 <head>
     <meta charset="utf-8">
     <title>Salvaged codes from jsdo.it</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css">
     <style>
         :root {
             --bg: #ddd;
             --header-height: 30px;
             --frame-size: 465px;
-            --tab-size: 200px;
+            --switcher-size: 535px;
         }
         body {
             margin: 0;
@@ -28,26 +29,28 @@
         }
         .header {
             grid-area: header;
+            display: flex;
             background-color: var(--bg);
         }
             .header__selector {
                 width: var(--frame-size);
+                max-width: 100%;
             }
             .header__switcher {
                 display: inline-flex;
+                width: var(--switcher-size);
                 margin: 0;
                 padding: 0;
             }
             .header__switcherButton {
                 display: block;
+                flex: auto;
             }
             .header__switcherButton input {
                 display: none;
             }
             .header__switcherButton label {
                 display: block;
-                width: var(--tab-size);
-                height: var(--header-height);
                 line-height: var(--header-height);
                 text-align: center;
                 cursor: pointer;
@@ -57,6 +60,7 @@
             }
         .player {
             grid-area: player;
+            border-bottom: 1px solid var(--bg);
         }
             .player__iframe {
                 border: none;
@@ -72,7 +76,6 @@
             }
         .description {
             grid-area: desc;
-            border-top: 1px solid var(--bg);
             overflow: auto;
             word-break: break-word;
         }
@@ -85,6 +88,27 @@
             .editor code {
                 font-family: Consolas, monospace;
             }
+
+        /* frame-size + switcher-size */
+        @media screen and (min-width: 1000px) {
+            .header__switcherButton:nth-child(1),
+            .header__switcherButton:nth-child(2) {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 999px) {
+            .main,
+            .header {
+                display: block;
+            }
+            .player:not(.active),
+            .description:not(.active) {
+                display: none;
+            }
+                .header__switcher {
+                    width: 100%;
+                }
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/coffeescript.min.js"></script>
@@ -104,6 +128,12 @@
             </select>
             <ul class="header__switcher">
                 <li class="header__switcherButton">
+                    <input type="radio" name="codeType" id="player" value="player" v-model="codeType"><label for="player">Player</label>
+                </li>
+                <li class="header__switcherButton">
+                    <input type="radio" name="codeType" id="desc" value="desc" v-model="codeType"><label for="desc">Description</label>
+                </li>
+                <li class="header__switcherButton">
                     <input type="radio" name="codeType" id="html" value="html" v-model="codeType"><label for="html">HTML</label>
                 </li>
                 <li class="header__switcherButton">
@@ -114,21 +144,19 @@
                 </li>
             </ul>
         </div>
-        <div class="player">
+        <div class="player" :class="{ active: codeType === 'player' }">
             <iframe class="player__iframe" width="465" height="465" :src="src"></iframe>
             <div class="player__button" :hidden="isPlaying" @click="play">▶ Play</div>
         </div>
-        <div class="description" v-html="description"></div>
-        <div class="editor">
-            <div class="editor__editor" v-show="codeType === 'html'">
-                <pre><code v-html="codes.html"></code></pre>
-            </div>
-            <div class="editor__editor" v-show="codeType === 'js'">
-                <pre><code v-html="codes.js"></code></pre>
-            </div>
-            <div class="editor__editor" v-show="codeType === 'css'">
-                <pre><code v-html="codes.css"></code></pre>
-            </div>
+        <div class="description" :class="{ active: codeType === 'desc' }" v-html="description"></div>
+        <div class="editor" v-show="codeType === 'html'">
+            <pre><code v-html="codes.html"></code></pre>
+        </div>
+        <div class="editor" v-show="codeType === 'js'">
+            <pre><code v-html="codes.js"></code></pre>
+        </div>
+        <div class="editor" v-show="codeType === 'css'">
+            <pre><code v-html="codes.css"></code></pre>
         </div>
     </div>
 </body>
