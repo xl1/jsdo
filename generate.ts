@@ -46,7 +46,7 @@ async function load(file: string): Promise<Page> {
     const libraries = Array.from(
         libraryLoadingScript.matchAll(/initial_tabs\["js"\]\.push\( "(.+?)" \)/g),
         m => m[1]
-    );
+    ).reverse();
     return {
         name,
         title: $('meta[property="og:title"]').attr('content'),
