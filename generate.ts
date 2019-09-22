@@ -23,6 +23,15 @@ interface Page {
 const sourceDir = './html/';
 const dataDir = './data/';
 
+function replaceAssetPaths(source: string | null): string {
+    if (!source) return '';
+    const c = (_: unknown, filename: string) => `../assets/${filename}`;
+    return source
+        .replace(/http:\/\/jsdo.it\/static\/assets\/\w\/\w\/(\w+(\.?\w+)?)/g, c)
+        .replace(/http:\/\/jsrun.it\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+)?)/g, c)
+        .replace(/http:\/\/jsdo-it-static-contents.s3.amazonaws.com\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+))?/g, c);
+}
+
 async function load(file: string): Promise<Page> {
     const { name } = pathParse(file)
     const html = await fs.readFile(sourceDir + file, { encoding: 'utf8' });
@@ -41,19 +50,19 @@ async function load(file: string): Promise<Page> {
     return {
         name,
         title: $('meta[property="og:title"]').attr('content'),
-        description: descriptionBox.html() || '',
+        description: replaceAssetPaths(descriptionBox.html()),
         libraries,
         js: {
             language: codeJS.attr('data-lang') || 'js',
-            content: codeJS.val()
+            content: replaceAssetPaths(codeJS.val())
         },
         html: {
             language: codeHTML.attr('data-lang') || 'html',
-            content: codeHTML.val()
+            content: replaceAssetPaths(codeHTML.val())
         },
         css: {
             language: codeCSS.attr('data-lang') || 'css',
-            content: codeCSS.val()
+            content: replaceAssetPaths(codeCSS.val())
         },
         published: $('time').attr('datetime'),
     } as const;
