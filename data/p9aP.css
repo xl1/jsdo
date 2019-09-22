@@ -1,0 +1,16 @@
+:root {
+    -webkit-var-a: red;
+    -webkit-var-b: -webkit-linear-gradient(red, yellow);
+}
+code {
+    display: block;
+}
+#mono {
+    background: -webkit-var(a);
+}
+#gradient1 {
+    background: -webkit-var(b);
+}
+#gradient2 {
+    background: -webkit-linear-gradient(-webkit-var(a), yellow);
+}

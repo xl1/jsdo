@@ -1,0 +1,25 @@
+#julia {
+  width: 384px;
+  height: 384px;
+  -webkit-filter: custom(
+    url(https://gist.github.com/xl1/3776570/raw/ca82eb0a7de52fb1bd992ac65b1c29799074e55b/normal.vs)
+    url(https://gist.github.com/xl1/3776570/raw/5b79c1843999bbf4dee5ff2cada07979594412a4/julia.fs),
+    constant 0.75 -0.314
+  ) hue-rotate(0deg);
+  -webkit-transition: -webkit-filter 6s;
+}
+#julia:hover {
+  -webkit-filter: custom(
+    url(https://gist.github.com/xl1/3776570/raw/ca82eb0a7de52fb1bd992ac65b1c29799074e55b/normal.vs)
+    url(https://gist.github.com/xl1/3776570/raw/5b79c1843999bbf4dee5ff2cada07979594412a4/julia.fs),
+    constant -0.818 0.777
+  ) hue-rotate(120deg);
+  cursor: pointer;
+}
+#julia:active {
+  -webkit-filter: custom(
+    url(https://gist.github.com/xl1/3776570/raw/ca82eb0a7de52fb1bd992ac65b1c29799074e55b/normal.vs)
+    url(https://gist.github.com/xl1/3776570/raw/5b79c1843999bbf4dee5ff2cada07979594412a4/julia.fs),
+    constant 0.321 0.043
+  ) hue-rotate(240deg);
+}

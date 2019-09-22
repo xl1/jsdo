@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>forked: Voronoi diagram</title>
+<link rel="stylesheet" href="9byk.css">
+</head>
+<body><script type="text/x-vertex-shader" id="vshader">
+uniform   vec2 uPoint;
+uniform   sampler2D uSampler;
+attribute vec3 aPosition;
+varying   vec4 vColor;
+
+void main(){
+  gl_Position = vec4(
+    aPosition.xy * 3.0 + mod(uPoint, 1.0) * 2.0 - 1.0,
+    aPosition.z,
+    1.0
+  );
+  vColor = texture2D(uSampler, mod(uPoint, 1.0));
+}
+</script>
+<script type="text/x-fragment-shader" id="fshader">
+precision mediump float;
+
+varying vec4 vColor;
+
+void main(){
+  gl_FragColor = vColor;
+}
+</script><script src="./eHqL.js"></script><script src="9byk.js"></script></body>
+</html>

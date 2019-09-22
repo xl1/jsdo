@@ -1,0 +1,94 @@
+/* #! scss */
+/* remove unit */
+input.controller {
+  display: none; }
+
+label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  label:hover {
+    cursor: pointer;
+    opacity: 0.7; }
+
+.container {
+  position: relative; }
+
+.window-container {
+  position: absolute;
+  width: 1px;
+  height: 400px;
+  transition: filter 800ms cubic-bezier(0.3, 0.2, 0.7, 0.8);
+  -webkit-transition: -webkit-filter 800ms cubic-bezier(0.3, 0.2, 0.7, 0.8); }
+
+.window {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 15px;
+  background: #eee;
+  border: 1px solid #aaa;
+  border-radius: 4px; }
+
+.bar {
+  height: 24px;
+  line-height: 24px;
+  font-size: 18px;
+  margin: -15px;
+  margin-bottom: 15px; }
+
+.collapse-button {
+  display: inline-block;
+  margin: 3px 40px 3px 5px;
+  width: 18px;
+  height: 18px;
+  background: #eee;
+  border-radius: 100%;
+  text-align: center; }
+  .collapse-button::before {
+    content: '-'; }
+
+.icon {
+  position: absolute;
+  display: block;
+  top: 400px;
+  width: 50px;
+  height: 50px; }
+
+#window1 {
+  left: 20px;
+  top: 40px;
+  width: 320px;
+  height: 280px; }
+
+#window1 .bar, #lb1 {
+  background: skyblue; }
+
+#window2 {
+  left: 200px;
+  top: 250px;
+  width: 250px;
+  height: 150px; }
+
+#window2 .bar, #lb2 {
+  background: pink; }
+
+#wd1 {
+  -webkit-filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 175 400, timing 1);
+  filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 175 400, timing 1); }
+  #wd1-open:checked ~ * #wd1 {
+    -webkit-filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 175 400, timing 0);
+    filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 175 400, timing 0); }
+
+#lb1 {
+  left: 150px; }
+
+#wd2 {
+  -webkit-filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 230 400, timing 1);
+  filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 230 400, timing 1); }
+  #wd2-open:checked ~ * #wd2 {
+    -webkit-filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 230 400, timing 0);
+    filter: custom(url("https://gist.github.com/xl1/3785245/raw/f914e321b261b560a78f454246dede1c3aafe4b3/genie.vs") mix(url(data:text/plain,) normal source-atop), 16 16, target 230 400, timing 0); }
+
+#lb2 {
+  left: 205px; }

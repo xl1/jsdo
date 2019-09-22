@@ -1,0 +1,45 @@
+#content {
+  text-align: justify;
+  -webkit-flow-into: f;
+  -adobe-flow-into: f;
+  flow-into: f;
+}
+.main {
+  max-width: 700px;
+  margin: auto;
+}
+.main div {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  -webkit-flow-from: f;
+  -adobe-flow-from: f;
+  flow-from: f;
+}
+.main .intro {
+  height: 160px;
+  background: #ffc;
+}
+.main div:nth-child(2), .main div:nth-child(3) {
+  float: left;
+  width: 50%;
+  height: 300px;
+}
+.main div:nth-child(4) {
+  clear: both;
+}
+
+/*
+@-webkit-region .main .intro {
+  p {
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+.main .intro::region(p) {
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+}
+*/

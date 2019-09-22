@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>強制再描画のテスト</title>
+<link rel="stylesheet" href="iikn.css">
+</head>
+<body><h1>強制再描画のテスト</h1>
+
+OK を押した時に「表示されるか？」と表示され、1 秒で消えるのが正しい
+
+<section>
+  <h1>強制再描画しないタイプ</h1>
+  <input type="button" value="OK" class="ok">
+  <input type="text" pattern="(?!)" required>
+  <div class="message">表示されるか？</div>
+</section>
+
+<section class="redraw">
+  <h1>強制再描画するタイプ</h1>
+  <input type="button" value="OK" class="ok">
+  <input type="text" pattern="(?!)" required>
+  <div class="message">表示されるか？</div>
+</section><script src="iikn.js"></script></body>
+</html>

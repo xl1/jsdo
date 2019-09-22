@@ -1,0 +1,68 @@
+@-webkit-keyframes redraw {
+  0% { max-height: 1000px; }
+  100% { max-height: 2000px; }
+}
+
+@-webkit-keyframes jump {
+  0% { -webkit-transform: translateY(0); }
+  100% { -webkit-transform: translateY(-200px); }
+} 
+
+#content {
+  font-family: 'MS Gothic', monospace;
+  font-size: 40px;
+  line-height: 40px;
+  -webkit-flow-into: content;
+  overflow: hidden;
+  outline: 0;
+}
+#content:focus + #regions > span {
+  background: #fca;
+  -webkit-animation-play-state: paused, running;
+}
+
+#regions {
+  position: relative;
+  top: 300px;
+}
+
+#regions > span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  -webkit-flow-from: content;
+  background: #acf;
+  border-radius: 50%;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation:
+    jump 1s cubic-bezier(.3, .7, .5, 1) infinite alternate,
+    redraw 1s infinite;
+}
+
+#regions > span:nth-child(2) {
+  -webkit-animation-duration: 909.1ms;
+}
+#regions > span:nth-child(3) {
+  -webkit-animation-duration: 833.3ms;
+}
+#regions > span:nth-child(4) {
+  -webkit-animation-duration: 769.2ms;
+}
+#regions > span:nth-child(5) {
+  -webkit-animation-duration: 714.3ms;
+}
+#regions > span:nth-child(6) {
+  -webkit-animation-duration: 666.7ms;
+}
+#regions > span:nth-child(7) {
+  -webkit-animation-duration: 625.0ms;
+}
+#regions > span:nth-child(8) {
+  -webkit-animation-duration: 588.2ms;
+}
+#regions > span:nth-child(9) {
+  -webkit-animation-duration: 555.6ms;
+}
+#regions > span:nth-child(10) {
+  -webkit-animation-duration: 526.3ms;
+}

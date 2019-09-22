@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>ページぐちゃぐちゃにするやつ</title>
+<link rel="stylesheet" href="7iMb.css">
+</head>
+<body><script type="x-shader/x-vertex" id="vshader">
+precision mediump float;
+attribute vec4 a_position;
+attribute vec3 a_triangleCoord;
+uniform vec2 u_meshSize;
+uniform mat4 u_projectionMatrix;
+varying float v_diff;
+
+uniform vec2 seed;
+float seed1 = seed.x, seed2 = seed.y;
+
+void nextSeed(inout float s, float modulo, float a, float b){
+  s = mod(a * s + b, modulo);
+}
+float rand1(){
+  nextSeed(seed1, 65537.0, 11367.0, 12345.0);
+  return seed1 / 65537.0;
+}
+float rand2(){
+  nextSeed(seed2, 32771.0, 7529.0, 4545.0);
+  return seed2 / 32771.0;
+}
+
+void main(){
+  const int loopMax = 1000;
+  
+  float diff = 0.0;
+  float width = u_meshSize.x;
+  float density = 0.37 / width;
+  int index = int(a_triangleCoord.y * width);
+  
+  for(int i = 0; i < loopMax; i++){
+    if(i == index) break;
+    if(rand1() < density){
+      diff += rand2() * width;
+    }
+  }
+  diff = floor(diff);
+  v_diff = diff;
+  float gap = a_position.x - a_triangleCoord.x / width;
+  gl_Position = u_projectionMatrix * vec4(
+    fract((a_triangleCoord.x + diff) / width) + gap,
+    a_position.y,
+    0.0,
+    1.0
+  );
+}
+</script>
+<script type="x-shader/x-fragment" id="fshader">
+precision mediump float;
+varying float v_diff;
+
+uniform vec2 seed;
+float seed1 = seed.x, seed2 = seed.y;
+
+void nextSeed(inout float s, float modulo, float a, float b){
+  s = mod(a * s + b, modulo);
+}
+float rand1(){
+  nextSeed(seed1, 65537.0, 11367.0, 12345.0);
+  return seed1 / 65537.0;
+}
+float rand2(){
+  nextSeed(seed2, 32771.0, 7529.0, 4545.0);
+  return seed2 / 32771.0;
+}
+
+float val(){
+  const float density = 0.2;
+
+  if(rand1() < density) return rand2();
+  return 0.0;
+}
+
+void main(){
+  const int loopMax = 1000;
+  
+  int index = int(mod(v_diff, float(loopMax)));
+  for(int i = 0; i < loopMax; i++){
+    if(i == index) break;
+    rand1(); rand2();
+  }
+  
+  css_ColorMatrix = mat4(
+    1.0 - val(), val(), val(), 0.0,
+    val(), 1.0 - val(), val(), 0.0,
+    val(), val(), 1.0 - val(), 0.0,
+    val(), val(), val(), 1.0
+  );
+}
+</script>
+<input id="address" value="http://www.w3.org/">
+<div id="wrapper">
+  <iframe id="ifr" src="http://www.w3.org/"></iframe>    
+</div><script src="7iMb.js"></script></body>
+</html>

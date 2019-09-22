@@ -1,0 +1,25 @@
+body {
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background:#666;
+}
+canvas{
+  background:#000;
+  position:absolute;
+  top:0;
+  left:0;
+}
+#fps{
+  background:black;
+  color:white;
+  padding:.5em;
+  display:inline-block;
+  font-size:80%;
+  width:5em;
+  text-align:center;
+  border-radius:5px;
+  position:absolute;
+  top:5px;
+  left:5px;
+}

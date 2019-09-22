@@ -1,0 +1,40 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+*[candrag="true"] {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  max-width: 10%;
+  max-height: 12.5%;
+  resize: both;
+  overflow: hidden;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scale(10, 8);
+  transform-origin: 0 0;
+  transform: scale(10, 8);
+  left: 0;
+  top: 0;
+}
+*[candrag="true"]:not([style]) {
+  /* 逆に *[candrag][style]{ left: 100px; } などとやると Chrome でうまくいかない（謎）*/
+  /* 初期位置 */
+  left: 100px;
+  top: 100px;
+}
+#content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 160px;
+  height: 128px;
+  background: skyblue;
+  -webkit-transform-origin: 100% 100%;
+  -webkit-transform: scale(0.1, 0.125);
+  transform-origin: 100% 100%;
+  transform: scale(0.1, 0.125);
+  pointer-events: none;
+}

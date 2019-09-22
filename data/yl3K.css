@@ -1,0 +1,12 @@
+#target {
+  -webkit-filter: custom(
+    url('data:text/plain,')
+    url('data:text/plain,precision mediump float;void main(){gl_FragColor=vec4(0.0,1.0,1.0,1.0);}')
+  );
+}
+#target[style] {
+  -webkit-filter: custom(
+    url('data:text/plain,')
+    url('data:text/plain,precision mediump float;void main(){gl_FragColor=vec4(0.0,1.0,1.0,1.0);}')
+  );
+}

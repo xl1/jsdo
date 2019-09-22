@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>WebGL ライブラリ 3 つ</title>
+<link rel="stylesheet" href="35S6.css">
+</head>
+<body><script type="x-shader/x-vertex" id="vshader-threejs">
+  void main(){
+    gl_Position = vec4(2.0 * position.xy - 1.0, 0.0, 1.0);
+  }
+</script>
+<script type="x-shader/x-vertex" id="vshader-microgl">
+  attribute vec2 position;
+  void main(){
+    gl_Position = vec4(2.0 * position - vec2(1.0), 0.0, 1.0);
+  }
+</script>
+<script type="x-shader/x-fragment" id="fshader">
+  precision mediump float;
+  uniform float time;
+  uniform vec2 resolution;
+  void main(){
+    gl_FragColor = vec4(
+      0.5 * (cos(time * 0.005) + 1.0),
+      gl_FragCoord.xy / 128.0,
+      1.0
+    );
+  }
+</script>
+<script src="http://mrdoob.github.com/three.js/build/three.min.js">three.js</script>
+<script src="http://greweb.fr/glsl.js/glsl.js">glsl.js</script>
+<script src="http://xl1.github.com/microgl/microgl.js">MicroGL</script><script src="35S6.js"></script></body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>ドラッグできるダイアログボックス</title>
+<link rel="stylesheet" href="fUjx.css">
+</head>
+<body><input type="checkbox" id="show-dialog1">
+<input type="checkbox" id="show-gimmick">
+
+<h1>ドラッグできるダイアログボックス</h1>
+
+<div class="dialog-container" id="dialog1">
+  <div class="dialog-frame"></div>
+  <div class="dialog">
+    <div class="dialog-title">Draggable Dialog</div>
+    <label class="dialog-close" for="show-dialog1"></label>
+    <div class="dialog-content">
+      Chrome なら（たぶん Safari も）タイトルバーを持って移動できます。
+      <code>overflow: scroll</code> を指定している都合上、
+      ドラッグさせる要素の弟要素にダイアログを配置しています。
+    </div>
+  </div>
+</div>
+
+<label class="toggle" for="show-dialog1">こんにちは！</label>
+<label class="toggle" for="show-gimmick">仕組みを見る</label><script src="fUjx.js"></script></body>
+</html>

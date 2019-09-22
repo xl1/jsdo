@@ -1,0 +1,43 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+	-webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin: 0;
+  overflow-x: hidden;
+}
+textarea {
+  width: 49%;
+  -webkit-flex: 1 0 50%;
+  -moz-flex: 1 0 50%;
+  flex: 1 0 50%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  resize: none;
+}
+#input {
+  background: #ffe;
+  height: 70%;
+  height: 70vh;
+}
+#canvas {
+  background: #9cf;
+  height: 70%;
+  height: 70vh;
+}
+#output {
+  background: #9fc;
+  height: 30%;
+  height: 30vh;
+}
+#status {
+  background: #fc9;
+  height: 30%;
+  height: 30vh;
+}

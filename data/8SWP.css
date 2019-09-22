@@ -1,0 +1,90 @@
+/* main */
+@-webkit-keyframes redraw {
+  from {
+    min-width: 1px; }
+  to {
+    min-width: 2px; } }
+
+body {
+  -webkit-animation: redraw 1s infinite; }
+
+.slider {
+  width: 110px;
+  height: 20px;
+  margin-left: -90px;
+  resize: horizontal;
+  overflow: auto;
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.5), white);
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), white);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), white);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%; }
+  .slider:hover {
+    cursor: e-resize; }
+
+#slider1 {
+  min-width: 110px;
+  max-width: 590px; }
+  #slider1[style*="width: 1"] ~ .slides {
+    margin-left: 0px; }
+  #slider1[style*="width: 2"] ~ .slides {
+    margin-left: -500px; }
+  #slider1[style*="width: 3"] ~ .slides {
+    margin-left: -1000px; }
+  #slider1[style*="width: 4"] ~ .slides {
+    margin-left: -1500px; }
+  #slider1[style*="width: 5"] ~ .slides,
+  #slider1[style*="width: 6"] ~ .slides,
+  #slider1[style*="width: 7"] ~ .slides,
+  #slider1[style*="width: 8"] ~ .slides,
+  #slider1[style*="width: 9"] ~ .slides {
+    margin-left: -2000px; }
+
+.slides-container {
+  width: 500px;
+  height: 380px;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(left, crimson, crimson 20%, orange 20%, orange 40%, seagreen 40%, seagreen 60%, skyblue 60%, skyblue 80%, slateblue 80%, slateblue);
+  background-image: -moz-linear-gradient(to right, crimson, crimson 20%, orange 20%, orange 40%, seagreen 40%, seagreen 60%, skyblue 60%, skyblue 80%, slateblue 80%, slateblue);
+  background-image: linear-gradient(to right, crimson, crimson 20%, orange 20%, orange 40%, seagreen 40%, seagreen 60%, skyblue 60%, skyblue 80%, slateblue 80%, slateblue); }
+
+.slides {
+  margin: 0;
+  padding: 0;
+  width: 2500px;
+  list-style-type: none;
+  -webkit-transition: margin-left 400ms ease-out;
+  -moz-transition: margin-left 400ms ease-out;
+  transition: margin-left 400ms ease-out; }
+  .slides li {
+    float: left;
+    width: 500px;
+    height: 360px; }
+
+.slide {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 20px; }
+
+#page1 {
+  background: crimson;
+  color: white; }
+
+#page2 {
+  background: orange;
+  color: black; }
+
+#page3 {
+  background: seagreen;
+  color: white; }
+
+#page4 {
+  background: skyblue;
+  color: black; }
+
+#page5 {
+  background: slateblue;
+  color: white; }

@@ -1,0 +1,67 @@
+input[type="button"], input[type="submit"], button, input[type="file"]::before, input[type="checkbox"]::before, input[type="radio"]::before {
+  display: inline-block;
+  box-sizing: border-box;
+  color: #555555;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: #bbbbbb #6f6f6f #6f6f6f #bbbbbb;
+  background: #eee;
+  text-align: center; }
+  input:hover[type="button"], input:hover[type="submit"], button:hover, input[type="file"]:hover::before, input[type="checkbox"]:hover::before, input[type="radio"]:hover::before {
+    background: #e1e1e1; }
+
+input[type="text"], input[type="password"], textarea {
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: #6f6f6f #bbbbbb #bbbbbb #6f6f6f;
+  padding: 3px; }
+
+input[type="button"], input[type="submit"], button {
+  padding: 3px 10px 3px 10px; }
+  input:hover[type="button"], input:hover[type="submit"], button:hover {
+    cursor: pointer; }
+  input:active[type="button"], input:active[type="submit"], button:active {
+    background: #c8c8c8; }
+
+input[type="file"] {
+  width: 120px; }
+  input[type="file"]::before {
+    content: 'Choose File...';
+    position: absolute;
+    width: 120px;
+    padding: 3px 10px 3px 10px; }
+  input:hover[type="file"] {
+    cursor: pointer; }
+  input[type="file"]:active::before {
+    background: #c8c8c8; }
+
+input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px; }
+
+input[type="checkbox"]:checked::before {
+  background-image: url('data:image/svg+xml,<svg viewBox="-1 -1 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M2,6L0,6L4,10L10,0L8,0L4,8Z" fill="#4c9" stroke="#000" stroke-width="0.25"/></svg>');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
+
+input[type="radio"] {
+  position: relative;
+  top: 3px; }
+  input[type="radio"]::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; }
+  input[type="radio"]:checked::before {
+    background-image: url('data:image/svg+xml,<svg viewBox="-1 -1 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="3" fill="#4c9" stroke="#000" stroke-width="0.25"/></svg>');
+    background-size: 100% 100%;
+    background-repeat: no-repeat; }
+
+/* ----------- */

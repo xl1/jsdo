@@ -1,0 +1,38 @@
+@import "http://hail2u.github.com/natural.css";
+
+body {
+  margin: 0;
+}
+::-moz-selection {
+  background-color: #69f;
+  color: #fff;
+}
+::selection {
+  background-color: #69f;
+  color: #fff;
+}
+
+#test {
+  margin: 32px 5%;
+  margin-right: -moz-calc(20%);
+  background-color: #999;
+  background-image: -moz-linear-gradient(white, white);
+  background-image: -webkit-linear-gradient(white, white);
+  background-image: linear-gradient(white, white);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.preview {
+  position: fixed;
+  top: 5%;
+  right: 20px;
+  width: 0;
+  width: -moz-calc(20% - 40px);
+  height: 90%;
+  background-image: -moz-element(#test);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.6;
+}

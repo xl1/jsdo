@@ -1,0 +1,12 @@
+#sourceURL {
+  width: 300px;
+  font-family: consolas, monospace;
+}
+#textList {
+  background: #ff9;
+  border: 1px dashed #9a9;
+  font-family: consolas, monospace;
+}
+#textList .added {
+  color: #ccc;
+}

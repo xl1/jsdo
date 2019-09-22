@@ -1,0 +1,15 @@
+#first {
+  background: pink;
+  margin-bottom: 100px;
+}
+#second {
+  background: ivory;
+  margin-top: 200px;
+  -webkit-transition: margin-top 1s;
+  -moz-transition: margin-top 1s;
+  -ms-transition: margin-top 1s;
+  transition: margin-top 1s;
+}
+#chk:checked ~ #second {
+  margin-top: -100px;
+}

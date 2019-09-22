@@ -1,0 +1,13 @@
+.resizable {
+  width: 160px;
+  height: 300px;
+  overflow: hidden;
+  resize: horizontal;
+  background: -webkit-linear-gradient(right, orange, orange 20px, transparent 20px);
+  background: -moz-linear-gradient(to left, orange, orange 20px, transparent 20px);
+  background: linear-gradient(to left, orange, orange 20px, transparent 20px);
+}
+.resizable iframe {
+  width: 100%;
+  height: 280px;
+}

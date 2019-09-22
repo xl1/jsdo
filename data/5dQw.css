@@ -1,0 +1,125 @@
+body {
+  position: relative;
+  margin: 0;
+  width: 465px;
+  height: 465px;
+  overflow: hidden;
+}
+
+body div {
+  position: absolute;
+}
+
+/* background */
+#background {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/eeYkn.jpg');
+  background-size: cover;
+}
+
+
+/* enemy */
+#enemy {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/bTV2w.png');
+  background-size: cover;
+}
+
+
+/* controller */
+#controller {
+  left: 50%;
+  top: 90%;
+  height: auto;
+  width: 200px;
+  margin-left: -100px;
+}
+#controller > label {
+  -webkit-appearance: button;
+  text-align: center;
+  width: 100%;
+}
+
+
+/* effect */
+#effect * {
+  opacity: 0;
+}
+.slash {
+  left: -400px;
+  top: -250px;
+  width: 400px;
+  height: 400px;
+  border-radius: 0 100% 0 0;
+  background-image: -webkit-radial-gradient(550px -150px, farthest-side,
+    yellow, yellow 70.7%, transparent 70.7%);
+  -webkit-transform-origin: 284px 116px;
+}
+.ball {
+  left: 300px;
+  top: 320px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #903;
+}
+.ball:nth-of-type(2) {
+  -webkit-transform-origin: 30px 30px;
+}
+.ball:nth-of-type(3) {
+  -webkit-transform-origin: 20px 40px;
+}
+.ball:nth-of-type(4) {
+  -webkit-transform-origin: 30px 20px;
+}
+.ball:nth-of-type(5) {
+  -webkit-transform-origin: 20px 20px;
+}
+.ball:nth-of-type(6) {
+  -webkit-transform-origin: 30px 40px;
+}
+
+@-webkit-keyframes dummy {}
+@-webkit-keyframes slash {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(500px, 500px) scale(4.0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes ball {
+  10%  { opacity: 1; }
+  50%  { opacity: 1; }
+  100% { -webkit-transform: translate(-100px, -100px) scale(4.0); }
+}
+
+/* ボタンの動作, :target はスクロールしちゃうので避けたかった */
+#attack:checked ~ #effect .slash {
+  -webkit-animation: slash 500ms ease;
+}
+#attack:checked ~ #effect .ball {
+  -webkit-animation: ball 500ms ease;
+}
+#attack:not(:checked) ~ #effect .slash {
+  -webkit-animation: slash 500ms ease, dummy;
+}
+#attack:not(:checked) ~ #effect .ball {
+  -webkit-animation: ball 500ms ease, dummy;
+}
+
+/* ロードした時には effect 出さない */
+@-webkit-keyframes load {
+  0%   { opacity: 0; }
+  100% { opacity: 0; }
+}
+#effect {
+  -webkit-animation: load 500ms;
+}

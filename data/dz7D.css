@@ -1,0 +1,21 @@
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+nav {
+  border: 1pt solid black;
+  border-right: none;
+  float: left;
+}
+nav div {
+  width: 24px;
+  height: 24px;
+}
+#canv {
+  position: relative;
+  border: 1pt solid black;
+}
+#searchbutton {
+  width: 400px;
+  font-size: large;
+}

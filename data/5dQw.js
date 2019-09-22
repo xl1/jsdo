@@ -1,0 +1,1 @@
+// forked from edo_m18's "CSSで必殺技！" http://jsdo.it/edo_m18/g5fN

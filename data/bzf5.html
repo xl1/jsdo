@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>input:active で animation-play-state を paused すると本当に押しやすくなるか</title>
+<link rel="stylesheet" href="bzf5.css">
+</head>
+<body><p>
+  <h1>&lt;input&gt; を押せると青色になります</h1>
+
+  (a) :active で animation-play-state 操作なし
+  <input type="checkbox" class="ia">
+
+  (b) :active で animation-play-state: paused
+  <input type="checkbox" class="ib">
+</p>
+
+<p>
+  <h1>&lt;input&gt; のサイズが大きい場合</h1>
+    
+  (a') :active で animation-play-state 操作なし
+  <input type="checkbox" class="ia large">
+
+  (b') :active で animation-play-state: paused
+  <input type="checkbox" class="ib large">
+</p><script src="bzf5.js"></script></body>
+</html>

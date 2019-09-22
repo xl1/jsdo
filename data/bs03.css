@@ -1,0 +1,13 @@
+ul { font-size: 16px; }
+.bitmap { font-family: "ＭＳ Ｐゴシック", "MS PGothic"; }
+.cleartype { font-family: "メイリオ", "meiryo"; }
+.antialiased {
+    -webkit-transform: rotate(360deg);
+    /*-webkit-font-smoothing: antialiased;*/
+}
+.shadow {
+    text-shadow: 3px 3px 1px pink;
+}
+.shadow2 {
+    text-shadow: 0 0 0 transparent, 3px 3px 1px pink;
+}

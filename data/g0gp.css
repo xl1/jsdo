@@ -1,0 +1,26 @@
+body {
+  counter-reset: cnt;
+}
+input:checked {
+  counter-increment: cnt;
+}
+#displaycnt::before {
+  content: counter(cnt);
+  font-size: 30px;
+}
+#result {
+  display: none;
+  font-size: 30px;
+}
+#not, #result:target + form {
+  display: none;
+}
+#result:target {
+  display: block;
+}
+@-moz-document regexp(".*\\?((i=on&)?|(((i=on&)(i=on&)+?)\\4+))d=d#result$") {
+  #not { display: inline; }
+}
+@document regexp(".*\\?((i=on&)?|(((i=on&)(i=on&)+?)\\4+))d=d#result$") {
+  #not { display: inline; }
+}

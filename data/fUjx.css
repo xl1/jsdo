@@ -1,0 +1,103 @@
+/* main */
+/* dialog box */
+#show-dialog1:checked ~ #dialog1 {
+  display: inline-block; }
+
+.dialog-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  padding-bottom: 170px;
+  pointer-events: none; }
+  .dialog-container * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
+.dialog-frame {
+  resize: both;
+  overflow: hidden;
+  width: 800px;
+  height: 330px; }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .dialog-frame {
+      overflow: scroll;
+      width: 400px;
+      height: 30px;
+      margin-left: 400px;
+      margin-top: 300px; }
+      .dialog-frame:active {
+        margin-left: 399px;
+        margin-top: 299px; }
+      .dialog-frame[style] {
+        margin-left: 0;
+        margin-top: 0; } }
+  .dialog-frame::-webkit-scrollbar {
+    width: 400px;
+    height: 30px; }
+  .dialog-frame::-webkit-resizer, .dialog-frame::-webkit-scrollbar-corner {
+    visibility: hidden; }
+
+.dialog {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  width: 400px;
+  height: 200px;
+  border: 1px solid #58b;
+  background: #6af;
+  padding: 7px;
+  text-align: center; }
+  .dialog .dialog-title {
+    height: 22px;
+    line-height: 22px;
+    font-size: 14.3px; }
+  .dialog .dialog-close {
+    position: absolute;
+    right: 7px;
+    top: 0;
+    width: 30px;
+    height: 20px;
+    pointer-events: auto;
+    background: #c44;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold; }
+    .dialog .dialog-close::before {
+      content: '\D7'; }
+    .dialog .dialog-close:hover {
+      background: #e44; }
+  .dialog .dialog-content {
+    height: 162px;
+    background: #f0f0f0;
+    border: 1px solid #69c;
+    padding: 12px 24px;
+    line-height: 1.6;
+    text-align: left; }
+
+/* show gimmick */
+#show-gimmick:checked ~ .dialog-container {
+  background: rgba(255, 150, 0, 0.2); }
+
+#show-gimmick:checked ~ * .dialog-frame {
+  background: rgba(0, 150, 255, 0.2); }
+
+/* controls */
+body > input {
+  display: none; }
+
+.toggle {
+  background: #ddd;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 0 1px white inset;
+  padding: 7px; }
+  .toggle:hover {
+    cursor: pointer; }
+
+#show-gimmick:checked ~ .toggle[for="show-gimmick"],
+#show-dialog1:checked ~ .toggle[for="show-dialog1"] {
+  background: #6af;
+  color: white;
+  box-shadow: 0 0 0 1px white inset, 0 2px #333 inset;
+  padding: 8px 7px 6px 7px; }

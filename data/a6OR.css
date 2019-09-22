@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+	background: #efeff4;
+}
+
+fieldset{
+  margin: 30px auto 0;
+  width: 320px;
+  text-align: left;
+}
+
+form{
+	border-top: 1px solid #c8c7cc;
+	border-bottom: 1px solid #c8c7cc;
+}
+
+legend{
+	margin: 0 0 5px 8px;
+	color: #6f6f74;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.item{
+	position: relative;
+	box-sizing: border-box;
+	background: #ffffff;
+}
+
+.item p{
+	border-top: 1px solid #c8c7cc;
+	margin: 0 0 0 8px;
+	height: 44px;
+	color: #000000;
+	font-size: 15px;
+	line-height: 44px;
+}
+
+.item:nth-child(1) p{
+	border: 0;
+}
+
+
+input[type="checkbox"]{
+	display: none;	
+}
+
+.toggle{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 9px;
+	margin: auto;
+	width: 51px;
+	height: 31px;
+}
+
+.toggle label,
+.toggle i{
+	box-sizing: border-box;
+	display: block;
+	background: #ffffff;
+}
+
+.toggle label{
+	width: 51px;
+	height: 32px;
+	border-radius: 32px; 
+	border: 2px solid #e5e5e5;
+	transition: all 0.30s ease;
+}
+
+.toggle label:active {
+    min-width: 1px; /* redraw */
+}
+
+.toggle i{
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 28px;
+	height: 28px;
+	border-radius: 28px;
+	box-shadow: 0 0 1px 0 rgba(0,0,0, 0.25),
+				0 3px 3px 0 rgba(0,0,0, 0.15);
+	background: #ffffff;
+	transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+}
+
+input[type="checkbox"]:active + .toggle i{
+	width: 35px;
+}
+
+input[type="checkbox"]:active + .toggle label,
+input[type="checkbox"]:checked + .toggle label{
+	border: 16px solid #4cd964;
+}
+
+input[type="checkbox"]:checked + .toggle i{
+	left: 21px;
+}
+
+input[type="checkbox"]:checked:active + .toggle label{
+	border: 16px solid #e5e5e5;
+}
+
+input[type="checkbox"]:checked:active + .toggle i{
+	left: 14px;
+}

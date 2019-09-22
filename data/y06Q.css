@@ -1,0 +1,532 @@
+.sensor0:hover ~ .cover, .cover:hover {
+  -webkit-animation: explosion 1ms;
+  animation: explosion 1ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translate(0, 0); }
+  to {
+    -webkit-transform: translate(0, 2250px); } }
+
+@keyframes move {
+  from {
+    transform: translate(0, 0); }
+  to {
+    transform: translate(0, 2250px); } }
+
+@-webkit-keyframes switch {
+  0% {
+    width: 0; }
+  50%, 100% {
+    width: 33vw; } }
+
+@keyframes switch {
+  0% {
+    width: 0; }
+  50%, 100% {
+    width: 33vw; } }
+
+body {
+  margin: 0;
+  overflow: hidden; }
+
+.sensor {
+  width: 33vw;
+  height: 50px;
+  position: absolute; }
+  .sensor:hover ~ .cover {
+    background: yellow; }
+
+.sensor-left {
+  -webkit-animation: move 18000ms linear, switch 400ms steps(1, end) infinite;
+  animation: move 18000ms linear, switch 400ms steps(1, end) infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.sensor-right {
+  -webkit-animation: move 18000ms linear, switch 400ms steps(1, end) -200ms infinite;
+  animation: move 18000ms linear, switch 400ms steps(1, end) -200ms infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.sensor0 {
+  -webkit-animation: move 18000ms linear;
+  animation: move 18000ms linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  background: black; }
+
+.sensor1 {
+  margin-top: 50px;
+  background: #ff1a1a; }
+  .sensor1.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left1 1ms 400ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left1 1ms 400ms;
+    animation-fill-mode: forwards; }
+  .sensor1.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right1 1ms 400ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right1 1ms 400ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left1 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left1 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right1 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right1 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor2 {
+  margin-top: 100px;
+  background: #ff3333; }
+  .sensor2.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left2 1ms 800ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left2 1ms 800ms;
+    animation-fill-mode: forwards; }
+  .sensor2.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right2 1ms 800ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right2 1ms 800ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left2 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left2 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right2 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right2 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor3 {
+  margin-top: 150px;
+  background: #ff4d4d; }
+  .sensor3.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left3 1ms 1200ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left3 1ms 1200ms;
+    animation-fill-mode: forwards; }
+  .sensor3.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right3 1ms 1200ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right3 1ms 1200ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left3 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left3 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right3 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right3 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor4 {
+  margin-top: 200px;
+  background: #ff6666; }
+  .sensor4.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left4 1ms 1600ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left4 1ms 1600ms;
+    animation-fill-mode: forwards; }
+  .sensor4.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right4 1ms 1600ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right4 1ms 1600ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left4 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left4 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right4 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right4 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor5 {
+  margin-top: 250px;
+  background: #ff8080; }
+  .sensor5.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left5 1ms 2000ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left5 1ms 2000ms;
+    animation-fill-mode: forwards; }
+  .sensor5.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right5 1ms 2000ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right5 1ms 2000ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left5 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left5 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right5 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right5 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor6 {
+  margin-top: 300px;
+  background: #ff9999; }
+  .sensor6.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left6 1ms 2400ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left6 1ms 2400ms;
+    animation-fill-mode: forwards; }
+  .sensor6.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right6 1ms 2400ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right6 1ms 2400ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left6 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left6 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right6 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right6 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor7 {
+  margin-top: 350px;
+  background: #ffb3b3; }
+  .sensor7.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left7 1ms 2800ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left7 1ms 2800ms;
+    animation-fill-mode: forwards; }
+  .sensor7.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right7 1ms 2800ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right7 1ms 2800ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left7 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left7 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right7 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right7 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor8 {
+  margin-top: 400px;
+  background: #ffcccc; }
+  .sensor8.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left8 1ms 3200ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left8 1ms 3200ms;
+    animation-fill-mode: forwards; }
+  .sensor8.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right8 1ms 3200ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right8 1ms 3200ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left8 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left8 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right8 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right8 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor9 {
+  margin-top: 450px;
+  background: #ffe6e6; }
+  .sensor9.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left9 1ms 3600ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left9 1ms 3600ms;
+    animation-fill-mode: forwards; }
+  .sensor9.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right9 1ms 3600ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right9 1ms 3600ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left9 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left9 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right9 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right9 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.sensor10 {
+  margin-top: 500px;
+  background: white; }
+  .sensor10.sensor-left:hover ~ .cover {
+    -webkit-animation: explosion-left10 1ms 4000ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-left10 1ms 4000ms;
+    animation-fill-mode: forwards; }
+  .sensor10.sensor-right:hover ~ .cover {
+    -webkit-animation: explosion-right10 1ms 4000ms;
+    -webkit-animation-fill-mode: forwards;
+    animation: explosion-right10 1ms 4000ms;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes explosion-left10 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-left10 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@-webkit-keyframes explosion-right10 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+@keyframes explosion-right10 {
+  from, to {
+    width: 100vw;
+    height: 100vh;
+    background: yellow; } }
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  background: yellow; }
+
+.goal {
+  -webkit-animation: move 18000ms linear;
+  animation: move 18000ms linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  position: absolute;
+  left: 0;
+  top: -2250px; }
+
+.sensor:hover {
+  background: cyan !important; }
+
+.line14 {
+  left: 33vw;
+  top: -100px; }
+
+.line13 {
+  left: 66vw;
+  top: -100px; }
+
+.line12 {
+  left: 0vw;
+  top: -200px; }
+
+.line11 {
+  left: 33vw;
+  top: -400px; }
+
+.line10 {
+  left: 66vw;
+  top: -500px; }
+
+.line9 {
+  left: 0vw;
+  top: -650px; }
+
+.line8 {
+  left: 33vw;
+  top: -750px; }
+
+.line7 {
+  left: 66vw;
+  top: -1000px; }
+
+.line6 {
+  left: 0vw;
+  top: -1100px; }
+
+.line5 {
+  left: 33vw;
+  top: -1100px; }
+
+.line4 {
+  left: 66vw;
+  top: -1300px; }
+
+.line3 {
+  left: 0vw;
+  top: -1450px; }
+
+.line2 {
+  left: 33vw;
+  top: -1550px; }
+
+.line1 {
+  left: 66vw;
+  top: -1650px; }
+
+.line0 {
+  left: 0vw;
+  top: -1750px; }

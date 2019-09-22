@@ -1,0 +1,95 @@
+.chrome {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  margin: auto;
+}
+.chrome > div {
+  position: absolute;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+}
+.redpart, .greenpart, .yellowpart {
+  width: 375px;
+  height: 200px;
+}
+.redpart::before, .greenpart::before, .yellowpart::before {
+  content: '';
+  display: block;
+  position: relative;
+  left: 160px;
+  top: 125px;
+  width: 210px;
+  height: 50px;
+}
+.redpart, .redpart2 {
+  left: -55px;
+  background: -webkit-linear-gradient(#f38265, #df2227 50%);
+  -moz-transform: skew(45deg);
+  background: -moz-linear-gradient(#f38265, #df2227 50%);
+  -webkit-transform: skew(45deg);
+}
+.redpart::before {
+  background: -webkit-linear-gradient(#eb2, #fcd209);
+  background: -moz-linear-gradient(#eb2, #fcd209);
+}
+.redpart2 {
+  width: 120px;
+  height: 200px;
+}
+.greenpart {
+  left: 171px;
+  top: 583px;
+  background: -webkit-linear-gradient(-75deg, #273, #4db849 40%);
+  -webkit-transform: rotate(-120deg) skew(45deg);
+  background: -moz-linear-gradient(-75deg, #273, #4db849 40%);
+  -moz-transform: rotate(-120deg) skew(45deg);
+}
+.greenpart::before {
+  background: -webkit-linear-gradient(#c21, #df2227);
+  background: -moz-linear-gradient(#c21, #df2227);
+}
+.yellowpart {
+  left: 558px;
+  top: 96px;
+  background: -webkit-linear-gradient(195deg, #da3, #fcd209 30%);
+  -webkit-transform: rotate(120deg) skew(45deg);
+  background: -moz-linear-gradient(195deg, #da3, #fcd209 30%);
+  -moz-transform: rotate(120deg) skew(45deg);
+}
+.yellowpart::before {
+  background: -webkit-linear-gradient(#4a5, #4db849);
+  background: -moz-linear-gradient(#4a5, #4db849);
+}
+.whitepart {
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: -100px 0 0 -100px;
+  background: -webkit-linear-gradient(-90deg, #f6ecea, #dcddde 100%);
+  background: -moz-linear-gradient(-90deg, #f6ecea, #dcddde 100%);
+}
+.bluepart {
+  left: 50%;
+  top: 50%;
+  width: 170px;
+  height: 170px;
+  border-radius: 85px;
+  margin: -85px 0 0 -85px;
+  background: -webkit-linear-gradient(-90deg, #8fbee3, #0a659f 100%);
+  background: -moz-linear-gradient(-90deg, #8fbee3, #0a659f 100%);
+}
+.coverpart {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-radial-gradient(224px 225px, 225px 226px,
+    transparent, transparent 224px, #fff 224px, #fff);
+  /* ここホントは 225px でいいと思うんだけど webkit の計算おかしいきがする */
+  background: -moz-radial-gradient(center, circle,
+    transparent, transparent 225px, #fff 225px, #fff);
+}

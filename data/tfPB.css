@@ -1,0 +1,90 @@
+table {
+  border-spacing: 0;
+}
+table td {
+  padding: 0;
+}
+input:hover + label {
+  background: silver;
+}
+
+#canvas input:checked + label { 
+  background: black
+}
+#canvas {
+  position: relative;
+  line-height: 0;
+}
+#canvas input, #canvas label {
+  width: 20px;
+  height: 20px;
+  border-left: 1px solid silver;
+  border-top: 1px solid silver;
+}
+#canvas input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+#canvas label {
+  display: inline-block;
+  z-index: -1;
+}
+.question {
+  font-family: monospace;
+}
+.question.top span {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  border-left: 1px solid silver;
+}
+.question.left div {
+  height: 16px;
+  text-align: right;
+  border-top: 1px solid silver;
+  padding: 2px 8px;
+}
+
+table:active {
+  content: '';
+}
+#clear {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: red;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+  z-index: -1;
+  opacity: 0;
+}
+
+#i00:checked~#i01:checked~#i02:checked~#i03:checked~#i04:checked~
+#i05:checked~#i06:checked~#i07:checked~#i08:checked~#i09:checked~
+#i10:checked~#i11:checked~#i12:checked~#i13:checked~#i14:checked~
+#i15:not(:checked)~#i16:not(:checked)~#i17:not(:checked)~#i18:not(:checked)~#i19:checked~
+#i20:checked~#i21:checked~#i22:not(:checked)~#i23:not(:checked)~#i24:not(:checked)~
+#i25:checked~#i26:checked~#i27:checked~#i28:not(:checked)~#i29:checked~
+#i30:checked~#i31:checked~#i32:not(:checked)~#i33:checked~#i34:checked~
+#i35:not(:checked)~#i36:not(:checked)~#i37:not(:checked)~#i38:not(:checked)~#i39:checked~
+#i40:checked~#i41:checked~#i42:not(:checked)~#i43:not(:checked)~#i44:not(:checked)~
+#i45:checked~#i46:checked~#i47:checked~#i48:not(:checked)~#i49:checked~
+#i50:checked~#i51:checked~#i52:checked~#i53:checked~#i54:checked~
+#i55:not(:checked)~#i56:not(:checked)~#i57:checked~#i58:not(:checked)~#i59:checked~
+#i60:checked~#i61:checked~#i62:not(:checked)~#i63:not(:checked)~#i64:checked~
+#i65:not(:checked)~#i66:checked~#i67:checked~#i68:not(:checked)~#i69:checked~
+#i70:not(:checked)~#i71:checked~#i72:checked~#i73:not(:checked)~#i74:not(:checked)~
+#i75:checked~#i76:checked~#i77:not(:checked)~#i78:checked~#i79:not(:checked)~
+#i80:not(:checked)~#i81:checked~#i82:checked~#i83:checked~#i84:checked~
+#i85:not(:checked)~#i86:not(:checked)~#i87:not(:checked)~#i88:checked~#i89:not(:checked)~
+#i90:not(:checked)~#i91:not(:checked)~#i92:checked~#i93:checked~#i94:checked~
+#i95:checked~#i96:checked~#i97:checked~#i98:not(:checked)~#i99:not(:checked)~
+#clear {
+  opacity: 1;
+  z-index: 1;
+}

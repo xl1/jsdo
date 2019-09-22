@@ -1,0 +1,57 @@
+@-webkit-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-moz-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-ms-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@-o-keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+@keyframes move {
+    0% { left: 0; }
+    100% { left: 300px; }
+}
+h1 {
+    font-size: large;
+}
+input {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: silver;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -ms-appearance: button;
+    -o-appearance: button;
+    appearance: button;
+    -webkit-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -moz-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -ms-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    -o-animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+    animation: move 2s cubic-bezier(0.2, 0, 0.8, 1) infinite alternate;
+}
+input:checked {
+    background: blue;
+}
+input:active {
+    background: pink;
+}
+input.large {
+    width: 100px;
+    height: 100px;
+}
+input.ib:active {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}

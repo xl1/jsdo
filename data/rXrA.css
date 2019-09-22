@@ -1,0 +1,106 @@
+#title, .subjects {
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+.subjects {
+  text-align: center;
+  font-size: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.subjects input {
+  display: block;
+  font-size: 30px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.congratulations {
+  font-size: 40px;
+  color: red;
+}
+.congratulations a {
+  display: block;
+  font-size: 20px;
+}
+
+/* inputs */
+.subjects input:invalid {
+  outline: 1px solid red;
+  box-shadow: none;
+}
+.subjects input:focus {
+  background-color: #fee;
+}
+.subjects input:valid {
+  background-color: silver;
+  color: gray;
+}
+.subjects input:invalid + div {
+  visibility: hidden;
+}
+.subjects {
+  -ms-animation: redraw 1s infinite;
+}
+@keyframes redraw {
+  from { min-width: 1px; }
+  to   { min-width: 2px; }
+}
+
+/* button */
+label:hover {
+  cursor: pointer;
+}
+
+#startbuttons {
+  width: 150px;
+  height: 50px;
+  overflow: hidden;
+  background-color: #9af;
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px #9af;
+  margin: 0 auto 0;
+}
+#startbuttons label {
+  position: relative;
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  -webkit-animation: startbutton 600ms infinite steps(3);
+  animation: startbutton 600ms infinite steps(3);
+  z-index: 1;
+}
+#startbuttons label:active {
+  /* IE は active が親に貫通しないので label にスタイルするしかなかった…… */
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  z-index: 2;
+  background-color: #f44;
+  line-height: 55px;
+}
+@-webkit-keyframes startbutton {
+  from { top: 0; }
+  to   { top: -150px; }
+}
+@keyframes startbutton {
+  from { top: 0; }
+  to   { top: -150px; }
+}
+
+/* controls */
+body > input {
+  display: none;
+}
+input[name="route"]:checked ~ #title {
+  display: none;
+}
+.subjects {
+  display: none;
+}
+input[name="route"]:checked +*+*+*+ .subjects {
+  display: block;
+}

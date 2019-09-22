@@ -1,0 +1,20 @@
+.cells {
+    display: -webkit-flex;
+    display: -moz-box; /* Firefox 19- */
+    display: -moz-flex;
+    display: -ms-flexbox; /* IE 10 */
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap; /* not supported on Firefox 19- */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.cell {
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    margin: 10px 10px 0 0;
+    padding: 10px;
+    width: 100px;
+}

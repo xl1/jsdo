@@ -1,0 +1,5 @@
+.original { width: 450px; height: 135px; }
+li:nth-of-type(1) { color: red; }
+li:nth-of-type(2) { color: blue; background: yellow; }
+li:nth-of-type(3) { background: lime; }
+li:nth-of-type(4) { color: magenta; background: cyan; }

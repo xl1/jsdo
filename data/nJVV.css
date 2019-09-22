@@ -1,0 +1,62 @@
+.parent {
+  background-image: -webkit-linear-gradient(
+    pink, pink 10px, palegreen 10px, palegreen 20px, gold 20px, gold);
+  background-image: linear-gradient(
+    pink, pink 10px, palegreen 10px, palegreen 20px, gold 20px, gold);
+  background-size: 100% 30px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+  
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  height: 3999px; /* 十分に大きい */
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+
+  -webkit-animation: redraw 1s infinite;
+}
+@-webkit-keyframes redraw {
+  from { min-width: 1px; }
+  to   { min-width: 2px; }
+}
+
+.sticky {
+  background: rgba(40, 200, 255, 0.4);
+  width: 80px;
+  height: 60px;
+  
+  position: -webkit-sticky;
+  position: sticky;
+  top: 200px;
+}
+
+label {
+  position: fixed;
+  left: 200px;
+}
+
+
+/* controls */
+body > input {
+  display: none;
+}
+.toggle {
+  background: #ddd;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 0 1px white inset;
+  padding: 7px;
+}
+.toggle:hover {
+  cursor: pointer;
+}
+#rotate30:checked ~ .parent {
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+#rotate30:checked ~ .toggle[for="rotate30"] {
+  background: #6af;
+  color: white;
+  box-shadow: 0 0 0 1px white inset, 0 2px #333 inset;
+  padding: 8px 7px 6px 7px;
+}

@@ -1,0 +1,45 @@
+*{
+    -webkit-user-select:none;
+    user-select:none;
+    margin:0;
+    padding:0;
+}
+
+iframe{
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    width:0px;
+    height:0px;
+}
+
+input{
+    display:none;
+}
+
+button{
+    display:block;
+    -webkit-appearance:none;
+    appearance:none;
+    background: transparent;
+    overflow:hidden;
+    border:none;
+}
+
+label[for*="check_"] {
+    cursor: pointer;
+    display:block;
+    float:left;
+    -webkit-appearance:none;
+    appearance:none;
+    width:46px;
+    height:44px;
+    background: url("../assets/8NqPH.png") no-repeat;
+}
+
+input:checked + label {
+    background-position: 0 -44px;
+    cursor:no-drop;
+    -webkit-pointer-events:none;
+    pointer-events:none;
+}

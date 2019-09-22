@@ -1,0 +1,68 @@
+.candrag { 
+  position: relative;
+  width: 16px;
+  height: 16px;
+  resize: both;
+  overflow: hidden;
+  -webkit-transform: scale(10);
+}
+.candrag::-webkit-resizer {
+  visibility: hidden;
+}
+.candrag:not(:active) {
+  overflow: visible;
+  resize: none;
+}
+
+.cube {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 160px;
+  height: 160px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform-origin: 100% 100%;
+  -webkit-animation: rotation 3s linear infinite;
+  pointer-events: none;
+}
+
+.plane {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  opacity: 0.7;
+  border: 1px solid black;
+}
+.plane.front {
+  background: red;
+  -webkit-transform: translateZ(80px);
+}
+.plane.back {
+  background: blue;
+  -webkit-transform: rotateX(180deg) translateZ(80px);
+}
+.plane.top {
+  background: lime;
+  -webkit-transform: rotateX(90deg) translateZ(80px);
+}
+.plane.bottom {
+  background: magenta;
+  -webkit-transform: rotateX(-90deg) translateZ(80px); 
+}
+.plane.left {
+  background: cyan;
+  -webkit-transform: rotateY(90deg) translateZ(80px);
+}
+.plane.right {
+  background: yellow;
+  -webkit-transform: rotateY(-90deg) translateZ(80px);
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: scale(0.1) translate(-80px, -80px) rotateX(0) rotateY(0) translate(80px, 80px);
+  }
+  100% {
+    -webkit-transform: scale(0.1) translate(-80px, -80px) rotateX(360deg) rotateY(720deg) translate(80px, 80px);
+  }
+}

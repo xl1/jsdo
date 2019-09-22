@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>ドラッグでスライドを切り替える</title>
+<link rel="stylesheet" href="8SWP.css">
+</head>
+<body><h1>ドラッグでスライドを切り替える</h1>
+
+<div class="slides-container">
+  <div class="slider" id="slider1"></div>
+  <ol class="slides">
+    <li>
+      <section class="slide" id="page1">
+        <h1>ページ 1</h1>
+        <p>上のスライダーを横にドラッグすると、ページが切り替わります</p>
+      </section>
+    </li><li>
+      <section class="slide" id="page2">
+        <h1>ページ 2</h1>
+        <p>Transitions を指定しているのでするりとアニメーションするはず</p>
+      </section>
+    </li><li>
+      <section class="slide" id="page3">
+        <h1>ページ 3</h1>
+        <p>
+          最上位桁だけで分岐しているので、どんどんドラッグして
+          1000px を超えると 1 ページ目に戻ってしまいます
+        </p>
+      </section>
+    </li><li>
+      <section class="slide" id="page4">
+        <h1>ページ 4</h1>
+        <p>ろーれむいぷさむほげほげほげほげ</p>
+      </section>
+    </li><li>
+      <section class="slide" id="page5">
+        <h1>ページ 5</h1>
+        <p>おわり</p>
+      </section>
+    </li>
+  </ol>
+</div><script src="8SWP.js"></script></body>
+</html>

@@ -1,0 +1,18 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}
+div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+#textfield {
+  text-align: justify;
+  font-size: xx-small;
+  line-height: 1.2;
+}

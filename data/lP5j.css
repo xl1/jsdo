@@ -1,0 +1,101 @@
+table tr:nth-child(even) {
+  background: #eee;
+}
+table td {
+  text-align: right;
+  min-width: 40px;
+}
+
+/* --- 外観 --- */
+
+#result input {
+  display: none;
+}
+#panel {
+  position: relative;
+}
+#panel label {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  opacity: .1;
+}
+#panel .button, #panel label {
+  width: 100px;
+  height: 25px;
+  margin: 0;
+  cursor: pointer;
+}
+.button {
+  display: inline-block;
+  text-align: center;
+  background: #eee;
+  border-bottom: 2px solid #aaa;
+  border-right: 2px solid #aaa;
+  box-sizing: border-box;
+}
+
+/* --- ろじっく --- */
+
+#i1:checked ~ #panel #saving::after,
+#i6:checked ~ #panel #saving::after,
+#i7:checked ~ #panel #saving::after,
+#i8:checked ~ #panel #saving::after,
+#i9:checked ~ #panel #saving::after,
+#i10:checked ~ #panel #saving::after { content: '0円'; }
+#i2:checked ~ #panel #saving::after,
+#i11:checked ~ #panel #saving::after { content: '50円'; }
+#i3:checked ~ #panel #saving::after { content: '100円'; }
+#i4:checked ~ #panel #saving::after { content: '150円'; }
+#i5:checked ~ #panel #saving::after { content: '200円'; }
+
+#i6:checked ~ #panel #output::after { content: '50円'; }
+#i7:checked ~ #panel #output::after { content: '100円'; }
+#i8:checked ~ #panel #output::after { content: '150円'; }
+#i9:checked ~ #panel #output::after { content: '200円'; }
+#i10:checked ~ #panel #output::after,
+#i11:checked ~ #panel #output::after { content: 'ジュース'; }
+
+#i1:checked ~ #panel label:nth-of-type(3),
+#i2:checked ~ #panel label:nth-of-type(4),
+#i3:checked ~ #panel label:nth-of-type(5),
+#i6:checked ~ #panel label:nth-of-type(3),
+#i7:checked ~ #panel label:nth-of-type(3),
+#i8:checked ~ #panel label:nth-of-type(3),
+#i9:checked ~ #panel label:nth-of-type(3),
+#i10:checked ~ #panel label:nth-of-type(3),
+#i11:checked ~ #panel label:nth-of-type(4) { display: block; left: 0; }
+
+#i1:checked ~ #panel label:nth-of-type(2),
+#i2:checked ~ #panel label:nth-of-type(3),
+#i3:checked ~ #panel label:nth-of-type(4),
+#i4:checked ~ #panel label:nth-of-type(5),
+#i6:checked ~ #panel label:nth-of-type(2),
+#i7:checked ~ #panel label:nth-of-type(2),
+#i8:checked ~ #panel label:nth-of-type(2),
+#i9:checked ~ #panel label:nth-of-type(2),
+#i10:checked ~ #panel label:nth-of-type(2),
+#i11:checked ~ #panel label:nth-of-type(3) { display: block; left: 100px; }
+
+#i4:checked ~ #panel label:nth-of-type(10),
+#i5:checked ~ #panel label:nth-of-type(11),
+#i6:checked ~ #panel label:nth-of-type(1),
+#i7:checked ~ #panel label:nth-of-type(1),
+#i8:checked ~ #panel label:nth-of-type(1),
+#i9:checked ~ #panel label:nth-of-type(1),
+#i10:checked ~ #panel label:nth-of-type(1),
+#i11:checked ~ #panel label:nth-of-type(2) { display: block; left: 200px; }
+
+#i2:checked ~ #panel label:nth-of-type(6),
+#i3:checked ~ #panel label:nth-of-type(7),
+#i4:checked ~ #panel label:nth-of-type(8),
+#i5:checked ~ #panel label:nth-of-type(9),
+#i6:checked ~ #panel label:nth-of-type(12),
+#i7:checked ~ #panel label:nth-of-type(12),
+#i8:checked ~ #panel label:nth-of-type(12),
+#i9:checked ~ #panel label:nth-of-type(12),
+#i10:checked ~ #panel label:nth-of-type(12),
+#i11:checked ~ #panel label:nth-of-type(6) { display: block; left: 300px; }

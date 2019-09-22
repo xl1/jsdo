@@ -1,0 +1,4 @@
+canvas   { border: 1px solid black; }
+input    { width: 500px; }
+button   { width: 100px; }
+textarea { width: 800px; font-size: large; }

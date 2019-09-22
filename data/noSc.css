@@ -1,0 +1,11 @@
+details > :not(summary) {
+    margin-left: 20px;
+}
+
+details[open] {
+    color: red;
+}
+
+summary:focus {
+    background: blue;
+}

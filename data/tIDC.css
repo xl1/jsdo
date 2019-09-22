@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background: #bbc;
+  color: #fff;
+  text-align: center;
+  font-family: consolas, Monaco, monospace;
+  font-size: 20px;
+  width: 400px;
+  overflow: hidden;
+}
+body > div {
+  float: left;
+  height: 999px;
+}
+#fps, #frame {
+  border-left: 1px solid #fff;
+  padding: 0 8px;
+}
+#fpscounter, #framecounter {
+  font-size: 60px;
+}
+.button:hover {
+  color: #234;
+  cursor: pointer;
+}
+#fastbutton, #slowbutton {
+  display: inline-block;
+  width: 30px;
+  height: 49px;
+  line-height: 49px;
+}
+#playbutton {
+  width: 100px;
+  font-size: 72px;
+  line-height: 100px;
+}

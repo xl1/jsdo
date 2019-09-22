@@ -1,0 +1,24 @@
+.peephole {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  width: 150px;
+  height: 150px;
+  resize: both;
+
+  background-image: url('../assets/material.svg');
+  background-position: 0 0;
+  -webkit-mask-image: -webkit-radial-gradient(contain,
+    white, white 80%, transparent 99%);
+  -webkit-mask-size: 150px 150px;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: 100% 100%;
+}
+.peephole::-webkit-scrollbar {
+  width: 150px;
+  height: 150px;
+}
+.peephole::-webkit-resizer, .peephole::-webkit-scrollbar-corner {
+  visibility: hidden;
+}

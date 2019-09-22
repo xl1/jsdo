@@ -1,0 +1,12 @@
+/* #! scss */
+#a, #b, #c {
+  height: 30px; }
+
+#a::before {
+  content: "1"; }
+
+#b::before {
+  content: "40"; }
+
+#c::before {
+  content: "23.4"; }

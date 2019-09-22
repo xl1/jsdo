@@ -1,0 +1,9 @@
+body {
+    counter-reset: score;
+}
+:checked {
+    counter-increment: score;
+}
+.length::before {
+    content: counter(score);
+}

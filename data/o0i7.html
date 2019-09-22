@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>forked: 安全なつもりのeval：alertしてみてください</title>
+<link rel="stylesheet" href="o0i7.css">
+</head>
+<body><strong>安全なeval<br />攻撃(DOM, alert)できるもんなら<br />してみやがれ！！！<br />(正解はあります)</strong>
+<textarea id="evalText">0..constructor.constructor('return this')().alert(0)</textarea><br />
+<input type="button" value="安全なEval" id="letsEval" /><br />
+結果：<br />
+<textarea id="returnText"></textarea><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script><script src="o0i7.js"></script></body>
+</html>

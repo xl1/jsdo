@@ -1,0 +1,7 @@
+div {
+    background: yellow;
+    height: 100px;
+}
+div::first-letter {
+    background: red;
+}

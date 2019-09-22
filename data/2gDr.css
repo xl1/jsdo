@@ -1,0 +1,40 @@
+#a, #b {
+  width: 32px;
+  height: 32px;
+  background-image: url(../assets/mnIxh.gif);
+  background-position: 0 0;
+}
+#a {
+  -webkit-animation: anim 4s steps(8, end) infinite;
+  -moz-animation: anim 4s steps(8, end) infinite;
+  -ms-animation: anim 4s steps(8, end) infinite;
+  -o-animation: anim 4s steps(8, end) infinite;
+  animation: anim 4s steps(8, end) infinite;
+}
+#b {
+  -webkit-animation: anim 4s linear infinite;
+  -moz-animation: anim 4s linear infinite;
+  -ms-animation: anim 4s linear infinite;
+  -o-animation: anim 4s linear infinite;
+  animation: anim 4s linear infinite;
+}
+@-webkit-keyframes anim {
+  0%   { background-position: 0 0; }
+  100% { background-position: -256px 0; }
+}
+@-moz-keyframes anim {
+  0%   { background-position: 0 0; }
+  100% { background-position: -256px 0; }
+}
+@-ms-keyframes anim {
+  0%   { background-position: 0 0; }
+  100% { background-position: -256px 0; }
+}
+@-o-keyframes anim {
+  0%   { background-position: 0 0; }
+  100% { background-position: -256px 0; }
+}
+@keyframes anim {
+  0%   { background-position: 0 0; }
+  100% { background-position: -256px 0; }
+}

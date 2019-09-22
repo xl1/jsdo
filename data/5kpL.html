@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>WebGL と SVG filter でディザかけるやつ</title>
+<link rel="stylesheet" href="5kpL.css">
+</head>
+<body><!-- webgl shaders -->
+<script type="text/x-vertex-shader" id="vshader">
+attribute vec2 aPosition;
+
+void main(){
+  gl_Position = vec4(aPosition, 0.0, 1.0);
+}
+</script>
+<script type="text/x-fragment-shader" id="fshader">
+precision mediump float;
+
+uniform vec2 uTexSize;
+uniform sampler2D uSampler;
+
+vec4 getColor(vec2 position){
+  return texture2D(uSampler, (gl_FragCoord.xy + position) / uTexSize);
+}
+
+vec4 getFinalColor(){
+  float p = floor(mod(gl_FragCoord.x, 4.0));
+  float q = floor(mod(p - gl_FragCoord.y, 4.0));
+  float threshold = (
+    8.0 * mod(q, 2.0) +
+    4.0 * mod(p, 2.0) +
+    2.0 * floor(q / 2.0) +
+    floor(p / 2.0) +
+    0.5
+  ) / 16.0;
+  
+  vec3 color = getColor(vec2(0.0)).rgb;
+  return vec4(step(threshold, color), 1.0);
+}
+
+void main(){
+  gl_FragColor = getFinalColor();
+}
+</script>
+
+WebGL 版:
+<div id="webgl"></div>
+
+SVG Filter 版:
+<svg id="svgfilter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="256">
+<defs>
+  <filter id="orderedDither" filterUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+    <feImage xlink:href="data:image/gif;base64,R0lGODlhBAAEALMAAAgICBgYGCgoKDg4OEhISFhYWGhoaHh4eIiIiJiYmKioqLi4uMjIyNjY2Ojo6Pj4+CwAAAAABAAEAAAEDBAgoRhxZqyQ3mlFBAA7" result="thresholdUnit" width="4" height="4"/>
+    <feTile in="thresholdUnit" result="threshold"/>
+    
+    <feComposite operator="arithmetic" k1="0" k2="1" k3=".5" k4="0" in="SourceGraphic" in2="threshold" result="sieved"/>
+    <feComponentTransfer in="sieved">
+      <feFuncR type="discrete" tableValues="0 1"/>
+      <feFuncG type="discrete" tableValues="0 1"/>
+      <feFuncB type="discrete" tableValues="0 1"/>
+      <feFuncA type="linear" slope="1"/>
+    </feComponentTransfer>
+  </filter>
+</defs>
+<image filter="url(#orderedDither)" xlink:href="../assets/cwJhh.jpg" width="256" height="256"/>
+</svg><script src="./eHqL.js"></script><script src="5kpL.js"></script></body>
+</html>

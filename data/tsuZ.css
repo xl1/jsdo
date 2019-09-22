@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  overflow: hidden;
+}
+.comments {
+  color: #080;
+}
+.musicElement {
+  width: 60px;
+  height: 30px;
+  font: 10px monospace;
+  position: absolute;
+  border-radius: 5px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: #8cf;
+}
+.musicElement:hover {
+  cursor: all-scroll;
+}
+._jsPlumb_connector {
+  z-index: -1;
+}

@@ -1,0 +1,111 @@
+.container {
+  position: relative;
+  width: 200px;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+}
+.cover {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+  background: -webkit-linear-gradient(0deg,
+    white, white 140px, transparent 140px, transparent 260px, white 260px),
+    -webkit-linear-gradient(90deg,
+    white, white 140px, transparent 140px, transparent 260px, white 260px);
+  -webkit-transform: translateZ(110px);
+}
+
+.cone {
+  -webkit-transform-style: preserve-3d;
+}
+
+.cone:nth-child(1) { -webkit-animation: move1 3600ms linear 0 infinite; }
+.cone:nth-child(2) { -webkit-animation: move2 3800ms linear 0 infinite; }
+.cone:nth-child(3) { -webkit-animation: move3 4000ms linear 0 infinite; }
+.cone:nth-child(4) { -webkit-animation: move4 4200ms linear 0 infinite; }
+.cone:nth-child(5) { -webkit-animation: move5 4400ms linear 0 infinite; }
+.cone:nth-child(6) { -webkit-animation: move6 4600ms linear 0 infinite; }
+
+.cone .plane {
+  position: absolute;
+  border-radius: 50% 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.cone:nth-child(1) .plane { background: #fc6; }
+.cone:nth-child(2) .plane { background: #6fc; }
+.cone:nth-child(3) .plane { background: #c6f; }
+.cone:nth-child(4) .plane { background: #f6c; }
+.cone:nth-child(5) .plane { background: #cf6; }
+.cone:nth-child(6) .plane { background: #6cf; }
+
+.cone .plane:nth-child(2)  { -webkit-transform: scale(0.94) translateZ( 6px); }
+.cone .plane:nth-child(3)  { -webkit-transform: scale(0.88) translateZ(12px); }
+.cone .plane:nth-child(4)  { -webkit-transform: scale(0.82) translateZ(18px); }
+.cone .plane:nth-child(5)  { -webkit-transform: scale(0.76) translateZ(24px); }
+.cone .plane:nth-child(6)  { -webkit-transform: scale(0.70) translateZ(30px); }
+.cone .plane:nth-child(7)  { -webkit-transform: scale(0.64) translateZ(36px); }
+.cone .plane:nth-child(8)  { -webkit-transform: scale(0.58) translateZ(42px); }
+.cone .plane:nth-child(9)  { -webkit-transform: scale(0.52) translateZ(48px); }
+.cone .plane:nth-child(10) { -webkit-transform: scale(0.46) translateZ(54px); }
+.cone .plane:nth-child(11) { -webkit-transform: scale(0.40) translateZ(60px); }
+.cone .plane:nth-child(12) { -webkit-transform: scale(0.34) translateZ(66px); }
+.cone .plane:nth-child(13) { -webkit-transform: scale(0.28) translateZ(72px); }
+.cone .plane:nth-child(14) { -webkit-transform: scale(0.22) translateZ(78px); }
+.cone .plane:nth-child(15) { -webkit-transform: scale(0.16) translateZ(84px); }
+.cone .plane:nth-child(16) { -webkit-transform: scale(0.10) translateZ(90px); }
+
+.cone .top {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 97px;
+  top: 97px;
+  background: -webkit-linear-gradient(45deg,
+    transparent, transparent 49%, black 49%, black 51%, transparent 51%),
+    -webkit-linear-gradient(-45deg,
+    transparent, transparent 49%, black 49%, black 51%, transparent 51%);
+  -webkit-transform: translateZ(100px);
+}
+
+@-webkit-keyframes move1 {
+  0% { -webkit-transform: translate(-50px, -50px); }
+  50% { -webkit-transform: translate(50px, 50px); }
+  100% { -webkit-transform: translate(-50px, -50px); }
+}
+@-webkit-keyframes move2 {
+  0% { -webkit-transform: translate(-50px, 50px); }
+  50% { -webkit-transform: translate(50px, -50px); }
+  100% { -webkit-transform: translate(-50px, 50px); }
+}
+@-webkit-keyframes move3 {
+  0% { -webkit-transform: translate(0, -50px); }
+  25% { -webkit-transform: translate(-50px, 0); }
+  50% { -webkit-transform: translate(0, 50px); }
+  75% { -webkit-transform: translate(50px, 0); }
+  100% { -webkit-transform: translate(0, -50px); }
+}
+@-webkit-keyframes move4 {
+  0% { -webkit-transform: translate(-10px, -50px); }
+  25% { -webkit-transform: translate(20px, -10px); }
+  50% { -webkit-transform: translate(-20px, 20px); }
+  75% { -webkit-transform: translate(-50px, -20px); }
+  100% { -webkit-transform: translate(-10px, -50px); }
+}
+@-webkit-keyframes move5 {
+  0% { -webkit-transform: translate(20px, 50px); }
+  25% { -webkit-transform: translate(50px, 10px); }
+  50% { -webkit-transform: translate(10px, -20px); }
+  75% { -webkit-transform: translate(30px, 20px); }
+  100% { -webkit-transform: translate(20px, 50px); }
+}
+@-webkit-keyframes move6 {
+  0% { -webkit-transform: translate(10px, 50px); }
+  25% { -webkit-transform: translate(-50px, 10px); }
+  50% { -webkit-transform: translate(-10px, -50px); }
+  75% { -webkit-transform: translate(50px, -10px); }
+  100% { -webkit-transform: translate(10px, 50px); }
+}

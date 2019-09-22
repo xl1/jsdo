@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>2012-10-15 1st</title>
+<link rel="stylesheet" href="ahmy.css">
+</head>
+<body><script type="x-shader/x-vertex" id="vshader">
+attribute vec4 a_position;
+uniform mat4 u_projectionMatrix;
+
+void main(){
+  gl_Position = u_projectionMatrix * a_position;
+}
+</script>
+<script type="x-shader/x-fragment" id="fshader">
+precision mediump float;
+
+void main(){
+  css_MixColor = vec4(1.0, 0.7, 0.4, 0.2);
+  css_ColorMatrix = mat4(
+    1.0, 0.0, 0.0, 0.0,
+    0.0, 0.7, 0.0, 0.0,
+    1.0, 0.0, 0.4, 0.0,
+    0.0, 0.0, 0.0, 1.0
+  );
+}
+</script>
+
+<div id="target" class="original">
+    <h2>Lorem ipsum dolor sit amet</h2>
+    <ul>
+    	<li>consectetur adipisicing elit
+    	<li>ed do eiusmod tempor incididunt ut labore
+    	<li>Ut enim ad minim veniam, quis nostrud exercitation
+    	<li>laboris nisi ut aliquip ex ea commodo consequat
+    </ul>
+</div>
+<div id="dest"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script><script src="./eHqL.js"></script><script src="./2Ckz.js"></script><script src="ahmy.js"></script></body>
+</html>

@@ -1,0 +1,8 @@
+span {
+    display: inline-block;
+    width: 70px;
+    background: #ddd;
+}
+span:nth-child(odd) {
+    background: #eee;
+}

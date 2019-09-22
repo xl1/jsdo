@@ -1,0 +1,6 @@
+/* #!scss */
+.hoge:hover::first-letter, .piyo:hover::first-letter {
+  background: red; }
+
+.piyo:first-letter {
+  background: inherit; }

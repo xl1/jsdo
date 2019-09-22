@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-perspective: 1000px;
+  -webkit-perspective-origin: 0 0; }
+
+div {
+  -webkit-transform-origin: 0 0; }
+
+#outer {
+  width: 120px;
+  height: 1000px;
+  background: rgba(255, 200, 50, 0.2);
+  -webkit-transform: scaleY(1.11803) rotateX(0.46365rad);
+  -webkit-transform-style: preserve-3d; }
+
+#inner {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: sticky;
+  top: 0;
+  -webkit-transform: rotateX(-0.46365rad) scaleY(0.89443); }

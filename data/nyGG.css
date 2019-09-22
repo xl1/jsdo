@@ -1,0 +1,177 @@
+/* #! scss */
+.parallax-sticky-outer, #par0, #par1, #par2, #par4, #par6, #par7, #par8, #par9, #par10 {
+  position: absolute;
+  top: 0;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0; }
+  .parallax-sticky-outer > *, #par0 > *, #par1 > *, #par2 > *, #par4 > *, #par6 > *, #par7 > *, #par8 > *, #par9 > *, #par10 > * {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0; }
+
+@-webkit-keyframes redraw {
+  from {
+    min-width: 1px; }
+  to {
+    min-width: 2px; } }
+
+body {
+  -webkit-animation: redraw 1s infinite; }
+
+body {
+  height: 1500px;
+  margin: 0;
+  overflow-x: hidden; }
+
+body {
+  background: url("../assets/pUsSW.gif"); }
+
+.block {
+  width: 40px;
+  height: 40px; }
+
+#par0 {
+  height: 66.66667%;
+  -webkit-transform: translate(100%, 100%) scale(-1.5);
+  transform: translate(100%, 100%) scale(-1.5);
+  left: 0px; }
+  #par0 > * {
+    -webkit-transform: scale(-0.66667) translate(-100%, -100%) translateY(200px);
+    transform: scale(-0.66667) translate(-100%, -100%) translateY(200px); }
+  #par0 > .block {
+    background: #ff6666; }
+    #par0 > .block::before {
+      content: "-2.5"; }
+
+#par1 {
+  height: 100%;
+  -webkit-transform: translate(100%, 100%) scale(-1);
+  transform: translate(100%, 100%) scale(-1);
+  left: 40px; }
+  #par1 > * {
+    -webkit-transform: scale(-1) translate(-100%, -100%) translateY(200px);
+    transform: scale(-1) translate(-100%, -100%) translateY(200px); }
+  #par1 > .block {
+    background: #ffb866; }
+    #par1 > .block::before {
+      content: "-2"; }
+
+#par2 {
+  height: 200%;
+  -webkit-transform: translate(100%, 100%) scale(-0.5);
+  transform: translate(100%, 100%) scale(-0.5);
+  left: 80px; }
+  #par2 > * {
+    -webkit-transform: scale(-2) translate(-100%, -100%) translateY(200px);
+    transform: scale(-2) translate(-100%, -100%) translateY(200px); }
+  #par2 > .block {
+    background: #f5ff66; }
+    #par2 > .block::before {
+      content: "-1.5"; }
+
+#par3 {
+  position: absolute;
+  top: 200px;
+  left: 120px; }
+  #par3 > .block {
+    background: #a3ff66; }
+    #par3 > .block::before {
+      content: "-1"; }
+
+#par4 {
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  left: 160px; }
+  #par4 > * {
+    -webkit-transform: scale(2) translateY(200px);
+    transform: scale(2) translateY(200px); }
+  #par4 > .block {
+    background: #66ff7a; }
+    #par4 > .block::before {
+      content: "-0.5"; }
+
+#par5 {
+  position: fixed;
+  top: 200px;
+  left: 200px; }
+  #par5 > .block {
+    background: #66ffcc; }
+    #par5 > .block::before {
+      content: "0"; }
+
+#par6 {
+  height: 66.66667%;
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  left: 240px; }
+  #par6 > * {
+    -webkit-transform: scale(0.66667) translateY(200px);
+    transform: scale(0.66667) translateY(200px); }
+  #par6 > .block {
+    background: #66e0ff; }
+    #par6 > .block::before {
+      content: "0.5"; }
+
+#par7 {
+  height: 50%;
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  left: 280px; }
+  #par7 > * {
+    -webkit-transform: scale(0.5) translateY(200px);
+    transform: scale(0.5) translateY(200px); }
+  #par7 > .block {
+    background: #668fff; }
+    #par7 > .block::before {
+      content: "1"; }
+
+#par8 {
+  height: 40%;
+  -webkit-transform: scale(2.5);
+  transform: scale(2.5);
+  left: 320px; }
+  #par8 > * {
+    -webkit-transform: scale(0.4) translateY(200px);
+    transform: scale(0.4) translateY(200px); }
+  #par8 > .block {
+    background: #8f66ff; }
+    #par8 > .block::before {
+      content: "1.5"; }
+
+#par9 {
+  height: 33.33333%;
+  -webkit-transform: scale(3);
+  transform: scale(3);
+  left: 360px; }
+  #par9 > * {
+    -webkit-transform: scale(0.33333) translateY(200px);
+    transform: scale(0.33333) translateY(200px); }
+  #par9 > .block {
+    background: #e066ff; }
+    #par9 > .block::before {
+      content: "2"; }
+
+#par10 {
+  height: 28.57143%;
+  -webkit-transform: scale(3.5);
+  transform: scale(3.5);
+  left: 400px; }
+  #par10 > * {
+    -webkit-transform: scale(0.28571) translateY(200px);
+    transform: scale(0.28571) translateY(200px); }
+  #par10 > .block {
+    background: #ff66cc; }
+    #par10 > .block::before {
+      content: "2.5"; }

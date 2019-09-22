@@ -1,0 +1,9 @@
+#test1 {
+    background: red;
+}
+#test1::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: url(../assets/k9Fgo.gif);
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>ページめくり</title>
+<link rel="stylesheet" href="lVQ9.css">
+</head>
+<body><input type="radio" name="onpage" id="onpage1" checked>
+<input type="radio" name="onpage" id="onpage3">
+<input type="radio" name="onpage" id="onpage5">
+
+<div id="content">
+  <section>
+    <h1>ページめくり</h1>
+    <p>
+      Chrome のみ対応。
+      かつ about:flags で「試験運用版の WebKit 機能を有効にする」をオンにする必要があります。
+    </p>
+    <label class="next" for="onpage3">&gt;&gt;</label>
+  </section>
+  <section>
+    <p>
+      CSS Regions で要素を半分に切って、別々に Transform させています。
+      このくらいなら <a href="http://html.adobe.com/webstandards/csscustomfilters/">Custom Filters</a> を使わなくても可能。
+    </p>
+    <label class="prev" for="onpage1">&lt;&lt;</label>
+    <label class="next" for="onpage5">&gt;&gt;</label>
+  </section>
+  <section>
+    <p>
+      たとえば video も切断できる
+      <video src="../assets/trailer.webm" controls width="420">
+    </p>
+    <label class="prev" for="onpage3">&lt;&lt;</label>
+  </section>
+</div>
+
+<div id="book">
+  <div id="page1" class="page"></div>
+  <div id="page3" class="page"></div>
+  <div id="page5" class="page"></div>
+  <div id="page6" class="page"></div>
+  <div id="page4" class="page"></div>
+  <div id="page2" class="page"></div>
+</div><script src="lVQ9.js"></script></body>
+</html>

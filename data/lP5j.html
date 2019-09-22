@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>オートマトン（自動販売機）</title>
+<link rel="stylesheet" href="lP5j.css">
+</head>
+<body><table>
+  <tr><th>状態<th colspan="4">次の状態<th colspan="2">出力</tr>
+  <tr><th><th>a<th>b<th>c<th>d<th>1<th>2</tr>
+  <tr><td> 1<td> 3<td> 2<td> -<td> -<td>  0円<td>      </tr>
+  <tr><td> 2<td> 4<td> 3<td> -<td> 6<td> 50円<td>      </tr>
+  <tr><td> 3<td> 5<td> 4<td> -<td> 7<td>100円<td>      </tr>
+  <tr><td> 4<td> -<td> 5<td>10<td> 8<td>150円<td>      </tr>
+  <tr><td> 5<td> -<td> -<td>11<td> 9<td>200円<td>      </tr>
+  <tr><td> 6<td> 3<td> 2<td> 1<td> 1<td>  0円<td>  50円</tr>
+  <tr><td> 7<td> 3<td> 2<td> 1<td> 1<td>  0円<td> 100円</tr>
+  <tr><td> 8<td> 3<td> 2<td> 1<td> 1<td>  0円<td> 150円</tr>
+  <tr><td> 9<td> 3<td> 2<td> 1<td> 1<td>  0円<td> 200円</tr>
+  <tr><td>10<td> 3<td> 2<td> 1<td> 1<td>  0円<td>ジュース</tr>
+  <tr><td>11<td> 4<td> 3<td> 2<td> 6<td> 50円<td>ジュース</tr>
+</table>
+
+<section id="result">
+  表ができたら機械的に変換するだけ:
+  <input type="radio" name="state" id="i1" checked>
+  <input type="radio" name="state" id="i2">
+  <input type="radio" name="state" id="i3">
+  <input type="radio" name="state" id="i4">
+  <input type="radio" name="state" id="i5">
+  <input type="radio" name="state" id="i6">
+  <input type="radio" name="state" id="i7">
+  <input type="radio" name="state" id="i8">
+  <input type="radio" name="state" id="i9">
+  <input type="radio" name="state" id="i10">
+  <input type="radio" name="state" id="i11">
+  <div id="panel">
+    <label for="i1"></label>
+    <label for="i2"></label>
+    <label for="i3"></label>
+    <label for="i4"></label>
+    <label for="i5"></label>
+    <label for="i6"></label>
+    <label for="i7"></label>
+    <label for="i8"></label>
+    <label for="i9"></label>
+    <label for="i10"></label>
+    <label for="i11"></label>
+    <label for="i1"></label>
+    <div class="button">a: 100円投入</div>
+    <div class="button">b: 50円投入</div>
+    <div class="button">c: 購入</div>
+    <div class="button">d: お釣り</div>
+    <div id="saving">出力1: </div>
+    <div id="output">出力2: </div>
+  </div>
+</section><script src="lP5j.js"></script></body>
+</html>

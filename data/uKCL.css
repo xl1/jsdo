@@ -1,0 +1,61 @@
+body {
+  background: #222;
+  margin: 0;
+  overflow: hidden; }
+
+@-webkit-keyframes redraw {
+  from {
+    min-width: 1px; }
+  to {
+    min-width: 2px; } }
+
+.check {
+  display: none; }
+
+.drop {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin: 3px;
+  float: left;
+  background: #4a5;
+  cursor: pointer;
+  transition: border-radius 650ms, background-color 450ms;
+  box-shadow: 1px 1px 1px 0px black, inset 1px 1px 1px 0px white;
+  -webkit-animation: redraw 1s infinite; }
+
+.dummy {
+  display: block;
+  clear: both; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  background: #4cf;
+  border-radius: 100%; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-top-left-radius: 0; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-top-right-radius: 0; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-bottom-left-radius: 0; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-bottom-right-radius: 0; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.check:checked + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + * + .drop {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }

@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>CSS でタイピングゲーム</title>
+<link rel="stylesheet" href="rXrA.css">
+</head>
+<body><input type="radio" name="route" id="route1">
+<input type="radio" name="route" id="route2">
+<input type="radio" name="route" id="route3">
+
+<div id="title">
+  <h1>CSS でタイピングゲーム</h1>
+
+  <ul>
+    <li>IE10, Firefox, Chrome, Opera, たぶん Safari の最新版で動くはずです</li>
+    <li>全部で各 7 問</li>
+    <li>一問題を打ち終わったら Tab キーで次の問題が打てます</li>
+  </ul>
+
+  <div id="startbuttons">
+    <label for="route1">はじめる</label>
+    <label for="route2">はじめる</label>
+    <label for="route3">はじめる</label>
+  </div>
+</div>
+
+<div class="subjects" unselectable="on">
+  visibility
+  <input pattern="visibility" required autofocus>
+  <div>
+    list-style-type
+    <input pattern="list-style-type" required>
+    <div>
+      background-size
+      <input pattern="background-size" required>
+      <div>
+        transform-origin
+        <input pattern="transform-origin" required>
+        <div>
+          border-radius
+          <input pattern="border-radius" required>
+          <div>
+            animation-iteration-count
+            <input pattern="animation-iteration-count" required>
+            <div>
+              counter-increment
+              <input pattern="counter-increment" required>
+              <div class="congratulations">
+                クリア！
+                <a href="?dummy=1">もういちど</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="subjects" unselectable="on">
+  radial-gradient()
+  <input pattern="radial-gradient\(\)" required autofocus>
+  <div>
+    -moz-element()
+    <input pattern="-moz-element\(\)" required>
+    <div>
+      translate3d()
+      <input pattern="translate3[dD]\(\)" required>
+      <div>
+        counters()
+        <input pattern="counters\(\)" required>
+        <div>
+          cubic-bezier()
+          <input pattern="cubic-bezier\(\)" required>
+          <div>
+            drop-shadow()
+            <input pattern="drop-shadow\(\)" required>
+            <div>
+              repeating-linear-gradient()
+              <input pattern="repeating-linear-gradient\(\)" required>
+              <div class="congratulations">
+                クリア！
+                <a href="?dummy=1">もういちど</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="subjects" unselectable="on">
+  contentEditable
+  <input pattern="content[eE]ditable" required autofocus>
+  <div>
+    @-moz-document
+    <input pattern="@-moz-document" required>
+    <div>
+      min-resolution
+      <input pattern="min-resolution" required>
+      <div>
+        ease-in-out
+        <input pattern="ease-in-out" required>
+        <div>
+          column-reverse
+          <input pattern="column-reverse" required>
+          <div>
+            crisp-edges
+            <input pattern="crisp-edges" required>
+            <div>
+              ::-webkit-validation-bubble
+              <input pattern="::-webkit-validation-bubble" required>
+              <div class="congratulations">
+                クリア！
+                <a href="?dummy=1">もういちど</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><script src="rXrA.js"></script></body>
+</html>

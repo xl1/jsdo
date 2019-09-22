@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+body > input {
+  display: none;
+}
+
+.candrag {
+  display: none;
+  position: fixed;
+  left: 100%;
+  top: 100%;
+  width: 18px;
+  height: 160px; /* てきとう */
+  max-width: 6.25%;
+  max-height: 100%;
+  overflow: hidden;
+  resize: both;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: rotate(180deg) scaleX(16);
+  transform-origin: 0 0;
+  transform: rotate(180deg) scaleX(16);
+}
+.candrag::-webkit-resizer {
+  visibility: hidden;
+}
+.candrag:not([style]) {
+  left: 300px;
+  top: 300px;
+}
+.candrag:not([style]):active {
+  /* 「小さくなる方にも移動できる」かつ「.closeButton が押せる」 ための苦肉の策…… */
+  left: 301px;
+  top: 301px;
+}
+.candrag * {
+  box-sizing: border-box;
+  /* 子にも resizer が表示されるので消す(Chrome dev 18.0.1010.1) */
+  resize: none;
+}
+
+.dialog {
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  width: 288px;
+  background-image: -webkit-linear-gradient(bottom, #ddd, #eee 32px, #eee);
+  background-image: linear-gradient(to top, #ddd, #eee 32px, #eee);
+  border-radius: 16px;
+  border: 1px solid #888;
+  box-shadow: white 0px -1px 1px inset;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scaleX(0.0625) rotate(180deg);
+  transform-origin: 0 0;
+  transform: scaleX(0.0625) rotate(180deg);
+  pointer-events: none;
+}
+.dialogTitle {
+  padding-left: 18px;
+  height: 18px;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(#69c, #47a);
+  background-image: linear-gradient(#69c, #47a);
+  line-height: 18px;
+  color: white;
+  font-weight: bold;
+  border-radius: 16px 16px 0 0;
+  box-shadow: black 0px -1px 1px inset, white 0 1px 1px inset;
+}
+
+.button {
+  display: block;
+  width: 120px;
+  height: 40px;
+  margin: auto;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(#ddd, #bbb);
+  background-image: linear-gradient(#ddd, #bbb);
+  line-height: 40px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  box-shadow: black 0px -1px 1px inset, white 0 1px 1px inset;
+  border: 1px solid #888;
+}
+.closeButton {
+  float: right;
+  width: 48px;
+  color: white;
+  text-align: center;
+  box-shadow: black 0 -1px 1px inset, white 1px 0 1px inset;
+  pointer-events: auto;
+}
+.closeButton::before {
+  content: 'x';
+}
+.closeButton:hover, .button:hover {
+  background: #d64;
+  cursor: pointer;
+}
+.closeButton:hover:active, .button:hover:active {
+  box-shadow: none;
+}
+
+.dialogContent {
+  padding: 20px;
+  pointer-events: auto;
+}
+
+#showDialog:checked + * .candrag {
+  display: block;
+}
+
+.container {
+  padding: 20px;
+}

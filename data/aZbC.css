@@ -1,0 +1,90 @@
+#mainform, #mainform input {
+  font-size: 23px;
+}
+#csssaid, #youwillsay {
+  float: left;
+  clear: both;
+  position: relative;
+  background-color: #fea;
+  padding: 15px 30px 15px;
+  margin: 15px 30px 15px;
+  color: #a94;
+}
+#csssaid::before, #youwillsay::before {
+  position: absolute;
+  content: '';
+  bottom: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #fea;
+}
+#csssaid::before {
+  left: -15px;
+  transform-origin: 0 100%;
+  transform: rotate(45deg);
+}
+#youwillsay::before {
+  right: -15px;
+  transform-origin: 100% 100%;
+  transform: rotate(-45deg);  
+}
+#csssaid::after {
+  color: black;
+}
+
+#csssaid::after { content: 'はじめまして'; }
+
+@-moz-document regexp(".+\\?reply=.+#") {
+  #csssaid::after { content: 'それはどういうものですか'; }
+}
+@-moz-document regexp(".+\\?.+%E3%81%9D%E3%82%8C.+") {
+  /* それ */
+  #csssaid::after { content: 'CSS でできるよ！'; }
+}
+@-moz-document regexp(".+\\?.+%E3%82%92.+") {
+  /* を */
+  #csssaid::after { content: 'なるほどなるほど'; }
+}
+@-moz-document regexp(".+\\?.+(%E4%BD%95|%E6%84%8F%E5%91%B3).+") {
+  /* (何|意味) */
+  #csssaid::after { content: 'ごめんなさい、わかりません'; }
+}
+@-moz-document regexp(".+\\?.+(%E6%9C%9D|%E6%98%BC|%E5%A4%9C).+") {
+  /* (朝|昼|夜) */
+  #csssaid::after { content: '時間はわからないんです'; }
+}
+@-moz-document regexp(".+\\?.+(%E3%81%84%E3%81%84|%E8%89%AF).+") {
+  /* (いい|良) */
+  #csssaid::after { content: 'もしかしてわたしに言ってますか'; }
+}
+@-moz-document regexp(".+\\?.+%E6%82%AA.+") {
+  /* 悪 */
+  #csssaid::after { content: 'それ本当ですか'; }
+}
+@-moz-document regexp(".+\\?.+(%E3%81%AF%E3%81%84|%E3%81%9D%E3%81%86%E3%81%A7%E3%81%99).+") {
+  /* (はい|そうです) */
+  #csssaid::after { content: 'それはよかった'; }
+}
+@-moz-document regexp(".+\\?.+(%E9%81%95%E3%81%86|%E3%81%84%E3%81%84%E3%81%88).+") {
+  /* (違う|いいえ) */
+  #csssaid::after { content: 'わたしの勘違いでしたか'; }
+}
+@-moz-document regexp(".+\\?.+(%E3%81%8A%E3%82%82%E3%81%97%E3%82%8D|%E9%9D%A2%E7%99%BD|%E3%81%8B%E3%82%8F%E3%81%84|%E6%A5%BD%E3%81%97).+") {
+  /* (おもしろ|面白|かわい|楽し) */
+  #csssaid::after { content: 'わたしもそう思います'; }
+}
+@-moz-document regexp(".+\\?.+(%E3%81%95%E3%82%88(%E3%81%86)?%E3%81%AA%E3%82%89|%E3%83%90%E3%82%A4%E3%83%90%E3%82%A4).+") {
+  /* (さよう?なら|バイバイ) */
+  #csssaid::after { content: 'えっそんなこと言わないで'; }
+}
+@-moz-document regexp(".+\\?.+(%E3%81%AF%E3%81%98%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6|%E3%81%93%E3%82%93(%E3%81%AB)?%E3%81%A1(%E3%81%AF|%E3%82%8F)|%E3%81%8A%E3%81%AF%E3%82%88%E3%81%86|%E3%81%93%E3%82%93%E3%81%B0%E3%82%93(%E3%81%AF|%E3%82%8F)|%E3%83%8F%E3%83%AD%E3%83%BC).+") {
+  /* (はじめまして|こんに?ち[はわ]|おはよう|こんばん[はわ]|ハロー) */
+  #csssaid::after { content: 'ハロー、わたしは CSS です'; }
+}
+@-moz-document regexp(".+\\?.+(css|CSS|%E3%81%8A%E5%89%8D|%E5%90%9B).+") {
+  /* (css|CSS|お前|君) */
+  #csssaid::after { content: '呼びましたか？'; }
+}
+@-moz-document regexp(".+\\?.+(JavaScript|javascript|JS|js).+") {
+  #csssaid::after { content: 'JavaScript はおともだちです'; }
+}

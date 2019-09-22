@@ -1,0 +1,52 @@
+#content {
+  -webkit-flow-into: f1;
+  flow-into: f1;
+}
+#regions {
+  -webkit-flow-from: f1;
+  flow-from: f1;
+}
+@-webkit-region #regions {
+  h1 {
+    font-size: 60px; 
+    font-family: monospace;
+    color: red; /* supported */
+    opacity: 0.5;
+    background-color: lime; /* supported */
+    background-image: -webkit-linear-gradient(red, blue);
+    word-spacing: 20px;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 100px;
+    text-align: center;
+    border: 1px dashed black;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding-right: 50px;
+    text-shadow: 0 0 10px;
+    box-shadow: 0 0 10px;
+    width: 500px;
+  }
+}
+#regions::region(h1) {
+    font-size: 60px; 
+    font-family: monospace;
+    color: red;
+    opacity: 0.5;
+    background-color: lime;
+    background-image: linear-gradient(red, blue);
+    word-spacing: 20px;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 100px;
+    text-align: center;
+    border: 1px dashed black;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding-right: 50px;
+    text-shadow: 0 0 10px;
+    box-shadow: 0 0 10px;
+    width: 500px;
+}

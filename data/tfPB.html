@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>Pure CSS お絵かきロジック</title>
+<link rel="stylesheet" href="tfPB.css">
+</head>
+<body><table><tr>
+  <td></td>
+  <td class="question top">
+    <span><br><br><br><br>7</span><span><br><br><br><br>9</span><span><br><br>2<br>1<br>3</span><span><br>2<br>1<br>1<br>2</span><span><br>2<br>1<br>2<br>2</span><span>1<br>1<br>1<br>1<br>1</span><span>1<br>1<br>1<br>2<br>1</span><span><br>1<br>1<br>3<br>1</span><span><br><br><br>1<br>2</span><span><br><br><br><br>7</span>
+  </td>
+</tr><tr>
+  <td class="question left">
+    <div>10</div>
+    <div>5&nbsp;&nbsp;1</div>
+    <div>2&nbsp;&nbsp;3&nbsp;&nbsp;1</div>
+    <div>2&nbsp;&nbsp;2&nbsp;&nbsp;1</div>
+    <div>2&nbsp;&nbsp;3&nbsp;&nbsp;1</div>
+    <div>5&nbsp;&nbsp;1&nbsp;&nbsp;1</div>
+    <div>2&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;1</div>
+    <div>2&nbsp;&nbsp;2&nbsp;&nbsp;1</div>
+    <div>4&nbsp;&nbsp;1</div>
+    <div>6</div>
+  </td>
+  <td id="canvas">
+    <input type="checkbox" id="i00"><label></label><input type="checkbox" id="i01"><label></label><input type="checkbox" id="i02"><label></label><input type="checkbox" id="i03"><label></label><input type="checkbox" id="i04"><label></label><input type="checkbox" id="i05"><label></label><input type="checkbox" id="i06"><label></label><input type="checkbox" id="i07"><label></label><input type="checkbox" id="i08"><label></label><input type="checkbox" id="i09"><label></label><br>
+    <input type="checkbox" id="i10"><label></label><input type="checkbox" id="i11"><label></label><input type="checkbox" id="i12"><label></label><input type="checkbox" id="i13"><label></label><input type="checkbox" id="i14"><label></label><input type="checkbox" id="i15"><label></label><input type="checkbox" id="i16"><label></label><input type="checkbox" id="i17"><label></label><input type="checkbox" id="i18"><label></label><input type="checkbox" id="i19"><label></label><br>
+    <input type="checkbox" id="i20"><label></label><input type="checkbox" id="i21"><label></label><input type="checkbox" id="i22"><label></label><input type="checkbox" id="i23"><label></label><input type="checkbox" id="i24"><label></label><input type="checkbox" id="i25"><label></label><input type="checkbox" id="i26"><label></label><input type="checkbox" id="i27"><label></label><input type="checkbox" id="i28"><label></label><input type="checkbox" id="i29"><label></label><br>
+    <input type="checkbox" id="i30"><label></label><input type="checkbox" id="i31"><label></label><input type="checkbox" id="i32"><label></label><input type="checkbox" id="i33"><label></label><input type="checkbox" id="i34"><label></label><input type="checkbox" id="i35"><label></label><input type="checkbox" id="i36"><label></label><input type="checkbox" id="i37"><label></label><input type="checkbox" id="i38"><label></label><input type="checkbox" id="i39"><label></label><br>
+    <input type="checkbox" id="i40"><label></label><input type="checkbox" id="i41"><label></label><input type="checkbox" id="i42"><label></label><input type="checkbox" id="i43"><label></label><input type="checkbox" id="i44"><label></label><input type="checkbox" id="i45"><label></label><input type="checkbox" id="i46"><label></label><input type="checkbox" id="i47"><label></label><input type="checkbox" id="i48"><label></label><input type="checkbox" id="i49"><label></label><br>
+    <input type="checkbox" id="i50"><label></label><input type="checkbox" id="i51"><label></label><input type="checkbox" id="i52"><label></label><input type="checkbox" id="i53"><label></label><input type="checkbox" id="i54"><label></label><input type="checkbox" id="i55"><label></label><input type="checkbox" id="i56"><label></label><input type="checkbox" id="i57"><label></label><input type="checkbox" id="i58"><label></label><input type="checkbox" id="i59"><label></label><br>
+    <input type="checkbox" id="i60"><label></label><input type="checkbox" id="i61"><label></label><input type="checkbox" id="i62"><label></label><input type="checkbox" id="i63"><label></label><input type="checkbox" id="i64"><label></label><input type="checkbox" id="i65"><label></label><input type="checkbox" id="i66"><label></label><input type="checkbox" id="i67"><label></label><input type="checkbox" id="i68"><label></label><input type="checkbox" id="i69"><label></label><br>
+    <input type="checkbox" id="i70"><label></label><input type="checkbox" id="i71"><label></label><input type="checkbox" id="i72"><label></label><input type="checkbox" id="i73"><label></label><input type="checkbox" id="i74"><label></label><input type="checkbox" id="i75"><label></label><input type="checkbox" id="i76"><label></label><input type="checkbox" id="i77"><label></label><input type="checkbox" id="i78"><label></label><input type="checkbox" id="i79"><label></label><br>
+    <input type="checkbox" id="i80"><label></label><input type="checkbox" id="i81"><label></label><input type="checkbox" id="i82"><label></label><input type="checkbox" id="i83"><label></label><input type="checkbox" id="i84"><label></label><input type="checkbox" id="i85"><label></label><input type="checkbox" id="i86"><label></label><input type="checkbox" id="i87"><label></label><input type="checkbox" id="i88"><label></label><input type="checkbox" id="i89"><label></label><br>
+    <input type="checkbox" id="i90"><label></label><input type="checkbox" id="i91"><label></label><input type="checkbox" id="i92"><label></label><input type="checkbox" id="i93"><label></label><input type="checkbox" id="i94"><label></label><input type="checkbox" id="i95"><label></label><input type="checkbox" id="i96"><label></label><input type="checkbox" id="i97"><label></label><input type="checkbox" id="i98"><label></label><input type="checkbox" id="i99"><label></label>
+    <div id="clear">Congratulations!<br>(HTML5 logo)</div>
+  </td>
+</tr></table><script src="tfPB.js"></script></body>
+</html>

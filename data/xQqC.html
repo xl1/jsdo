@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>2013-09-18 1st</title>
+<link rel="stylesheet" href="xQqC.css">
+</head>
+<body><script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+
+<div ng-app="myModule">
+  <div ng-controller="HogeController as hoge">
+    <input ng-model="hoge.text">
+    <button ng-click="hoge.say()">say</button>
+  </div>
+
+  <div ng-controller="FugaController as fuga">
+    <input ng-model="text">
+    <button ng-click="say()">say</button>
+  </div>
+
+  <div ng-controller="piyo">
+    <input ng-model="text">
+    <button ng-click="say()">say</button>
+  </div>
+</div><script src="xQqC.js"></script></body>
+</html>

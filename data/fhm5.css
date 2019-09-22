@@ -1,0 +1,20 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+}
+
+#svg {
+  display: none;
+  overflow: hidden;
+  width: 465px;
+  height: 262px;
+}
+
+svg {
+  vertical-align: middle;
+}
+

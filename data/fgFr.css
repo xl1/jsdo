@@ -1,0 +1,27 @@
+style[contentEditable] {
+    display: block;
+    background: #fea;
+    white-space: pre;
+}
+
+#target {
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+#log {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    clear: both;
+    overflow: hidden;
+}
+#log li {
+    text-align: right;
+    width: 80px;
+    float: left;
+    font-family: monospace;
+}
+#log :nth-child(4n-3) {
+    clear: both;
+}

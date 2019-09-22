@@ -1,0 +1,8 @@
+body { background-color: #DDDDDD; font: 30px sans-serif; }
+.c1 {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  -ms-appearance: checkbox;
+  -o-appearance: checkbox;
+  appearance: checkbox;
+}

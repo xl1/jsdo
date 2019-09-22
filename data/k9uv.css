@@ -1,0 +1,56 @@
+#box > div {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+#surface1 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  background: rgba(0, 255, 0, 0.3);
+}
+#surface2 {
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  background: rgba(0, 0, 255, 0.3);
+}
+#surface3 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: translateZ(100px);
+  transform: translateZ(100px);
+  background: rgba(0, 255, 255, 0.3);
+}
+#box {
+  position: -webkit-sticky;
+  position: sticky;
+
+  top: 0;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+  background: rgb(255, 100, 100);
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(-100px);
+  transform: translateZ(-100px);
+}
+#container {
+  height: 1000px;
+  -webkit-transform: translateZ(100px);
+  transform: translateZ(100px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+body {
+  margin: 0;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+  -webkit-perspective-origin: 50px 232px;
+  perspective-origin: 50px 232px;
+}

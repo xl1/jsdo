@@ -1,0 +1,8 @@
+#a, #b {
+    background: yellow;
+    border-left: solid red 50px;
+    border-bottom: solid rgba(0, 0, 255, 0.3) 50px;
+}
+#b {
+    background-clip: padding-box;
+}

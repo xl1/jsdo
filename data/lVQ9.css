@@ -1,0 +1,105 @@
+body {
+  background-color: gray;
+  -webkit-perspective: 600px;
+  perspective: 600px; }
+  body * {
+    box-sizing: border-box; }
+  body input {
+    display: none; }
+
+#content {
+  position: relative;
+  font-size: 20px;
+  line-height: 1.7; }
+  #content section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 440px;
+    height: 350px;
+    padding: 15px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(350px) rotate(90deg);
+    transform: translateX(350px) rotate(90deg); }
+
+label {
+  position: absolute;
+  bottom: 0; }
+  label.next {
+    right: 0; }
+  label.prev {
+    left: 0; }
+  label:hover {
+    cursor: pointer;
+    color: #f44; }
+
+#book {
+  position: relative;
+  width: 440px;
+  height: 350px;
+  margin: 30px auto 0;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+  -webkit-transform: rotateX(5deg);
+  transform: rotateX(5deg); }
+
+.page {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 350px;
+  height: 220px;
+  background-color: white;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transition: all 700ms ease-out;
+  transition: all 700ms ease-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+#page1, #page3, #page5 {
+  left: 0;
+  -webkit-transform: translateX(220px) rotateY(0) translateX(-220px) rotate(-90deg) translateX(-350px);
+  transform: translateX(220px) rotateY(0) translateX(-220px) rotate(-90deg) translateX(-350px); }
+
+#page2, #page4, #page6 {
+  left: 220px;
+  -webkit-transform: rotateY(0deg) rotate(-90deg) translateX(-350px);
+  transform: rotateY(0deg) rotate(-90deg) translateX(-350px); }
+
+#onpage1:checked ~ * #page3,
+#onpage1:checked ~ * #page5,
+#onpage3:checked ~ * #page5 {
+  -webkit-transform: translateX(220px) rotateY(180deg) translateX(-220px) rotate(-90deg) translateX(-350px);
+  transform: translateX(220px) rotateY(180deg) translateX(-220px) rotate(-90deg) translateX(-350px); }
+
+#onpage3:checked ~ * #page2,
+#onpage5:checked ~ * #page2,
+#onpage5:checked ~ * #page4 {
+  -webkit-transform: rotateY(-180deg) rotate(-90deg) translateX(-350px);
+  transform: rotateY(-180deg) rotate(-90deg) translateX(-350px); }
+
+#content section:nth-child(1) {
+  -webkit-flow-into: flow1;
+  flow-into: flow1; }
+
+#page1, #page2 {
+  -webkit-flow-from: flow1;
+  flow-from: flow1; }
+
+#content section:nth-child(2) {
+  -webkit-flow-into: flow2;
+  flow-into: flow2; }
+
+#page3, #page4 {
+  -webkit-flow-from: flow2;
+  flow-from: flow2; }
+
+#content section:nth-child(3) {
+  -webkit-flow-into: flow3;
+  flow-into: flow3; }
+
+#page5, #page6 {
+  -webkit-flow-from: flow3;
+  flow-from: flow3; }

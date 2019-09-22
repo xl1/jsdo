@@ -1,0 +1,53 @@
+input:hover + label {
+  background: silver;
+}
+
+#pblack + label,
+.black input:checked + label { background: black; color: white }
+#pred   + label,
+.red   input:checked + label { background: red; color: white }
+#plime  + label,
+.lime  input:checked + label { background: lime }
+#pblue  + label,
+.blue  input:checked + label { background: blue; color: white }
+#pwhite + label,
+.white input:checked + label { background: white }
+
+#canvas {
+  position: relative;
+}
+#canvas div {
+  position: absolute;
+  line-height: 0;
+  border: 10px solid silver;
+  margin: 10px;
+}
+#canvas input, #canvas label {
+  width: 16px;
+  height: 16px;
+}
+#canvas input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+#canvas label {
+  display: inline-block;
+  z-index: -1;
+}
+
+#pblack:checked ~ #canvas .black,
+#pred:checked   ~ #canvas .red,
+#plime:checked  ~ #canvas .lime,
+#pblue:checked  ~ #canvas .blue,
+#pwhite:checked ~ #canvas .white { z-index: 1; }
+
+.refresher {
+  width: 300px;
+  height: 10px;
+  z-index: -1;
+}
+.refresher:hover {
+  content: ''; /* 再描画 */
+}

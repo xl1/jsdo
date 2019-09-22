@@ -1,0 +1,74 @@
+/* #! scss */
+input {
+  position: absolute;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  left: 0;
+  top: 100px; }
+  input:first-of-type {
+    left: 25px;
+    top: auto;
+    bottom: -75px; }
+  input:last-of-type {
+    left: auto;
+    right: 0;
+    top: 100px; }
+
+.rail, #top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75px;
+  height: 75px; }
+
+#top {
+  left: 200px;
+  top: 90px; }
+
+.rail::after {
+  content: '';
+  position: absolute;
+  left: 31.25px;
+  top: 75px;
+  width: 12.5px;
+  height: 6.25px;
+  background-color: #29f; }
+
+input:checked + .rail {
+  -webkit-transform: translateY(75px) rotate(-90deg);
+  -moz-transform: translateY(75px) rotate(-90deg);
+  -ms-transform: translateY(75px) rotate(-90deg);
+  -o-transform: translateY(75px) rotate(-90deg);
+  transform: translateY(75px) rotate(-90deg);
+  background: -webkit-radial-gradient(100% 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -moz-radial-gradient(100% 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -ms-radial-gradient(100% 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -o-radial-gradient(100% 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: radial-gradient(100% 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px); }
+
+input:checked + * + .rail {
+  -webkit-transform: translateY(75px) rotate(90deg);
+  -moz-transform: translateY(75px) rotate(90deg);
+  -ms-transform: translateY(75px) rotate(90deg);
+  -o-transform: translateY(75px) rotate(90deg);
+  transform: translateY(75px) rotate(90deg);
+  background: -webkit-radial-gradient(0 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -moz-radial-gradient(0 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -ms-radial-gradient(0 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -o-radial-gradient(0 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: radial-gradient(0 100%, circle, transparent 25px, #29f 25px, #29f 50px, transparent 50px); }
+
+input:checked + * + * + .rail {
+  -webkit-transform: translateY(75px);
+  -moz-transform: translateY(75px);
+  -ms-transform: translateY(75px);
+  -o-transform: translateY(75px);
+  transform: translateY(75px);
+  background: -webkit-linear-gradient(0deg, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -moz-linear-gradient(0deg, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -ms-linear-gradient(0deg, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: -o-linear-gradient(0deg, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: linear-gradient(0deg, transparent 25px, #29f 25px, #29f 50px, transparent 50px);
+  background: linear-gradient(90deg, transparent 25px, #29f 25px, #29f 50px, transparent 50px); }

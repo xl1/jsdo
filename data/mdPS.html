@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>ウィンドウがにゅるんって出てくるアレ</title>
+<link rel="stylesheet" href="mdPS.css">
+</head>
+<body><input type="checkbox" checked class="controller" id="wd1-open">
+<input type="checkbox" checked class="controller" id="wd2-open">
+
+<div class="container">
+  <div class="window-container" id="wd1">
+    <div class="window" id="window1">
+      <div class="bar">
+        <label for="wd1-open" class="collapse-button"></label>
+        hoge
+      </div>
+      <ul>
+        <li>上の「-」を押すとウィンドウをしまう
+        <li>下の四角を押すとまたでてくる
+      </ul>
+    </div>
+  </div>
+  <div class="window-container" id="wd2">
+    <div class="window" id="window2">
+      <div class="bar">
+        <label for="wd2-open" class="collapse-button"></label>
+        piyo
+      </div>
+        <a href="http://html2canvas.hertzen.com/">html2canvas</a> 
+        とかで無茶しなくていいので、少しは CSS でやる意義もあるかもしれない
+    </div>
+  </div>
+  
+  <label for="wd1-open" class="icon" id="lb1">hoge</label>
+  <label for="wd2-open" class="icon" id="lb2">piyo</label>
+</div><script src="mdPS.js"></script></body>
+</html>

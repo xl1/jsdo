@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>Pure CSS Scrolling Effect</title>
+<link rel="stylesheet" href="k4fp.css">
+</head>
+<body><link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+
+<input type="checkbox" id="show-outline">
+
+<div id="container">
+  <!-- これらは普通にスクロール -->
+  <section id="title">
+    <h1>Pure CSS Scrolling Effect</h1>
+    <ol id="scroll-suggest">
+      <li><a href="http://www.adventar.org/calendars/2">CSS Programming Advent Calendar 2012</a> Day 14</li>
+      <li>works on: Chrome 23+</li>
+    </ol>
+  </section>
+  <section id="intro" class="paper">
+    <h1>Scrolling Effect ?</h1>
+    <ul>
+      <li><a href="http://design.kayac.com/topics/2012/06/koukyuperaichi.php">縦や横に長いサイト「高級ペライチ」1度は見ておきたいスクロール演出のまとめ32個！</a></li>
+      <li><a href="https://www.google.com/search?q=scrolling+effect">scrolling effect - Google 検索</a></li>
+    </ul>
+    最近では
+    <ul>
+      <li><a href="http://special.jimin.jp/political_promise/">自民党＜政権公約＞</a></li>
+    </ul>
+    →　<strong>それ、CSS でできるよ！</strong>
+  </section>
+  <section id="mixin" class="paper">
+    <h1>SCSS Mixins</h1>
+    <a href="https://gist.github.com/4277256">sticker.scss</a>
+  </section>
+  <section id="code" class="paper">
+    <h1>これだけ</h1>
+    <pre><code>@import "sticker.scss";
+@include use-stickers($height);
+
+#your-favorite-element {
+  @include sticker($start, $velocity, $range);
+}</code></pre>
+  </section>
+
+  <section id="how" class="paper">
+    <h1>どうやってるの？</h1>
+    <ul>
+      <li>
+        Sticky Positioning
+        <div>
+          参照: <a href="http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit">HTML5Rocks Updates</a>
+        </div>
+      </li>
+      <li>
+        <a href="http://www.w3.org/TR/css3-3d-transforms/">CSS Transforms</a>
+      </li>
+    </ul>
+    <label for="show-outline">sticker の位置を見えるようにする</label>
+  </section>
+  <section id="why" class="paper">
+    <h1>なぜ CSS で?</h1>
+    <ul>
+      <li>
+        <strong>軽い</strong><br>ロード時間ゼロ！ JS がない分軽い
+      </li>
+      <li>
+        <strong>速い</strong><br>スクロール遅延ゼロ！ ブラウザ側が処理してくれる
+      </li>
+      <li>
+        <strong>たのしい</strong><br>CSS でやる意味ゼロ！！
+      </li>
+    </ul>
+    <small>※ 効果には個人差・環境差があります</small>
+  </section>
+  <section id="more" class="paper">
+    <h1>もっと詳しく</h1>
+    <ul>
+      <li>
+        <a href="https://gist.github.com/4281393">CSS でペライチ</a><br>
+        （<a href="http://www.adventar.org/calendars/2">CSS Programming Advent Calendar 2012</a> の 14日目）
+      </li>
+      <li><a href="http://twitter.com/xl1blue">@xl1blue on Twitter</a></li>
+    </ul>
+  </section>
+  <section id="end">
+    <h1>END</h1>
+  </section>
+</div>
+
+<div id="stickers">
+  <div class="sticker" id="star1"><div class="star"></div></div>
+  <div class="sticker" id="star2"><div class="star"></div></div>
+  <div class="sticker" id="star3"><div class="star"></div></div>
+  <div class="sticker" id="star4"><div class="star"></div></div>
+  <div class="sticker" id="star5"><div class="star"></div></div>
+  <div class="sticker" id="shootingstar"><div class="star"></div></div>
+  <div class="sticker" id="moon"><div></div></div>
+  <div class="sticker" id="star1-balloon">
+    <pre class="balloon"><code>sticker(
+  $start: 300px 150px,
+  $velocity: 0 -0.06,
+  $range: 0.5 1
+)</code></pre>
+  </div>
+  <div class="sticker" id="sunnysky"><div></div></div>
+  <div class="sticker" id="background-far"><div></div></div>
+  <div class="sticker" id="background-close"><div></div></div>
+  <div class="sticker" id="title-cloud-back"><div></div></div>
+  <div class="sticker" id="ufo"><div></div></div>
+  <div class="sticker" id="ufo-balloon">
+    <pre class="balloon"><code>sticker(
+  $start: -550px 200px,
+  $velocity: 0.95 0.55,
+  $range: 0.40 0.53
+)</code></pre>
+  </div>
+  <div class="sticker" id="sled"><div></div></div>
+  <div class="sticker" id="sled-balloon">
+    <pre class="balloon"><code>sticker(
+  $start: -720px 250px,
+  $velocity: 0.1 0,
+  $range: 0.12 1
+)</code></pre>
+  </div>
+  <div class="sticker" id="snow1"><div class="snow"></div></div>
+  <div class="sticker" id="snow2"><div class="snow"></div></div>
+  <div class="sticker" id="snow3"><div class="snow"></div></div>
+  <div class="sticker" id="snow4"><div class="snow"></div></div>
+  <div class="sticker" id="snow5"><div class="snow"></div></div>
+  <div class="sticker" id="snow6"><div class="snow"></div></div>
+  <div class="sticker" id="title-cloud-front"><div></div></div>
+  <div class="sticker" id="end-trees"><div></div></div>
+</div><script src="k4fp.js"></script></body>
+</html>

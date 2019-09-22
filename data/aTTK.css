@@ -1,0 +1,42 @@
+/* #!scss */
+#field {
+  overflow: scroll;
+  resize: both;
+  border: solid;
+  border-width: 300px 170px 0 190px;
+  width: 20px;
+  height: 11px;
+  max-width: 200px;
+  max-height: 100px;
+  -webkit-animation: anim 7.5s cubic-bezier(0.1, 0.4, 0.8, 1);
+  animation: anim 7.5s cubic-bezier(0.1, 0.4, 0.8, 1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused; }
+  #field::-webkit-scrollbar {
+    width: 20px;
+    height: 20px; }
+  #field::-webkit-resizer, #field::-webkit-scrollbar-corner {
+    visibility: hidden; }
+  #field[style] {
+    border-left-width: 100px; }
+  #field[style]:not(:active) {
+    -webkit-animation-play-state: running;
+    animation-play-state: running; }
+
+@-webkit-keyframes anim {
+  0% {
+    -webkit-filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 0);
+    filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 0); }
+  100% {
+    -webkit-filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 9);
+    filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 9); } }
+
+@keyframes anim {
+  0% {
+    -webkit-filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 0);
+    filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 0); }
+  100% {
+    -webkit-filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 9);
+    filter: custom(url(https://gist.github.com/xl1/3927259/raw/d4d9a4642cd1f9b8ec54b0d3209cc3828fa2d3ca/normal.vs) url(https://gist.github.com/xl1/3927259/raw/0f9375555e7a21ca2d64a36b6d4db12b9fccb8ce/golf.fs), timing 9); } }

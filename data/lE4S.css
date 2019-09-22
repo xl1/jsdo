@@ -1,0 +1,410 @@
+body {
+  overflow-x: hidden; }
+
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 465px;
+  margin-top: -232.5px;
+  top: 50%; }
+  #container input, #container keygen, #container [_moz-type="-mozilla-keygen"] {
+    display: none; }
+
+#dice, .diceface {
+  width: 100px;
+  height: 100px; }
+
+#dice {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform-origin: 0 0 0;
+  transform: rotateX(-60deg) rotateY(-45deg);
+  transform-style: preserve-3d; }
+
+.diceface {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  background-image: url(../assets/jmIxZ);
+  background-size: 600px 100px;
+  background-position: 0 0; }
+
+#face1 {
+  transform: translateZ(50px); }
+
+#face2 {
+  background-position: -100px;
+  transform: rotateX(90deg) translateZ(50px); }
+
+#face3 {
+  background-position: -200px;
+  transform: rotateY(90deg) translateZ(50px); }
+
+label {
+  display: inline-block;
+  background-color: #9cf;
+  padding: 5px 20px 5px 20px;
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px #9cf; }
+  label:hover {
+    cursor: pointer; }
+  label:active {
+    background-color: #f44;
+    padding: 7px 20px 3px 20px; }
+
+#submitbutton {
+  display: block;
+  width: 150px;
+  text-align: center;
+  margin: 250px auto 0; }
+
+#balloon {
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 150px;
+  width: 400px;
+  margin-left: -200px;
+  overflow: hidden;
+  border: 1px solid black;
+  background-color: white; }
+
+#content {
+  width: 23200px;
+  margin-left: -14400px; }
+
+.content-list {
+  width: 8400px; }
+  .content-list li {
+    float: left;
+    width: 400px;
+    height: 160px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 20px;
+    text-align: center;
+    line-height: 25px; }
+  .content-list strong {
+    display: block;
+    font-size: 35px;
+    line-height: 40px;
+    margin: 10px 0; }
+
+#sugoroku {
+  position: absolute;
+  width: 5900px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3750px; }
+
+.squares {
+  width: 2200px;
+  height: 100px;
+  background-image: linear-gradient(to right, #4a4, #4a4 100px, #9cf 100px, #9cf 200px, #46a 200px, #46a);
+  background-size: 300px 100px; }
+  .squares #start, .squares #end {
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #f44; }
+  .squares #start {
+    float: left; }
+  .squares #end {
+    float: right; }
+
+#marker {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  margin-left: -53px;
+  width: 100px;
+  height: 100px;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #f44; }
+
+.congrats {
+  color: #f44; }
+
+#sugoroku div, #sugoroku ol, #balloon div, #balloon ol {
+  float: left; }
+
+.cushion {
+  height: 100px; }
+
+#cushion-square {
+  min-width: 1600px; }
+
+#cushion-content {
+  min-width: 6400px; }
+
+#margin1-square {
+  width: 100px; }
+
+#margin1-content {
+  width: 400px; }
+
+#margin2-square {
+  width: 200px; }
+
+#margin2-content {
+  width: 800px; }
+
+#margin4-square {
+  width: 400px; }
+
+#margin4-content {
+  width: 1600px; }
+
+#margin8-square {
+  width: 800px; }
+
+#margin8-content {
+  width: 3200px; }
+
+#marginF-square {
+  width: 1600px; }
+
+#marginF-content {
+  width: 6400px; }
+
+#margin6-square {
+  width: 600px; }
+
+#margin6-content {
+  width: 2400px; }
+
+@-moz-document regexp(".+\\Wat=[01]{4}1.*") {
+  #margin1-square, #margin1-content {
+    display: none; } }
+
+@-moz-document regexp(".+\\Wat=[01]{3}1.*") {
+  #margin2-square, #margin2-content {
+    display: none; } }
+
+@-moz-document regexp(".+\\Wat=[01]{2}1.*") {
+  #margin4-square, #margin4-content {
+    display: none; } }
+
+@-moz-document regexp(".+\\Wat=[01]1.*") {
+  #margin8-square, #margin8-content {
+    display: none; } }
+
+@-moz-document regexp(".+\\Wat=1.*") {
+  #marginF-square, #marginF-content {
+    display: none; } }
+
+@-moz-document regexp(.+Wkey=[0-9A-z%]+[0-8]ww%3D%3DW.*) {
+  #face1 {
+    background-position: -100px; }
+  #face2 {
+    background-position: 0px; }
+  #face3 {
+    background-position: 100px; }
+  #balloon {
+    display: block;
+    animation: show-balloon 10ms 800ms both; }
+  #margin6-square {
+    animation: move1300ms 500ms both; }
+  #margin6-content {
+    width: 2000px; } }
+
+@-moz-document regexp(.+Wkey=[0-9A-z%]+[9A-H]ww%3D%3DW.*) {
+  #face1 {
+    background-position: -200px; }
+  #face2 {
+    background-position: -100px; }
+  #face3 {
+    background-position: 0px; }
+  #balloon {
+    display: block;
+    animation: show-balloon 10ms 1100ms both; }
+  #margin6-square {
+    animation: move2600ms 500ms both; }
+  #margin6-content {
+    width: 1600px; } }
+
+@-moz-document regexp(.+Wkey=[0-9A-z%]+[I-S]ww%3D%3DW.*) {
+  #face1 {
+    background-position: -300px; }
+  #face2 {
+    background-position: -200px; }
+  #face3 {
+    background-position: -100px; }
+  #balloon {
+    display: block;
+    animation: show-balloon 10ms 1400ms both; }
+  #margin6-square {
+    animation: move3900ms 500ms both; }
+  #margin6-content {
+    width: 1200px; } }
+
+@-moz-document regexp(.+Wkey=[0-9A-z%]+[T-Za-d]ww%3D%3DW.*) {
+  #face1 {
+    background-position: -400px; }
+  #face2 {
+    background-position: -300px; }
+  #face3 {
+    background-position: -200px; }
+  #balloon {
+    display: block;
+    animation: show-balloon 10ms 1700ms both; }
+  #margin6-square {
+    animation: move41200ms 500ms both; }
+  #margin6-content {
+    width: 800px; } }
+
+@-moz-document regexp(.+Wkey=[0-9A-z%]+[e-o]ww%3D%3DW.*) {
+  #face1 {
+    background-position: -500px; }
+  #face2 {
+    background-position: -400px; }
+  #face3 {
+    background-position: -300px; }
+  #balloon {
+    display: block;
+    animation: show-balloon 10ms 2000ms both; }
+  #margin6-square {
+    animation: move51500ms 500ms both; }
+  #margin6-content {
+    width: 400px; } }
+
+@-moz-document regexp(.+Wkey=[0-9A-z%]+[p-z]ww%3D%3DW.*) {
+  #face1 {
+    background-position: -600px; }
+  #face2 {
+    background-position: -500px; }
+  #face3 {
+    background-position: -400px; }
+  #balloon {
+    display: block;
+    animation: show-balloon 10ms 2300ms both; }
+  #margin6-square {
+    animation: move61800ms 500ms both; }
+  #margin6-content {
+    width: 0px; } }
+
+input[name="at"]:checked ~ #balloon {
+  display: none; }
+
+@keyframes move1 {
+  0% {
+    width: 600px; }
+  95% {
+    width: 500px; }
+  100% {
+    width: 500px; } }
+
+@keyframes move2 {
+  0% {
+    width: 600px; }
+  45% {
+    width: 500px; }
+  50% {
+    width: 500px; }
+  95% {
+    width: 400px; }
+  100% {
+    width: 400px; } }
+
+@keyframes move3 {
+  0% {
+    width: 600px; }
+  28.33333% {
+    width: 500px; }
+  33.33333% {
+    width: 500px; }
+  61.66667% {
+    width: 400px; }
+  66.66667% {
+    width: 400px; }
+  95% {
+    width: 300px; }
+  100% {
+    width: 300px; } }
+
+@keyframes move4 {
+  0% {
+    width: 600px; }
+  20% {
+    width: 500px; }
+  25% {
+    width: 500px; }
+  45% {
+    width: 400px; }
+  50% {
+    width: 400px; }
+  70% {
+    width: 300px; }
+  75% {
+    width: 300px; }
+  95% {
+    width: 200px; }
+  100% {
+    width: 200px; } }
+
+@keyframes move5 {
+  0% {
+    width: 600px; }
+  15% {
+    width: 500px; }
+  20% {
+    width: 500px; }
+  35% {
+    width: 400px; }
+  40% {
+    width: 400px; }
+  55% {
+    width: 300px; }
+  60% {
+    width: 300px; }
+  75% {
+    width: 200px; }
+  80% {
+    width: 200px; }
+  95% {
+    width: 100px; }
+  100% {
+    width: 100px; } }
+
+@keyframes move6 {
+  0% {
+    width: 600px; }
+  11.66667% {
+    width: 500px; }
+  16.66667% {
+    width: 500px; }
+  28.33333% {
+    width: 400px; }
+  33.33333% {
+    width: 400px; }
+  45% {
+    width: 300px; }
+  50% {
+    width: 300px; }
+  61.66667% {
+    width: 200px; }
+  66.66667% {
+    width: 200px; }
+  78.33333% {
+    width: 100px; }
+  83.33333% {
+    width: 100px; }
+  95% {
+    width: 0px; }
+  100% {
+    width: 0px; } }
+
+@keyframes show-balloon {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

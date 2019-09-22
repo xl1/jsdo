@@ -1,0 +1,22 @@
+#target {
+  width: 50px;
+  height: 50px;
+  max-width: 300px;
+  resize: horizontal;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-filter: custom(url(../assets/68Lr0) url(../assets/g7u1E));
+  filter: custom(url(../assets/68Lr0) url(../assets/g7u1E));
+}
+#target[style] {
+  -webkit-filter: custom(url(../assets/68Lr0) url(../assets/g7u1E));
+  filter: custom(url(../assets/68Lr0) url(../assets/g7u1E));
+}
+#target::-webkit-scrollbar {
+  width: 100%;
+}
+#target[style]:not(:active) {
+  max-width: 50px;
+  -webkit-transition: max-width 1s;
+  transition: max-width 1s;
+}

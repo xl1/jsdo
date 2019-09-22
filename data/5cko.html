@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>JavaScript (CSS automata) generator</title>
+<link rel="stylesheet" href="5cko.css">
+</head>
+<body><style id="resultStyle"></style>
+<form>
+  <div>
+    <select id="examples" size="1"></select>
+    <label>操作の数:<input type="number" id="numOperations" min="0"></label>
+    <label>出力の数:<input type="number" id="numOutputs" min="0"></label>
+  </div>
+  <textarea id="operations"></textarea>
+  <textarea id="outputs"></textarea>
+  <textarea id="data"></textarea>
+  <input type="button" value=" ▼ 生成する ▼ " id="generateButton">
+  <hr>
+  <div>生成された CSS と HTML:</div>
+  <textarea id="resultCss"></textarea>
+  <textarea id="resultHtml"></textarea>
+  <div class="dummy"></div>
+</form>
+<div id="result">（ここにシミュレータができる）</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script><script src="5cko.js"></script></body>
+</html>

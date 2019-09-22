@@ -1,0 +1,26 @@
+form textarea {
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 200px;
+  float: left;
+}
+form textarea + :not(textarea) {
+  display: block;
+  clear: both;
+}
+#operations, #outputs {
+  width: 16%;
+}
+#data {
+  width: 68%;
+}
+#resultCss, #resultHtml {
+  width: 50%;
+  height: 100px;
+}
+#result {
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  padding: 5px;
+}

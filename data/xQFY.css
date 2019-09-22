@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* #! scss */
+* {
+  padding: 0;
+  margin: 0; }
+
+#input {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  border: none;
+  /* redraw */
+  -webkit-animation: redraw 1s infinite;
+  /* resize */
+  overflow: hidden;
+  resize: horizontal; }
+
+#output {
+  display: block;
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  /* redraw */
+  -webkit-animation: redraw 1s infinite;
+  /* resize */
+  overflow: hidden;
+  resize: horizontal; }
+
+#test1 {
+  -webkit-appearance: none;
+  border: none;
+  width: 100px;
+  height: 100px;
+  background: blue; }
+
+/* 謎の余白部分 */
+#test1::-webkit-color-swatch-wrapper {
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  margin: 0; }
+
+#test1::-webkit-color-swatch {
+  border: 2px dashed red;
+  border-radius: 50px; }
+
+/*
+::-webkit-color-swatch-wrapper
+::-webkit-color-swatch
+-webkit-appearance: menulist;
+-webkit-appearance: square-button;
+-webkit-appearance: color-swatch;
+*/
+@-webkit-keyframes redraw {
+  from {
+    min-width: 2px; }
+  to {
+    min-width: 1px; } }
+
+/* https://twitter.com/xl1blue/status/223376980899405824 */
+/* https://twitter.com/xl1blue/status/223377535759683584 */
+#input[type="color"][value*="B89FEC"] + #output {
+  background-color: #b89fec; }
+
+#input[type="color"][value*="000000"] + #output {
+  background-color: #000000; }
+
+#input[type="color"][value*="FFFFFF"] + #output {
+  background-color: #ffffff; }

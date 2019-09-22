@@ -1,0 +1,24 @@
+.message {
+  opacity: 0;
+  -webkit-transition: opacity 1200ms cubic-bezier(1, 0, 1, 0);
+  transition: opacity 1200ms cubic-bezier(1, 0, 1, 0);
+}
+.ok:active + input:invalid + .message {
+  opacity: 1;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.redraw {
+  -webkit-animation: redraw 1s infinite; /* for Chrome */
+  -ms-animation: redraw 1s infinite; /* for IE10 */
+}
+
+@-webkit-keyframes redraw {
+  from { min-width: 1px; }
+  to   { min-width: 2px; }
+}
+@keyframes redraw {
+  from { min-width: 1px; }
+  to   { min-width: 2px; }
+}

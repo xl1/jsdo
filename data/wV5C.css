@@ -1,0 +1,59 @@
+/* main */
+.drag {
+  width: 20px;
+  height: 20px;
+  background-position: 100% 100%;
+  background-image: -webkit-linear-gradient(red, red);
+  background-image: -moz-linear-gradient(red, red);
+  background-image: -ms-linear-gradient(red, red);
+  background-image: -o-linear-gradient(red, red);
+  background-image: linear-gradient(red, red);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  resize: both;
+  overflow: hidden;
+  width: 370px;
+  height: 220px; }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .drag {
+      overflow: scroll;
+      width: 20px;
+      height: 20px;
+      margin-left: 350px;
+      margin-top: 200px; }
+      .drag:active {
+        margin-left: 349px;
+        margin-top: 199px; }
+      .drag[style] {
+        margin-left: 0;
+        margin-top: 0; } }
+  .drag::-webkit-scrollbar {
+    width: 20px;
+    height: 20px; }
+  .drag::-webkit-resizer, .drag::-webkit-scrollbar-corner {
+    visibility: hidden; }
+
+.drag:active {
+  cursor: move; }
+
+/* show gimmick */
+body > input {
+  display: none; }
+
+.toggle {
+  display: inline-block;
+  background: #ddd;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 0 1px white inset;
+  padding: 7px; }
+  .toggle:hover {
+    cursor: pointer; }
+
+#show-gimmick:checked ~ * .toggle[for="show-gimmick"] {
+  background: #6af;
+  color: white;
+  box-shadow: 0 0 0 1px white inset, 0 2px #333 inset;
+  padding: 8px 7px 6px 7px; }
+
+#show-gimmick:checked ~ .drag {
+  background-color: pink; }
