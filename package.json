@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Salvaged codes from jsdo.it",
   "main": "index.js",
+  "scripts": {
+    "generate": "ts-node generate.ts"
+  },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "coffeescript": "^1.4.0",
+    "node-sass": "^4.12.0"
   },
   "author": "xl1",
   "license": "MIT",
@@ -12,7 +17,6 @@
     "@types/cheerio": "^0.22.13",
     "@types/coffeescript": "file:types/coffeescript",
     "@types/node-sass": "^4.11.0",
-    "coffeescript": "^1.4.0",
-    "node-sass": "^4.12.0"
+    "ts-node": "^8.4.1"
   }
 }
