@@ -31,8 +31,9 @@ async function load(file: string): Promise<Page> {
     const codeJS = $('#codeJS');
     const codeHTML = $('#codeHTML');
     const codeCSS = $('#codeCSS');
+    const libraryLoadingScript = $('#boxEditCSS + script').html() || '';
     const libraries = Array.from(
-        $('#boxEditCSS + script').text().matchAll(/initial_tabs\["js"\]\.push\( "(.+?)" \)/g),
+        libraryLoadingScript.matchAll(/initial_tabs\["js"\]\.push\( "(.+?)" \)/g),
         m => m[1]
     );
     return {
