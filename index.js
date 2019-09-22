@@ -30,9 +30,9 @@ const vApp = new Vue({
             this.title = page.title;
             this.description = page.description;
             this.libraries = page.libraries;
-            this.codes.html = page.html.content;
-            this.codes.css = page.css.content;
-            this.codes.js = page.js.content;
+            this.codes.html = hljs.highlight(page.html.language, page.html.content, true).value;
+            this.codes.css = hljs.highlight(page.css.language, page.css.content, true).value;
+            this.codes.js = hljs.highlight(page.js.language, page.js.content, true).value;
         },
         play() {
             this.isPlaying = !!this.selectedPage;

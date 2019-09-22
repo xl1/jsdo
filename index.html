@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>Salvaged codes from jsdo.it</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css">
     <style>
         :root {
             --bg: #ddd;
@@ -12,6 +13,9 @@
         body {
             margin: 0;
             padding: 0;
+        }
+        pre {
+            margin: 0;
         }
         .main {
             display: grid;
@@ -75,8 +79,19 @@
         .editor {
             grid-area: editor;
             border-left: 1px solid var(--bg);
+            padding: 10px;
+            overflow: auto;
         }
+            .editor code {
+                font-family: Consolas, monospace;
+            }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/coffeescript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/scss.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/xml.min.js"></script>
     <script type="module" src="./index.js"></script>
 </head>
 <body>
@@ -100,22 +115,19 @@
             </ul>
         </div>
         <div class="player">
-            <iframe
-                class="player__iframe"
-                width="465" height="465"
-                :src="src"></iframe>
+            <iframe class="player__iframe" width="465" height="465" :src="src"></iframe>
             <div class="player__button" :hidden="isPlaying" @click="play">▶ Play</div>
         </div>
         <div class="description" v-html="description"></div>
         <div class="editor">
             <div class="editor__editor" v-show="codeType === 'html'">
-                <code><pre>{{ codes.html }}</pre></code>
+                <pre><code v-html="codes.html"></code></pre>
             </div>
             <div class="editor__editor" v-show="codeType === 'js'">
-                <code><pre>{{ codes.js }}</pre></code>
+                <pre><code v-html="codes.js"></code></pre>
             </div>
             <div class="editor__editor" v-show="codeType === 'css'">
-                <code><pre>{{ codes.css }}</pre></code>
+                <pre><code v-html="codes.css"></code></pre>
             </div>
         </div>
     </div>
