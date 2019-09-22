@@ -23,13 +23,20 @@ interface Page {
 const sourceDir = './html/';
 const dataDir = './data/';
 
-function replaceAssetPaths(source: string | null): string {
+function replaceAssetPaths(source: string | null, base: string): string {
     if (!source) return '';
-    const c = (_: unknown, filename: string) => `../assets/${filename}`;
+    // http://jsdo.it/static/assets/svggirl/04/material.svg ==> assets/material.svg
+    // http://jsrun.it/static/assets/svggirl/12/trailer.webm ==> assets/trailer.webm
+    // http://jsrun.it/assets/o/E/H/G/oEHGT.jpg ==> assets/oEHGT.jpg
+    // http://jsdo-it-static-contents.s3.amazonaws.com/assets/b/T/V/2/bTV2w.png ==> assets/bTV2w.png
+    // http://jsrun.it/xl1/j3Od ==> data/j3Od.html
+    // http://jsrun.it/xl1/jlbs/js ==> data/jlbs.js
+    const c = (_: unknown, filename: string) => `${base}/assets/${filename}`;
     return source
-        .replace(/http:\/\/jsdo.it\/static\/assets\/\w\/\w\/(\w+(\.?\w+)?)/g, c)
-        .replace(/http:\/\/jsrun.it\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+)?)/g, c)
-        .replace(/http:\/\/jsdo-it-static-contents.s3.amazonaws.com\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+))?/g, c);
+        .replace(/http:\/\/js(?:do|run)\.it\/static\/assets\/\w+\/\w+\/(\w+(\.?\w+)?)/g, c)
+        .replace(/http:\/\/jsrun\.it\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+)?)/g, c)
+        .replace(/http:\/\/jsdo-it-static-contents\.s3\.amazonaws\.com\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+))?/g, c)
+        .replace(/http:\/\/jsrun\.it\/xl1\/(\w+)(\/(js|css))?/g, (_, name, __, ext) => `${base}/data/${name}.${ext || 'html'}`);
 }
 
 async function load(file: string): Promise<Page> {
@@ -50,19 +57,19 @@ async function load(file: string): Promise<Page> {
     return {
         name,
         title: $('meta[property="og:title"]').attr('content'),
-        description: replaceAssetPaths(descriptionBox.html()),
+        description: replaceAssetPaths(descriptionBox.html(), '.'),
         libraries,
         js: {
             language: codeJS.attr('data-lang') || 'js',
-            content: replaceAssetPaths(codeJS.val())
+            content: replaceAssetPaths(codeJS.val(), '..')
         },
         html: {
             language: codeHTML.attr('data-lang') || 'html',
-            content: replaceAssetPaths(codeHTML.val())
+            content: replaceAssetPaths(codeHTML.val(), '..')
         },
         css: {
             language: codeCSS.attr('data-lang') || 'css',
-            content: replaceAssetPaths(codeCSS.val())
+            content: replaceAssetPaths(codeCSS.val(), '..')
         },
         published: $('time').attr('datetime'),
     } as const;
