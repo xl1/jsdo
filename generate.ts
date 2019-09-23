@@ -31,11 +31,10 @@ function replaceAssetPaths(source: string | null, base: string): string {
     // http://jsdo-it-static-contents.s3.amazonaws.com/assets/b/T/V/2/bTV2w.png ==> assets/bTV2w.png
     // http://jsrun.it/xl1/j3Od ==> data/j3Od.html
     // http://jsrun.it/xl1/jlbs/js ==> data/jlbs.js
-    const c = (_: unknown, filename: string) => `${base}/assets/${filename}`;
     return source
-        .replace(/http:\/\/js(?:do|run)\.it\/static\/assets\/\w+\/\w+\/(\w+(\.?\w+)?)/g, c)
-        .replace(/http:\/\/jsrun\.it\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+)?)/g, c)
-        .replace(/http:\/\/jsdo-it-static-contents\.s3\.amazonaws\.com\/assets\/\w\/\w\/\w\/\w\/(\w+(\.?\w+))?/g, c)
+        .replace(/http:\/\/js(do|run)\.it\/static\/assets\/\w+\/\w+\/(\w+(\.\w+)?)/g, `${base}/assets/$2`)
+        .replace(/http:\/\/jsrun\.it\/assets\/\w\/\w\/\w\/\w\/(\w+(\.\w+)?)/g, `${base}/assets/$1`)
+        .replace(/http:\/\/jsdo-it-static-contents\.s3\.amazonaws\.com\/assets\/\w\/\w\/\w\/\w\/(\w+(\.\w+)?)/g, `${base}/assets/$1`)
         .replace(/http:\/\/jsrun\.it\/xl1\/(\w+)(\/(js|css))?/g, (_, name, __, ext) => `${base}/data/${name}.${ext || 'html'}`);
 }
 
@@ -121,6 +120,7 @@ function convertLibraryPath(path: string): string {
         case '/lib/jquery-2.1.0':
             return 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js';
         case '/lib/jquery.easing.1.3':
+            return 'https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js';
         case '/lib/jquery-ui-1.8.1.min':
             return 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js';
         case '/njf/mFlj':
